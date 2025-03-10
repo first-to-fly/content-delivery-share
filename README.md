@@ -1,8 +1,8 @@
-# MyAwesomeProject
+# Content Delivery Share
 
 (Short description for this project)
 
-- [MyAwesomeProject](#myawesomeproject)
+- [Content Delivery Share](#content-delivery-share)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Development](#development)

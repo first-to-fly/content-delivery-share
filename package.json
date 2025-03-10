@@ -1,5 +1,5 @@
 {
-  "name": "content-delivery-share",
+  "name": "@firsttofly/content-delivery-share",
   "version": "0.0.1",
   "private": true,
   "description": "Some description.",

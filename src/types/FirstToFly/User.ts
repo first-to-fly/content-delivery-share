@@ -12,4 +12,6 @@ export interface FTFUser extends CDEntity {
   emailVerified: boolean;
   username: string | null;
 
+  departmentID: string;
+
 }

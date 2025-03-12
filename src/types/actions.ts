@@ -1,11 +1,14 @@
 import { CDEntity } from "./entity";
+import { FTFDepartment } from "./FirstToFly/Department";
+import { FTFLocation } from "./FirstToFly/Location";
 import { FTFUser } from "./FirstToFly/User";
 import { OID } from "./generic";
 
 
 export type AllEntityField =
   | keyof CDEntity
-  // User entity
+  | keyof FTFLocation
+  | keyof FTFDepartment
   | keyof FTFUser;
 
 

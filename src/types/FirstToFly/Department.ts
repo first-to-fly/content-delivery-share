@@ -6,6 +6,8 @@ import { CDEntity } from "../entity";
  * @extends {CDBaseEntity}
  */
 export interface FTFDepartment extends CDEntity {
+  tenantOid: string;
+
   name: string;
   locationOid: string;
   parentDepartmentOid?: string;

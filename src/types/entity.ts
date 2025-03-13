@@ -3,6 +3,7 @@ export enum CDEntityType {
   FTF_USER = "ftf-user",
   FTF_LOCATION = "ftf-location",
   FTF_DEPARTMENT = "ftf-department",
+  FTF_TENANT = "ftf-tenant",
 }
 
 export interface CDEntity {

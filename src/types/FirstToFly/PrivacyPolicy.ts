@@ -2,21 +2,18 @@ import { CDEntity } from "../entity";
 
 /**
  * @export
- * @interface FTFDepartment
- * @extends {CDBaseEntity}
+ * @interface FTFPrivacyPolicy
+ * @extends {CDEntity}
  */
-export interface FTFDepartment extends CDEntity {
+export interface FTFPrivacyPolicy extends CDEntity {
   tenantOID: string;
 
   name: string;
-  locationOID: string;
-  parentDepartmentOID?: string;
-  code: string;
+  fileURL: string;
   isActive: boolean;
 
   createdAt: string;
   updatedAt: string;
   createdBy: string;
   updatedBy: string | null;
-
 }

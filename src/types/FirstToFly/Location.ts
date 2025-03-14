@@ -7,9 +7,14 @@ import { LocationType } from "../enums/location";
  * @extends {CDBaseEntity}
  */
 export interface FTFLocation extends CDEntity {
-  tenantOid: string;
+  tenantOID: string;
 
   name: string;
   description?: string;
   type: LocationType;
+
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string | null;
 }

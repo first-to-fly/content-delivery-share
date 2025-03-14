@@ -1,6 +1,7 @@
 import { CDEntity } from "./entity";
 import { FTFDepartment } from "./FirstToFly/Department";
 import { FTFLocation } from "./FirstToFly/Location";
+import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
 import { FTFUser } from "./FirstToFly/User";
 import { OID } from "./generic";
 
@@ -9,6 +10,7 @@ export type AllEntityField =
   | keyof CDEntity
   | keyof FTFLocation
   | keyof FTFDepartment
+  | keyof FTFPrivacyPolicy
   | keyof FTFUser;
 
 

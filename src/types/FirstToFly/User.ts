@@ -6,7 +6,7 @@ import { CDEntity } from "../entity";
  * @extends {CDBaseEntity}
  */
 export interface FTFUser extends CDEntity {
-  tenantOid: string;
+  tenantOID: string;
 
   displayName: string;
   avatarURL: string;
@@ -14,6 +14,6 @@ export interface FTFUser extends CDEntity {
   emailVerified: boolean;
   username: string | null;
 
-  departmentOid: string;
+  departmentOID: string;
 
 }

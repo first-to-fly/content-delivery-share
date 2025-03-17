@@ -1,4 +1,5 @@
 import { CDEntity } from "../entity";
+import { NamedURL } from "../url";
 
 /**
  * @export
@@ -9,7 +10,7 @@ export interface FTFPrivacyPolicy extends CDEntity {
   tenantOID: string;
 
   name: string;
-  fileURL: string;
+  file: NamedURL;
   isActive: boolean;
 
   createdAt: string;

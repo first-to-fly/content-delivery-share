@@ -11,10 +11,10 @@ export interface FTFSector extends CDEntity {
   name: string;
   isActive: boolean;
   images: string[] | null;
-  parentOID?: string;
+  parentOID: string | null;
 
   isPopular: boolean;
-  productTypeOIDs?: string[];
+  productTypeOIDs: string[] | null;
 
   createdAt: string;
   updatedAt: string;

@@ -10,7 +10,7 @@ export interface FTFLocation extends CDEntity {
   tenantOID: string;
 
   name: string;
-  description?: string;
+  description: string | null;
   type: LocationType;
 
   createdAt: string;

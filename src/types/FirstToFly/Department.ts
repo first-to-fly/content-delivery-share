@@ -10,7 +10,7 @@ export interface FTFDepartment extends CDEntity {
 
   name: string;
   locationOID: string;
-  parentDepartmentOID?: string;
+  parentDepartmentOID: string | null;
   code: string;
 
   createdAt: string;

@@ -7,6 +7,8 @@ export enum CDEntityType {
   FTF_TENANT = "ftf-tenant",
   FTF_PRIVACY_POLICY = "ftf-privacyPolicy",
   FTF_SECTOR = "ftf-sector",
+  FTF_TERM = "ftf-term",
+  FTF_BADGE = "ftf-badge",
 }
 
 export interface CDEntity {

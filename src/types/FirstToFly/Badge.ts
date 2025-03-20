@@ -1,17 +1,17 @@
 import { CDEntity } from "../entity";
-import { TermType } from "../enums/term";
 import { MultiLangRecord } from "../multipleLanguage";
 
 /**
  * @export
- * @interface FTFTerm
+ * @interface FTFBadge
  * @extends {CDEntity}
  */
-export interface FTFTerm extends CDEntity {
+export interface FTFBadge extends CDEntity {
   tenantOID: string;
 
-  type: TermType;
-  value: MultiLangRecord<string>;
+  image: MultiLangRecord<string>;
+  isActive: boolean;
+  icon: string;
 
   createdAt: string;
   updatedAt: string;

@@ -12,8 +12,14 @@ export interface FTFUser extends CDEntity {
   avatarURL: string;
   email: string;
   emailVerified: boolean;
-  username: string | null;
 
   departmentOID: string;
+
+  tourLeadingSkills: {
+    sectorOID: string;
+    termOID: string;
+    startYear: number;
+    // noOfTours: number;
+  }[] | null;
 
 }

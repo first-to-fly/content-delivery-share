@@ -2,7 +2,7 @@ import { CDEntity } from "../entity";
 
 /**
  * @export
- * @interface FTFSector
+ * @interface FTFSectorGroup
  * @extends {CDEntity}
  */
 export interface FTFSectorGroup extends CDEntity {

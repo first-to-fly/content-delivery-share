@@ -1,16 +1,30 @@
 import { CDEntity } from "./entity";
+import { FTFBadge } from "./FirstToFly/Badge";
 import { FTFDepartment } from "./FirstToFly/Department";
+import { FTFDesignation } from "./FirstToFly/Designation";
 import { FTFLocation } from "./FirstToFly/Location";
+import { FTFMeal } from "./FirstToFly/Meal";
 import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
+import { FTFProductType } from "./FirstToFly/ProductType";
+import { FTFSector } from "./FirstToFly/Sector";
+import { FTFSectorGroup } from "./FirstToFly/SectorGroup";
+import { FTFTerm } from "./FirstToFly/Term";
 import { FTFUser } from "./FirstToFly/User";
 import { OID } from "./generic";
 
 
 export type AllEntityField =
   | keyof CDEntity
-  | keyof FTFLocation
+  | keyof FTFBadge
   | keyof FTFDepartment
+  | keyof FTFDesignation
+  | keyof FTFLocation
+  | keyof FTFMeal
   | keyof FTFPrivacyPolicy
+  | keyof FTFProductType
+  | keyof FTFSector
+  | keyof FTFSectorGroup
+  | keyof FTFTerm
   | keyof FTFUser;
 
 

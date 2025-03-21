@@ -10,6 +10,8 @@ export enum CDEntityType {
   FTF_SECTOR_GROUP = "ftf-sectorGroup",
   FTF_TERM = "ftf-term",
   FTF_BADGE = "ftf-badge",
+  FTF_MEAL = "ftf-meal",
+  FTF_DESIGNATION = "ftf-designation",
 }
 
 export interface CDEntity {

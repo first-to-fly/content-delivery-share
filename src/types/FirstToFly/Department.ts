@@ -14,6 +14,8 @@ export interface FTFDepartment extends CDEntity {
   code: string;
   isActive: boolean;
 
+  userOIDs: string[] | null;
+
   createdAt: string;
   updatedAt: string;
   createdBy: string;

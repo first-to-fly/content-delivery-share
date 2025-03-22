@@ -10,7 +10,7 @@ export interface FTFMeal extends CDEntity {
 
   code: string;
   description: string;
-  type: string;
+  type: "Airline" | "Land" | "Cruise";
   seq: number;
   offlineOperator: string | null;
 
@@ -18,5 +18,4 @@ export interface FTFMeal extends CDEntity {
   updatedAt: string;
   createdBy: string;
   updatedBy: string | null;
-  deletedAt: string | null;
 }

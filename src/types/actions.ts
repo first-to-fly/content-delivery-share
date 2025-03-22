@@ -2,6 +2,7 @@ import { CDEntity } from "./entity";
 import { FTFBadge } from "./FirstToFly/Badge";
 import { FTFDepartment } from "./FirstToFly/Department";
 import { FTFDesignation } from "./FirstToFly/Designation";
+import { FTFDocument } from "./FirstToFly/Document";
 import { FTFLocation } from "./FirstToFly/Location";
 import { FTFMeal } from "./FirstToFly/Meal";
 import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
@@ -18,6 +19,7 @@ export type AllEntityField =
   | keyof FTFBadge
   | keyof FTFDepartment
   | keyof FTFDesignation
+  | keyof FTFDocument
   | keyof FTFLocation
   | keyof FTFMeal
   | keyof FTFPrivacyPolicy

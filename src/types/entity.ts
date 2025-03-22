@@ -12,6 +12,7 @@ export enum CDEntityType {
   FTF_BADGE = "ftf-badge",
   FTF_MEAL = "ftf-meal",
   FTF_DESIGNATION = "ftf-designation",
+  FTF_DOCUMENT = "ftf-document",
 }
 
 export interface CDEntity {

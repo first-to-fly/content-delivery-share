@@ -6,20 +6,26 @@ import { CDEntity } from "../entity";
  * @extends {CDBaseEntity}
  */
 export interface FTFUser extends CDEntity {
-  tenantOID: string;
 
-  displayName: string;
-  avatarURL: string;
   email: string;
-  emailVerified: boolean;
 
-  departmentOID: string;
-
-  tourLeadingSkills: {
-    sectorOID: string;
-    termOID: string;
-    startYear: number;
-    // noOfTours: number;
-  }[] | null;
+  firstName: string;
+  lastName: string;
+  preferredName: string;
+  dob: Date;
+  otherNames?: Record<string, string>;
+  mobile: number;
+  altMobile?: number;
+  personalEmail?: string;
+  images?: string[];
+  avatar?: string;
+  emergencyContact?: {
+    name: string;
+    relationship?: string;
+    mobile: number;
+    email?: string;
+  };
+  description?: string;
+  salutation: string;
 
 }

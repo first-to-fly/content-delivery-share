@@ -11,6 +11,7 @@ import { FTFSector } from "./FirstToFly/Sector";
 import { FTFSectorGroup } from "./FirstToFly/SectorGroup";
 import { FTFTerm } from "./FirstToFly/Term";
 import { FTFUser } from "./FirstToFly/User";
+import { FTFUserTenant } from "./FirstToFly/UserTenant";
 import { OID } from "./generic";
 
 
@@ -27,6 +28,7 @@ export type AllEntityField =
   | keyof FTFSector
   | keyof FTFSectorGroup
   | keyof FTFTerm
+  | keyof FTFUserTenant
   | keyof FTFUser;
 
 

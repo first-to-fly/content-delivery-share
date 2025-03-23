@@ -11,6 +11,7 @@ import { CDEntity } from "../entity";
 export interface FTFUserTenant extends CDEntity {
   tenantOID: string;
 
+  designationOIDs: string[];
   departmentOIDs: string[];
   roleOIDs?: string[];
 

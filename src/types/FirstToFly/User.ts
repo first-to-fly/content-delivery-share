@@ -28,4 +28,9 @@ export interface FTFUser extends CDEntity {
   description?: string;
   salutation: string;
 
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string;
+
 }

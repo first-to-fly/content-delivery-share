@@ -1,5 +1,6 @@
 import { CDBaseEntity } from "../entity";
 
+
 export interface FTFRole extends CDBaseEntity {
   oid: string;
   name: string;

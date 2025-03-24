@@ -15,6 +15,7 @@ import { FTFUser } from "./FirstToFly/User";
 import { FTFUserTenant } from "./FirstToFly/UserTenant";
 import { OID } from "./generic";
 
+
 export type AllEntityField =
   | keyof CDEntity
   | keyof FTFBadge

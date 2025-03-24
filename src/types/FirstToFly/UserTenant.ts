@@ -17,7 +17,7 @@ export interface FTFUserTenant extends CDEntity {
 
   isActive: boolean;
   staffType: string;
-  buddyID?: string;
+  buddyOID?: string;
 
   tourLeadingSkills?: {
     sectorOID: string;

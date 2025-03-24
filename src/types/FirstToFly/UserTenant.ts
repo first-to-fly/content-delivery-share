@@ -31,4 +31,9 @@ export interface FTFUserTenant extends CDEntity {
 
   documentOIDs?: string[];
 
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string;
+
 }

@@ -12,20 +12,20 @@ export interface FTFUser extends CDEntity {
   firstName: string;
   lastName: string;
   preferredName: string;
-  dob: Date;
-  otherNames?: Record<string, string>;
+  dob: string;
+  otherNames: Record<string, string> | null;
   mobile: number;
-  altMobile?: number;
-  personalEmail?: string;
-  images?: string[];
-  avatar?: string;
-  emergencyContact?: {
+  altMobile: number | null;
+  personalEmail: string | null;
+  images: string[] | null;
+  avatar: string | null;
+  emergencyContact: {
     name: string;
     relationship?: string;
     mobile: number;
     email?: string;
-  };
-  description?: string;
+  } | null;
+  description: string | null;
   salutation: string;
 
   createdAt: string;

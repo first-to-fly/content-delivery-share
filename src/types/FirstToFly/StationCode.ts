@@ -1,17 +1,18 @@
 import { CDEntity } from "../entity";
-import { MultiLangRecord } from "../multipleLanguage";
 
 /**
  * @export
- * @interface FTFBadge
+ * @interface FTFStationCode
  * @extends {CDEntity}
  */
-export interface FTFBadge extends CDEntity {
+export interface FTFStationCode extends CDEntity {
   tenantOID: string;
 
-  image: MultiLangRecord<string>;
+  code: string;
   isActive: boolean;
-  icon: string;
+  seq: number;
+
+  departmentOIDs: string[] | null;
 
   createdAt: string;
   updatedAt: string;

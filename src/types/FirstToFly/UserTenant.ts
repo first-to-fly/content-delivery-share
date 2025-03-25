@@ -13,23 +13,23 @@ export interface FTFUserTenant extends CDEntity {
 
   designationOIDs: string[];
   departmentOIDs: string[];
-  roleOIDs?: string[];
+  roleOIDs: string[] | null;
 
   isActive: boolean;
   staffType: string;
-  buddyOID?: string;
+  buddyOID: string | null;
 
-  tourLeadingSkills?: {
+  tourLeadingSkills: {
     sectorOID: string;
     termOID: string;
     startYear: number;
-  }[];
+  }[] | null;
 
-  languageSkills?: {
+  languageSkills: {
     termOID: string;
-  }[];
+  }[] | null;
 
-  documentOIDs?: string[];
+  documentOIDs: string[] | null;
 
   createdAt: string;
   updatedAt: string;

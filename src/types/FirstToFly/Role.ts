@@ -7,7 +7,7 @@ export interface FTFRole extends CDBaseEntity {
   description: string;
   tenantOID: string;
   permissions: string[];
-  userOIDs: string[];
+  userOIDs: string[] | null;
   createdAt: string;
   updatedAt: string;
   createdBy: string;

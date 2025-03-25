@@ -17,5 +17,4 @@ export interface FTFBadge extends CDEntity {
   updatedAt: string;
   createdBy: string;
   updatedBy: string | null;
-  deletedAt: string | null;
 }

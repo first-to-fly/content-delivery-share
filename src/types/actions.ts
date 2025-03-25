@@ -10,6 +10,7 @@ import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
 import { FTFProductType } from "./FirstToFly/ProductType";
 import { FTFSector } from "./FirstToFly/Sector";
 import { FTFSectorGroup } from "./FirstToFly/SectorGroup";
+import { FTFStationCode } from "./FirstToFly/StationCode";
 import { FTFTerm } from "./FirstToFly/Term";
 import { FTFUser } from "./FirstToFly/User";
 import { FTFUserTenant } from "./FirstToFly/UserTenant";
@@ -28,6 +29,7 @@ export type AllEntityField =
   | keyof FTFProductType
   | keyof FTFSector
   | keyof FTFSectorGroup
+  | keyof FTFStationCode
   | keyof FTFTerm
   | keyof FTFInsuranceDiscount
   | keyof FTFUserTenant

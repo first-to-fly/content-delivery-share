@@ -16,6 +16,7 @@ export enum CDEntityType {
   FTF_DOCUMENT = "ftf-document",
   FTF_INSURANCE_DISCOUNT = "ftf-insuranceDiscount",
   FTF_ROLE = "ftf-role",
+  FTF_STATION_CODE = "ftf-stationCode",
 }
 
 export interface CDEntity {

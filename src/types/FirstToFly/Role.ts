@@ -1,5 +1,6 @@
 import { CDBaseEntity } from "../entity";
 
+
 export interface FTFRole extends CDBaseEntity {
   oid: string;
   name: string;
@@ -10,4 +11,5 @@ export interface FTFRole extends CDBaseEntity {
   updatedAt: string;
   createdBy: string;
   updatedBy: string;
+
 }

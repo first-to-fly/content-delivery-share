@@ -12,4 +12,5 @@ export interface FTFRole extends CDBaseEntity {
   updatedAt: string;
   createdBy: string;
   updatedBy: string;
+
 }

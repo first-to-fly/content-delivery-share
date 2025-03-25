@@ -1,4 +1,5 @@
 import { CDEntity } from "../entity";
+import { MultiLangRecord } from "../multipleLanguage";
 
 /**
  * @export
@@ -13,7 +14,7 @@ export interface FTFUser extends CDEntity {
   lastName: string;
   preferredName: string;
   dob: string;
-  otherNames: Record<string, string> | null;
+  otherNames: MultiLangRecord<string> | null;
   mobile: number;
   altMobile: number | null;
   personalEmail: string | null;

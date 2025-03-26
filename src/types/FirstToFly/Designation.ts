@@ -17,5 +17,4 @@ export interface FTFDesignation extends CDEntity {
   updatedAt: string;
   createdBy: string;
   updatedBy: string | null;
-  deletedAt: string | null;
 }

@@ -18,6 +18,7 @@ export enum CDEntityType {
   FTF_ROLE = "ftf-role",
   FTF_STATION_CODE = "ftf-stationCode",
   FTF_REFERENCE_CODE = "ftf-referenceCode",
+  FTF_REFERENCE_CODE_TREE = "ftf-referenceCodeTree",
 }
 
 export interface CDEntity {

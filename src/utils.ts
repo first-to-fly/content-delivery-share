@@ -7,6 +7,13 @@ import { CDEntity, CDEntityType } from "./types/entity";
 import { OID } from "./types/generic";
 
 
+export type NullableToOptional<T> = {
+  [P in keyof T as null extends T[P] ? never : P]: T[P];
+} & {
+  [P in keyof T as null extends T[P] ? P : never]?: Exclude<T[P], null>;
+};
+
+
 const checkIsOIDRegex = new RegExp(`^(${Object.values(CDEntityType).map((t) => t.replaceAll("-", "\\-")).join("|")})\\-`, "");
 
 export const checkIcdResponseHandler = <R extends CDEntity>(

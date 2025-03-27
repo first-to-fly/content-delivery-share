@@ -1,6 +1,7 @@
 import { CDEntity } from "../entity";
 import { CDCostingItemCategory } from "./CostingItem";
 
+
 export interface FTFCostingTemplate extends CDEntity {
   name: string;
   remarks: string | null;

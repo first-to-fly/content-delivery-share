@@ -20,6 +20,12 @@ export enum CDEntityType {
   FTF_POI = "ftf-poi",
   FTF_COSTING_ITEM = "ftf-costingItem",
   FTF_COSTING_TEMPLATE = "ftf-costingTemplate",
+<<<<<<< HEAD
+=======
+  FTF_REFERENCE_CODE_LIST = "ftf-referenceCodeList",
+  FTF_REFERENCE_CODE_TEMPLATE = "ftf-referenceCodeTemplate",
+  FTF_TERM_CONDITION = "ftf-termCondition",
+>>>>>>> fcc40b8 (Handle term-condition)
 }
 
 export interface CDEntity {

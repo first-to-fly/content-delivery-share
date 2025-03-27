@@ -1,5 +1,4 @@
 import { CDEntity } from "../entity";
-import { CDCostingItemCategory } from "./CostingItem";
 
 
 export interface FTFCostingTemplate extends CDEntity {
@@ -7,8 +6,7 @@ export interface FTFCostingTemplate extends CDEntity {
   remarks: string | null;
   isActive: boolean;
 
-  // Mapping of category to array of costing item OIDs
-  categoryItems: Record<CDCostingItemCategory, string[]>;
+  costingItemOIDs: string[];
 
   createdAt: string;
   updatedAt: string | null;

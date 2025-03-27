@@ -19,6 +19,8 @@ export interface GeoPoint {
  * @extends {CDEntity}
  */
 export interface FTFPOI extends CDEntity {
+  tenantOID: string;
+
   name: string;
   address: string;
   type: string;
@@ -29,4 +31,10 @@ export interface FTFPOI extends CDEntity {
   position: GeoPoint;
   images: string[] | null;
   additionalInfo: Record<string, unknown> | null;
+
+
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string | null;
 }

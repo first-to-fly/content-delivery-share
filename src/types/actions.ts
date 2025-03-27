@@ -1,5 +1,7 @@
 import { CDEntity } from "./entity";
 import { FTFBadge } from "./FirstToFly/Badge";
+import { FTFCostingItem } from "./FirstToFly/CostingItem";
+import { FTFCostingTemplate } from "./FirstToFly/CostingTemplate";
 import { FTFDepartment } from "./FirstToFly/Department";
 import { FTFDesignation } from "./FirstToFly/Designation";
 import { FTFDocument } from "./FirstToFly/Document";
@@ -22,6 +24,8 @@ import { OID } from "./generic";
 export type AllEntityField =
   | keyof CDEntity
   | keyof FTFBadge
+  | keyof FTFCostingItem
+  | keyof FTFCostingTemplate
   | keyof FTFDepartment
   | keyof FTFDesignation
   | keyof FTFDocument

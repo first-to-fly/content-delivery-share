@@ -8,11 +8,6 @@ export enum InsuranceDiscountType {
 
 /**
  * @export
- * @enum {number}
- */
-
-/**
- * @export
  * @interface FTFInsuranceDiscount
  * @extends {CDEntity}
  */

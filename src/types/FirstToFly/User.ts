@@ -32,6 +32,6 @@ export interface FTFUser extends CDEntity {
   createdAt: string;
   updatedAt: string;
   createdBy: string;
-  updatedBy: string;
+  updatedBy: string | null;
 
 }

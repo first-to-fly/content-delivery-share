@@ -1,5 +1,12 @@
 import { CDEntity } from "../entity";
 
+
+export enum MealType {
+  AIRLINE = "airline",
+  LAND = "land",
+  CRUISE = "cruise",
+}
+
 /**
  * @export
  * @interface FTFMeal
@@ -10,7 +17,7 @@ export interface FTFMeal extends CDEntity {
 
   code: string;
   description: string;
-  type: "Airline" | "Land" | "Cruise";
+  type: MealType;
   seq: number;
   offlineOperator: string | null;
 

@@ -54,7 +54,7 @@ export interface FTFCostingItem extends CDEntity {
   isActive: boolean;
 
   createdAt: string;
-  updatedAt: string | null;
+  updatedAt: string;
   createdBy: string;
   updatedBy: string | null;
 }

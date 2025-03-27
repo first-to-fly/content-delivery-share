@@ -8,6 +8,7 @@ import { FTFDocument } from "./FirstToFly/Document";
 import { FTFInsuranceDiscount } from "./FirstToFly/InsuranceDiscount";
 import { FTFLocation } from "./FirstToFly/Location";
 import { FTFMeal } from "./FirstToFly/Meal";
+import { FTFPOI } from "./FirstToFly/POI";
 import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
 import { FTFProductType } from "./FirstToFly/ProductType";
 import { FTFReferenceCodeList } from "./FirstToFly/ReferenceCodeList";
@@ -33,6 +34,7 @@ export type AllEntityField =
   | keyof FTFDocument
   | keyof FTFLocation
   | keyof FTFMeal
+  | keyof FTFPOI
   | keyof FTFPrivacyPolicy
   | keyof FTFProductType
   | keyof FTFSector

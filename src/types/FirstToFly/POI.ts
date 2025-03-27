@@ -1,0 +1,32 @@
+import { CDEntity } from "../entity";
+
+/**
+ * @export
+ * @interface GeoPoint
+ * GeoJSON Point format
+ */
+export interface GeoPoint {
+  type: "Point";
+  coordinate: {
+    x: number;
+    y: number;
+  };
+}
+
+/**
+ * @export
+ * @interface FTFPOI
+ * @extends {CDEntity}
+ */
+export interface FTFPOI extends CDEntity {
+  name: string;
+  address: string;
+  type: string;
+  country: string;
+  area: string;
+  category: string;
+  description: string;
+  position: GeoPoint;
+  images: string[] | null;
+  additionalInfo: Record<string, unknown> | null;
+}

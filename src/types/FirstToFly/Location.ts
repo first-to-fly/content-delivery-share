@@ -1,5 +1,11 @@
 import { CDEntity } from "../entity";
-import { LocationType } from "../enums/location";
+
+
+export enum LocationType {
+  ALL = "all",
+  OFFICE = "office",
+  QUEUE = "queue",
+}
 
 /**
  * @export

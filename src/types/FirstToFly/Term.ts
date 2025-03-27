@@ -1,6 +1,11 @@
 import { CDEntity } from "../entity";
-import { TermType } from "../enums/term";
 import { MultiLangRecord } from "../multipleLanguage";
+
+
+export enum TermType {
+  TOUR_LEADING_SKILL = "tour-leading-skill",
+  LANGUAGE_SKILL = "language-skill",
+}
 
 /**
  * @export

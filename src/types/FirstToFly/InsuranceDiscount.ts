@@ -1,5 +1,10 @@
 import { CDEntity } from "../entity";
-import { InsuranceDiscountType } from "../enums/discount";
+
+
+export enum InsuranceDiscountType {
+  PERCENTAGE = "percentage",
+  FIXED = "fixed",
+}
 
 /**
  * @export

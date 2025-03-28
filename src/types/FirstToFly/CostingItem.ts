@@ -1,7 +1,7 @@
 import { CDEntity } from "../entity";
 
 
-export enum CDCostingItemCategory {
+export enum CostingItemCategory {
   AIRLINE = "airline",
   ACCOMMODATION = "accommodation",
   LAND_TOUR = "land-tour",
@@ -14,7 +14,7 @@ export enum CDCostingItemCategory {
   OPTIONAL_SERVICE = "optional-service",
 }
 
-export enum CDCalculationBasis {
+export enum CalculationBasis {
   PER_PAX = "per-pax",
   PER_TRIP = "per-trip",
   PER_TOUR_LEAD = "per-tour-lead",
@@ -22,13 +22,13 @@ export enum CDCalculationBasis {
   PER_TOUR_LEAD_OR_MANAGER = "per-tour-lead-or-manager",
 }
 
-export enum CDPackageType {
+export enum PackageType {
   BOTH = "both",
   FULL_ONLY = "full-only",
   LAND_ONLY = "land-only",
 }
 
-export enum CDOccupancyType {
+export enum OccupancyType {
   ALL = "all",
   EXCEPT_INFANT = "except-infant",
   ADULT = "adult",
@@ -45,10 +45,10 @@ export enum CDOccupancyType {
 
 export interface FTFCostingItem extends CDEntity {
   name: string;
-  category: CDCostingItemCategory;
-  calculationBasis: CDCalculationBasis;
-  applyToPackageType: CDPackageType;
-  applyToOccupancyType: CDOccupancyType;
+  category: CostingItemCategory;
+  calculationBasis: CalculationBasis;
+  applyToPackageType: PackageType;
+  applyToOccupancyType: OccupancyType;
 
   remarks: string | null;
   isActive: boolean;

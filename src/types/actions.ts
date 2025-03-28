@@ -11,9 +11,6 @@ import { FTFMeal } from "./FirstToFly/Meal";
 import { FTFPOI } from "./FirstToFly/POI";
 import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
 import { FTFProductType } from "./FirstToFly/ProductType";
-import { FTFReferenceCodeList } from "./FirstToFly/ReferenceCodeList";
-import { FTFReferenceCodeTemplate } from "./FirstToFly/ReferenceCodeTemplate";
-import { FTFReferenceCodeTree } from "./FirstToFly/ReferenceCodeTree";
 import { FTFSector } from "./FirstToFly/Sector";
 import { FTFSectorGroup } from "./FirstToFly/SectorGroup";
 import { FTFStationCode } from "./FirstToFly/StationCode";
@@ -44,10 +41,7 @@ export type AllEntityField =
   | keyof FTFTerm
   | keyof FTFInsuranceDiscount
   | keyof FTFUserTenant
-  | keyof FTFUser
-  | keyof FTFReferenceCodeTree
-  | keyof FTFReferenceCodeList
-  | keyof FTFReferenceCodeTemplate;
+  | keyof FTFUser;
 
 export interface RequestIncludeOptions {
   includeKey?: string;

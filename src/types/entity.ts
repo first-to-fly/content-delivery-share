@@ -17,13 +17,9 @@ export enum CDEntityType {
   FTF_INSURANCE_DISCOUNT = "ftf-insuranceDiscount",
   FTF_ROLE = "ftf-role",
   FTF_STATION_CODE = "ftf-stationCode",
-  FTF_REFERENCE_CODE = "ftf-referenceCode",
-  FTF_REFERENCE_CODE_TREE = "ftf-referenceCodeTree",
+  FTF_POI = "ftf-poi",
   FTF_COSTING_ITEM = "ftf-costingItem",
   FTF_COSTING_TEMPLATE = "ftf-costingTemplate",
-  FTF_REFERENCE_CODE_LIST = "ftf-referenceCodeList",
-  FTF_REFERENCE_CODE_TEMPLATE = "ftf-referenceCodeTemplate",
-  FTF_POI = "ftf-poi",
 }
 
 export interface CDEntity {

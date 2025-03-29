@@ -9,8 +9,8 @@ export interface FTFReferenceCodeTree extends CDEntity {
   tenantOID: string;
 
   name: string;
-  moduleId: number;
-  parentId: number | null;
+  moduleId: string;
+  parentId: string | null;
   seq: number | null;
 
   createdAt: string;

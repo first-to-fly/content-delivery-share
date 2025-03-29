@@ -22,7 +22,7 @@ export interface FTFReferenceCodeTemplate extends CDEntity {
   tenantOID: string;
 
   name: string;
-  moduleId: number;
+  moduleId: string;
   counterType: CounterType;
   resetCounterType: ResetCounterType;
   counterWidth: number;

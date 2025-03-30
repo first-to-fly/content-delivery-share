@@ -18,6 +18,7 @@ export interface FTFTermCondition extends CDEntity {
   description: string | null;
   remarks: string | null;
   offlineOperator: string | null;
+  productTypeOIDs: string[] | null;
 
   createdAt: string;
   updatedAt: string;

@@ -25,6 +25,7 @@ export enum CDEntityType {
   FTF_REFERENCE_CODE_TREE = "ftf-referenceCodeTree",
   FTF_REFERENCE_CODE_TEMPLATE = "ftf-referenceCodeTemplate",
   FTF_REFERENCE_CODE_COMPONENT = "ftf-referenceCodeComponent",
+  FTF_ASSEMBLE_LOCATION_AIRLINES = "ftf-assembleLocationAirlines",
 }
 
 export interface CDEntity {

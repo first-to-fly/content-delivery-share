@@ -1,4 +1,5 @@
 import { CDEntity } from "./entity";
+import { FTFAssembleLocationAirlines } from "./FirstToFly/AssembleLocationAirlines";
 import { FTFBadge } from "./FirstToFly/Badge";
 import { FTFCostingItem } from "./FirstToFly/CostingItem";
 import { FTFCostingTemplate } from "./FirstToFly/CostingTemplate";
@@ -25,7 +26,6 @@ import { FTFTermConditionCoverage } from "./FirstToFly/TermConditionCoverage";
 import { FTFTermConditionProductTypes } from "./FirstToFly/TermConditionProductTypes";
 import { FTFUser } from "./FirstToFly/User";
 import { FTFUserTenant } from "./FirstToFly/UserTenant";
-import { AssembleLocationAirlines } from "./FirstToFly/AssembleLocationAirlines";
 import { OID } from "./generic";
 
 
@@ -57,7 +57,7 @@ export type AllEntityField =
   | keyof FTFInsuranceDiscount
   | keyof FTFUserTenant
   | keyof FTFUser
-  | keyof AssembleLocationAirlines;
+  | keyof FTFAssembleLocationAirlines;
 
 export interface RequestIncludeOptions {
   includeKey?: string;

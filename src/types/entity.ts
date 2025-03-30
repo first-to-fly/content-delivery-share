@@ -21,6 +21,7 @@ export enum CDEntityType {
   FTF_COSTING_ITEM = "ftf-costingItem",
   FTF_COSTING_TEMPLATE = "ftf-costingTemplate",
   FTF_TERM_CONDITION = "ftf-termCondition",
+  FTF_SPECIAL_INSTRUCTION = "ftf-specialInstruction",
   FTF_REFERENCE_CODE_TREE = "ftf-referenceCodeTree",
   FTF_REFERENCE_CODE_TEMPLATE = "ftf-referenceCodeTemplate",
   FTF_REFERENCE_CODE_COMPONENT = "ftf-referenceCodeComponent",

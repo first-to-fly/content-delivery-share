@@ -1,5 +1,6 @@
 import { CDBaseEntity } from "../entity";
 
+
 export interface FTFUsefulInfo extends CDBaseEntity {
   name: string;
   coverage: number | null;

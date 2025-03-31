@@ -24,9 +24,9 @@ import { FTFTerm } from "./FirstToFly/Term";
 import { FTFTermCondition } from "./FirstToFly/TermCondition";
 import { FTFTermConditionCoverage } from "./FirstToFly/TermConditionCoverage";
 import { FTFTermConditionProductTypes } from "./FirstToFly/TermConditionProductTypes";
+import { FTFUsefulInfo, FTFUsefulInfoProductType, FTFUsefulInfoRef } from "./FirstToFly/UsefulInfo";
 import { FTFUser } from "./FirstToFly/User";
 import { FTFUserTenant } from "./FirstToFly/UserTenant";
-import { FTFUsefulInfo, FTFUsefulInfoRef, FTFUsefulInfoProductType } from "./FirstToFly/UsefulInfo";
 import { OID } from "./generic";
 
 

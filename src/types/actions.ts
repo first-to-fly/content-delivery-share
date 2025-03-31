@@ -24,6 +24,7 @@ import { FTFTerm } from "./FirstToFly/Term";
 import { FTFTermCondition } from "./FirstToFly/TermCondition";
 import { FTFTermConditionCoverage } from "./FirstToFly/TermConditionCoverage";
 import { FTFTermConditionProductTypes } from "./FirstToFly/TermConditionProductTypes";
+import { FTFUsefulInfo, FTFUsefulInfoProductType, FTFUsefulInfoRef } from "./FirstToFly/UsefulInfo";
 import { FTFUser } from "./FirstToFly/User";
 import { FTFUserTenant } from "./FirstToFly/UserTenant";
 import { OID } from "./generic";
@@ -57,7 +58,10 @@ export type AllEntityField =
   | keyof FTFInsuranceDiscount
   | keyof FTFUserTenant
   | keyof FTFUser
-  | keyof FTFAssembleLocationAirlines;
+  | keyof FTFAssembleLocationAirlines
+  | keyof FTFUsefulInfo
+  | keyof FTFUsefulInfoRef
+  | keyof FTFUsefulInfoProductType;
 
 export interface RequestIncludeOptions {
   includeKey?: string;

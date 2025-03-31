@@ -1,10 +1,16 @@
-import { CDBaseEntity } from "../entity";
+import { CDEntity } from "../entity";
+import { CoverageType } from "../enums/coverageType";
 
+/**
+ * @export
+ * @interface FTFUsefulInfo
+ * @extends {CDEntity}
+ */
 
-export interface FTFUsefulInfo extends CDBaseEntity {
+export interface FTFUsefulInfo extends CDEntity {
   name: string;
-  coverage: number | null;
-  status: number | null;
+  coverageType: CoverageType;
+  status: boolean;
   offlineOperator: string | null;
   remarks: string | null;
   info: {
@@ -14,15 +20,22 @@ export interface FTFUsefulInfo extends CDBaseEntity {
     weather: string | null;
     optionalTours: string | null;
   } | null;
+  refOIDs: string[] | null;
+  productTypeOIDs: string[] | null;
+
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string | null;
 }
 
-export interface FTFUsefulInfoRef extends CDBaseEntity {
+export interface FTFUsefulInfoRef extends CDEntity {
   usefulInfoOID: string;
   refId: number;
   name: string;
 }
 
-export interface FTFUsefulInfoProductType extends CDBaseEntity {
+export interface FTFUsefulInfoProductType extends CDEntity {
   usefulInfoOID: string;
   productTypeOID: string;
   offlineOperator: string | null;

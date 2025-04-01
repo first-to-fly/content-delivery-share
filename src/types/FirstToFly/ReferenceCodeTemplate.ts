@@ -25,6 +25,7 @@ export interface FTFReferenceCodeTemplate extends CDEntity {
   moduleId: string;
   counterType: CounterType;
   resetCounterType: ResetCounterType;
+  referenceCodeTreeId: string;
   counterWidth: number;
   template: string;
   remarks: string | null;

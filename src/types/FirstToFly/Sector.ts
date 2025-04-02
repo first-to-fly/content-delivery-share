@@ -15,6 +15,7 @@ export interface FTFSector extends CDEntity {
 
   isPopular: boolean;
   productTypeOIDs: string[] | null;
+  departmentOID: string | null;
 
   createdAt: string;
   updatedAt: string;

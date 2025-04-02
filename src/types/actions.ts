@@ -15,6 +15,7 @@ import { FTFProductType } from "./FirstToFly/ProductType";
 import { FTFReferenceCodeComponent } from "./FirstToFly/ReferenceCodeComponent";
 import { FTFReferenceCodeTemplate } from "./FirstToFly/ReferenceCodeTemplate";
 import { FTFReferenceCodeTree } from "./FirstToFly/ReferenceCodeTree";
+import { FTFRoomConfiguration } from "./FirstToFly/RoomConfiguration";
 import { FTFSector } from "./FirstToFly/Sector";
 import { FTFSectorGroup } from "./FirstToFly/SectorGroup";
 import { FTFSpecialInstruction } from "./FirstToFly/SpecialInstruction";
@@ -46,6 +47,7 @@ export type AllEntityField =
   | keyof FTFReferenceCodeComponent
   | keyof FTFReferenceCodeTemplate
   | keyof FTFReferenceCodeTree
+  | keyof FTFRoomConfiguration
   | keyof FTFSector
   | keyof FTFSectorGroup
   | keyof FTFSpecialInstruction

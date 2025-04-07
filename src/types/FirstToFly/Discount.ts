@@ -1,16 +1,78 @@
 // Enums - must match those in firsttofly-travel-share
-export type DiscountStatus = "Active" | "Inactive";
-export type DiscountBookingChannel = "Web" | "iPad" | "App";
-export type DiscountMechanics = "Per Room" | "Per Booking";
-export type DiscountType = "Air Ticket" | "Land Tour" | "Full Tour";
-export type DiscountBasePrice = "Net Price" | "Gross Price";
-export type DiscountMode = "Percentage" | "Fixed Amount" | "Fixed Price" | "Free Gift";
-export type DiscountWhichPax = "1st" | "2nd" | "3rd" | "4th" | "5th" | "6th" | "N/A";
-export type DiscountPaxType = "Adult" | "Child" | "Child w/Bed" | "Child No Bed" | "All Pax" | "N/A";
-export type DiscountAmountType = "LimitedSingle" | "LimitedRange" | "Unlimited";
-export type DiscountSpecialDatesType = "Specific Date Range" | "N/A";
-export type DiscountTimeslotType = "Specific Hours" | "N/A";
-export type DiscountHowToApply = "Manually Tick" | "Manually Input" | "Auto";
+export enum DiscountStatus {
+  ACTIVE = "active",
+  INACTIVE = "inactive",
+}
+
+export enum DiscountBookingChannel {
+  WEB = "web",
+  IPAD = "ipad",
+  APP = "app",
+}
+
+export enum DiscountMechanics {
+  PER_ROOM = "per-room",
+  PER_BOOKING = "per-booking",
+}
+
+export enum DiscountType {
+  AIR_TICKET = "air-ticket",
+  LAND_TOUR = "land-tour",
+  FULL_TOUR = "full-tour",
+}
+
+export enum DiscountBasePrice {
+  NET_PRICE = "net-price",
+  GROSS_PRICE = "gross-price",
+}
+
+export enum DiscountMode {
+  PERCENTAGE = "percentage",
+  FIXED_AMOUNT = "fixed-amount",
+  FIXED_PRICE = "fixed-price",
+  FREE_GIFT = "free-gift",
+}
+
+export enum DiscountWhichPax {
+  FIRST = "1st",
+  SECOND = "2nd",
+  THIRD = "3rd",
+  FOURTH = "4th",
+  FIFTH = "5th",
+  SIXTH = "6th",
+  NA = "n/a",
+}
+
+export enum DiscountPaxType {
+  ADULT = "adult",
+  CHILD = "child",
+  CHILD_WITH_BED = "child-with-bed",
+  CHILD_NO_BED = "child-no-bed",
+  ALL_PAX = "all-pax",
+  NA = "n/a",
+}
+
+export enum DiscountAmountType {
+  LIMITED_SINGLE = "limited-single",
+  LIMITED_RANGE = "limited-range",
+  UNLIMITED = "unlimited",
+}
+
+export enum DiscountSpecialDatesType {
+  SPECIFIC_DATE_RANGE = "specific-date-range",
+  NA = "n/a",
+}
+
+export enum DiscountTimeslotType {
+  SPECIFIC_HOURS = "specific-hours",
+  NA = "n/a",
+}
+
+export enum DiscountHowToApply {
+  MANUALLY_TICK = "manually-tick",
+  MANUALLY_INPUT = "manually-input",
+  AUTO = "auto",
+}
 
 export interface Discount {
   oid: string; // OID string from EntityZ

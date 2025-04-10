@@ -1,4 +1,4 @@
-import { CDEntity } from "types/entity";
+import { CDEntity } from "../entity";
 
 
 export enum DiscountBookingChannel {

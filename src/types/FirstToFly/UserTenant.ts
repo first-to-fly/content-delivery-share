@@ -12,7 +12,7 @@ export interface FTFUserTenant extends CDEntity {
   tenantOID: string;
 
   designationOIDs: string[];
-  departmentOIDs: string[];
+  departmentOIDs: string[] | null;
   roleOIDs: string[] | null;
 
   isActive: boolean;

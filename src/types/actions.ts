@@ -5,6 +5,8 @@ import { FTFCostingItem } from "./FirstToFly/CostingItem";
 import { FTFCostingTemplate } from "./FirstToFly/CostingTemplate";
 import { FTFDepartment } from "./FirstToFly/Department";
 import { FTFDesignation } from "./FirstToFly/Designation";
+import { FTFDiscount } from "./FirstToFly/Discount";
+import { FTFDiscountTemplate } from "./FirstToFly/DiscountTemplate";
 import { FTFDocument } from "./FirstToFly/Document";
 import { FTFGroupTourCosting } from "./FirstToFly/GroupTourCosting";
 import { FTFGroupTourItinerary } from "./FirstToFly/GroupTourItinerary";
@@ -48,6 +50,8 @@ export type AllEntityField =
   | keyof FTFMeal
   | keyof FTFPOI
   | keyof FTFPrivacyPolicy
+  | keyof FTFDiscount
+  | keyof FTFDiscountTemplate
   | keyof FTFGroupTourCosting
   | keyof FTFGroupTourItinerary
   | keyof FTFGroupTourProduct

@@ -1,8 +1,5 @@
-// Enums - must match those in firsttofly-travel-share
-export enum DiscountStatus {
-  ACTIVE = "active",
-  INACTIVE = "inactive",
-}
+import { CDEntity } from "types/entity";
+
 
 export enum DiscountBookingChannel {
   WEB = "web",
@@ -74,46 +71,55 @@ export enum DiscountHowToApply {
   AUTO = "auto",
 }
 
-export interface Discount {
-  oid: string; // OID string from EntityZ
-  entityType: "discount"; // Literal type
-  tenantOID: string; // From EntityZ
+export interface FTFDiscount extends CDEntity {
+  tenantOID: string;
+
   discountCode: string;
   discountName: string;
   description: string | null;
-  validityStartDate: string; // ISO Date string (from DateISOStringZ)
-  validityEndDate: string; // ISO Date string (from DateISOStringZ)
-  status: DiscountStatus;
+
+  validityStartDate: string;
+  validityEndDate: string;
+
+  isActive: boolean;
+
   bookingChannel: DiscountBookingChannel;
   discountMechanics: DiscountMechanics;
   discountType: DiscountType;
   basePrice: DiscountBasePrice;
   discountMode: DiscountMode;
+
   applyWithTierDiscounts: boolean;
   applyWithOtherDiscounts: boolean;
+
   whichPax: DiscountWhichPax;
   paxType: DiscountPaxType;
   minPax: number;
   minSpending: number;
+
   amountType: DiscountAmountType;
   amountValue: number | null;
   amountRangeStart: number | null;
   amountRangeEnd: number | null;
+
   specialDatesType: DiscountSpecialDatesType;
-  specialDatesStart: string | null; // ISO Date string (from DateISOStringZ)
-  specialDatesEnd: string | null; // ISO Date string (from DateISOStringZ)
+  specialDatesStart: string | null;
+  specialDatesEnd: string | null;
+
   timeslotType: DiscountTimeslotType;
-  timeslotStart: string | null; // Time string HH:MM:SS
-  timeslotEnd: string | null; // Time string HH:MM:SS
+  timeslotStart: string | null;
+  timeslotEnd: string | null;
+
   discountValue: number;
   howToApply: DiscountHowToApply;
   useDiscountCode: boolean;
-  sectorIds: string[]; // Array of UUIDs (as strings)
-  productIds: string[]; // Array of UUIDs (as strings)
-  tourIds: string[]; // Array of UUIDs (as strings)
-  createdAt: string; // ISO DateTime string (from DateISOStringZ)
-  updatedAt: string | null; // ISO DateTime string (from DateISOStringZ) - Optional in EntityZ
-  deletedAt?: string | null; // ISO DateTime string (from DateISOStringZ) - Optional in EntityZ
-  createdBy: string; // From EntityZ
-  updatedBy: string | null; // From EntityZ - Optional
+
+  sectorOIDs: string[] | null;
+  productOIDs: string[] | null;
+  tourOIDs: string[] | null;
+
+  createdAt: string;
+  updatedAt: string | null;
+  createdBy: string;
+  updatedBy: string | null;
 }

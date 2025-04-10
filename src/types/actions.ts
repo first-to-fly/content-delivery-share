@@ -6,6 +6,11 @@ import { FTFCostingTemplate } from "./FirstToFly/CostingTemplate";
 import { FTFDepartment } from "./FirstToFly/Department";
 import { FTFDesignation } from "./FirstToFly/Designation";
 import { FTFDocument } from "./FirstToFly/Document";
+import { FTFGroupTourCosting } from "./FirstToFly/GroupTourCosting";
+import { FTFGroupTourItinerary } from "./FirstToFly/GroupTourItinerary";
+import { FTFGroupTourPNLSimulation } from "./FirstToFly/GroupTourPNLSimulation";
+import { FTFGroupTourPricing } from "./FirstToFly/GroupTourPricing";
+import { FTFGroupTourProduct } from "./FirstToFly/GroupTourProduct";
 import { FTFInsuranceDiscount } from "./FirstToFly/InsuranceDiscount";
 import { FTFLocation } from "./FirstToFly/Location";
 import { FTFMeal } from "./FirstToFly/Meal";
@@ -43,6 +48,11 @@ export type AllEntityField =
   | keyof FTFMeal
   | keyof FTFPOI
   | keyof FTFPrivacyPolicy
+  | keyof FTFGroupTourCosting
+  | keyof FTFGroupTourItinerary
+  | keyof FTFGroupTourProduct
+  | keyof FTFGroupTourPricing
+  | keyof FTFGroupTourPNLSimulation
   | keyof FTFProductType
   | keyof FTFReferenceCodeComponent
   | keyof FTFReferenceCodeTemplate

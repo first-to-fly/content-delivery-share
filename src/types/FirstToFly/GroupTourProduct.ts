@@ -19,11 +19,12 @@ export interface FTFGroupTourProduct extends CDEntity {
   exclusions: MultiLangRecord<string> | null;
   durationDays: number | null;
   durationNights: number | null;
-  validityStartDate: Date | null;
-  validityEndDate: Date | null;
-  salesPeriodStartDate: Date | null;
-  salesPeriodEndDate: Date | null;
+  validityStartDate: string | null;
+  validityEndDate: string | null;
+  salesPeriodStartDate: string | null;
+  salesPeriodEndDate: string | null;
   isActive: boolean;
   published: boolean;
+
   tenantOID: string;
 }

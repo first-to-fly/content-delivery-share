@@ -12,8 +12,8 @@ export interface FTFGroupTourPricing extends CDEntity {
   code: string;
   remarks: string | null;
   targetYieldPercentage: number | null;
-  validityStartDate: Date | null;
-  validityEndDate: Date | null;
+  validityStartDate: string | null;
+  validityEndDate: string | null;
   isActive: boolean;
   tenantOID: string;
 }

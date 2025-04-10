@@ -8,8 +8,8 @@ import { CDEntity } from "../entity";
 export interface FTFGroupTourItinerary extends CDEntity {
   groupTourProductOID: string;
   name: string;
-  validityStartDate: Date | null;
-  validityEndDate: Date | null;
+  validityStartDate: string | null;
+  validityEndDate: string | null;
   isActive: boolean;
   tenantOID: string;
 }

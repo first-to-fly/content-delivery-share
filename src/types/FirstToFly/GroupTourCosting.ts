@@ -11,8 +11,8 @@ export interface FTFGroupTourCosting extends CDEntity {
   name: string;
   code: string;
   remarks: string | null;
-  validityStartDate: Date | null;
-  validityEndDate: Date | null;
+  validityStartDate: string | null;
+  validityEndDate: string | null;
   isActive: boolean;
   tenantOID: string;
 }

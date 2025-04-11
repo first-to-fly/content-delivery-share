@@ -6,13 +6,37 @@ import { CDEntity } from "../entity";
  * @extends {CDEntity}
  */
 export interface FTFGroupTourCosting extends CDEntity {
-  groupTourProductOID: string;
+
+  groupTourProductOID: string; // parent
+
   templateOID: string;
   name: string;
   code: string;
+
   remarks: string | null;
+
   validityStartDate: string | null;
   validityEndDate: string | null;
+
   isActive: boolean;
-  tenantOID: string;
+
+  airlineOIDs: string[];
+
+  landTourGroupSizeTiers: {
+    from: number;
+    to: number;
+  }[];
+
+  freeOfChargeTiers: {
+    pax: number;
+    freePax: number;
+  }[];
+
+  leadManagerCountTiers: {
+    pax: number;
+    leadCount: number;
+    managerCount: number;
+  }[];
+
+  groupTourCostingEntryOIDs: string[];
 }

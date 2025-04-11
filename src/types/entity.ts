@@ -9,6 +9,7 @@ export enum CDEntityType {
   FTF_GROUP_TOUR_ITINERARY_MEAL = "ftf-groupTourItineraryMeal",
   FTF_GROUP_TOUR_ITINERARY_EVENT = "ftf-groupTourItineraryEvent",
   FTF_GROUP_TOUR_COSTING = "ftf-groupTourCosting",
+  FTF_GROUP_TOUR_COSTING_ENTRY = "ftf-groupTourCostingEntry",
   FTF_GROUP_TOUR_PRICING = "ftf-groupTourPricing",
   FTF_GROUP_TOUR_PNL_SIMULATION = "ftf-groupTourPNLSimulation",
   FTF_PRODUCT_TYPE = "ftf-productType",

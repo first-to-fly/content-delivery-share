@@ -10,6 +10,9 @@ import { FTFDiscountTemplate } from "./FirstToFly/DiscountTemplate";
 import { FTFDocument } from "./FirstToFly/Document";
 import { FTFGroupTourCosting } from "./FirstToFly/GroupTourCosting";
 import { FTFGroupTourItinerary } from "./FirstToFly/GroupTourItinerary";
+import { FTFGroupTourItineraryDay } from "./FirstToFly/GroupTourItineraryDay";
+import { FTFGroupTourItineraryEvent } from "./FirstToFly/GroupTourItineraryEvent";
+import { FTFGroupTourItineraryMeal } from "./FirstToFly/GroupTourItineraryMeal";
 import { FTFGroupTourPNLSimulation } from "./FirstToFly/GroupTourPNLSimulation";
 import { FTFGroupTourPricing } from "./FirstToFly/GroupTourPricing";
 import { FTFGroupTourProduct } from "./FirstToFly/GroupTourProduct";
@@ -54,6 +57,9 @@ export type AllEntityField =
   | keyof FTFDiscountTemplate
   | keyof FTFGroupTourCosting
   | keyof FTFGroupTourItinerary
+  | keyof FTFGroupTourItineraryDay
+  | keyof FTFGroupTourItineraryMeal
+  | keyof FTFGroupTourItineraryEvent
   | keyof FTFGroupTourProduct
   | keyof FTFGroupTourPricing
   | keyof FTFGroupTourPNLSimulation

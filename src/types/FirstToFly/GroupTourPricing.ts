@@ -1,19 +1,61 @@
 import { CDEntity } from "../entity";
 
+
+export interface FTFGroupTourPricingEntry {
+  groupTourCostingEntryOID: string;
+  priceValue: {
+    currency: string;
+    amount: number;
+    tax: number;
+  };
+}
 /**
  * @export
  * @interface FTFGroupTourPricing
  * @extends {CDEntity}
  */
 export interface FTFGroupTourPricing extends CDEntity {
-  groupTourProductOID: string;
+
   groupTourCostingOID: string;
+
   name: string;
   code: string;
+
   remarks: string | null;
-  targetYieldPercentage: number | null;
-  validityStartDate: string | null;
-  validityEndDate: string | null;
+  targetYieldPercentage: number;
+
+  validityStartDate: string;
+  validityEndDate: string;
+
   isActive: boolean;
   tenantOID: string;
+
+  fullFare: {
+    twin: number;
+    single: number;
+    triple: number;
+    quad: number;
+    childTwin: number;
+    childWithBed: number;
+    childNoBed: number;
+    infant: number;
+  };
+
+  landFare: {
+    twin: number;
+    single: number;
+    triple: number;
+    quad: number;
+    childTwin: number;
+    childWithBed: number;
+    childNoBed: number;
+    infant: number;
+  };
+
+  airportTax: {
+    adult: number;
+    child: number;
+  };
+
+  groupTourPricingEntries: FTFGroupTourPricingEntry[];
 }

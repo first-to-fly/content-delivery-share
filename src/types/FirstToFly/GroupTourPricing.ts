@@ -16,7 +16,8 @@ export interface FTFGroupTourPricingEntry {
  */
 export interface FTFGroupTourPricing extends CDEntity {
 
-  groupTourCostingOID: string;
+  groupTourProductOID: string; // parent
+  groupTourCostingOID: string; // cost linkage
 
   name: string;
   code: string;
@@ -74,4 +75,6 @@ export interface FTFGroupTourPricing extends CDEntity {
   };
 
   groupTourPricingEntries: FTFGroupTourPricingEntry[];
+
+  groupTourPNLSimulationOID: string;
 }

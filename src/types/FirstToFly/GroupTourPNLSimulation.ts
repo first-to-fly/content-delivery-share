@@ -1,4 +1,6 @@
 import { CDEntity } from "../entity";
+import { OccupancyType, PackageType } from "./CostingItem";
+
 
 /**
  * @export
@@ -7,7 +9,34 @@ import { CDEntity } from "../entity";
  */
 export interface FTFGroupTourPNLSimulation extends CDEntity {
   groupTourPricingOID: string;
-  groupVolume: string;
-  passengerCount: number;
-  tenantOID: string;
+
+  groupVolumeData: {
+    groupVolume: number;
+    packageType: PackageType;
+
+    occupancies: {
+      // eslint-disable-next-line max-len
+      occupancyType: OccupancyType.TWIN | OccupancyType.SINGLE | OccupancyType.TRIPLE | OccupancyType.QUAD | OccupancyType.CHILD_TWIN | OccupancyType.CHILD_WITH_BED | OccupancyType.CHILD_NO_BED | OccupancyType.INFANT;
+
+      totalCost: number;
+      tax: number;
+      retailPrice: number;
+
+      markup: number;
+      discounts: {
+        name: string;
+        amount: number;
+      }[];
+
+      sellingPrice: number;
+      netProfit: number;
+      netProfitPercentage: number;
+    }[];
+
+  }[];
+
+  summary: {
+    averageProfit: number;
+    averageProfitPercentage: number;
+  }
 }

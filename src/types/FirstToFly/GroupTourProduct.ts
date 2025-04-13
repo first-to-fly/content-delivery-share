@@ -17,8 +17,6 @@ export interface FTFGroupTourProduct extends CDEntity {
   displaySectorOIDs: string[];
 
   sectorGroupOID: string | null;
-  itineraryOIDs: string[] | null;
-  costingOIDs: string[] | null;
 
   shoutout: MultiLangRecord<string> | null;
   writeup: MultiLangRecord<string> | null;

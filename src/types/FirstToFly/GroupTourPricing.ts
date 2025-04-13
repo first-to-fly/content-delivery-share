@@ -52,6 +52,22 @@ export interface FTFGroupTourPricing extends CDEntity {
     infant: number;
   };
 
+  discount: {
+    tierConfigs: {
+      from: number;
+      to: number;
+    }[];
+    groups: {
+      name: string;
+      tierData: {
+        [tierIndex: number]: {
+          adult: number;
+          child: number;
+        };
+      };
+    }[];
+  };
+
   airportTax: {
     adult: number;
     child: number;

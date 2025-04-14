@@ -2,10 +2,10 @@ import { CDEntity } from "../entity";
 
 /**
  * @export
- * @interface FTFTermConditionProductType
+ * @interface FTFTermConditionProductTypes
  * @extends {CDEntity}
  */
-export interface FTFTermConditionProductType extends CDEntity {
+export interface FTFTermConditionProductTypes extends CDEntity {
   tenantOID: string;
 
   termConditionOID: string;

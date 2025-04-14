@@ -1,5 +1,5 @@
 import { CDEntity } from "./entity";
-import { FTFAssembleLocationAirline } from "./FirstToFly/AssembleLocationAirline";
+import { FTFAssembleLocationAirlines } from "./FirstToFly/AssembleLocationAirlines";
 import { FTFBadge } from "./FirstToFly/Badge";
 import { FTFCostingItem } from "./FirstToFly/CostingItem";
 import { FTFCostingTemplate } from "./FirstToFly/CostingTemplate";
@@ -35,7 +35,7 @@ import { FTFTenant } from "./FirstToFly/Tenant";
 import { FTFTerm } from "./FirstToFly/Term";
 import { FTFTermCondition } from "./FirstToFly/TermCondition";
 import { FTFTermConditionCoverage } from "./FirstToFly/TermConditionCoverage";
-import { FTFTermConditionProductType } from "./FirstToFly/TermConditionProductType";
+import { FTFTermConditionProductTypes } from "./FirstToFly/TermConditionProductTypes";
 import { FTFUsefulInfo, FTFUsefulInfoProductType, FTFUsefulInfoRef } from "./FirstToFly/UsefulInfo";
 import { FTFUser } from "./FirstToFly/User";
 import { FTFUserTenant } from "./FirstToFly/UserTenant";
@@ -78,11 +78,11 @@ export type AllEntityField =
   | keyof FTFTerm
   | keyof FTFTermCondition
   | keyof FTFTermConditionCoverage
-  | keyof FTFTermConditionProductType
+  | keyof FTFTermConditionProductTypes
   | keyof FTFInsuranceDiscount
   | keyof FTFUserTenant
   | keyof FTFUser
-  | keyof FTFAssembleLocationAirline
+  | keyof FTFAssembleLocationAirlines
   | keyof FTFUsefulInfo
   | keyof FTFUsefulInfoRef
   | keyof FTFUsefulInfoProductType;

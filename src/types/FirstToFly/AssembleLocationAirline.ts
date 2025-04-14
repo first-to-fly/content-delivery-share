@@ -1,11 +1,12 @@
 import { CDEntity } from "../entity";
 
+
 /**
  * @export
- * @interface FTFAssembleLocationAirlines
+ * @interface FTFAssembleLocationAirline
  * @extends {CDEntity}
  */
-export interface FTFAssembleLocationAirlines extends CDEntity {
+export interface FTFAssembleLocationAirline extends CDEntity {
   tenantOID: string;
 
   airlineCode: string;

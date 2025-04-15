@@ -27,7 +27,6 @@ export interface FTFReferenceCode extends CDEntity {
   resetCounterType: ResetCounterType;
   counterWidth: number;
   template: string;
-  remarks: string | null;
 
   // Relationships
   allowedComponents: string[] | null;

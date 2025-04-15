@@ -23,9 +23,7 @@ import { FTFMeal } from "./FirstToFly/Meal";
 import { FTFPOI } from "./FirstToFly/POI";
 import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
 import { FTFProductType } from "./FirstToFly/ProductType";
-import { FTFReferenceCodeComponent } from "./FirstToFly/ReferenceCodeComponent";
-import { FTFReferenceCodeTemplate } from "./FirstToFly/ReferenceCodeTemplate";
-import { FTFReferenceCodeTree } from "./FirstToFly/ReferenceCodeTree";
+import { FTFReferenceCode } from "./FirstToFly/ReferenceCode";
 import { FTFRoomConfiguration } from "./FirstToFly/RoomConfiguration";
 import { FTFSector } from "./FirstToFly/Sector";
 import { FTFSectorGroup } from "./FirstToFly/SectorGroup";
@@ -66,9 +64,7 @@ export type AllEntityField =
   | keyof FTFGroupTourPricing
   | keyof FTFGroupTourPNLSimulation
   | keyof FTFProductType
-  | keyof FTFReferenceCodeComponent
-  | keyof FTFReferenceCodeTemplate
-  | keyof FTFReferenceCodeTree
+  | keyof FTFReferenceCode
   | keyof FTFRoomConfiguration
   | keyof FTFSector
   | keyof FTFSectorGroup

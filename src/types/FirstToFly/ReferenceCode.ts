@@ -18,11 +18,11 @@ export enum ResetCounterType {
  * @interface FTFReferenceCodeTemplate
  * @extends {CDEntity}
  */
-export interface FTFReferenceCodeTemplate extends CDEntity {
+export interface FTFReferenceCode extends CDEntity {
   tenantOID: string;
 
   name: string;
-  moduleId: string;
+  moduleName: string;
   counterType: CounterType;
   resetCounterType: ResetCounterType;
   counterWidth: number;
@@ -30,7 +30,7 @@ export interface FTFReferenceCodeTemplate extends CDEntity {
   remarks: string | null;
 
   // Relationships
-  componentIds: string[] | null;
+  allowedComponents: string[] | null;
 
   createdAt: string;
   updatedAt: string;

@@ -26,4 +26,9 @@ export interface FTFGroupTourCostingEntry extends CDEntity {
     amount: number;
     tax: number;
   }[];
+
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string | null;
 }

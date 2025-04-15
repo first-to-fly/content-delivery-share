@@ -52,7 +52,7 @@ export interface FTFDiscountTemplate extends CDEntity {
   useDiscountCode: boolean;
 
   createdAt: string;
-  updatedAt: string | null;
+  updatedAt: string;
   createdBy: string;
   updatedBy: string | null;
 }

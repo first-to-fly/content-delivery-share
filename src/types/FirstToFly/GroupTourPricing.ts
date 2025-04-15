@@ -77,4 +77,9 @@ export interface FTFGroupTourPricing extends CDEntity {
   groupTourPricingEntries: FTFGroupTourPricingEntry[];
 
   groupTourPNLSimulationOID: string;
+
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string | null;
 }

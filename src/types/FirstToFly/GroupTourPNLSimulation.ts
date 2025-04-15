@@ -39,4 +39,9 @@ export interface FTFGroupTourPNLSimulation extends CDEntity {
     averageProfit: number;
     averageProfitPercentage: number;
   }
+
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string | null;
 }

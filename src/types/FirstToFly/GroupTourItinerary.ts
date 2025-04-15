@@ -17,4 +17,9 @@ export interface FTFGroupTourItinerary extends CDEntity {
   tenantOID: string;
 
   groupTourItineraryDayOIDs: string[] | null;
+
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string | null;
 }

@@ -119,7 +119,7 @@ export interface FTFDiscount extends CDEntity {
   tourOIDs: string[] | null;
 
   createdAt: string;
-  updatedAt: string | null;
+  updatedAt: string;
   createdBy: string;
   updatedBy: string | null;
 }

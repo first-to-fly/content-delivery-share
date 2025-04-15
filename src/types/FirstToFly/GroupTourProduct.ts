@@ -41,5 +41,10 @@ export interface FTFGroupTourProduct extends CDEntity {
   groupTourCostingOIDs: string[] | null;
   groupTourPricingOIDs: string[] | null;
 
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string | null;
+
   tenantOID: string;
 }

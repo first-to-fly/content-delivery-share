@@ -29,7 +29,7 @@ export interface FTFReferenceCode extends CDEntity {
   template: string;
 
   // Relationships
-  allowedComponents: string[] | null;
+  availableComponents: string[] | null;
 
   createdAt: string;
   updatedAt: string;

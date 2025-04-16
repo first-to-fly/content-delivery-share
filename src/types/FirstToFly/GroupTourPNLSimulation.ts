@@ -12,7 +12,7 @@ export interface FTFGroupTourPNLSimulation extends CDEntity {
 
   groupVolumeData: {
     groupVolume: number;
-    packageType: PackageType;
+    packageType: PackageType.FULL_ONLY | PackageType.LAND_ONLY;
 
     occupancies: {
       // eslint-disable-next-line max-len

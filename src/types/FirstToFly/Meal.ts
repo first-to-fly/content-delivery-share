@@ -19,7 +19,6 @@ export interface FTFMeal extends CDEntity {
   description: string;
   type: MealType;
   seq: number;
-  offlineOperator: string | null;
 
   createdAt: string;
   updatedAt: string;

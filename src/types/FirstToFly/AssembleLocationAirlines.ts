@@ -10,10 +10,10 @@ export interface FTFAssembleLocationAirlines extends CDEntity {
 
   airlineCode: string;
   airportCode: string;
+
   location: string | null;
-  file: string[] | null;
-  status: boolean;
-  offlineOperator: string | null;
+  files: string[] | null;
+  isActive: boolean;
 
   createdAt: string;
   updatedAt: string;

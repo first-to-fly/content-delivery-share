@@ -14,10 +14,9 @@ export interface FTFTermCondition extends CDEntity {
   isCustomized: boolean;
   isPrint: boolean;
   type: number | null;
-  status: boolean;
+  isActive: boolean;
   description: string | null;
   remarks: string | null;
-  offlineOperator: string | null;
   productTypeOIDs: string[] | null;
 
   createdAt: string;

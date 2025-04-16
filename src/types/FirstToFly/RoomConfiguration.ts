@@ -7,10 +7,10 @@ import { CDEntity } from "../entity";
  */
 export interface FTFRoomConfiguration extends CDEntity {
   tenantOID: string;
+
   name: string;
-  status: number;
+  isActive: boolean;
   remarks: string | null;
-  offlineOperator: string | null;
   childWithoutBedStartAge: number;
   childWithoutBedEndAge: number;
   typeNames: string | null;
@@ -20,12 +20,10 @@ export interface FTFRoomConfiguration extends CDEntity {
   sectorOIDs?: string[];
   sectorGroupOIDs?: string[];
   productOIDs?: string[];
-  participatorOIDs?: string[];
-  personInChargeOIDs?: string[];
 
   createdAt: string;
   updatedAt: string;
   createdBy: string;
   updatedBy: string | null;
-  deletedAt: string | null;
+
 }

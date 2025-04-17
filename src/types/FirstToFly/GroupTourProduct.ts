@@ -29,10 +29,10 @@ export interface FTFGroupTourProduct extends CDEntity {
   durationNights: number;
 
   validityStartDate: string;
-  validityEndDate: string;
+  validityEndDate: string | null; // end indefinitely
 
   salesPeriodStartDate: string;
-  salesPeriodEndDate: string;
+  salesPeriodEndDate: string | null; // end indefinitely
 
   isActive: boolean;
   published: boolean;

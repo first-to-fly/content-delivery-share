@@ -18,7 +18,7 @@ export interface FTFTermCondition extends CDEntity {
 
   name: string;
 
-  pdf: NamedURL;
+  pdf: NamedURL | null;
 
   isCustomized: boolean;
   isPrint: boolean;

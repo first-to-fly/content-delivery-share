@@ -36,8 +36,6 @@ export enum CDEntityType {
   FTF_REFERENCE_CODE = "ftf-referenceCode",
   FTF_ASSEMBLE_LOCATION_AIRLINES = "ftf-assembleLocationAirlines",
   FTF_USEFUL_INFO = "ftf-usefulInfo",
-  FTF_USEFUL_INFO_REF = "ftf-usefulInfoRef",
-  FTF_USEFUL_INFO_PRODUCT_TYPE = "ftf-usefulInfoProductType",
   FTF_ROOM_CONFIGURATION = "ftf-roomConfiguration",
 }
 

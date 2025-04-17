@@ -1,4 +1,11 @@
 import { CDEntity } from "../entity";
+import { NamedURL } from "../url";
+
+
+export enum TermConditionType {
+  TERM_CONDITION = "term-condition",
+  ADDENDUM = "addendum",
+}
 
 
 /**
@@ -10,13 +17,20 @@ export interface FTFTermCondition extends CDEntity {
   tenantOID: string;
 
   name: string;
-  pdf: string | null;
+
+  pdf: NamedURL;
+
   isCustomized: boolean;
   isPrint: boolean;
-  type: number | null;
+
+  type: TermConditionType;
+
   isActive: boolean;
   description: string | null;
   remarks: string | null;
+
+  coveredEntityOIDs: string[];
+
   productTypeOIDs: string[] | null;
 
   createdAt: string;

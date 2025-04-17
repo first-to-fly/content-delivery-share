@@ -32,8 +32,6 @@ import { FTFStationCode } from "./FirstToFly/StationCode";
 import { FTFTenant } from "./FirstToFly/Tenant";
 import { FTFTerm } from "./FirstToFly/Term";
 import { FTFTermCondition } from "./FirstToFly/TermCondition";
-import { FTFTermConditionCoverage } from "./FirstToFly/TermConditionCoverage";
-import { FTFTermConditionProductTypes } from "./FirstToFly/TermConditionProductTypes";
 import { FTFUsefulInfo } from "./FirstToFly/UsefulInfo";
 import { FTFUser } from "./FirstToFly/User";
 import { FTFUserTenant } from "./FirstToFly/UserTenant";
@@ -73,8 +71,6 @@ export type AllEntityField =
   | keyof FTFTenant
   | keyof FTFTerm
   | keyof FTFTermCondition
-  | keyof FTFTermConditionCoverage
-  | keyof FTFTermConditionProductTypes
   | keyof FTFInsuranceDiscount
   | keyof FTFUserTenant
   | keyof FTFUser

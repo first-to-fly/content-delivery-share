@@ -1,5 +1,4 @@
 import { CDEntity } from "../entity";
-import { CoverageType } from "../enums/coverageType";
 
 /**
  * @export
@@ -9,7 +8,9 @@ import { CoverageType } from "../enums/coverageType";
 
 export interface FTFUsefulInfo extends CDEntity {
   name: string;
-  coverageType: CoverageType;
+
+  productTypeOIDs: string[] | null;
+
   isActive: boolean;
   remarks: string | null;
   info: {
@@ -19,8 +20,8 @@ export interface FTFUsefulInfo extends CDEntity {
     weather: string | null;
     optionalTours: string | null;
   } | null;
-  refOIDs: string[] | null;
-  productTypeOIDs: string[] | null;
+
+  applyToEntityOIDs: string[] | null;
 
   createdAt: string;
   updatedAt: string;

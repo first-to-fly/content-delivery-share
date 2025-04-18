@@ -7,17 +7,15 @@ import { CDEntity } from "../entity";
  */
 export interface FTFSpecialInstruction extends CDEntity {
   tenantOID: string;
-  isPrepare: boolean;
+  isPreset: boolean;
   description: string | null;
-  remark: string | null;
+  remarks: string | null;
   isActive: boolean;
   isCustomized: boolean | null;
 
   // Relationships
-  sectorOIDs?: string[];
-  sectorGroupOIDs?: string[];
-  productOIDs?: string[];
-  productTypeOIDs?: string[];
+  coveredEntityOIDs: string[];
+  productTypeOIDs: string[];
 
   createdAt: string;
   updatedAt: string;

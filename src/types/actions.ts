@@ -25,6 +25,7 @@ import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
 import { FTFProductType } from "./FirstToFly/ProductType";
 import { FTFReferenceCode } from "./FirstToFly/ReferenceCode";
 import { FTFRoomConfiguration } from "./FirstToFly/RoomConfiguration";
+import { FTFRoomConfigurationRule } from "./FirstToFly/RoomConfigurationRule";
 import { FTFSector } from "./FirstToFly/Sector";
 import { FTFSectorGroup } from "./FirstToFly/SectorGroup";
 import { FTFSpecialInstruction } from "./FirstToFly/SpecialInstruction";
@@ -64,6 +65,7 @@ export type AllEntityField =
   | keyof FTFProductType
   | keyof FTFReferenceCode
   | keyof FTFRoomConfiguration
+  | keyof FTFRoomConfigurationRule
   | keyof FTFSector
   | keyof FTFSectorGroup
   | keyof FTFSpecialInstruction

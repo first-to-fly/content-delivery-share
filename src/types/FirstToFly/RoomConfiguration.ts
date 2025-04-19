@@ -11,15 +11,13 @@ export interface FTFRoomConfiguration extends CDEntity {
   name: string;
   isActive: boolean;
   remarks: string | null;
+
   childWithoutBedStartAge: number;
   childWithoutBedEndAge: number;
-  typeNames: string | null;
-  checkChart: string | null;
 
   // Relationships
-  sectorOIDs?: string[];
-  sectorGroupOIDs?: string[];
-  productOIDs?: string[];
+  coveredEntityOIDs: string[];
+  roomConfigurationRuleOIDs: string[];
 
   createdAt: string;
   updatedAt: string;

@@ -37,6 +37,7 @@ export enum CDEntityType {
   FTF_ASSEMBLE_LOCATION_AIRLINES = "ftf-assembleLocationAirlines",
   FTF_USEFUL_INFO = "ftf-usefulInfo",
   FTF_ROOM_CONFIGURATION = "ftf-roomConfiguration",
+  FTF_ROOM_CONFIGURATION_RULE = "ftf-roomConfigurationRule",
 }
 
 export interface CDEntity {

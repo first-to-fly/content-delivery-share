@@ -8,6 +8,24 @@ export enum RoomType {
   QUADRUPLE = "quadruple",
 }
 
+export type RuleOccupancy = {
+  adultNum: number | null;
+  childWithBedNum: number | null;
+  childWithoutBedNum: number | null;
+  infantNum: number | null;
+};
+
+export type RulePricingArrangement = {
+  single: number | null;
+  twin: number | null;
+  triple: number | null;
+  quad: number | null;
+  childTwin: number | null;
+  childWithBed: number | null;
+  childNoBed: number | null;
+  infant: number | null;
+};
+
 /**
  * @export
  * @interface FTFRoomConfigurationRule
@@ -20,23 +38,9 @@ export interface FTFRoomConfigurationRule extends CDEntity {
 
   roomType: RoomType;
 
-  occupancy: {
-    adultNum: number | null;
-    childWithBedNum: number | null;
-    childWithoutBedNum: number | null;
-    infantNum: number | null;
-  };
+  occupancy: RuleOccupancy;
 
-  pricingArrangement: {
-    single: number | null;
-    twin: number | null;
-    triple: number | null;
-    quad: number | null;
-    childTwin: number | null;
-    childWithBed: number | null;
-    childNoBed: number | null;
-    infant: number | null;
-  };
+  pricingArrangement: RulePricingArrangement;
 
   isBackendOnly: boolean;
   isTcp: boolean;

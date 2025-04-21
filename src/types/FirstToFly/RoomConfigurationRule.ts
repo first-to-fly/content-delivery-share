@@ -9,21 +9,21 @@ export enum RoomType {
 }
 
 export type RuleOccupancy = {
-  adultNum: number | null;
-  childWithBedNum: number | null;
-  childWithoutBedNum: number | null;
-  infantNum: number | null;
+  adultNum?: number;
+  childWithBedNum?: number;
+  childWithoutBedNum?: number;
+  infantNum?: number;
 };
 
 export type RulePricingArrangement = {
-  single: number | null;
-  twin: number | null;
-  triple: number | null;
-  quad: number | null;
-  childTwin: number | null;
-  childWithBed: number | null;
-  childNoBed: number | null;
-  infant: number | null;
+  single?: number;
+  twin?: number;
+  triple?: number;
+  quad?: number;
+  childTwin?: number;
+  childWithBed?: number;
+  childNoBed?: number;
+  infant?: number;
 };
 
 /**

@@ -33,6 +33,8 @@ import { FTFStationCode } from "./FirstToFly/StationCode";
 import { FTFTenant } from "./FirstToFly/Tenant";
 import { FTFTerm } from "./FirstToFly/Term";
 import { FTFTermCondition } from "./FirstToFly/TermCondition";
+import { FTFTransportGroup } from "./FirstToFly/TransportGroup";
+import { FTFTransportSegment } from "./FirstToFly/TransportSegment";
 import { FTFUsefulInfo } from "./FirstToFly/UsefulInfo";
 import { FTFUser } from "./FirstToFly/User";
 import { FTFUserTenant } from "./FirstToFly/UserTenant";
@@ -62,6 +64,8 @@ export type AllEntityField =
   | keyof FTFGroupTourProduct
   | keyof FTFGroupTourPricing
   | keyof FTFGroupTourPNLSimulation
+  | keyof FTFTransportGroup
+  | keyof FTFTransportSegment
   | keyof FTFProductType
   | keyof FTFReferenceCode
   | keyof FTFRoomConfiguration

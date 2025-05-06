@@ -40,6 +40,8 @@ export enum CDEntityType {
   FTF_ROOM_CONFIGURATION_RULE = "ftf-roomConfigurationRule",
   FTF_TRANSPORT_GROUP = "ftf-transportGroup",
   FTF_TRANSPORT_SEGMENT = "ftf-transportSegment",
+  FTF_SUPPLIER_PROFILE = "ftf-supplierProfile",
+  FTF_SUPPLIER_CONTRACT = "ftf-supplierContract",
 }
 
 export interface CDEntity {

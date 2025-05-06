@@ -15,11 +15,16 @@ export enum FTFTransportGroupType {
  * @extends {CDEntity}
  */
 export interface FTFTransportGroup extends CDEntity {
+
   name: string;
   capacity: number;
   mainType: FTFTransportGroupType | null;
   description: string | null;
+
+  transportSegmentOIDs: string[];
+
   tenantOID: string;
+
   createdAt: string;
   updatedAt: string;
   createdBy: string;

@@ -7,6 +7,7 @@ import { CDEntity } from "../entity";
  */
 export interface FTFGroupTourItinerary extends CDEntity {
   groupTourProductOID: string;
+  tourDepartureOID: string | null;
 
   name: string;
 

@@ -30,11 +30,12 @@ import { FTFSector } from "./FirstToFly/Sector";
 import { FTFSectorGroup } from "./FirstToFly/SectorGroup";
 import { FTFSpecialInstruction } from "./FirstToFly/SpecialInstruction";
 import { FTFStationCode } from "./FirstToFly/StationCode";
-import { SupplierContract } from "./FirstToFly/SupplierContract";
-import { SupplierProfile } from "./FirstToFly/SupplierProfile";
+import { FTFSupplierContract } from "./FirstToFly/SupplierContract";
+import { FTFSupplierProfile } from "./FirstToFly/SupplierProfile";
 import { FTFTenant } from "./FirstToFly/Tenant";
 import { FTFTerm } from "./FirstToFly/Term";
 import { FTFTermCondition } from "./FirstToFly/TermCondition";
+import { FTFTourDeparture } from "./FirstToFly/TourDeparture";
 import { FTFTransportGroup } from "./FirstToFly/TransportGroup";
 import { FTFTransportSegment } from "./FirstToFly/TransportSegment";
 import { FTFUsefulInfo } from "./FirstToFly/UsefulInfo";
@@ -84,8 +85,9 @@ export type AllEntityField =
   | keyof FTFUser
   | keyof FTFAssembleLocationAirlines
   | keyof FTFUsefulInfo
-  | keyof SupplierProfile
-  | keyof SupplierContract;
+  | keyof FTFSupplierProfile
+  | keyof FTFSupplierContract
+  | keyof FTFTourDeparture;
 
 export interface RequestIncludeOptions {
   includeKey?: string;

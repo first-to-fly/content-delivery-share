@@ -24,12 +24,8 @@ export interface ApiCredentials {
   secret: string;
 }
 
-export interface SupplierProfile extends CDEntity {
-  // oid is in CDEntity. tenantOID, createdBy, etc. are not part of CDEntity by default.
-  // The prompt for content-delivery-share says "optional properties must be marked as nullable (`| null`)"
-  // and it usually mirrors the main entity structure but simplified for content delivery.
-  // Let's assume it needs the core fields.
-  tenantOID: OID; // Assuming tenantOID is needed for CD
+export interface FTFSupplierProfile extends CDEntity {
+  tenantOID: OID;
   name: string;
   type: SupplierProfileType;
   contactEmail: string | null;
@@ -39,9 +35,9 @@ export interface SupplierProfile extends CDEntity {
   manualContact: boolean;
   communicationInstructions: string | null;
   status: SupplierProfileStatus;
-  createdBy?: OID | null; // Optional and nullable
-  createdAt?: ISO8601DateTime | null; // Optional and nullable
-  updatedBy?: OID | null; // Optional and nullable
-  updatedAt?: ISO8601DateTime | null; // Optional and nullable
-  deletedAt?: ISO8601DateTime | null; // Optional and nullable
+
+  createdBy: OID;
+  createdAt: ISO8601DateTime;
+  updatedBy: OID;
+  updatedAt: ISO8601DateTime | null;
 }

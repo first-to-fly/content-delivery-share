@@ -1,5 +1,6 @@
 import { CDEntity } from "../entity";
 import { MultiLangRecord } from "../multipleLanguage";
+import { FTFGroupTourPricingDiscount } from "./GroupTourPricing";
 
 
 export enum TourDepartureStatus {
@@ -45,6 +46,8 @@ export interface FTFTourDeparture extends CDEntity {
   isArchived: boolean;
   tourLeaderOIDs: string[] | null;
   tourManagerOIDs: string[] | null;
+
+  discount: FTFGroupTourPricingDiscount | null;
 
   createdAt: string;
   updatedAt: string;

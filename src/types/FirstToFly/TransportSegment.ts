@@ -49,7 +49,6 @@ export type FTFTransportSegment = CDEntity & {
   destinationLocation: string;
   departureDateTime: string;
   arrivalDateTime: string;
-  capacity: number | null;
 
   tenantOID: string;
 

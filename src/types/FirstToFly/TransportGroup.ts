@@ -17,7 +17,6 @@ export enum FTFTransportGroupType {
 export interface FTFTransportGroup extends CDEntity {
 
   name: string;
-  capacity: number;
   mainType: FTFTransportGroupType | null;
   description: string | null;
 

@@ -1,5 +1,5 @@
 import { CDEntity } from "../entity";
-import { FTFTransportGroupType } from "./TransportGroup";
+import { TransportType } from "./TransportGroup";
 
 
 export interface FTFTransportSegmentFlightDetails {
@@ -58,23 +58,23 @@ export type FTFTransportSegment = CDEntity & {
   updatedBy: string | null;
 } & (
   | {
-    type: FTFTransportGroupType.FLIGHT;
+    type: TransportType.FLIGHT;
     details: FTFTransportSegmentFlightDetails;
   }
   | {
-    type: FTFTransportGroupType.BUS;
+    type: TransportType.BUS;
     details: FTFTransportSegmentBusDetails;
   }
   | {
-    type: FTFTransportGroupType.CRUISE;
+    type: TransportType.CRUISE;
     details: FTFTransportSegmentCruiseDetails;
   }
   | {
-    type: FTFTransportGroupType.TRAIN;
+    type: TransportType.TRAIN;
     details: FTFTransportSegmentTrainDetails;
   }
   | {
-    type: FTFTransportGroupType.FERRY;
+    type: TransportType.FERRY;
     details: FTFTransportSegmentFerryDetails;
   }
 );

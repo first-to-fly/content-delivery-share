@@ -1,7 +1,7 @@
 import { CDEntity } from "../entity";
 
 
-export enum FTFTransportGroupType {
+export enum TransportType {
   FLIGHT = "flight",
   BUS = "bus",
   CRUISE = "cruise",
@@ -17,7 +17,7 @@ export enum FTFTransportGroupType {
 export interface FTFTransportGroup extends CDEntity {
 
   name: string;
-  mainType: FTFTransportGroupType | null;
+  mainType: TransportType | null;
   description: string | null;
 
   transportSegmentOIDs: string[];

@@ -15,21 +15,19 @@ export enum TourTransactionPaxTypeEnum {
 export interface TourTransactionPax {
   // Fields from EntityZ (firsttofly-travel-share)
   oid: string;
-  entityType: CDEntityType; // This should be CDEntityType.TOUR_TRANSACTION_PAX
+  entityType: CDEntityType;
   tenantOID: string;
   createdBy: string;
   updatedBy: string | null;
-  createdAt: string; // ISO Date string
-  updatedAt: string | null; // ISO Date string
-  deletedAt: string | null; // ISO Date string
+  createdAt: string;
+  updatedAt: string | null;
+  deletedAt: string | null;
 
   // Fields specific to TourTransactionPax
-  paxId: string;
-  // bookingId: string; // Removed
-  bookingRoomId: string;
+  tourTransactionRoomOID: string;
   type: TourTransactionPaxTypeEnum;
   isLandTourOnly: boolean;
   personalDetails: Record<string, unknown> | null;
   mealPreference: string | null;
-  transportRecordId: string | null;
+  transportRecordOID: string | null;
 }

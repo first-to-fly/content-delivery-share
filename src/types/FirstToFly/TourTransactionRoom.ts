@@ -11,18 +11,18 @@ export enum TourTransactionRoomStatusEnum {
 export interface TourTransactionRoom {
   // Fields from EntityZ (firsttofly-travel-share)
   oid: string;
-  entityType: CDEntityType; // This should be CDEntityType.TOUR_TRANSACTION_ROOM
+  entityType: CDEntityType;
   tenantOID: string;
   createdBy: string;
   updatedBy: string | null;
-  createdAt: string; // ISO Date string
-  updatedAt: string | null; // ISO Date string
-  deletedAt: string | null; // ISO Date string
+  createdAt: string;
+  updatedAt: string | null;
+  deletedAt: string | null;
 
   // Fields specific to TourTransactionRoom
-  bookingRoomId: string;
-  bookingId: string;
-  roomConfigurationRuleId: string;
+  // bookingRoomId: string; // Removed as oid is the primary CD identifier
+  tourTransactionOID: string;
+  roomConfigurationRuleOID: string;
   roomNumber: string | null;
   isDbl: boolean;
   status: TourTransactionRoomStatusEnum;

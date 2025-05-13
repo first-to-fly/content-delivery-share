@@ -28,21 +28,21 @@ export enum TourTransactionTransportTypeEnum {
 export interface TourTransaction {
   // Fields from EntityZ (firsttofly-travel-share)
   oid: string;
-  entityType: CDEntityType; // This should be CDEntityType.TOUR_TRANSACTION
+  entityType: CDEntityType;
   tenantOID: string;
   createdBy: string;
   updatedBy: string | null;
-  createdAt: string; // ISO Date string
-  updatedAt: string | null; // ISO Date string
-  deletedAt: string | null; // ISO Date string
+  createdAt: string;
+  updatedAt: string | null;
+  deletedAt: string | null;
 
   // Fields specific to TourTransaction
-  bookingId: string;
+  // bookingId: string; // Removed as oid is the primary CD identifier
   tenantId: string;
-  productId: string;
-  tourDepartureId: string;
-  costingId: string;
-  productPricingId: string;
+  productOID: string;
+  tourDepartureOID: string;
+  costingOID: string;
+  productPricingOID: string;
   bookingReference: string;
   paymentStatus: TourTransactionPaymentStatusEnum;
   bookingStatus: TourTransactionBookingStatusEnum;

@@ -43,7 +43,8 @@ export interface FTFTourDeparture extends CDEntity {
   minimumPax: number;
   finalizationDate: string | null;
   paymentDueDate: string | null;
-  assemblyDetails: AssemblyDetails | null;
+  assembleLocationAirlineOID: string | null;
+  assembleAirlineLocationTime: string | null;
   description: MultiLangRecord<string> | null;
   isArchived: boolean;
   tourLeaderOIDs: string[] | null;

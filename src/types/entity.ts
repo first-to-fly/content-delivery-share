@@ -48,6 +48,7 @@ export enum CDEntityType {
   FTF_TOUR_TRANSACTION = "ftf-tourTransaction",
   FTF_TOUR_TRANSACTION_ROOM = "ftf-tourTransactionRoom",
   FTF_TOUR_TRANSACTION_PAX = "ftf-tourTransactionPax",
+  FTF_TOUR_TRANSACTION_TRANSFER = "ftf-tourTransactionTransfer",
 }
 
 export interface CDEntity {

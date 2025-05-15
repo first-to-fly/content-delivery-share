@@ -45,6 +45,12 @@ export enum CDEntityType {
   FTF_TOUR_DEPARTURE = "ftf-tourDeparture",
 }
 
+
 export interface CDEntity {
   oid: string;
+}
+
+
+export interface CDBaseEntity extends CDEntity {
+  name?: string;
 }

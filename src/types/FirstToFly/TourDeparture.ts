@@ -40,6 +40,7 @@ export interface FTFTourDeparture extends CDEntity {
   durationNights: number;
   totalCapacity: number;
   minimumPax: number;
+  blockedCapacity: number;
   finalizationDate: string | null;
   paymentDueDate: string | null;
   assembleLocationAirlineOID: string | null;

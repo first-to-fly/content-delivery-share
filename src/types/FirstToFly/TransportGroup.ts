@@ -22,6 +22,9 @@ export interface FTFTransportGroup extends CDEntity {
 
   transportSegmentOIDs: string[];
 
+  departureDateTime: string | null;
+  arrivalDateTime: string | null;
+
   tenantOID: string;
 
   createdAt: string;

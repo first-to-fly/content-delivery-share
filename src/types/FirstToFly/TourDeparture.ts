@@ -8,7 +8,6 @@ export enum TourDepartureStatus {
   CONFIRMED = "confirmed",
   OPEN = "open",
   CLOSED = "closed",
-  CANCELLED = "cancelled",
 }
 
 export enum TransportType {
@@ -47,6 +46,7 @@ export interface FTFTourDeparture extends CDEntity {
   assembleAirlineLocationTime: string | null;
   description: MultiLangRecord<string> | null;
   isArchived: boolean;
+  isCancelled: boolean;
   tourLeaderOIDs: string[] | null;
   tourManagerOIDs: string[] | null;
 

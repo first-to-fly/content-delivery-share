@@ -1,4 +1,5 @@
 import type { CDEntityType } from "../entity";
+import type { NamedURL } from "../url";
 
 // Enums redefined for content-delivery-share, or should be imported if a shared enum strategy exists
 export enum TourTransactionPaxTypeEnum {
@@ -30,4 +31,5 @@ export interface TourTransactionPax {
   personalDetails: Record<string, unknown> | null;
   mealPreference: string | null;
   transportRecordOID: string | null;
+  files: NamedURL[] | null;
 }

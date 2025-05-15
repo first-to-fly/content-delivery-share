@@ -10,7 +10,7 @@ export enum LocationType {
 /**
  * @export
  * @interface FTFLocation
- * @extends {CDBaseEntity}
+ * @extends {CDEntity}
  */
 export interface FTFLocation extends CDEntity {
   tenantOID: string;

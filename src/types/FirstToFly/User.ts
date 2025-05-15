@@ -4,7 +4,7 @@ import { MultiLangRecord } from "../multipleLanguage";
 /**
  * @export
  * @interface FTFUser
- * @extends {CDBaseEntity}
+ * @extends {CDEntity}
  */
 export interface FTFUser extends CDEntity {
 

@@ -1,7 +1,7 @@
-import { CDBaseEntity } from "../entity";
+import { CDEntity } from "../entity";
 
 
-export interface FTFRole extends CDBaseEntity {
+export interface FTFRole extends CDEntity {
 
   name: string;
   description: string;

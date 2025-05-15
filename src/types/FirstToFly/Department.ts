@@ -3,7 +3,7 @@ import { CDEntity } from "../entity";
 /**
  * @export
  * @interface FTFDepartment
- * @extends {CDBaseEntity}
+ * @extends {CDEntity}
  */
 export interface FTFDepartment extends CDEntity {
   tenantOID: string;

@@ -48,7 +48,3 @@ export enum CDEntityType {
 export interface CDEntity {
   oid: string;
 }
-
-export interface CDBaseEntity extends CDEntity {
-  name?: string;
-}

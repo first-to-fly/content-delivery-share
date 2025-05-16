@@ -11,7 +11,7 @@ export enum BudgetStatus {
 
 export interface FTFBudget extends CDEntity {
   tourDepartureOID: string;
-  budgetCostingOID: string;
+  groupTourCostingOID: string;
 
   status: BudgetStatus;
   materializationRate: number;

@@ -42,7 +42,6 @@ export interface TourTransaction {
   productOID: string;
   tourDepartureOID: string;
   costingOID: string;
-  productPricingOID: string;
   bookingReference: string;
   paymentStatus: TourTransactionPaymentStatusEnum;
   bookingStatus: TourTransactionBookingStatusEnum;

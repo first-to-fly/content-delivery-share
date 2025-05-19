@@ -30,6 +30,8 @@ export interface FTFTourDeparture extends CDEntity {
   appliedItineraryOID: string;
   itineraryOID: string;
 
+  budgetOID: string | null; // available at OPEN status
+
   departureCode: string;
 
   status: TourDepartureStatus;
@@ -40,6 +42,7 @@ export interface FTFTourDeparture extends CDEntity {
   durationNights: number;
   totalCapacity: number;
   minimumPax: number;
+  blockedCapacity: number;
   finalizationDate: string | null;
   paymentDueDate: string | null;
   assembleLocationAirlineOID: string | null;

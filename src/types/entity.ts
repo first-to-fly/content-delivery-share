@@ -22,6 +22,7 @@ export enum CDEntityType {
   FTF_SECTOR_GROUP = "ftf-sectorGroup",
   FTF_TERM = "ftf-term",
   FTF_BADGE = "ftf-badge",
+  FTF_BUDGET = "ftf-budget",
   FTF_MEAL = "ftf-meal",
   FTF_DESIGNATION = "ftf-designation",
   FTF_DOCUMENT = "ftf-document",
@@ -51,9 +52,11 @@ export enum CDEntityType {
   FTF_TOUR_TRANSACTION_TRANSFER = "ftf-tourTransactionTransfer",
 }
 
+
 export interface CDEntity {
   oid: string;
 }
+
 
 export interface CDBaseEntity extends CDEntity {
   name?: string;

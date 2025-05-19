@@ -27,7 +27,7 @@ export interface FTFPOI extends CDEntity {
   country: string;
   area: string;
   category: string;
-  description: string;
+  description: string | null;
   position: GeoPoint;
   images: string[] | null;
   additionalInfo: Record<string, unknown> | null;

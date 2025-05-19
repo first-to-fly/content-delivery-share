@@ -17,14 +17,6 @@ export enum TourTransactionBookingStatusEnum {
   VOIDED = "voided",
 }
 
-export enum TourTransactionTransportTypeEnum {
-  FLIGHT = "flight",
-  BUS = "bus",
-  CRUISE = "cruise",
-  TRAIN = "train",
-  FERRY = "ferry",
-}
-
 export interface TourTransaction {
   // Fields from EntityZ (firsttofly-travel-share)
   oid: string;
@@ -41,15 +33,11 @@ export interface TourTransaction {
   tenantId: string;
   productOID: string;
   tourDepartureOID: string;
-  costingOID: string;
   bookingReference: string;
   paymentStatus: TourTransactionPaymentStatusEnum;
   bookingStatus: TourTransactionBookingStatusEnum;
   totalAmount: number;
   receivedAmount: number;
-  discounts: number;
-  addOns: number;
-  transportType: TourTransactionTransportTypeEnum | null;
   snapshot: Record<string, unknown>;
   metadata: Record<string, unknown> | null;
 }

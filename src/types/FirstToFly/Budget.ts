@@ -11,12 +11,33 @@ export enum BudgetStatus {
 
 export interface FTFBudget extends CDEntity {
   tourDepartureOID: string;
-  groupTourCostingOID: string;
 
   status: BudgetStatus;
   materializationRate: number;
   remarks: string | null;
   isArchived: boolean;
+
+  airlineOIDs: string[];
+
+  landTourGroupSizeTiers: {
+    from: number;
+    to: number;
+  }[];
+
+  freeOfChargeTiers: {
+    pax: number;
+    freePax: number;
+  }[];
+
+  leadManagerCountTiers: {
+    pax: number;
+    leadCount: number;
+    managerCount: number;
+  }[];
+
+  originalGroupTourCostingOID: string;
+
+  budgetEntryOIDs: string[];
 
   tenantOID: string;
 

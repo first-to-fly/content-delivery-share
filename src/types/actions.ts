@@ -2,6 +2,7 @@ import { CDEntity } from "./entity";
 import { FTFAssembleLocationAirlines } from "./FirstToFly/AssembleLocationAirlines";
 import { FTFBadge } from "./FirstToFly/Badge";
 import { FTFBudget } from "./FirstToFly/Budget";
+import { FTFBudgetEntry } from "./FirstToFly/BudgetEntry";
 import { FTFCostingItem } from "./FirstToFly/CostingItem";
 import { FTFCostingTemplate } from "./FirstToFly/CostingTemplate";
 import { FTFDepartment } from "./FirstToFly/Department";
@@ -49,6 +50,7 @@ export type AllEntityField =
   | keyof CDEntity
   | keyof FTFBadge
   | keyof FTFBudget
+  | keyof FTFBudgetEntry
   | keyof FTFCostingItem
   | keyof FTFCostingTemplate
   | keyof FTFDepartment

@@ -1,9 +1,22 @@
-// This will be used for mapping if needed, CDEntityType is primary here
-import type { PaymentMethod, TourTransactionTransferType } from "@firsttofly/travel-share/src/entities/Operations/TourTransactionTransfer";
-
 import type { CDBaseEntity, CDEntityType } from "../entity"; // Corrected import
 import type { NamedURL } from "../url";
 
+
+export enum TourTransactionTransferType {
+  PAYMENT_RECEIVED = "payment_received",
+  REFUND_ISSUED = "refund_issued",
+  BOOKING_CREDIT = "booking_credit",
+  BOOKING_DEBIT = "booking_debit",
+}
+
+export enum PaymentMethod {
+  CASH = "cash",
+  CREDIT_CARD = "credit_card",
+  BANK_TRANSFER = "bank_transfer",
+  ONLINE_GATEWAY = "online_gateway",
+  VOUCHER = "voucher",
+  OTHER = "other",
+}
 
 export interface TourTransactionTransfer extends CDBaseEntity {
   // entityType from CDBaseEntity might be CDEntityType, ensure mapping or correct usage

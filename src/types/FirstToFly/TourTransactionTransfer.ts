@@ -1,4 +1,4 @@
-import type { CDBaseEntity, CDEntityType } from "../entity"; // Corrected import
+import type { CDBaseEntity } from "../entity"; // Corrected import
 import type { NamedURL } from "../url";
 
 
@@ -18,10 +18,8 @@ export enum PaymentMethod {
   OTHER = "other",
 }
 
-export interface TourTransactionTransfer extends CDBaseEntity {
-  // entityType from CDBaseEntity might be CDEntityType, ensure mapping or correct usage
-  entityType: CDEntityType.FTF_TOUR_TRANSACTION_TRANSFER; // Using CDEntityType directly
-  tourTransactionTransferOID: string;
+export interface FTFTourTransactionTransfer extends CDBaseEntity {
+
   tenantOID: string;
   tourTransactionOID: string;
 
@@ -35,10 +33,8 @@ export interface TourTransactionTransfer extends CDBaseEntity {
   metadata: Record<string, unknown> | null;
   files?: NamedURL[]; // Added files field
 
-  // Audit fields
   createdAt: string; // ISO Date string
   updatedAt: string; // ISO Date string
-  createdBy: string | null; // UserOID
+  createdBy: string; // UserOID
   updatedBy: string | null; // UserOID
-  deletedAt?: string | null; // ISO Date string
 }

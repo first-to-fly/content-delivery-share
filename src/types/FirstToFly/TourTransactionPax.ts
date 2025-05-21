@@ -1,8 +1,8 @@
-import type { CDEntityType } from "../entity";
+import type { CDEntity } from "../entity";
 import type { NamedURL } from "../url";
 
 // Enums redefined for content-delivery-share, or should be imported if a shared enum strategy exists
-export enum TourTransactionPaxTypeEnum {
+export enum TourTransactionPaxType {
   TWIN = "twin",
   SINGLE = "single",
   TRIPLE = "triple",
@@ -13,23 +13,21 @@ export enum TourTransactionPaxTypeEnum {
   INFANT = "infant",
 }
 
-export interface TourTransactionPax {
-  // Fields from EntityZ (firsttofly-travel-share)
-  oid: string;
-  entityType: CDEntityType;
+export interface FTFTourTransactionPax extends CDEntity {
   tenantOID: string;
-  createdBy: string;
-  updatedBy: string | null;
-  createdAt: string;
-  updatedAt: string | null;
-  deletedAt: string | null;
 
   // Fields specific to TourTransactionPax
+  tourTransactionOID: string;
   tourTransactionRoomOID: string;
-  type: TourTransactionPaxTypeEnum;
+  type: TourTransactionPaxType;
   isLandTourOnly: boolean;
   personalDetails: Record<string, unknown> | null;
   mealPreference: string | null;
   transportRecordOID: string | null;
   files: NamedURL[] | null;
+
+  createdBy: string;
+  updatedBy: string | null;
+  createdAt: string;
+  updatedAt: string;
 }

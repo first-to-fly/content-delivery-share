@@ -1,30 +1,28 @@
-import type { CDEntityType } from "../entity";
+import type { CDEntity } from "../entity";
 
 // Enums redefined for content-delivery-share, or should be imported if a shared enum strategy exists
-export enum TourTransactionRoomStatusEnum {
+export enum TourTransactionRoomStatus {
   REQUESTED = "requested",
   CONFIRMED = "confirmed",
   WAITLISTED = "waitlisted",
   CANCELLED = "cancelled",
 }
 
-export interface TourTransactionRoom {
-  // Fields from EntityZ (firsttofly-travel-share)
-  oid: string;
-  entityType: CDEntityType;
+export interface FTFTourTransactionRoom extends CDEntity {
+
   tenantOID: string;
-  createdBy: string;
-  updatedBy: string | null;
-  createdAt: string;
-  updatedAt: string | null;
-  deletedAt: string | null;
 
   // Fields specific to TourTransactionRoom
   // bookingRoomId: string; // Removed as oid is the primary CD identifier
   tourTransactionOID: string;
   roomConfigurationRuleOID: string;
-  roomNumber: string | null;
+  roomNumber: string;
   isDbl: boolean;
-  status: TourTransactionRoomStatusEnum;
+  status: TourTransactionRoomStatus;
   notes: string | null;
+
+  createdBy: string;
+  updatedBy: string | null;
+  createdAt: string;
+  updatedAt: string;
 }

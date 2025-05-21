@@ -1,14 +1,22 @@
 import { CDEntity } from "../entity";
 import { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
 
+/**
+ * Payment status enum
+ */
+export enum PaymentStatus {
+  UNPAID = "unpaid",
+  PARTIALLY_PAID = "partially-paid",
+  PAID = "paid",
+}
 
 /**
  * @export
- * @interface FTFGroupTourCostingEntry
+ * @interface FTFBudgetEntry
  * @extends {CDEntity}
  */
-export interface FTFGroupTourCostingEntry extends CDEntity {
-  groupTourCostingOID: string; // parent
+export interface FTFBudgetEntry extends CDEntity {
+  budgetOID: string; // parent
 
   name: string;
   category: CostingItemCategory;
@@ -28,6 +36,15 @@ export interface FTFGroupTourCostingEntry extends CDEntity {
     amount: number;
     tax: number;
   }[];
+
+  originalCostingEntryOID: string;
+  forexRate: number;
+  localCurrency: string;
+  localAmount: number;
+  paymentStatus: PaymentStatus;
+  paidAmount: number;
+  // paymentTransactionOIDs: string[] | null; // Available when Finance module is added
+  // exchangeOrderItemOIDs: string[] | null; // Available when EO module is added
 
   createdAt: string;
   updatedAt: string;

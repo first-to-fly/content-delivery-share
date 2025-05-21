@@ -83,7 +83,7 @@ export interface FTFDiscount extends CDEntity {
 
   isActive: boolean;
 
-  bookingChannel: DiscountBookingChannel;
+  bookingChannels: DiscountBookingChannel[];
   discountMechanics: DiscountMechanics;
   discountType: DiscountType;
   basePrice: DiscountBasePrice;

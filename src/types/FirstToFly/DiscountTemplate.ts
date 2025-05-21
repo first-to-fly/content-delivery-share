@@ -20,7 +20,7 @@ export interface FTFDiscountTemplate extends CDEntity {
   templateName: string;
   description: string | null;
 
-  bookingChannel: DiscountBookingChannel;
+  bookingChannels: DiscountBookingChannel[];
   discountMechanics: DiscountMechanics;
   discountType: DiscountType;
   basePrice: DiscountBasePrice;

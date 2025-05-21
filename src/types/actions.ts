@@ -38,9 +38,10 @@ import { FTFTenant } from "./FirstToFly/Tenant";
 import { FTFTerm } from "./FirstToFly/Term";
 import { FTFTermCondition } from "./FirstToFly/TermCondition";
 import { FTFTourDeparture } from "./FirstToFly/TourDeparture";
-import { FTFTourTransaction as FTFTourTransaction } from "./FirstToFly/TourTransaction";
-import { FTFTourTransactionPax as FTFTourTransactionPax } from "./FirstToFly/TourTransactionPax";
-import { FTFTourTransactionRoom as FTFTourTransactionRoom } from "./FirstToFly/TourTransactionRoom";
+import { FTFTourTransaction } from "./FirstToFly/TourTransaction";
+import { FTFTourTransactionPax } from "./FirstToFly/TourTransactionPax";
+import { FTFTourTransactionRoom } from "./FirstToFly/TourTransactionRoom";
+import { FTFTourTransactionTransfer } from "./FirstToFly/TourTransactionTransfer";
 import { FTFTransportGroup } from "./FirstToFly/TransportGroup";
 import { FTFTransportSegment } from "./FirstToFly/TransportSegment";
 import { FTFUsefulInfo } from "./FirstToFly/UsefulInfo";
@@ -97,7 +98,8 @@ export type AllEntityField =
   | keyof FTFTourDeparture
   | keyof FTFTourTransaction
   | keyof FTFTourTransactionRoom
-  | keyof FTFTourTransactionPax;
+  | keyof FTFTourTransactionPax
+  | keyof FTFTourTransactionTransfer;
 
 export interface RequestIncludeOptions {
   includeKey?: string;

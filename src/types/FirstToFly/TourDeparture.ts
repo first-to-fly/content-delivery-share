@@ -26,7 +26,7 @@ export type AssemblyDetails = {
 export interface FTFTourDeparture extends CDEntity {
   tenantOID: string;
 
-  productPricingOID: string;
+  groupTourPricingOID: string;
   appliedItineraryOID: string;
   itineraryOID: string;
 

@@ -31,7 +31,6 @@ export interface TourTransaction {
   // Fields specific to TourTransaction
   // bookingId: string; // Removed as oid is the primary CD identifier
   tenantId: string;
-  productOID: string;
   tourDepartureOID: string;
   bookingReference: string;
   paymentStatus: TourTransactionPaymentStatusEnum;

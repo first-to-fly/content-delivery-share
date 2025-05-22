@@ -10,8 +10,6 @@ export enum TourTransactionRoomStatus {
 
 export interface FTFTourTransactionRoom extends CDEntity {
 
-  tenantOID: string;
-
   // Fields specific to TourTransactionRoom
   // bookingRoomId: string; // Removed as oid is the primary CD identifier
   tourTransactionOID: string;

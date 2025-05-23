@@ -18,7 +18,7 @@ export interface FTFGroupTourPricingDiscount {
   groups: {
     name: string;
     tierData: {
-      [tierIndex: number]: {
+      [tierIndex: string]: {
         adult: number;
         child: number;
       };

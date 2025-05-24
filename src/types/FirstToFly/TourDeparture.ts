@@ -34,6 +34,9 @@ export interface FTFTourDeparture extends CDEntity {
 
   departureCode: string;
 
+  startingFullFare: number;
+  startingLandFare: number;
+
   status: TourDepartureStatus;
   departureDate: string;
   transportType: TransportType;

@@ -56,6 +56,8 @@ export interface FTFTourDeparture extends CDEntity {
   tourLeaderOIDs: string[] | null;
   tourManagerOIDs: string[] | null;
 
+  bookedCount: number;
+
   discount: FTFGroupTourPricingDiscount | null;
 
   createdAt: string;

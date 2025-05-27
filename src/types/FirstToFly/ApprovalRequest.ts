@@ -23,7 +23,7 @@ export interface FTFApprovalRequest extends CDEntity {
   tenantOID: string;
 
   type: ApprovalRequestType;
-  entityOid: string;
+  entityOID: string;
   payload: Record<string, unknown>; // JSONB - flexible structure
   status: ApprovalRequestStatus;
   remarks: string | null;

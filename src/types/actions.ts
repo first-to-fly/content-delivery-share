@@ -1,4 +1,5 @@
 import { CDEntity } from "./entity";
+import type { FTFApprovalRequest } from "./FirstToFly/approval-request";
 import { FTFAssembleLocationAirlines } from "./FirstToFly/AssembleLocationAirlines";
 import { FTFBadge } from "./FirstToFly/Badge";
 import { FTFBudget } from "./FirstToFly/Budget";
@@ -52,6 +53,7 @@ import { OID } from "./generic";
 
 export type AllEntityField =
   | keyof CDEntity
+  | keyof FTFApprovalRequest
   | keyof FTFBadge
   | keyof FTFBudget
   | keyof FTFBudgetEntry

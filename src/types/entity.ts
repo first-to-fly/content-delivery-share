@@ -45,6 +45,7 @@ export enum CDEntityType {
   FTF_SUPPLIER_PROFILE = "ftf-supplierProfile",
   FTF_SUPPLIER_CONTRACT = "ftf-supplierContract",
   FTF_TOUR_DEPARTURE = "ftf-tourDeparture",
+  FTF_APPROVAL_REQUEST = "ftf-approvalRequest",
 
   // BOOKING
   FTF_TOUR_TRANSACTION = "ftf-tourTransaction",

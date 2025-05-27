@@ -1,5 +1,5 @@
 import { CDEntity } from "./entity";
-import type { FTFApprovalRequest } from "./FirstToFly/approval-request";
+import { FTFApprovalRequest } from "./FirstToFly/ApprovalRequest";
 import { FTFAssembleLocationAirlines } from "./FirstToFly/AssembleLocationAirlines";
 import { FTFBadge } from "./FirstToFly/Badge";
 import { FTFBudget } from "./FirstToFly/Budget";

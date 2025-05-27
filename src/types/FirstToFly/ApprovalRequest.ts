@@ -1,5 +1,19 @@
 import { CDEntity } from "../entity";
 
+
+export enum ApprovalRequestStatus {
+  PENDING = "pending",
+  APPROVED = "approved",
+  REJECTED = "rejected",
+  CANCELLED = "cancelled",
+}
+
+export enum ApprovalRequestType {
+  TOUR_TRANSACTION_SPECIAL_DISCOUNT = "tour_transaction_special_discount",
+  BUDGET_APPROVAL = "budget_approval",
+  // Add more request types as needed
+}
+
 /**
  * @export
  * @interface FTFApprovalRequest
@@ -8,10 +22,10 @@ import { CDEntity } from "../entity";
 export interface FTFApprovalRequest extends CDEntity {
   tenantOID: string;
 
-  requestType: string;
+  type: ApprovalRequestType;
   entityOid: string;
   payload: Record<string, unknown>; // JSONB - flexible structure
-  status: string;
+  status: ApprovalRequestStatus;
   remarks: string | null;
   assigneeOID: string;
   assigneeNote: string | null;

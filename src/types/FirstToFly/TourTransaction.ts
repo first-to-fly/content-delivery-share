@@ -33,6 +33,7 @@ export interface FTFTourTransaction extends CDEntity {
   receivedAmount: number;
   snapshot: Record<string, unknown>;
   metadata: Record<string, unknown> | null;
+  specialInstructions: string[] | null;
 
   createdAt: string;
   updatedAt: string;

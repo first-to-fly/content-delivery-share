@@ -115,8 +115,8 @@ export interface FTFDiscount extends CDEntity {
   useDiscountCode: boolean;
 
   sectorOIDs: string[] | null;
-  productOIDs: string[] | null;
-  tourOIDs: string[] | null;
+  groupTourProductOIDs: string[] | null;
+  tourDepartureOIDs: string[] | null;
 
   createdAt: string;
   updatedAt: string;

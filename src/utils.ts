@@ -9,11 +9,13 @@ import { OID } from "./types/generic";
 
 // Deliberately not support deep convert nullable to optional,
 // since this is used for converting the first level of the nullable keys from CD
-export type NullableToOptional<T> = {
-  [P in keyof T as null extends T[P] ? never : P]: T[P];
-} & {
-  [P in keyof T as null extends T[P] ? P : never]?: Exclude<T[P], null>;
-};
+export type NullableToOptional<T> = T extends Array<infer U>
+  ? NullableToOptional<U>[]
+  : {
+    [P in keyof T as null extends T[P] ? never : P]: T[P];
+  } & {
+    [P in keyof T as null extends T[P] ? P : never]?: Exclude<T[P], null>;
+  };
 
 export const nullToUndefined = <T>(obj: T): NullableToOptional<T> => {
   if (obj === null || typeof obj !== "object") {

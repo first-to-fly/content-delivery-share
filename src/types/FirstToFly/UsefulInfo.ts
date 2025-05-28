@@ -14,11 +14,11 @@ export interface FTFUsefulInfo extends CDEntity {
   isActive: boolean;
   remarks: string | null;
   info: {
-    otherInfo: string | null;
-    tipping: string | null;
-    visa: string | null;
-    weather: string | null;
-    optionalTours: string | null;
+    otherInfo?: string;
+    tipping?: string;
+    visa?: string;
+    weather?: string;
+    optionalTours?: string;
   } | null;
 
   applyToEntityOIDs: string[] | null;

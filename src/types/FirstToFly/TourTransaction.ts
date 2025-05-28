@@ -1,4 +1,5 @@
 import type { CDEntity } from "../entity"; // Assuming CDEntityType is exported from here
+import { MultiLangRecord } from "../multipleLanguage";
 
 // Enums redefined for content-delivery-share, or should be imported if a shared enum strategy exists
 export enum TourTransactionPaymentStatus {
@@ -29,6 +30,9 @@ export interface FTFTourTransaction extends CDEntity {
   receivedAmount: number;
   snapshot: Record<string, unknown>;
   metadata: Record<string, unknown> | null;
+
+  tourProductName: MultiLangRecord<string>;
+  tourCode: string;
 
   createdAt: string;
   updatedAt: string;

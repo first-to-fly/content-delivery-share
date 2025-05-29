@@ -41,31 +41,31 @@ export const nullToUndefined = <T>(obj: T): NullableToOptional<T> => {
 };
 
 
-type DeepNullToUndefined<T> = T extends Primitive | Date
+export type DeepNullableToOptional<T> = T extends Primitive | Date
   ? T
   : T extends (infer U)[]
-    ? DeepNullToUndefined<U>[]
+    ? DeepNullableToOptional<U>[]
     : T extends readonly (infer U)[]
-      ? readonly DeepNullToUndefined<U>[]
+      ? readonly DeepNullableToOptional<U>[]
       : {
         [P in keyof T]: null extends T[P]
           ? Exclude<T[P], null> extends object | undefined
-            ? DeepNullToUndefined<Exclude<T[P], null>> | undefined
+            ? DeepNullableToOptional<Exclude<T[P], null>> | undefined
             : Exclude<T[P], null> | undefined
           : T[P] extends object | undefined
-            ? DeepNullToUndefined<T[P]>
+            ? DeepNullableToOptional<T[P]>
             : T[P];
       };
 
 type Primitive = string | number | boolean | bigint | symbol | undefined | null;
 
-export function deepNullToUndefined<T>(obj: T): DeepNullToUndefined<T> {
+export function deepNullToUndefined<T>(obj: T): DeepNullableToOptional<T> {
   if (obj === null || typeof obj !== "object") {
-    return obj as DeepNullToUndefined<T>;
+    return obj as DeepNullableToOptional<T>;
   }
 
   if (Array.isArray(obj)) {
-    return obj.map((item) => deepNullToUndefined(item)) as DeepNullToUndefined<T>;
+    return obj.map((item) => deepNullToUndefined(item)) as DeepNullableToOptional<T>;
   }
 
   const result = { ...obj } as Record<string, unknown>;
@@ -78,7 +78,7 @@ export function deepNullToUndefined<T>(obj: T): DeepNullToUndefined<T> {
       }
     }
   }
-  return result as DeepNullToUndefined<T>;
+  return result as DeepNullableToOptional<T>;
 }
 
 const checkIsOIDRegex = new RegExp(`^(${Object.values(CDEntityType).map((t) => t.replaceAll("-", "\\-")).join("|")})\\-`, "");

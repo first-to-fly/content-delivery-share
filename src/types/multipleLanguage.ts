@@ -13,7 +13,5 @@ export function getMultiLangRecord<T>(record: MultiLangRecord<T>, preferredLangu
     }
   }
 
-  const firstLanguage = Object.keys(record)
-    .sort((a, b) => a.localeCompare(b))[0] as LanguageCode;
-  return record[firstLanguage];
+  return record[LanguageCode.ENGLISH];
 }

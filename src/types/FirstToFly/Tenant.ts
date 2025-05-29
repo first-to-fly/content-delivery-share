@@ -12,7 +12,7 @@ export interface FTFTenant extends CDEntity {
   logo: string | null;
   description: string;
   domain: string;
-  languages: LanguageCode[];
+  localizationSupportLanguages: LanguageCode[];
   homeCurrency: CurrencyCode;
   currencyExtra: {
     supportedCurrencies: {

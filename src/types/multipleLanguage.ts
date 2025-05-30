@@ -13,5 +13,5 @@ export function getMultiLangRecord<T>(record: MultiLangRecord<T>, preferredLangu
     }
   }
 
-  return record[LanguageCode.ENGLISH];
+  return preferredLanguages ? undefined : record[LanguageCode.ENGLISH];
 }

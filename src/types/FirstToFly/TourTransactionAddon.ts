@@ -2,7 +2,7 @@ import type { CDEntity } from "../entity";
 
 
 export enum TourTransactionAddonType {
-  BUDGET_ENTRY = "budget_entry",
+  PRICING_ENTRY = "pricing_entry",
   MANUAL = "manual",
 }
 
@@ -10,7 +10,8 @@ export interface FTFTourTransactionAddon extends CDEntity {
   tenantOID: string;
   tourTransactionOID: string;
   type: TourTransactionAddonType;
-  budgetItemOID: string | null;
+  groupTourPricingOID: string | null;
+  groupTourCostingEntryOID: string | null;
   name: string;
   unitPrice: number;
   quantity: number;

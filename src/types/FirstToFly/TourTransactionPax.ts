@@ -12,6 +12,37 @@ export enum TourTransactionPaxType {
   CHILD_NO_BED = "child_no_bed",
   INFANT = "infant",
 }
+// Personal details interface for tour transaction pax
+export interface TourTransactionPaxPersonalDetails {
+  title: string;
+  gender: string;
+  firstName: string;
+  lastName: string;
+  dateOfBirth?: string;
+  nationality?: string;
+  email?: string;
+  phone?: string;
+  alternativeMobile?: string;
+  address?: string;
+  postalCode?: string;
+  emergencyContact?: {
+    name: string;
+    phone: string;
+    relationship: string;
+  };
+  travelDocuments?: {
+    visaApplicationRequired: boolean;
+    passportNumber?: string;
+    passportIssueDate?: string;
+    passportExpiry?: string;
+  };
+  specialNeeds?: {
+    mealRequest?: string;
+    healthDeclaration?: string;
+    wheelchairRequired: boolean;
+  };
+  isLeadPassenger?: boolean;
+}
 
 export interface FTFTourTransactionPax extends CDEntity {
   tenantOID: string;
@@ -21,7 +52,7 @@ export interface FTFTourTransactionPax extends CDEntity {
   tourTransactionRoomOID: string;
   type: TourTransactionPaxType;
   isLandTourOnly: boolean;
-  personalDetails: Record<string, unknown> | null;
+  personalDetails: TourTransactionPaxPersonalDetails | null;
   mealPreference: string | null;
   transportRecordOID: string | null;
   files: NamedURL[] | null;

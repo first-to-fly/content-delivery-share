@@ -30,6 +30,7 @@ export interface FTFTourDeparture extends CDEntity {
   groupTourPricingOID: string;
   appliedItineraryOID: string;
   itineraryOID: string;
+  sectorOIDs: string[];
 
   budgetOID: string | null; // available at OPEN status
 

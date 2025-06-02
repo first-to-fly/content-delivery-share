@@ -8,6 +8,7 @@ import { CDEntity } from "../entity";
 export interface FTFGroupTourCosting extends CDEntity {
 
   groupTourProductOID: string; // parent
+  sectorOIDs: string[];
 
   templateOID: string;
   name: string;

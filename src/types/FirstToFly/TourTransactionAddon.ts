@@ -16,6 +16,7 @@ export interface FTFTourTransactionAddon extends CDEntity {
   unitPrice: number;
   quantity: number;
   totalPrice: number;
+  tax: number | null;
   supplierOID: string | null;
   notes: string | null;
 

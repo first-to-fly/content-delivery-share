@@ -1,4 +1,5 @@
 import type { CDEntity } from "../entity";
+import type { DiscountMode } from "./Discount";
 
 
 export enum TourTransactionDiscountType {
@@ -15,6 +16,8 @@ export interface FTFTourTransactionDiscount extends CDEntity {
   appliedDiscountCode: string | null;
   description: string;
   appliedAmount: number;
+  discountMode: DiscountMode;
+
   metadata: Record<string, unknown> | null;
 
   createdAt: string;

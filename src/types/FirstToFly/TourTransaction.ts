@@ -36,8 +36,8 @@ export interface TourTransactionPaxSnapshot {
   oid: string;
   type: TourTransactionPaxType;
   isLandTourOnly: boolean;
-  mealPreference: string | null;
-  transportRecordOID: string | null;
+  mealPreference?: string;
+  transportRecordOID?: string;
 }
 
 export interface TourTransactionAppliedDiscountSnapshot {
@@ -171,7 +171,7 @@ export interface TourTransactionPOISnapshot {
   type: string;
   country: string;
   position: GeoPoint;
-  additionalInfo: Record<string, unknown> | null;
+  additionalInfo?: Record<string, unknown>;
 }
 
 export interface TourTransactionItinerarySnapshot {

@@ -1,4 +1,5 @@
 import { CDEntity } from "../entity";
+import { DiscountMode } from "./Discount";
 
 
 export enum ApprovalRequestStatus {
@@ -14,6 +15,22 @@ export enum ApprovalRequestType {
   // Add more request types as needed
 }
 
+export interface ApprovalRequestTourTransactionSpecialDiscountPayload {
+  type: ApprovalRequestType.TOUR_TRANSACTION_SPECIAL_DISCOUNT;
+  discountName: string;
+  discountValue: number;
+  discountMode: DiscountMode;
+  reason?: string;
+}
+
+export interface ApprovalRequestBudgetApprovalPayload {
+  type: ApprovalRequestType.BUDGET_APPROVAL;
+}
+
+export type ApprovalRequestPayload =
+  ApprovalRequestTourTransactionSpecialDiscountPayload | ApprovalRequestBudgetApprovalPayload;
+
+
 /**
  * @export
  * @interface FTFApprovalRequest
@@ -24,7 +41,7 @@ export interface FTFApprovalRequest extends CDEntity {
 
   type: ApprovalRequestType;
   entityOID: string;
-  payload: Record<string, unknown>; // JSONB - flexible structure
+  payload: ApprovalRequestPayload;
   status: ApprovalRequestStatus;
   remarks: string | null;
   assigneeOID: string;

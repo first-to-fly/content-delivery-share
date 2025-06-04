@@ -233,7 +233,7 @@ export interface FTFTourTransaction extends CDEntity {
   bookingStatus: TourTransactionBookingStatus;
   totalAmount: number;
   receivedAmount: number;
-  snapshot: TourTransactionSnapshotData;
+  snapshot: TourTransactionSnapshotData | null;
   metadata: Record<string, unknown> | null;
   specialInstructions: string[] | null;
 

@@ -15,6 +15,7 @@ export enum PaymentMethod {
   BANK_TRANSFER = "bank_transfer",
   ONLINE_GATEWAY = "online_gateway",
   VOUCHER = "voucher",
+  AIR_WALLEX = "air_wallex",
   OTHER = "other",
 }
 

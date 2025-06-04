@@ -10,9 +10,14 @@ export enum ApprovalRequestStatus {
 }
 
 export enum ApprovalRequestType {
+  EMPTY = "empty",
   TOUR_TRANSACTION_SPECIAL_DISCOUNT = "tour_transaction_special_discount",
   BUDGET_APPROVAL = "budget_approval",
   // Add more request types as needed
+}
+
+export interface ApprovalRequestEmptyPayload {
+  type: ApprovalRequestType.EMPTY;
 }
 
 export interface ApprovalRequestTourTransactionSpecialDiscountPayload {
@@ -28,7 +33,8 @@ export interface ApprovalRequestBudgetApprovalPayload {
 }
 
 export type ApprovalRequestPayload =
-  ApprovalRequestTourTransactionSpecialDiscountPayload | ApprovalRequestBudgetApprovalPayload;
+  ApprovalRequestTourTransactionSpecialDiscountPayload | ApprovalRequestBudgetApprovalPayload |
+  ApprovalRequestEmptyPayload;
 
 
 /**

@@ -237,6 +237,9 @@ export interface FTFTourTransaction extends CDEntity {
   metadata: unknown | null;
   specialInstructions: string[] | null;
 
+  liveRoomCount: number;
+  livePaxCount: number;
+
   createdAt: string;
   updatedAt: string;
   createdBy: string;

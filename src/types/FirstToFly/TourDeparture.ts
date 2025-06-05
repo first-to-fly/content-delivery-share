@@ -60,6 +60,8 @@ export interface FTFTourDeparture extends CDEntity {
 
   livePaxCount: number;
 
+  liveRoomCount: number;
+
   discount: FTFGroupTourPricingDiscount | null;
 
   createdAt: string;

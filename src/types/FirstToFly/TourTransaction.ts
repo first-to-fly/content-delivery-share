@@ -226,6 +226,7 @@ export interface FTFTourTransaction extends CDEntity {
   tourDepartureOID: string;
   groupTourPricingOID: string;
   groupTourProductOID: string;
+  itineraryOID: string;
   sectorOIDs: string[];
 
   bookingReference: string;

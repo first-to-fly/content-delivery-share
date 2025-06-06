@@ -190,6 +190,14 @@ export interface TourTransactionTransportSegmentSnapshot {
   details: FTFTransportSegmentDetails;
 }
 
+export interface TourTransactionTenantCurrencySnapshot {
+  homeCurrency: string;
+  supportedCurrencies: {
+    currency: string;
+    rate: number;
+  }[];
+}
+
 export interface TourTransactionSnapshotData {
   productCostingSnapshot?: TourTransactionCostingSnapshot;
   productPricingSnapshot?: TourTransactionPricingSnapshot;
@@ -198,6 +206,7 @@ export interface TourTransactionSnapshotData {
   bookedRoomsSnapshot: TourTransactionBookedRoomSnapshot[];
   appliedDiscountsSnapshot: TourTransactionAppliedDiscountSnapshot[];
   appliedAddonsSnapshot: TourTransactionAppliedAddonSnapshot[];
+  tenantCurrencySnapshot: TourTransactionTenantCurrencySnapshot;
   snapshotTimestamp: string;
   snapshotVersion: string;
 }

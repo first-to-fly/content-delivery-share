@@ -1,6 +1,7 @@
 import type { CDEntity } from "../entity";
 import { MultiLangRecord } from "../multipleLanguage";
 import { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
+import { DiscountMode } from "./Discount";
 import { MealType } from "./GroupTourItineraryMeal";
 import { FTFGroupTourPricingEntry } from "./GroupTourPricing";
 import { GeoPoint } from "./POI";
@@ -46,6 +47,7 @@ export interface TourTransactionAppliedDiscountSnapshot {
   appliedDiscountCode?: string;
   description?: string;
   appliedAmount: number;
+  discountMode: DiscountMode;
   metadata?: TourTransactionDiscountMetadata;
   snapshotCreatedAt: string;
 }

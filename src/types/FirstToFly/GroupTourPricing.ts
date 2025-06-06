@@ -26,6 +26,17 @@ export interface FTFGroupTourPricingDiscount {
   }[];
 }
 
+export interface FTFGroupTourPricingFareStructure {
+  twin: number;
+  single: number;
+  triple: number;
+  quad: number;
+  childTwin: number;
+  childWithBed: number;
+  childNoBed: number;
+  infant: number;
+}
+
 
 /**
  * @export
@@ -50,27 +61,9 @@ export interface FTFGroupTourPricing extends CDEntity {
   isActive: boolean;
   tenantOID: string;
 
-  fullFare: {
-    twin: number;
-    single: number;
-    triple: number;
-    quad: number;
-    childTwin: number;
-    childWithBed: number;
-    childNoBed: number;
-    infant: number;
-  };
+  fullFare: FTFGroupTourPricingFareStructure;
 
-  landFare: {
-    twin: number;
-    single: number;
-    triple: number;
-    quad: number;
-    childTwin: number;
-    childWithBed: number;
-    childNoBed: number;
-    infant: number;
-  };
+  landFare: FTFGroupTourPricingFareStructure;
 
   discount: FTFGroupTourPricingDiscount;
 

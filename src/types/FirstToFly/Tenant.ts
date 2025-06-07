@@ -20,6 +20,10 @@ export interface FTFTenant extends CDEntity {
       rate: number;
     }[];
   } | null;
+  defaultTaxConfig: {
+    scheme: string;
+    rate: number; // Tax rate as percentage, e.g., 7.5 for 7.5%
+  } | null;
 
   createdAt: string;
   updatedAt: string;

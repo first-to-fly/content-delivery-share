@@ -198,6 +198,10 @@ export interface TourTransactionTenantCurrencySnapshot {
     currency: string;
     rate: number;
   }[];
+  defaultTaxConfig: {
+    scheme: string;
+    rate: number;
+  } | null;
 }
 
 export interface TourTransactionSnapshotData {

@@ -26,7 +26,7 @@ export interface FTFDocument extends CDEntity {
   name: string;
   docIdentification: string;
 
-  issueDate: string;
+  issuedDate: string;
   expiryDate: string;
 
   files: NamedURL[] | null;

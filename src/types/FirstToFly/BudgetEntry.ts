@@ -32,7 +32,7 @@ export interface FTFBudgetEntry extends CDEntity {
   currency: string;
 
   prices: {
-    tierIndex: number | null;
+    tierIndex?: number;
     amount: number;
     tax: number;
   }[];

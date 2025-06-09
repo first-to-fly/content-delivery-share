@@ -1,5 +1,4 @@
 import type { CDEntity } from "../entity";
-import type { NamedURL } from "../url";
 
 // Enums redefined for content-delivery-share, or should be imported if a shared enum strategy exists
 export enum TourTransactionPaxType {
@@ -45,8 +44,6 @@ export interface TourTransactionPaxPersonalDetails {
 }
 
 export interface FTFTourTransactionPax extends CDEntity {
-  tenantOID: string;
-
   // Fields specific to TourTransactionPax
   tourTransactionOID: string;
   tourTransactionRoomOID: string;
@@ -55,7 +52,7 @@ export interface FTFTourTransactionPax extends CDEntity {
   personalDetails: TourTransactionPaxPersonalDetails | null;
   mealPreference: string | null;
   transportRecordOID: string | null;
-  files: NamedURL[] | null;
+  documentOIDs: string[] | null;
 
   createdBy: string;
   updatedBy: string | null;

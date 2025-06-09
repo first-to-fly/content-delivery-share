@@ -2,7 +2,7 @@ import { CDEntity } from "../entity";
 import { NamedURL } from "../url";
 
 
-export enum DocumentType {
+export enum FTFDocumentType {
   PASSPORT = "passport",
   NATIONAL_ID = "national_id",
   DRIVING_LICENSE = "driving_license",
@@ -22,7 +22,7 @@ export interface FTFDocument extends CDEntity {
 
   entityOID: string; // linkage to the entity that owns this document
 
-  type: DocumentType;
+  type: FTFDocumentType;
   name: string;
   docIdentification: string;
 

@@ -23,11 +23,11 @@ export interface FTFDocument extends CDEntity {
   entityOID: string; // linkage to the entity that owns this document
 
   type: FTFDocumentType;
-  name: string;
-  docIdentification: string;
+  name: string | null;
+  docIdentification: string | null;
 
-  issuedDate: string;
-  expiryDate: string;
+  issuedDate: string | null;
+  expiryDate: string | null;
 
   files: NamedURL[] | null;
 

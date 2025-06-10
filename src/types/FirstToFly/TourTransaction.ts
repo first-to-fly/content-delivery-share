@@ -202,6 +202,10 @@ export interface TourTransactionTenantCurrencySnapshot {
     scheme: string;
     rate: number;
   } | null;
+  overwriteTaxConfig: {
+    scheme: string;
+    rate: number;
+  } | null;
 }
 
 export interface TourTransactionSnapshotData {
@@ -252,6 +256,10 @@ export interface FTFTourTransaction extends CDEntity {
   snapshot: TourTransactionSnapshotData | null;
   metadata: unknown | null;
   specialInstructions: string[] | null;
+  overwriteTax: {
+    scheme: string;
+    rate: number;
+  } | null;
 
   liveRoomCount: number;
   livePaxCount: number;

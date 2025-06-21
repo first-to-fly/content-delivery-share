@@ -236,6 +236,7 @@ export enum TourTransactionBookingStatus {
   COMPLETED = "completed",
   CANCELLED = "cancelled",
   VOIDED = "voided",
+  TRANSFERRED = "transferred",
 }
 
 export interface FTFTourTransaction extends CDEntity {

@@ -28,7 +28,7 @@ export interface FTFGroupTourProduct extends CDEntity {
   durationDays: number;
   durationNights: number;
 
-  departureDates: string[] | null;
+  proposedDepartureDates: string[] | null;
 
   validityStartDate: string;
   validityEndDate: string | null; // end indefinitely

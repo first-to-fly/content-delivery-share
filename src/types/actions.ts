@@ -7,6 +7,7 @@ import { FTFBudgetEntry } from "./FirstToFly/BudgetEntry";
 import { FTFCostingItem } from "./FirstToFly/CostingItem";
 import { FTFCostingTemplate } from "./FirstToFly/CostingTemplate";
 import { FTFDepartment } from "./FirstToFly/Department";
+import { FTFDeposit } from "./FirstToFly/Deposit";
 import { FTFDesignation } from "./FirstToFly/Designation";
 import { FTFDiscount } from "./FirstToFly/Discount";
 import { FTFDiscountTemplate } from "./FirstToFly/DiscountTemplate";
@@ -62,6 +63,7 @@ export type AllEntityField =
   | keyof FTFCostingItem
   | keyof FTFCostingTemplate
   | keyof FTFDepartment
+  | keyof FTFDeposit
   | keyof FTFDesignation
   | keyof FTFDocument
   | keyof FTFLocation

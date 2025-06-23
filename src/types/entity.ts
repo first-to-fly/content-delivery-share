@@ -16,6 +16,7 @@ export enum CDEntityType {
   FTF_DEPARTMENT = "ftf-department",
   FTF_DISCOUNT = "ftf-discount",
   FTF_DISCOUNT_TEMPLATE = "ftf-discountTemplate",
+  FTF_DEPOSIT = "ftf-deposit",
   FTF_TENANT = "ftf-tenant",
   FTF_PRIVACY_POLICY = "ftf-privacyPolicy",
   FTF_SECTOR = "ftf-sector",

@@ -43,7 +43,7 @@ export type FTFTransportSegmentDetails =
  * @extends {CDEntity}
  */
 export type FTFTransportSegment = CDEntity & {
-  transportGroupOID: string;
+  transportGroupOIDs: string[];
 
   originLocation: string;
   destinationLocation: string;

@@ -8,7 +8,7 @@ import { GeoPoint } from "./POI";
 import { RoomType, RuleOccupancy, RulePricingArrangement } from "./RoomConfigurationRule";
 import { TourTransactionAddonType } from "./TourTransactionAddon";
 import { TourTransactionDiscountMetadata, TourTransactionDiscountType } from "./TourTransactionDiscount";
-import { TourTransactionPaxType } from "./TourTransactionPax";
+import { TourTransactionPaxPersonalDetails, TourTransactionPaxType } from "./TourTransactionPax";
 import { TourTransactionRoomStatus } from "./TourTransactionRoom";
 import { TransportType } from "./TransportGroup";
 import { FTFTransportSegmentDetails } from "./TransportSegment";
@@ -239,6 +239,68 @@ export enum TourTransactionBookingStatus {
   TRANSFERRED = "transferred",
 }
 
+/**
+ * Base metadata structure for TourTransaction
+ * This provides a foundation that can be extended for specific use cases
+ */
+export interface BaseTourTransactionMetadata {
+  /**
+   * Primary customer/contact information
+   * This is required for all tour transactions
+   */
+  customer: TourTransactionPaxPersonalDetails;
+
+}
+
+/**
+ * Transfer-specific metadata fields
+ * Used when a tour transaction is involved in a transfer process
+ */
+export interface TransferMetadata {
+  // === Original Transaction (being transferred FROM) ===
+  /** Array of new TourTransaction OIDs that this booking was transferred to */
+  transferredTo?: string[];
+  /** Array of TourTransaction OIDs currently being transferred (in-progress) */
+  transferringOIDs?: string[];
+  /** Date when the transfer process started */
+  transferStartDate?: string;
+  /** User OID who initiated the transfer */
+  transferredBy?: string;
+  /** Passengers being transferred with their target destinations */
+  transferPassengers?: Array<{
+    oid?: string;
+    name: string;
+    targetTourDepartureOID: string;
+  }>;
+
+  // === New Transaction (created FROM transfer) ===
+  /** Original TourTransaction OID that this booking was transferred from */
+  transferredFrom?: string;
+  /** Booking reference of the original transaction */
+  transferredFromBookingNumber?: string;
+  /** Date when the transfer was completed */
+  transferDate?: string;
+  /** Name/identifier of the person who approved the transfer */
+  transferApprovedBy?: string;
+  /** Mapping of original passenger OIDs to new passenger OIDs */
+  passengerMapping?: {
+    [originalPaxOID: string]: string; // Maps to new pax OID
+  };
+
+  // NOTE: Payment transfer data is stored in TourTransactionTransfer entities
+  // and can be queried by tourTransactionOID - no need to duplicate references here
+}
+
+/**
+ * Complete TourTransaction metadata structure
+ * Combines base metadata with optional transfer metadata
+ */
+export interface TourTransactionMetadata extends BaseTourTransactionMetadata, Partial<TransferMetadata> {
+  // This interface combines both base and transfer metadata
+  // Transfer fields are optional since not all transactions involve transfers
+}
+
+
 export interface FTFTourTransaction extends CDEntity {
 
   tenantOID: string;
@@ -255,7 +317,7 @@ export interface FTFTourTransaction extends CDEntity {
   totalAmount: number;
   receivedAmount: number;
   snapshot: TourTransactionSnapshotData | null;
-  metadata: unknown | null;
+  metadata: TourTransactionMetadata | null;
   specialInstructions: string[] | null;
   overwriteTax: {
     scheme: string;

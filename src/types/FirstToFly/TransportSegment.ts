@@ -129,9 +129,10 @@ export type FTFTransportSegment = CDEntity & {
   destinationLocation: string;
   originTimezone: string;
   destinationTimezone: string;
-  departureDateTime: string;
-  arrivalDateTime: string;
 
+  // Actual mode fields
+  departureDateTime: string | null;
+  arrivalDateTime: string | null;
   seatCapacity: number | null;
 
   // Planning mode fields

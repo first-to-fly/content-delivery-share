@@ -134,6 +134,11 @@ export type FTFTransportSegment = CDEntity & {
 
   seatCapacity: number | null;
 
+  // Planning mode fields
+  isPlanning: boolean;
+  plannedDepartureTime: string | null; // Time in "HH:MM" format
+  plannedArrivalTime: string | null; // Time in "HH:MM" format
+
   tenantOID: string;
 
   createdAt: string;

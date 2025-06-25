@@ -2,10 +2,90 @@ import { CDEntity } from "../entity";
 import { TransportType } from "./TransportGroup";
 
 
+export enum FlightStatus {
+  SCHEDULED = "scheduled",
+  ACTIVE = "active",
+  LANDED = "landed",
+  CANCELLED = "cancelled",
+  INCIDENT = "incident",
+  DIVERTED = "diverted",
+}
+
+export interface FlightInfo {
+  flightDate: string;
+  flightStatus: FlightStatus;
+  departure: {
+    airport: string;
+    timezone: string;
+    iata: string;
+    icao: string;
+    terminal: string | null;
+    gate: string | null;
+    delay: number | null;
+    scheduled: string;
+    estimated: string;
+    actual: string | null;
+    estimatedRunway: string | null;
+    actualRunway: string | null;
+  };
+  arrival: {
+    airport: string;
+    timezone: string;
+    iata: string;
+    icao: string;
+    terminal: string | null;
+    gate: string | null;
+    baggage: string | null;
+    delay: number | null;
+    scheduled: string;
+    estimated: string;
+    actual: string | null;
+    estimatedRunway: string | null;
+    actualRunway: string | null;
+  };
+  airline: {
+    name: string;
+    iata: string;
+    icao: string;
+  };
+  flight: {
+    number: string;
+    iata: string;
+    icao: string;
+    codeshared: {
+      airlineName: string;
+      airlineIata: string;
+      airlineIcao: string;
+      flightNumber: string;
+      flightIata: string;
+      flightIcao: string;
+    } | null;
+  };
+  aircraft: {
+    registration: string | null;
+    iata: string | null;
+    icao: string | null;
+    icao24: string | null;
+  } | null;
+  live: {
+    updated: string | null;
+    latitude: number | null;
+    longitude: number | null;
+    altitude: number | null;
+    direction: number | null;
+    speedHorizontal: number | null;
+    speedVertical: number | null;
+    isGround: boolean | null;
+  } | null;
+}
+
+
 export interface FTFTransportSegmentFlightDetails {
-  airline: string;
   flightNumber: string;
   class: string;
+  departureDate: string;
+  flightInfo?: FlightInfo;
+  flightInfoUpdatedAt?: string;
 }
 
 export interface FTFTransportSegmentBusDetails {
@@ -47,10 +127,17 @@ export type FTFTransportSegment = CDEntity & {
 
   originLocation: string;
   destinationLocation: string;
+  originTimezone: string;
+  destinationTimezone: string;
   departureDateTime: string;
   arrivalDateTime: string;
 
   seatCapacity: number | null;
+
+  // Planning mode fields
+  isPlanning: boolean;
+  plannedDepartureTime: string | null; // Time in "HH:MM" format
+  plannedArrivalTime: string | null; // Time in "HH:MM" format
 
   tenantOID: string;
 

@@ -47,6 +47,7 @@ import { FTFTourTransactionPax } from "./FirstToFly/TourTransactionPax";
 import { FTFTourTransactionRoom } from "./FirstToFly/TourTransactionRoom";
 import { FTFTourTransactionTransfer } from "./FirstToFly/TourTransactionTransfer";
 import { FTFTransportGroup } from "./FirstToFly/TransportGroup";
+import { FTFTransportPlan } from "./FirstToFly/TransportPlan";
 import { FTFTransportSegment } from "./FirstToFly/TransportSegment";
 import { FTFUsefulInfo } from "./FirstToFly/UsefulInfo";
 import { FTFUser } from "./FirstToFly/User";
@@ -83,6 +84,7 @@ export type AllEntityField =
   | keyof FTFGroupTourPNLSimulation
   | keyof FTFTransportGroup
   | keyof FTFTransportSegment
+  | keyof FTFTransportPlan
   | keyof FTFProductType
   | keyof FTFReferenceCode
   | keyof FTFRoomConfiguration

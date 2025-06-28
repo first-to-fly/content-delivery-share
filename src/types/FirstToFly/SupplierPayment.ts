@@ -2,7 +2,7 @@ import { CDEntity } from "../entity";
 
 
 export interface FTFSupplierPayment extends CDEntity {
-  supplierId: string;
+  supplierOID: string;
   paymentType: string;
   accountName?: string;
   accountNumber?: string;

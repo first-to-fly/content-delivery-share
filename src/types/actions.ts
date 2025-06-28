@@ -34,8 +34,10 @@ import { FTFSector } from "./FirstToFly/Sector";
 import { FTFSectorGroup } from "./FirstToFly/SectorGroup";
 import { FTFSpecialInstruction } from "./FirstToFly/SpecialInstruction";
 import { FTFStationCode } from "./FirstToFly/StationCode";
-import { FTFSupplierContract } from "./FirstToFly/SupplierContract";
-import { FTFSupplierProfile } from "./FirstToFly/SupplierProfile";
+import { FTFSupplier } from "./FirstToFly/Supplier";
+import { FTFSupplierAddress } from "./FirstToFly/SupplierAddress";
+import { FTFSupplierPayment } from "./FirstToFly/SupplierPayment";
+import { FTFSupplierPerson } from "./FirstToFly/SupplierPerson";
 import { FTFTenant } from "./FirstToFly/Tenant";
 import { FTFTerm } from "./FirstToFly/Term";
 import { FTFTermCondition } from "./FirstToFly/TermCondition";
@@ -101,8 +103,12 @@ export type AllEntityField =
   | keyof FTFUser
   | keyof FTFAssembleLocationAirlines
   | keyof FTFUsefulInfo
-  | keyof FTFSupplierProfile
-  | keyof FTFSupplierContract
+
+  | keyof FTFSupplier
+  | keyof FTFSupplierAddress
+  | keyof FTFSupplierPayment
+  | keyof FTFSupplierPerson
+
   | keyof FTFTourDeparture
   | keyof FTFTourTransaction
   | keyof FTFTourTransactionRoom

@@ -1,5 +1,6 @@
 import { CDEntity } from "../entity";
 
+
 export interface FTFSupplierPerson extends CDEntity {
   supplierId: string;
   firstName: string;

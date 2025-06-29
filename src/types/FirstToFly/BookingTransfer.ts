@@ -2,7 +2,7 @@ import type { CDBaseEntity } from "../entity"; // Corrected import
 import type { NamedURL } from "../url";
 
 
-export enum TourTransactionTransferType {
+export enum BookingTransferType {
   PAYMENT_RECEIVED = "payment_received",
   REFUND_ISSUED = "refund_issued",
   BOOKING_CREDIT = "booking_credit",
@@ -19,12 +19,12 @@ export enum PaymentMethod {
   OTHER = "other",
 }
 
-export interface FTFTourTransactionTransfer extends CDBaseEntity {
+export interface FTFBookingTransfer extends CDBaseEntity {
 
   tenantOID: string;
-  tourTransactionOID: string;
+  bookingOID: string;
 
-  transferType: TourTransactionTransferType;
+  transferType: BookingTransferType;
   amount: number;
   currencyCode: string;
   paymentMethod: PaymentMethod | null;

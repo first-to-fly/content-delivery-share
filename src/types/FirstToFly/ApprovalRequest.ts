@@ -1,6 +1,6 @@
 import { CDEntity } from "../entity";
 import { DiscountMode } from "./Discount";
-import { FTFTourTransactionPax, TourTransactionPaxType } from "./TourTransactionPax";
+import { FTFBookingPax, BookingPaxType } from "./BookingPax";
 
 
 export enum ApprovalRequestStatus {
@@ -22,7 +22,7 @@ export interface ApprovalRequestEmptyPayload {
   type: ApprovalRequestType.EMPTY;
 }
 
-export interface ApprovalRequestTourTransactionSpecialDiscountPayload {
+export interface ApprovalRequestBookingSpecialDiscountPayload {
   type: ApprovalRequestType.TOUR_TRANSACTION_SPECIAL_DISCOUNT;
   discountName: string;
   discountValue: number;
@@ -34,7 +34,7 @@ export interface ApprovalRequestBudgetApprovalPayload {
   type: ApprovalRequestType.BUDGET_APPROVAL;
 }
 
-export interface ApprovalRequestTourTransactionBookingTransferPayload {
+export interface ApprovalRequestBookingTransferPayload {
   type: ApprovalRequestType.TOUR_TRANSACTION_BOOKING_TRANSFER;
   originalTourTransactionOID: string;
   transferItems: Array<{
@@ -43,8 +43,8 @@ export interface ApprovalRequestTourTransactionBookingTransferPayload {
       oid: string;
       firstName: string;
       lastName: string;
-      paxType: TourTransactionPaxType;
-      personalDetails: FTFTourTransactionPax["personalDetails"];
+      paxType: BookingPaxType;
+      personalDetails: FTFBookingPax["personalDetails"];
     }>;
     rooms: Array<{
       roomType: string;
@@ -55,7 +55,7 @@ export interface ApprovalRequestTourTransactionBookingTransferPayload {
       infantsCount: number;
       passengerAssignments: Array<{
         passengerOID: string;
-        paxType: TourTransactionPaxType;
+        paxType: BookingPaxType;
       }>;
     }>;
     addons: Array<{
@@ -101,8 +101,8 @@ export interface ApprovalRequestTourTransactionBookingTransferPayload {
 }
 
 export type ApprovalRequestPayload =
-  ApprovalRequestTourTransactionSpecialDiscountPayload | ApprovalRequestBudgetApprovalPayload |
-  ApprovalRequestEmptyPayload | ApprovalRequestTourTransactionBookingTransferPayload;
+  ApprovalRequestBookingSpecialDiscountPayload | ApprovalRequestBudgetApprovalPayload |
+  ApprovalRequestEmptyPayload | ApprovalRequestBookingTransferPayload;
 
 
 /**

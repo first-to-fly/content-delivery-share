@@ -42,12 +42,12 @@ import { FTFTenant } from "./FirstToFly/Tenant";
 import { FTFTerm } from "./FirstToFly/Term";
 import { FTFTermCondition } from "./FirstToFly/TermCondition";
 import { FTFTourDeparture } from "./FirstToFly/TourDeparture";
-import { FTFTourTransaction } from "./FirstToFly/TourTransaction";
-import { FTFTourTransactionAddon } from "./FirstToFly/TourTransactionAddon";
-import { FTFTourTransactionDiscount } from "./FirstToFly/TourTransactionDiscount";
-import { FTFTourTransactionPax } from "./FirstToFly/TourTransactionPax";
-import { FTFTourTransactionRoom } from "./FirstToFly/TourTransactionRoom";
-import { FTFTourTransactionTransfer } from "./FirstToFly/TourTransactionTransfer";
+import { FTFBooking } from "./FirstToFly/Booking";
+import { FTFBookingAddon } from "./FirstToFly/BookingAddon";
+import { FTFBookingDiscount } from "./FirstToFly/BookingDiscount";
+import { FTFBookingPax } from "./FirstToFly/BookingPax";
+import { FTFBookingRoom } from "./FirstToFly/BookingRoom";
+import { FTFBookingTransfer } from "./FirstToFly/BookingTransfer";
 import { FTFTransportGroup } from "./FirstToFly/TransportGroup";
 import { FTFTransportPlan } from "./FirstToFly/TransportPlan";
 import { FTFTransportSegment } from "./FirstToFly/TransportSegment";
@@ -110,12 +110,12 @@ export type AllEntityField =
   | keyof FTFSupplierPerson
 
   | keyof FTFTourDeparture
-  | keyof FTFTourTransaction
-  | keyof FTFTourTransactionRoom
-  | keyof FTFTourTransactionPax
-  | keyof FTFTourTransactionTransfer
-  | keyof FTFTourTransactionAddon
-  | keyof FTFTourTransactionDiscount;
+  | keyof FTFBooking
+  | keyof FTFBookingRoom
+  | keyof FTFBookingPax
+  | keyof FTFBookingTransfer
+  | keyof FTFBookingAddon
+  | keyof FTFBookingDiscount;
 
 export interface RequestIncludeOptions {
   includeKey?: string;

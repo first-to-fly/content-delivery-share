@@ -54,12 +54,12 @@ export enum CDEntityType {
   FTF_APPROVAL_REQUEST = "ftf-approvalRequest",
 
   // BOOKING
-  FTF_TOUR_TRANSACTION = "ftf-tourTransaction",
-  FTF_TOUR_TRANSACTION_ROOM = "ftf-tourTransactionRoom",
-  FTF_TOUR_TRANSACTION_PAX = "ftf-tourTransactionPax",
-  FTF_TOUR_TRANSACTION_TRANSFER = "ftf-tourTransactionTransfer",
-  FTF_TOUR_TRANSACTION_ADDON = "ftf-tourTransactionAddon",
-  FTF_TOUR_TRANSACTION_DISCOUNT = "ftf-tourTransactionDiscount",
+  FTF_BOOKING = "ftf-booking",
+  FTF_BOOKING_ROOM = "ftf-bookingRoom",
+  FTF_BOOKING_PAX = "ftf-bookingPax",
+  FTF_BOOKING_TRANSFER = "ftf-bookingTransfer",
+  FTF_BOOKING_ADDON = "ftf-bookingAddon",
+  FTF_BOOKING_DISCOUNT = "ftf-bookingDiscount",
 }
 
 

@@ -1,15 +1,15 @@
 import type { CDEntity } from "../entity";
 import { MultiLangRecord } from "../multipleLanguage";
+import { BookingAddonType } from "./BookingAddon";
+import { BookingDiscountMetadata, BookingDiscountType } from "./BookingDiscount";
+import { BookingPaxPersonalDetails, BookingPaxType } from "./BookingPax";
+import { BookingRoomStatus } from "./BookingRoom";
 import { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
 import { DiscountMode } from "./Discount";
 import { MealType } from "./GroupTourItineraryMeal";
 import { FTFGroupTourPricingEntry } from "./GroupTourPricing";
 import { GeoPoint } from "./POI";
 import { RoomType, RuleOccupancy, RulePricingArrangement } from "./RoomConfigurationRule";
-import { BookingAddonType } from "./BookingAddon";
-import { BookingDiscountMetadata, BookingDiscountType } from "./BookingDiscount";
-import { BookingPaxPersonalDetails, BookingPaxType } from "./BookingPax";
-import { BookingRoomStatus } from "./BookingRoom";
 import { TransportType } from "./TransportGroup";
 import { FTFTransportSegmentDetails } from "./TransportSegment";
 
@@ -246,7 +246,7 @@ export enum BookingBookingStatus {
 export interface BaseBookingMetadata {
   /**
    * Primary customer/contact information
-   * This is required for all tour transactions
+   * This is required for all bookings
    */
   customer: BookingPaxPersonalDetails;
 

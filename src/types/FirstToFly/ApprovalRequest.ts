@@ -1,6 +1,7 @@
 import { CDEntity } from "../entity";
+import { BookingAddonType } from "./BookingAddon";
+import { BookingPaxType, FTFBookingPax } from "./BookingPax";
 import { DiscountMode } from "./Discount";
-import { FTFBookingPax, BookingPaxType } from "./BookingPax";
 
 
 export enum ApprovalRequestStatus {
@@ -12,9 +13,9 @@ export enum ApprovalRequestStatus {
 
 export enum ApprovalRequestType {
   EMPTY = "empty",
-  TOUR_TRANSACTION_SPECIAL_DISCOUNT = "tour_transaction_special_discount",
+  BOOKING_SPECIAL_DISCOUNT = "booking_special_discount",
   BUDGET_APPROVAL = "budget_approval",
-  TOUR_TRANSACTION_BOOKING_TRANSFER = "tour_transaction_booking_transfer",
+  BOOKING_TRANSFER = "booking_transfer",
   // Add more request types as needed
 }
 
@@ -23,7 +24,7 @@ export interface ApprovalRequestEmptyPayload {
 }
 
 export interface ApprovalRequestBookingSpecialDiscountPayload {
-  type: ApprovalRequestType.TOUR_TRANSACTION_SPECIAL_DISCOUNT;
+  type: ApprovalRequestType.BOOKING_SPECIAL_DISCOUNT;
   discountName: string;
   discountValue: number;
   discountMode: DiscountMode;
@@ -35,10 +36,10 @@ export interface ApprovalRequestBudgetApprovalPayload {
 }
 
 export interface ApprovalRequestBookingTransferPayload {
-  type: ApprovalRequestType.TOUR_TRANSACTION_BOOKING_TRANSFER;
-  originalTourTransactionOID: string;
+  type: ApprovalRequestType.BOOKING_TRANSFER;
+  originalBookingOID: string;
   transferItems: Array<{
-    targetTourDepartureOID: string;
+    targetBookingOID: string;
     passengers: Array<{
       oid: string;
       firstName: string;
@@ -65,16 +66,16 @@ export interface ApprovalRequestBookingTransferPayload {
       quantity: number;
       tax?: number;
       totalPrice: number;
-      type?: string; // TourTransactionAddonType as string
+      type?: BookingAddonType;
       groupTourPricingOID?: string;
       groupTourCostingEntryOID?: string;
-      tourTransactionAddonOID?: string;
+      bookingAddonOID?: string;
       toBeRemoved?: boolean;
     }>;
     discounts: Array<{
       oid?: string;
       name: string;
-      type: string; // TourTransactionDiscountType as string
+      type?: string; // BookingDiscountType as string
       amount: number;
       discountMode: DiscountMode;
       code?: string;
@@ -82,7 +83,7 @@ export interface ApprovalRequestBookingTransferPayload {
       reason?: string;
       assigneeOID?: string;
       tourDepartureDiscountGroupIndex?: number;
-      tourTransactionDiscountOID?: string;
+      bookingDiscountOID?: string;
       approvalRequestOID?: string;
       toBeRemoved?: boolean;
     }>;

@@ -1,7 +1,7 @@
 import type { CDEntity } from "../entity";
 import { ApprovalRequestBookingSpecialDiscountPayload } from "./ApprovalRequest";
-import type { DiscountAmountType, DiscountBasePrice, DiscountBookingChannel, DiscountHowToApply, DiscountMechanics, DiscountMode, DiscountPaxType, DiscountSpecialDatesType, DiscountTimeslotType, DiscountType, DiscountWhichPax } from "./Discount";
 import { BookingPaxType } from "./BookingPax";
+import type { DiscountAmountType, DiscountBasePrice, DiscountBookingChannel, DiscountHowToApply, DiscountMechanics, DiscountMode, DiscountPaxType, DiscountSpecialDatesType, DiscountTimeslotType, DiscountType, DiscountWhichPax } from "./Discount";
 
 
 export enum BookingDiscountType {

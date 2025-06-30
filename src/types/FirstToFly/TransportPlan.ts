@@ -10,6 +10,8 @@ export type FTFTransportPlan = CDEntity & {
   name: string;
   description: string | null;
 
+  groupTourProductOID: string;
+
   transportSegmentOIDs: string[];
 
   tenantOID: string;

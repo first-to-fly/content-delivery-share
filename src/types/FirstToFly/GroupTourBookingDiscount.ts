@@ -1,17 +1,17 @@
 import type { CDEntity } from "../entity";
-import { ApprovalRequestBookingSpecialDiscountPayload } from "./ApprovalRequest";
-import { BookingPaxType } from "./BookingPax";
+import { ApprovalRequestGroupTourBookingSpecialDiscountPayload } from "./ApprovalRequest";
 import type { DiscountAmountType, DiscountBasePrice, DiscountBookingChannel, DiscountHowToApply, DiscountMechanics, DiscountMode, DiscountPaxType, DiscountSpecialDatesType, DiscountTimeslotType, DiscountType, DiscountWhichPax } from "./Discount";
+import { GroupTourBookingPaxType } from "./GroupTourBookingPax";
 
 
-export enum BookingDiscountType {
+export enum GroupTourBookingDiscountType {
   CODE_BASED = "code_based",
   TOUR_DEPARTURE_DISCOUNT = "tour_departure_discount",
   SPECIAL_REQUEST = "special_request",
 }
 
 export interface CodeBasedDiscountMetadata {
-  type: BookingDiscountType.CODE_BASED;
+  type: GroupTourBookingDiscountType.CODE_BASED;
   discountCodeItem: {
     oid: string;
     discountCode: string;
@@ -61,7 +61,7 @@ export interface CodeBasedDiscountMetadata {
 }
 
 export interface TourDepartureDiscountMetadata {
-  type: BookingDiscountType.TOUR_DEPARTURE_DISCOUNT;
+  type: GroupTourBookingDiscountType.TOUR_DEPARTURE_DISCOUNT;
   groupIndex: number;
   discountBreakdown: {
     totalDiscount: number,
@@ -69,7 +69,7 @@ export interface TourDepartureDiscountMetadata {
     groupName: string,
     paxBreakdown: {
       paxOID: string,
-      paxType: BookingPaxType,
+      paxType: GroupTourBookingPaxType,
       isAdult: boolean,
       positionInSequence: number,
       tierIndex: number,
@@ -87,27 +87,27 @@ export interface TourDepartureDiscountMetadata {
 }
 
 export interface SpecialRequestDiscountMetadata {
-  type: BookingDiscountType.SPECIAL_REQUEST;
+  type: GroupTourBookingDiscountType.SPECIAL_REQUEST;
   approvalRequestOID: string;
-  approvalRequestPayload: ApprovalRequestBookingSpecialDiscountPayload;
+  approvalRequestPayload: ApprovalRequestGroupTourBookingSpecialDiscountPayload;
   approvalNote?: string;
 }
 
-export type BookingDiscountMetadata =
+export type GroupTourBookingDiscountMetadata =
   CodeBasedDiscountMetadata | TourDepartureDiscountMetadata | SpecialRequestDiscountMetadata;
 
 
-export interface FTFBookingDiscount extends CDEntity {
+export interface FTFGroupTourBookingDiscount extends CDEntity {
   tenantOID: string;
   bookingOID: string;
-  discountType: BookingDiscountType;
+  discountType: GroupTourBookingDiscountType;
   discountOID: string | null;
   appliedDiscountCode: string | null;
   description: string;
   appliedAmount: number;
   discountMode: DiscountMode;
 
-  metadata: BookingDiscountMetadata | null;
+  metadata: GroupTourBookingDiscountMetadata | null;
 
   createdAt: string;
   updatedAt: string;

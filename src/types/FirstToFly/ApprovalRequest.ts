@@ -1,7 +1,7 @@
 import { CDEntity } from "../entity";
-import { BookingAddonType } from "./BookingAddon";
-import { BookingPaxType, FTFBookingPax } from "./BookingPax";
 import { DiscountMode } from "./Discount";
+import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
+import { FTFGroupTourBookingPax, GroupTourBookingPaxType } from "./GroupTourBookingPax";
 
 
 export enum ApprovalRequestStatus {
@@ -13,9 +13,9 @@ export enum ApprovalRequestStatus {
 
 export enum ApprovalRequestType {
   EMPTY = "empty",
-  BOOKING_SPECIAL_DISCOUNT = "booking_special_discount",
+  GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT = "group_tour_booking_special_discount",
   BUDGET_APPROVAL = "budget_approval",
-  BOOKING_TRANSFER = "booking_transfer",
+  GROUP_TOUR_BOOKING_TRANSFER = "group_tour_booking_transfer",
   // Add more request types as needed
 }
 
@@ -23,8 +23,8 @@ export interface ApprovalRequestEmptyPayload {
   type: ApprovalRequestType.EMPTY;
 }
 
-export interface ApprovalRequestBookingSpecialDiscountPayload {
-  type: ApprovalRequestType.BOOKING_SPECIAL_DISCOUNT;
+export interface ApprovalRequestGroupTourBookingSpecialDiscountPayload {
+  type: ApprovalRequestType.GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT;
   discountName: string;
   discountValue: number;
   discountMode: DiscountMode;
@@ -35,8 +35,8 @@ export interface ApprovalRequestBudgetApprovalPayload {
   type: ApprovalRequestType.BUDGET_APPROVAL;
 }
 
-export interface ApprovalRequestBookingTransferPayload {
-  type: ApprovalRequestType.BOOKING_TRANSFER;
+export interface ApprovalRequestGroupTourBookingTransferPayload {
+  type: ApprovalRequestType.GROUP_TOUR_BOOKING_TRANSFER;
   originalBookingOID: string;
   transferItems: Array<{
     targetBookingOID: string;
@@ -44,8 +44,8 @@ export interface ApprovalRequestBookingTransferPayload {
       oid: string;
       firstName: string;
       lastName: string;
-      paxType: BookingPaxType;
-      personalDetails: FTFBookingPax["personalDetails"];
+      paxType: GroupTourBookingPaxType;
+      personalDetails: FTFGroupTourBookingPax["personalDetails"];
     }>;
     rooms: Array<{
       roomType: string;
@@ -56,7 +56,7 @@ export interface ApprovalRequestBookingTransferPayload {
       infantsCount: number;
       passengerAssignments: Array<{
         passengerOID: string;
-        paxType: BookingPaxType;
+        paxType: GroupTourBookingPaxType;
       }>;
     }>;
     addons: Array<{
@@ -66,7 +66,7 @@ export interface ApprovalRequestBookingTransferPayload {
       quantity: number;
       tax?: number;
       totalPrice: number;
-      type?: BookingAddonType;
+      type?: GroupTourBookingAddonType;
       groupTourPricingOID?: string;
       groupTourCostingEntryOID?: string;
       bookingAddonOID?: string;
@@ -102,8 +102,8 @@ export interface ApprovalRequestBookingTransferPayload {
 }
 
 export type ApprovalRequestPayload =
-  ApprovalRequestBookingSpecialDiscountPayload | ApprovalRequestBudgetApprovalPayload |
-  ApprovalRequestEmptyPayload | ApprovalRequestBookingTransferPayload;
+  ApprovalRequestGroupTourBookingSpecialDiscountPayload | ApprovalRequestBudgetApprovalPayload |
+  ApprovalRequestEmptyPayload | ApprovalRequestGroupTourBookingTransferPayload;
 
 
 /**

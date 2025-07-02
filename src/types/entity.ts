@@ -60,6 +60,9 @@ export enum CDEntityType {
   FTF_TOUR_TRANSACTION_TRANSFER = "ftf-tourTransactionTransfer",
   FTF_TOUR_TRANSACTION_ADDON = "ftf-tourTransactionAddon",
   FTF_TOUR_TRANSACTION_DISCOUNT = "ftf-tourTransactionDiscount",
+
+  // USER MESSAGES
+  FTF_USER_MESSAGE = "ftf-userMessage",
 }
 
 

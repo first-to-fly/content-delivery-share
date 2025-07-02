@@ -287,7 +287,7 @@ export interface TransferMetadata {
     [originalPaxOID: string]: string; // Maps to new pax OID
   };
 
-  // NOTE: Payment transfer data is stored in GroupTourBookingTransfer entities
+  // NOTE: Payment data is now stored in PaymentOrder and Transaction entities
   // and can be queried by bookingOID - no need to duplicate references here
 }
 

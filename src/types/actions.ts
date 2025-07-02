@@ -12,6 +12,12 @@ import { FTFDesignation } from "./FirstToFly/Designation";
 import { FTFDiscount } from "./FirstToFly/Discount";
 import { FTFDiscountTemplate } from "./FirstToFly/DiscountTemplate";
 import { FTFDocument } from "./FirstToFly/Document";
+import { FTFGroupTourBooking } from "./FirstToFly/GroupTourBooking";
+import { FTFGroupTourBookingAddon } from "./FirstToFly/GroupTourBookingAddon";
+import { FTFGroupTourBookingDiscount } from "./FirstToFly/GroupTourBookingDiscount";
+import { FTFGroupTourBookingPax } from "./FirstToFly/GroupTourBookingPax";
+import { FTFGroupTourBookingRoom } from "./FirstToFly/GroupTourBookingRoom";
+import { FTFGroupTourBookingTransfer } from "./FirstToFly/GroupTourBookingTransfer";
 import { FTFGroupTourCosting } from "./FirstToFly/GroupTourCosting";
 import { FTFGroupTourCostingEntry } from "./FirstToFly/GroupTourCostingEntry";
 import { FTFGroupTourItinerary } from "./FirstToFly/GroupTourItinerary";
@@ -42,12 +48,6 @@ import { FTFTenant } from "./FirstToFly/Tenant";
 import { FTFTerm } from "./FirstToFly/Term";
 import { FTFTermCondition } from "./FirstToFly/TermCondition";
 import { FTFTourDeparture } from "./FirstToFly/TourDeparture";
-import { FTFTourTransaction } from "./FirstToFly/TourTransaction";
-import { FTFTourTransactionAddon } from "./FirstToFly/TourTransactionAddon";
-import { FTFTourTransactionDiscount } from "./FirstToFly/TourTransactionDiscount";
-import { FTFTourTransactionPax } from "./FirstToFly/TourTransactionPax";
-import { FTFTourTransactionRoom } from "./FirstToFly/TourTransactionRoom";
-import { FTFTourTransactionTransfer } from "./FirstToFly/TourTransactionTransfer";
 import { FTFTransportGroup } from "./FirstToFly/TransportGroup";
 import { FTFTransportPlan } from "./FirstToFly/TransportPlan";
 import { FTFTransportSegment } from "./FirstToFly/TransportSegment";
@@ -110,12 +110,12 @@ export type AllEntityField =
   | keyof FTFSupplierPerson
 
   | keyof FTFTourDeparture
-  | keyof FTFTourTransaction
-  | keyof FTFTourTransactionRoom
-  | keyof FTFTourTransactionPax
-  | keyof FTFTourTransactionTransfer
-  | keyof FTFTourTransactionAddon
-  | keyof FTFTourTransactionDiscount;
+  | keyof FTFGroupTourBooking
+  | keyof FTFGroupTourBookingRoom
+  | keyof FTFGroupTourBookingPax
+  | keyof FTFGroupTourBookingTransfer
+  | keyof FTFGroupTourBookingAddon
+  | keyof FTFGroupTourBookingDiscount;
 
 export interface RequestIncludeOptions {
   includeKey?: string;

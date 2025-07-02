@@ -1,6 +1,7 @@
 import { CDEntity } from "../entity";
 import { DiscountMode } from "./Discount";
-import { FTFTourTransactionPax, TourTransactionPaxType } from "./TourTransactionPax";
+import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
+import { FTFGroupTourBookingPax, GroupTourBookingPaxType } from "./GroupTourBookingPax";
 
 
 export enum ApprovalRequestStatus {
@@ -12,9 +13,9 @@ export enum ApprovalRequestStatus {
 
 export enum ApprovalRequestType {
   EMPTY = "empty",
-  TOUR_TRANSACTION_SPECIAL_DISCOUNT = "tour_transaction_special_discount",
+  GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT = "group_tour_booking_special_discount",
   BUDGET_APPROVAL = "budget_approval",
-  TOUR_TRANSACTION_BOOKING_TRANSFER = "tour_transaction_booking_transfer",
+  GROUP_TOUR_BOOKING_TRANSFER = "group_tour_booking_transfer",
   // Add more request types as needed
 }
 
@@ -22,8 +23,8 @@ export interface ApprovalRequestEmptyPayload {
   type: ApprovalRequestType.EMPTY;
 }
 
-export interface ApprovalRequestTourTransactionSpecialDiscountPayload {
-  type: ApprovalRequestType.TOUR_TRANSACTION_SPECIAL_DISCOUNT;
+export interface ApprovalRequestGroupTourBookingSpecialDiscountPayload {
+  type: ApprovalRequestType.GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT;
   discountName: string;
   discountValue: number;
   discountMode: DiscountMode;
@@ -34,17 +35,17 @@ export interface ApprovalRequestBudgetApprovalPayload {
   type: ApprovalRequestType.BUDGET_APPROVAL;
 }
 
-export interface ApprovalRequestTourTransactionBookingTransferPayload {
-  type: ApprovalRequestType.TOUR_TRANSACTION_BOOKING_TRANSFER;
-  originalTourTransactionOID: string;
+export interface ApprovalRequestGroupTourBookingTransferPayload {
+  type: ApprovalRequestType.GROUP_TOUR_BOOKING_TRANSFER;
+  originalBookingOID: string;
   transferItems: Array<{
-    targetTourDepartureOID: string;
+    targetBookingOID: string;
     passengers: Array<{
       oid: string;
       firstName: string;
       lastName: string;
-      paxType: TourTransactionPaxType;
-      personalDetails: FTFTourTransactionPax["personalDetails"];
+      paxType: GroupTourBookingPaxType;
+      personalDetails: FTFGroupTourBookingPax["personalDetails"];
     }>;
     rooms: Array<{
       roomType: string;
@@ -55,7 +56,7 @@ export interface ApprovalRequestTourTransactionBookingTransferPayload {
       infantsCount: number;
       passengerAssignments: Array<{
         passengerOID: string;
-        paxType: TourTransactionPaxType;
+        paxType: GroupTourBookingPaxType;
       }>;
     }>;
     addons: Array<{
@@ -65,16 +66,16 @@ export interface ApprovalRequestTourTransactionBookingTransferPayload {
       quantity: number;
       tax?: number;
       totalPrice: number;
-      type?: string; // TourTransactionAddonType as string
+      type?: GroupTourBookingAddonType;
       groupTourPricingOID?: string;
       groupTourCostingEntryOID?: string;
-      tourTransactionAddonOID?: string;
+      bookingAddonOID?: string;
       toBeRemoved?: boolean;
     }>;
     discounts: Array<{
       oid?: string;
       name: string;
-      type: string; // TourTransactionDiscountType as string
+      type?: string; // BookingDiscountType as string
       amount: number;
       discountMode: DiscountMode;
       code?: string;
@@ -82,7 +83,7 @@ export interface ApprovalRequestTourTransactionBookingTransferPayload {
       reason?: string;
       assigneeOID?: string;
       tourDepartureDiscountGroupIndex?: number;
-      tourTransactionDiscountOID?: string;
+      bookingDiscountOID?: string;
       approvalRequestOID?: string;
       toBeRemoved?: boolean;
     }>;
@@ -101,8 +102,8 @@ export interface ApprovalRequestTourTransactionBookingTransferPayload {
 }
 
 export type ApprovalRequestPayload =
-  ApprovalRequestTourTransactionSpecialDiscountPayload | ApprovalRequestBudgetApprovalPayload |
-  ApprovalRequestEmptyPayload | ApprovalRequestTourTransactionBookingTransferPayload;
+  ApprovalRequestGroupTourBookingSpecialDiscountPayload | ApprovalRequestBudgetApprovalPayload |
+  ApprovalRequestEmptyPayload | ApprovalRequestGroupTourBookingTransferPayload;
 
 
 /**

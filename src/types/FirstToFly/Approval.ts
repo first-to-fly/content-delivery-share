@@ -3,7 +3,7 @@ import { CDEntity } from "../entity";
 
 export enum ApprovalRequestStatus {
   PENDING = "pending",
-  APPROVED = "approved", 
+  APPROVED = "approved",
   REJECTED = "rejected",
   CANCELLED = "cancelled",
 }
@@ -15,7 +15,7 @@ export enum ApprovalRequestType {
   GROUP_TOUR_BOOKING_TRANSFER = "group_tour_booking_transfer",
 }
 
-export interface CDApproval extends CDEntity {
+export interface FTFApproval extends CDEntity {
   approvalId: string;
   tenantId: string;
   name: string;
@@ -33,7 +33,7 @@ export interface CDApproval extends CDEntity {
   deletedAt?: string;
 }
 
-export interface CDApprovalRequestV2 extends CDEntity {
+export interface FTFApprovalRequestV2 extends CDEntity {
   requestId: string;
   approvalId: string;
   targetEntityOid: string;

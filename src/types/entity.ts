@@ -55,10 +55,6 @@ export enum CDEntityType {
   FTF_APPROVAL = "ftf-approval",
   FTF_APPROVAL_REQUEST_V2 = "ftf-approvalRequestV2",
 
-  // NEW APPROVAL MANAGEMENT SYSTEM
-  FTF_APPROVAL = "ftf-approval",
-  FTF_APPROVAL_REQUEST_V2 = "ftf-approvalRequestV2",
-
   // GROUP TOUR BOOKING
   FTF_GROUP_TOUR_BOOKING = "ftf-groupTourBooking",
   FTF_GROUP_TOUR_BOOKING_ROOM = "ftf-groupTourBookingRoom",

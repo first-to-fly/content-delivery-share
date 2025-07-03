@@ -17,6 +17,7 @@ export interface FTFPaymentOrder extends CDBaseEntity {
   minPaymentPrice: number;
   currencyCode: string;
   status: PaymentOrderStatus;
+  transactionOIDs: string[]; // Array of Transaction OIDs
 
   createdAt: string; // ISO Date string
   updatedAt: string; // ISO Date string

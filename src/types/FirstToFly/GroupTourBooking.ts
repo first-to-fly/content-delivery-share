@@ -325,6 +325,7 @@ export interface FTFGroupTourBooking extends CDEntity {
   } | null;
 
   transactionOIDs: string[] | null;
+  paymentOrderOID: string | null;
 
   liveRoomCount: number;
   livePaxCount: number;

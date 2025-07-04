@@ -2,19 +2,19 @@ import type { CDEntity } from "../entity";
 import { MultiLangRecord } from "../multipleLanguage";
 import { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
 import { DiscountMode } from "./Discount";
+import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
+import { GroupTourBookingDiscountMetadata, GroupTourBookingDiscountType } from "./GroupTourBookingDiscount";
+import { GroupTourBookingPaxPersonalDetails, GroupTourBookingPaxType } from "./GroupTourBookingPax";
+import { GroupTourBookingRoomStatus } from "./GroupTourBookingRoom";
 import { MealType } from "./GroupTourItineraryMeal";
 import { FTFGroupTourPricingEntry } from "./GroupTourPricing";
 import { GeoPoint } from "./POI";
 import { RoomType, RuleOccupancy, RulePricingArrangement } from "./RoomConfigurationRule";
-import { TourTransactionAddonType } from "./TourTransactionAddon";
-import { TourTransactionDiscountMetadata, TourTransactionDiscountType } from "./TourTransactionDiscount";
-import { TourTransactionPaxPersonalDetails, TourTransactionPaxType } from "./TourTransactionPax";
-import { TourTransactionRoomStatus } from "./TourTransactionRoom";
 import { TransportType } from "./TransportGroup";
 import { FTFTransportSegmentDetails } from "./TransportSegment";
 
 // --- Snapshot Data Structure Interface ---
-export interface TourTransactionRoomConfigurationRuleSnapshot {
+export interface GroupTourBookingRoomConfigurationRuleSnapshot {
   oid: string;
   roomType: RoomType;
   occupancy: RuleOccupancy;
@@ -23,38 +23,38 @@ export interface TourTransactionRoomConfigurationRuleSnapshot {
   isTcp: boolean;
 }
 
-export interface TourTransactionBookedRoomSnapshot {
+export interface GroupTourBookingBookedRoomSnapshot {
   oid: string;
-  roomConfigurationRuleDetail?: TourTransactionRoomConfigurationRuleSnapshot;
-  paxes: TourTransactionPaxSnapshot[];
+  roomConfigurationRuleDetail?: GroupTourBookingRoomConfigurationRuleSnapshot;
+  paxes: GroupTourBookingPaxSnapshot[];
   roomNumber?: string;
   isDbl?: boolean;
-  status: TourTransactionRoomStatus;
+  status: GroupTourBookingRoomStatus;
   notes?: string;
 }
 
-export interface TourTransactionPaxSnapshot {
+export interface GroupTourBookingPaxSnapshot {
   oid: string;
-  type: TourTransactionPaxType;
+  type: GroupTourBookingPaxType;
   isLandTourOnly: boolean;
   mealPreference?: string;
   transportRecordOID?: string;
 }
 
-export interface TourTransactionAppliedDiscountSnapshot {
+export interface GroupTourBookingAppliedDiscountSnapshot {
   oid: string;
-  discountType: TourTransactionDiscountType;
+  discountType: GroupTourBookingDiscountType;
   appliedDiscountCode?: string;
   description?: string;
   appliedAmount: number;
   discountMode: DiscountMode;
-  metadata?: TourTransactionDiscountMetadata;
+  metadata?: GroupTourBookingDiscountMetadata;
   snapshotCreatedAt: string;
 }
 
-export interface TourTransactionAppliedAddonSnapshot {
+export interface GroupTourBookingAppliedAddonSnapshot {
   oid: string;
-  type: TourTransactionAddonType;
+  type: GroupTourBookingAddonType;
   name: string;
   unitPrice: number;
   quantity: number;
@@ -63,7 +63,7 @@ export interface TourTransactionAppliedAddonSnapshot {
   snapshotCreatedAt: string;
 }
 
-export interface TourTransactionCostingSnapshot {
+export interface GroupTourBookingCostingSnapshot {
   oid: string;
   name: string;
   code: string;
@@ -106,7 +106,7 @@ export interface TourTransactionCostingSnapshot {
   }[];
 }
 
-export interface TourTransactionPricingSnapshot {
+export interface GroupTourBookingPricingSnapshot {
   oid: string;
   name: string;
   code: string;
@@ -139,34 +139,34 @@ export interface TourTransactionPricingSnapshot {
   groupTourPricingEntries: FTFGroupTourPricingEntry[];
 }
 
-export interface TourTransactionItineraryDaySnapshot {
+export interface GroupTourBookingItineraryDaySnapshot {
   oid: string;
   dayNumber: number;
   title: MultiLangRecord<string>;
   description: MultiLangRecord<string>;
 
-  meals: TourTransactionItineraryMealSnapshot[];
-  events: TourTransactionItineraryEventSnapshot[];
+  meals: GroupTourBookingItineraryMealSnapshot[];
+  events: GroupTourBookingItineraryEventSnapshot[];
 }
 
-export interface TourTransactionItineraryMealSnapshot {
+export interface GroupTourBookingItineraryMealSnapshot {
   oid: string;
   type: MealType;
   title: MultiLangRecord<string>;
   description: MultiLangRecord<string>;
   provided: boolean;
   onBoard: boolean;
-  poi?: TourTransactionPOISnapshot;
+  poi?: GroupTourBookingPOISnapshot;
 }
 
-export interface TourTransactionItineraryEventSnapshot {
+export interface GroupTourBookingItineraryEventSnapshot {
   oid: string;
   title: MultiLangRecord<string>;
   description: MultiLangRecord<string>;
-  poi?: TourTransactionPOISnapshot;
+  poi?: GroupTourBookingPOISnapshot;
 }
 
-export interface TourTransactionPOISnapshot {
+export interface GroupTourBookingPOISnapshot {
   oid: string;
   name: string;
   address: string;
@@ -176,13 +176,13 @@ export interface TourTransactionPOISnapshot {
   additionalInfo?: Record<string, unknown>;
 }
 
-export interface TourTransactionItinerarySnapshot {
+export interface GroupTourBookingItinerarySnapshot {
   oid: string;
   name: string;
-  groupTourItineraryDays?: TourTransactionItineraryDaySnapshot[];
+  groupTourItineraryDays?: GroupTourBookingItineraryDaySnapshot[];
 }
 
-export interface TourTransactionTransportSegmentSnapshot {
+export interface GroupTourBookingTransportSegmentSnapshot {
   oid: string;
   originLocation: string;
   destinationLocation: string;
@@ -192,7 +192,7 @@ export interface TourTransactionTransportSegmentSnapshot {
   details: FTFTransportSegmentDetails;
 }
 
-export interface TourTransactionTenantCurrencySnapshot {
+export interface GroupTourBookingTenantCurrencySnapshot {
   homeCurrency: string;
   supportedCurrencies: {
     currency: string;
@@ -208,28 +208,28 @@ export interface TourTransactionTenantCurrencySnapshot {
   } | null;
 }
 
-export interface TourTransactionSnapshotData {
-  productCostingSnapshot?: TourTransactionCostingSnapshot;
-  productPricingSnapshot?: TourTransactionPricingSnapshot;
-  itinerarySnapshot?: TourTransactionItinerarySnapshot;
-  transportSnapshot?: TourTransactionTransportSegmentSnapshot[];
-  bookedRoomsSnapshot: TourTransactionBookedRoomSnapshot[];
-  appliedDiscountsSnapshot: TourTransactionAppliedDiscountSnapshot[];
-  appliedAddonsSnapshot: TourTransactionAppliedAddonSnapshot[];
-  tenantCurrencySnapshot: TourTransactionTenantCurrencySnapshot;
+export interface GroupTourBookingSnapshotData {
+  productCostingSnapshot?: GroupTourBookingCostingSnapshot;
+  productPricingSnapshot?: GroupTourBookingPricingSnapshot;
+  itinerarySnapshot?: GroupTourBookingItinerarySnapshot;
+  transportSnapshot?: GroupTourBookingTransportSegmentSnapshot[];
+  bookedRoomsSnapshot: GroupTourBookingBookedRoomSnapshot[];
+  appliedDiscountsSnapshot: GroupTourBookingAppliedDiscountSnapshot[];
+  appliedAddonsSnapshot: GroupTourBookingAppliedAddonSnapshot[];
+  tenantCurrencySnapshot: GroupTourBookingTenantCurrencySnapshot;
   snapshotTimestamp: string;
   snapshotVersion: string;
 }
 
 // Enums redefined for content-delivery-share, or should be imported if a shared enum strategy exists
-export enum TourTransactionPaymentStatus {
+export enum GroupTourBookingPaymentStatus {
   UNPAID = "unpaid",
   PARTIAL_DEPOSIT = "partial_deposit",
   DEPOSIT_PAID = "deposit_paid",
   FULLY_PAID = "fully_paid",
 }
 
-export enum TourTransactionBookingStatus {
+export enum GroupTourBookingBookingStatus {
   IN_PROGRESS = "in_progress",
   UNPAID = "unpaid",
   DEPOSIT_PAID = "deposit_paid",
@@ -240,27 +240,27 @@ export enum TourTransactionBookingStatus {
 }
 
 /**
- * Base metadata structure for TourTransaction
+ * Base metadata structure for GroupTourBooking
  * This provides a foundation that can be extended for specific use cases
  */
-export interface BaseTourTransactionMetadata {
+export interface BaseGroupTourBookingMetadata {
   /**
    * Primary customer/contact information
-   * This is required for all tour transactions
+   * This is required for all bookings
    */
-  customer: TourTransactionPaxPersonalDetails;
+  customer: GroupTourBookingPaxPersonalDetails;
 
 }
 
 /**
  * Transfer-specific metadata fields
- * Used when a tour transaction is involved in a transfer process
+ * Used when a booking is involved in a transfer process
  */
 export interface TransferMetadata {
-  // === Original Transaction (being transferred FROM) ===
-  /** Array of new TourTransaction OIDs that this booking was transferred to */
+  // === Original GroupTourBooking (being transferred FROM) ===
+  /** Array of new GroupTourBooking OIDs that this booking was transferred to */
   transferredTo?: string[];
-  /** Array of TourTransaction OIDs currently being transferred (in-progress) */
+  /** Array of GroupTourBooking OIDs currently being transferred (in-progress) */
   transferringOIDs?: string[];
   /** Date when the transfer process started */
   transferStartDate?: string;
@@ -273,10 +273,10 @@ export interface TransferMetadata {
     targetTourDepartureOID: string;
   }>;
 
-  // === New Transaction (created FROM transfer) ===
-  /** Original TourTransaction OID that this booking was transferred from */
+  // === New GroupTourBooking (created FROM transfer) ===
+  /** Original GroupTourBooking OID that this booking was transferred from */
   transferredFrom?: string;
-  /** Booking reference of the original transaction */
+  /** GroupTourBooking reference of the original booking */
   transferredFromBookingNumber?: string;
   /** Date when the transfer was completed */
   transferDate?: string;
@@ -287,21 +287,21 @@ export interface TransferMetadata {
     [originalPaxOID: string]: string; // Maps to new pax OID
   };
 
-  // NOTE: Payment transfer data is stored in TourTransactionTransfer entities
-  // and can be queried by tourTransactionOID - no need to duplicate references here
+  // NOTE: Payment data is now stored in PaymentOrder and Transaction entities
+  // and can be queried by bookingOID - no need to duplicate references here
 }
 
 /**
- * Complete TourTransaction metadata structure
+ * Complete GroupTourBooking metadata structure
  * Combines base metadata with optional transfer metadata
  */
-export interface TourTransactionMetadata extends BaseTourTransactionMetadata, Partial<TransferMetadata> {
+export interface GroupTourBookingMetadata extends BaseGroupTourBookingMetadata, Partial<TransferMetadata> {
   // This interface combines both base and transfer metadata
-  // Transfer fields are optional since not all transactions involve transfers
+  // Transfer fields are optional since not all bookings involve transfers
 }
 
 
-export interface FTFTourTransaction extends CDEntity {
+export interface FTFGroupTourBooking extends CDEntity {
 
   tenantOID: string;
 
@@ -312,17 +312,20 @@ export interface FTFTourTransaction extends CDEntity {
   sectorOIDs: string[];
 
   bookingReference: string;
-  paymentStatus: TourTransactionPaymentStatus;
-  bookingStatus: TourTransactionBookingStatus;
+  paymentStatus: GroupTourBookingPaymentStatus;
+  bookingStatus: GroupTourBookingBookingStatus;
   totalAmount: number;
   receivedAmount: number;
-  snapshot: TourTransactionSnapshotData | null;
-  metadata: TourTransactionMetadata | null;
+  snapshot: GroupTourBookingSnapshotData | null;
+  metadata: GroupTourBookingMetadata | null;
   specialInstructions: string[] | null;
   overwriteTax: {
     scheme: string;
     rate: number;
   } | null;
+
+  transactionOIDs: string[] | null;
+  paymentOrderOID: string | null;
 
   liveRoomCount: number;
   livePaxCount: number;

@@ -53,13 +53,16 @@ export enum CDEntityType {
   FTF_TOUR_DEPARTURE = "ftf-tourDeparture",
   FTF_APPROVAL_REQUEST = "ftf-approvalRequest",
 
-  // BOOKING
-  FTF_TOUR_TRANSACTION = "ftf-tourTransaction",
-  FTF_TOUR_TRANSACTION_ROOM = "ftf-tourTransactionRoom",
-  FTF_TOUR_TRANSACTION_PAX = "ftf-tourTransactionPax",
-  FTF_TOUR_TRANSACTION_TRANSFER = "ftf-tourTransactionTransfer",
-  FTF_TOUR_TRANSACTION_ADDON = "ftf-tourTransactionAddon",
-  FTF_TOUR_TRANSACTION_DISCOUNT = "ftf-tourTransactionDiscount",
+  // GROUP TOUR BOOKING
+  FTF_GROUP_TOUR_BOOKING = "ftf-groupTourBooking",
+  FTF_GROUP_TOUR_BOOKING_ROOM = "ftf-groupTourBookingRoom",
+  FTF_GROUP_TOUR_BOOKING_PAX = "ftf-groupTourBookingPax",
+  FTF_GROUP_TOUR_BOOKING_ADDON = "ftf-groupTourBookingAddon",
+  FTF_GROUP_TOUR_BOOKING_DISCOUNT = "ftf-groupTourBookingDiscount",
+
+  // PAYMENT AND TRANSACTION
+  FTF_PAYMENT_ORDER = "ftf-paymentOrder",
+  FTF_TRANSACTION = "ftf-transaction",
 }
 
 

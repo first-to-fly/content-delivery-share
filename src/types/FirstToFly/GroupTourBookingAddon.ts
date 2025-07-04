@@ -1,15 +1,15 @@
 import type { CDEntity } from "../entity";
 
 
-export enum TourTransactionAddonType {
+export enum GroupTourBookingAddonType {
   PRICING_ENTRY = "pricing_entry",
   MANUAL = "manual",
 }
 
-export interface FTFTourTransactionAddon extends CDEntity {
+export interface FTFGroupTourBookingAddon extends CDEntity {
   tenantOID: string;
-  tourTransactionOID: string;
-  type: TourTransactionAddonType;
+  bookingOID: string;
+  type: GroupTourBookingAddonType;
   groupTourPricingOID: string | null;
   groupTourCostingEntryOID: string | null;
   name: string;

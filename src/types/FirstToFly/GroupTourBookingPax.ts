@@ -1,7 +1,7 @@
 import type { CDEntity } from "../entity";
 
 // Enums redefined for content-delivery-share, or should be imported if a shared enum strategy exists
-export enum TourTransactionPaxType {
+export enum GroupTourBookingPaxType {
   TWIN = "twin",
   SINGLE = "single",
   TRIPLE = "triple",
@@ -11,8 +11,8 @@ export enum TourTransactionPaxType {
   CHILD_NO_BED = "child_no_bed",
   INFANT = "infant",
 }
-// Personal details interface for tour transaction pax
-export interface TourTransactionPaxPersonalDetails {
+// Personal details interface for booking pax
+export interface GroupTourBookingPaxPersonalDetails {
   title: string;
   gender: string;
   firstName: string;
@@ -43,13 +43,13 @@ export interface TourTransactionPaxPersonalDetails {
   isLeadPassenger?: boolean;
 }
 
-export interface FTFTourTransactionPax extends CDEntity {
-  // Fields specific to TourTransactionPax
-  tourTransactionOID: string;
-  tourTransactionRoomOID: string;
-  type: TourTransactionPaxType;
+export interface FTFGroupTourBookingPax extends CDEntity {
+  // Fields specific to GroupTourBookingPax
+  bookingOID: string;
+  bookingRoomOID: string;
+  type: GroupTourBookingPaxType;
   isLandTourOnly: boolean;
-  personalDetails: TourTransactionPaxPersonalDetails | null;
+  personalDetails: GroupTourBookingPaxPersonalDetails | null;
   mealPreference: string | null;
   transportRecordOID: string | null;
   documentOIDs: string[] | null;

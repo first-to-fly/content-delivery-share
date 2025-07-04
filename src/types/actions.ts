@@ -17,7 +17,8 @@ import { FTFGroupTourBookingAddon } from "./FirstToFly/GroupTourBookingAddon";
 import { FTFGroupTourBookingDiscount } from "./FirstToFly/GroupTourBookingDiscount";
 import { FTFGroupTourBookingPax } from "./FirstToFly/GroupTourBookingPax";
 import { FTFGroupTourBookingRoom } from "./FirstToFly/GroupTourBookingRoom";
-import { FTFGroupTourBookingTransfer } from "./FirstToFly/GroupTourBookingTransfer";
+import { FTFPaymentOrder } from "./FirstToFly/PaymentOrder";
+import { FTFTransaction } from "./FirstToFly/Transaction";
 import { FTFGroupTourCosting } from "./FirstToFly/GroupTourCosting";
 import { FTFGroupTourCostingEntry } from "./FirstToFly/GroupTourCostingEntry";
 import { FTFGroupTourItinerary } from "./FirstToFly/GroupTourItinerary";
@@ -113,9 +114,10 @@ export type AllEntityField =
   | keyof FTFGroupTourBooking
   | keyof FTFGroupTourBookingRoom
   | keyof FTFGroupTourBookingPax
-  | keyof FTFGroupTourBookingTransfer
   | keyof FTFGroupTourBookingAddon
-  | keyof FTFGroupTourBookingDiscount;
+  | keyof FTFGroupTourBookingDiscount
+  | keyof FTFPaymentOrder
+  | keyof FTFTransaction;
 
 export interface RequestIncludeOptions {
   includeKey?: string;

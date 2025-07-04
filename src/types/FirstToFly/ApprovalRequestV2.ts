@@ -24,6 +24,7 @@ export interface FTFApprovalRequestV2 extends CDEntity {
   status: ApprovalRequestStatus;
   rejectionReason?: string;
   completedAt?: string;
+  metadata?: unknown;
   tenantId: string;
   createdAt: string;
   updatedAt: string;

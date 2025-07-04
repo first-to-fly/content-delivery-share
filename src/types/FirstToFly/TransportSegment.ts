@@ -123,20 +123,20 @@ export type FTFTransportSegmentDetails =
  * @extends {CDEntity}
  */
 export type FTFTransportSegment = CDEntity & {
-  transportGroupOIDs: string[];
-
   originLocation: string;
   destinationLocation: string;
   originTimezone: string;
   destinationTimezone: string;
 
   // Actual mode fields
+  transportGroupOIDs: string[] | null; // Only used in actual mode
   departureDateTime: string | null;
   arrivalDateTime: string | null;
   seatCapacity: number | null;
 
   // Planning mode fields
   isPlanning: boolean | null;
+  transportPlanOIDs: string[] | null; // Only used in planning mode
   plannedDepartureTime: string | null; // Time in "HH:MM" format
   plannedArrivalTime: string | null; // Time in "HH:MM" format
 

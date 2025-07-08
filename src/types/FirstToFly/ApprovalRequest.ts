@@ -105,7 +105,7 @@ export interface ApprovalRequestGroupTourBookingTransferPayload {
 export interface ApprovalRequestGroupTourBookingAmendmentPayload {
   type: ApprovalRequestType.GROUP_TOUR_BOOKING_AMENDMENT;
   originalBookingOID: string;
-  
+
   // Complete amended form values for execution
   amendedFormValues: {
     groupTourBookingOID?: string;
@@ -201,7 +201,7 @@ export interface ApprovalRequestGroupTourBookingAmendmentPayload {
       isLeadPassenger?: boolean;
     };
   };
-  
+
   // Calculated breakdown for amended booking (for comparison UI)
   amendedBreakdown: {
     tourFare: Array<{
@@ -235,17 +235,20 @@ export interface ApprovalRequestGroupTourBookingAmendmentPayload {
     }>;
     total: number;
   };
-  
+
   // Financial summary for the amended booking
   financialSummary: {
     amendedTotal: number;
     totalDifference: number;
+    originalOutstanding: number;
+    amendedOutstanding: number;
+    receivedAmount: number;
     refundRequired: boolean;
     refundAmount: number;
     additionalPaymentRequired: boolean;
     additionalPaymentAmount: number;
   };
-  
+
   // Amendment metadata
   amendmentReason: string;
   changedFields: string[];
@@ -255,7 +258,7 @@ export interface ApprovalRequestGroupTourBookingAmendmentPayload {
 
 export type ApprovalRequestPayload =
   ApprovalRequestGroupTourBookingSpecialDiscountPayload | ApprovalRequestBudgetApprovalPayload |
-  ApprovalRequestEmptyPayload | ApprovalRequestGroupTourBookingTransferPayload | 
+  ApprovalRequestEmptyPayload | ApprovalRequestGroupTourBookingTransferPayload |
   ApprovalRequestGroupTourBookingAmendmentPayload;
 
 

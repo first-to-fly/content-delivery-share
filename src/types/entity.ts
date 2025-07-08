@@ -52,6 +52,8 @@ export enum CDEntityType {
   FTF_SUPPLIER_PERSON = "ftf-supplierPerson",
   FTF_TOUR_DEPARTURE = "ftf-tourDeparture",
   FTF_APPROVAL_REQUEST = "ftf-approvalRequest",
+  FTF_APPROVAL = "ftf-approval",
+  FTF_APPROVAL_REQUEST_V2 = "ftf-approvalRequestV2",
 
   // GROUP TOUR BOOKING
   FTF_GROUP_TOUR_BOOKING = "ftf-groupTourBooking",
@@ -60,6 +62,8 @@ export enum CDEntityType {
   FTF_GROUP_TOUR_BOOKING_ADDON = "ftf-groupTourBookingAddon",
   FTF_GROUP_TOUR_BOOKING_DISCOUNT = "ftf-groupTourBookingDiscount",
 
+  // USER MESSAGES
+  FTF_USER_MESSAGE = "ftf-userMessage",
   // PAYMENT AND TRANSACTION
   FTF_PAYMENT_ORDER = "ftf-paymentOrder",
   FTF_TRANSACTION = "ftf-transaction",

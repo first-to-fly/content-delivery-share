@@ -4,11 +4,11 @@ import { FTFGroupTourBookingPax, GroupTourBookingPaxType } from "./GroupTourBook
 
 
 /**
- * Payload types for ApprovalRequestV2 metadata field
- * These are the same as the legacy ApprovalRequest payloads but used in the new system
+ * Metadata types for ApprovalRequestV2 metadata field
+ * These are the same as the legacy ApprovalRequest metadatas but used in the new system
  */
 
-export interface ApprovalRequestV2GroupTourBookingSpecialDiscountPayload {
+export interface ApprovalRequestV2GroupTourBookingSpecialDiscountMetadata {
   type: "group_tour_booking_special_discount";
   discountName: string;
   discountValue: number;
@@ -16,12 +16,12 @@ export interface ApprovalRequestV2GroupTourBookingSpecialDiscountPayload {
   reason?: string;
 }
 
-export interface ApprovalRequestV2BudgetApprovalPayload {
+export interface ApprovalRequestV2BudgetApprovalMetadata {
   type: "budget_approval";
-  // empty payload
+  // empty metadata
 }
 
-export interface ApprovalRequestV2GroupTourBookingTransferPayload {
+export interface ApprovalRequestV2GroupTourBookingTransferMetadata {
   type: "group_tour_booking_transfer";
   originalBookingOID: string;
   transferItems: Array<{
@@ -87,7 +87,7 @@ export interface ApprovalRequestV2GroupTourBookingTransferPayload {
   };
 }
 
-export interface ApprovalRequestV2GroupTourBookingAmendmentPayload {
+export interface ApprovalRequestV2GroupTourBookingAmendmentMetadata {
   type: "group_tour_booking_amendment";
   originalBookingOID: string;
 
@@ -241,9 +241,9 @@ export interface ApprovalRequestV2GroupTourBookingAmendmentPayload {
   requestedDate: string;
 }
 
-// Union type for all V2 payloads
-export type ApprovalRequestV2Payload =
-  | ApprovalRequestV2GroupTourBookingSpecialDiscountPayload
-  | ApprovalRequestV2BudgetApprovalPayload
-  | ApprovalRequestV2GroupTourBookingTransferPayload
-  | ApprovalRequestV2GroupTourBookingAmendmentPayload;
+// Union type for all V2 metadata
+export type ApprovalRequestV2Metadata =
+  | ApprovalRequestV2GroupTourBookingSpecialDiscountMetadata
+  | ApprovalRequestV2BudgetApprovalMetadata
+  | ApprovalRequestV2GroupTourBookingTransferMetadata
+  | ApprovalRequestV2GroupTourBookingAmendmentMetadata;

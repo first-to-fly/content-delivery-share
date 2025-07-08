@@ -1,5 +1,5 @@
 import { CDEntity } from "../entity";
-import { ApprovalRequestV2Payload } from "./ApprovalRequestV2Payloads";
+import { ApprovalRequestV2Metadata } from "./ApprovalRequestV2Metadata";
 
 
 export enum ApprovalRequestV2Status {
@@ -10,19 +10,19 @@ export enum ApprovalRequestV2Status {
 }
 
 export interface FTFApprovalRequestV2 extends CDEntity {
-  requestId: string;
-  approvalId: string;
-  targetEntityOid: string;
-  submitterId: string;
-  departmentId?: string;
+
+  approvalOID: string;
+  targetEntityOID: string;
+  submitterOID: string;
+  departmentOID: string | null;
   status: ApprovalRequestV2Status;
-  rejectionReason?: string;
-  completedAt?: string;
-  metadata?: ApprovalRequestV2Payload;
-  tenantId: string;
+  rejectionReason: string | null;
+  completedAt: string | null;
+  metadata: ApprovalRequestV2Metadata;
+
+  tenantOID: string;
   createdAt: string;
   updatedAt: string;
   createdBy: string;
-  updatedBy: string;
-  deletedAt?: string;
+  updatedBy: string | null;
 }

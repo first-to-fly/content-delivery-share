@@ -1,18 +1,12 @@
 import { CDEntity } from "../entity";
+import { ApprovalRequestV2Payload } from "./ApprovalRequestV2Payloads";
 
 
-export enum ApprovalRequestStatus {
-  PENDING = "pending",
-  APPROVED = "approved",
-  REJECTED = "rejected",
-  CANCELLED = "cancelled",
-}
-
-export enum ApprovalRequestType {
-  EMPTY = "empty",
-  GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT = "group_tour_booking_special_discount",
-  BUDGET_APPROVAL = "budget_approval",
-  GROUP_TOUR_BOOKING_TRANSFER = "group_tour_booking_transfer",
+export enum ApprovalRequestV2Status {
+  IN_PROGRESS = "IN_PROGRESS",
+  APPROVED = "APPROVED",
+  REJECTED = "REJECTED",
+  CANCELLED = "CANCELLED",
 }
 
 export interface FTFApprovalRequestV2 extends CDEntity {
@@ -21,10 +15,10 @@ export interface FTFApprovalRequestV2 extends CDEntity {
   targetEntityOid: string;
   submitterId: string;
   departmentId?: string;
-  status: ApprovalRequestStatus;
+  status: ApprovalRequestV2Status;
   rejectionReason?: string;
   completedAt?: string;
-  metadata?: unknown;
+  metadata?: ApprovalRequestV2Payload;
   tenantId: string;
   createdAt: string;
   updatedAt: string;

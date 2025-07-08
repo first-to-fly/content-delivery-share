@@ -16,6 +16,7 @@ export enum ApprovalRequestType {
   GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT = "group_tour_booking_special_discount",
   BUDGET_APPROVAL = "budget_approval",
   GROUP_TOUR_BOOKING_TRANSFER = "group_tour_booking_transfer",
+  GROUP_TOUR_BOOKING_AMENDMENT = "group_tour_booking_amendment",
   // Add more request types as needed
 }
 
@@ -101,9 +102,161 @@ export interface ApprovalRequestGroupTourBookingTransferPayload {
   };
 }
 
+export interface ApprovalRequestGroupTourBookingAmendmentPayload {
+  type: ApprovalRequestType.GROUP_TOUR_BOOKING_AMENDMENT;
+  originalBookingOID: string;
+  
+  // Complete amended form values for execution
+  amendedFormValues: {
+    groupTourBookingOID?: string;
+    tourDepartureOID: string;
+    rooms: Array<{
+      roomNumber: number;
+      passengers: Array<{
+        oid?: string;
+        title: string;
+        gender: string;
+        firstName: string;
+        lastName: string;
+        dateOfBirth?: string;
+        nationality?: string;
+        email?: string;
+        phone?: string;
+        alternativeMobile?: string;
+        address?: string;
+        postalCode?: string;
+        isLeadPassenger?: boolean;
+      }>;
+      adultSelections: Array<{
+        paxIndex: number;
+        tourType: "full-tour" | "land-only";
+        groupTourBookingPaxOID?: string;
+      }>;
+      childWithBedSelections: Array<{
+        paxIndex: number;
+        tourType: "full-tour" | "land-only";
+        groupTourBookingPaxOID?: string;
+      }>;
+      childNoBedSelections: Array<{
+        paxIndex: number;
+        tourType: "full-tour" | "land-only";
+        groupTourBookingPaxOID?: string;
+      }>;
+      infantSelections: Array<{
+        paxIndex: number;
+        tourType: "full-tour" | "land-only";
+        groupTourBookingPaxOID?: string;
+      }>;
+      selectedRuleOID?: string;
+      bookingRoomOID?: string;
+      toBeRemoved?: boolean;
+    }>;
+    bookingAddOns: Array<{
+      oid?: string;
+      name: string;
+      price: number;
+      quantity: number;
+      tax?: number;
+      totalPrice: number;
+      type?: GroupTourBookingAddonType;
+      groupTourPricingOID?: string;
+      groupTourCostingEntryOID?: string;
+      groupTourBookingAddonOID?: string;
+      toBeRemoved?: boolean;
+    }>;
+    bookingDiscounts: Array<{
+      oid?: string;
+      name: string;
+      type?: string;
+      amount: number;
+      discountMode: DiscountMode;
+      code?: string;
+      discountCodeOID?: string;
+      reason?: string;
+      assigneeOID?: string;
+      tourDepartureDiscountGroupIndex?: number;
+      groupTourBookingDiscountOID?: string;
+      approvalRequestOID?: string;
+      toBeRemoved?: boolean;
+    }>;
+    specialInstructions?: string[];
+    overwriteTax?: {
+      scheme: string;
+      rate: number;
+    };
+    totalAmount: number;
+    primaryContact: {
+      oid?: string;
+      title: string;
+      gender: string;
+      firstName: string;
+      lastName: string;
+      dateOfBirth?: string;
+      nationality?: string;
+      email?: string;
+      phone?: string;
+      alternativeMobile?: string;
+      address?: string;
+      postalCode?: string;
+      isLeadPassenger?: boolean;
+    };
+  };
+  
+  // Calculated breakdown for amended booking (for comparison UI)
+  amendedBreakdown: {
+    tourFare: Array<{
+      paxType: string;
+      quantity: number;
+      unitPrice: number;
+      subTotal: number;
+    }>;
+    miscellaneous: Array<{
+      name: string;
+      quantity: number;
+      unitPrice: number;
+      subTotal: number;
+    }>;
+    addons: Array<{
+      name: string;
+      quantity: number;
+      unitPrice: number;
+      subTotal: number;
+    }>;
+    discounts: Array<{
+      discountOID: string;
+      description?: string;
+      appliedAmount: number;
+    }>;
+    taxes: Array<{
+      name: string;
+      quantity: number;
+      unitPrice: number;
+      subTotal: number;
+    }>;
+    total: number;
+  };
+  
+  // Financial summary for the amended booking
+  financialSummary: {
+    amendedTotal: number;
+    totalDifference: number;
+    refundRequired: boolean;
+    refundAmount: number;
+    additionalPaymentRequired: boolean;
+    additionalPaymentAmount: number;
+  };
+  
+  // Amendment metadata
+  amendmentReason: string;
+  changedFields: string[];
+  requestedBy: string;
+  requestedDate: string;
+}
+
 export type ApprovalRequestPayload =
   ApprovalRequestGroupTourBookingSpecialDiscountPayload | ApprovalRequestBudgetApprovalPayload |
-  ApprovalRequestEmptyPayload | ApprovalRequestGroupTourBookingTransferPayload;
+  ApprovalRequestEmptyPayload | ApprovalRequestGroupTourBookingTransferPayload | 
+  ApprovalRequestGroupTourBookingAmendmentPayload;
 
 
 /**

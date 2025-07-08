@@ -20,6 +20,7 @@ export interface FTFTransportGroup extends CDEntity {
   mainType: TransportType | null;
   description: string | null;
 
+  tourDepartureOID: string | null;
   transportSegmentOIDs: string[];
 
   departureDateTime: string | null;

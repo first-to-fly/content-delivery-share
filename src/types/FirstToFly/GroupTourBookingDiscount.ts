@@ -1,5 +1,5 @@
 import type { CDEntity } from "../entity";
-import { ApprovalRequestGroupTourBookingSpecialDiscountPayload } from "./ApprovalRequest";
+import { ApprovalRequestV2GroupTourBookingSpecialDiscountMetadata } from "./ApprovalRequestV2Metadata";
 import type { DiscountAmountType, DiscountBasePrice, DiscountBookingChannel, DiscountHowToApply, DiscountMechanics, DiscountMode, DiscountPaxType, DiscountSpecialDatesType, DiscountTimeslotType, DiscountType, DiscountWhichPax } from "./Discount";
 import { GroupTourBookingPaxType } from "./GroupTourBookingPax";
 
@@ -89,7 +89,7 @@ export interface TourDepartureDiscountMetadata {
 export interface SpecialRequestDiscountMetadata {
   type: GroupTourBookingDiscountType.SPECIAL_REQUEST;
   approvalRequestOID: string;
-  approvalRequestPayload: ApprovalRequestGroupTourBookingSpecialDiscountPayload;
+  approvalRequestPayload: ApprovalRequestV2GroupTourBookingSpecialDiscountMetadata;
   approvalNote?: string;
 }
 

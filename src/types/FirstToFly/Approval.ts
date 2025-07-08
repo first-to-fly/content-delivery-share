@@ -2,20 +2,27 @@ import { CDEntity } from "../entity";
 
 
 export enum ApprovalType {
-  GROUP_TOUR_BOOKING = "group-tour-booking",
-  GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT = "group-tour-booking-special-discount",
-  GROUP_TOUR_BOOKING_TRANSFER = "group-tour-booking-transfer",
-  GROUP_TOUR_BOOKING_AMENDMENT = "group-tour-booking-amendment",
+  GROUP_TOUR_BOOKING = "group-tour-booking-approval",
+
+  GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT = "group-tour-booking-special-discount-approval",
+
+  GROUP_TOUR_BOOKING_TRANSFER = "group-tour-booking-transfer-approval",
+
+  GROUP_TOUR_BOOKING_AMENDMENT = "group-tour-booking-amendment-approval",
+
   BUDGET_APPROVAL = "budget-approval",
-  TRAVEL_REQUEST = "travel-request",
-  EXPENSE_REPORT = "expense-report",
-  PURCHASE_ORDER = "purchase-order",
+
+  TRAVEL_REQUEST = "travel-request-approval",
+
+  EXPENSE_REPORT = "expense-report-approval",
+
+  PURCHASE_ORDER = "purchase-order-approval",
   CONTRACT_APPROVAL = "contract-approval",
   VENDOR_APPROVAL = "vendor-approval",
-  POLICY_EXCEPTION = "policy-exception",
-  EQUIPMENT_REQUEST = "equipment-request",
-  LEAVE_REQUEST = "leave-request",
-  EO_REQUEST = "eo-request",
+  POLICY_EXCEPTION = "policy-exception-approval",
+  EQUIPMENT_REQUEST = "equipment-request-approval",
+  LEAVE_REQUEST = "leave-request-approval",
+  EO_REQUEST = "eo-approval",
 }
 
 

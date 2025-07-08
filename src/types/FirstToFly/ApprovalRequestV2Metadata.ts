@@ -1,3 +1,4 @@
+import { ApprovalType } from "./Approval";
 import { DiscountMode } from "./Discount";
 import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
 import { FTFGroupTourBookingPax, GroupTourBookingPaxType } from "./GroupTourBookingPax";
@@ -9,7 +10,7 @@ import { FTFGroupTourBookingPax, GroupTourBookingPaxType } from "./GroupTourBook
  */
 
 export interface ApprovalRequestV2GroupTourBookingSpecialDiscountMetadata {
-  type: "group_tour_booking_special_discount";
+  type: ApprovalType.GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT;
   discountName: string;
   discountValue: number;
   discountMode: DiscountMode;
@@ -17,12 +18,12 @@ export interface ApprovalRequestV2GroupTourBookingSpecialDiscountMetadata {
 }
 
 export interface ApprovalRequestV2BudgetApprovalMetadata {
-  type: "budget_approval";
+  type: ApprovalType.BUDGET_APPROVAL;
   // empty metadata
 }
 
 export interface ApprovalRequestV2GroupTourBookingTransferMetadata {
-  type: "group_tour_booking_transfer";
+  type: ApprovalType.GROUP_TOUR_BOOKING_TRANSFER;
   originalBookingOID: string;
   transferItems: Array<{
     targetTourDepartureOID: string;
@@ -88,7 +89,7 @@ export interface ApprovalRequestV2GroupTourBookingTransferMetadata {
 }
 
 export interface ApprovalRequestV2GroupTourBookingAmendmentMetadata {
-  type: "group_tour_booking_amendment";
+  type: ApprovalType.GROUP_TOUR_BOOKING_AMENDMENT;
   originalBookingOID: string;
 
   // Complete amended form values for execution

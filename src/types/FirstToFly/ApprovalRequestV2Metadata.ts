@@ -26,7 +26,7 @@ export interface ApprovalRequestV2GroupTourBookingTransferMetadata {
   type: ApprovalType.GROUP_TOUR_BOOKING_TRANSFER;
   originalBookingOID: string;
   transferItems: Array<{
-    targetBookingOID: string;
+    targetTourDepartureOID: string;
     passengers: Array<{
       oid: string;
       firstName: string;

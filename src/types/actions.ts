@@ -56,13 +56,13 @@ import { FTFUser } from "./FirstToFly/User";
 import { FTFUserTenant } from "./FirstToFly/UserTenant";
 import { OID } from "./generic";
 import { FTFApproval } from "./FirstToFly/Approval";
-import { FTFApprovalRequestV2 } from "./FirstToFly/ApprovalRequestV2";
+import { FTFApprovalRequest } from "./FirstToFly/ApprovalRequest";
 
 
 export type AllEntityField =
   | keyof CDEntity
   | keyof FTFApproval
-  | keyof FTFApprovalRequestV2
+  | keyof FTFApprovalRequest
   | keyof FTFBadge
   | keyof FTFBudget
   | keyof FTFBudgetEntry

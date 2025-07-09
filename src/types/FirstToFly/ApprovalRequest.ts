@@ -1,24 +1,24 @@
 import { CDEntity } from "../entity";
-import { ApprovalRequestV2Metadata } from "./ApprovalRequestV2Metadata";
+import { ApprovalRequestMetadata } from "./ApprovalRequestMetadata";
 
 
-export enum ApprovalRequestV2Status {
+export enum ApprovalRequestStatus {
   IN_PROGRESS = "IN_PROGRESS",
   APPROVED = "APPROVED",
   REJECTED = "REJECTED",
   CANCELLED = "CANCELLED",
 }
 
-export interface FTFApprovalRequestV2 extends CDEntity {
+export interface FTFApprovalRequest extends CDEntity {
 
   approvalOID: string;
   targetEntityOID: string;
   submitterOID: string;
   departmentOID: string | null;
-  status: ApprovalRequestV2Status;
+  status: ApprovalRequestStatus;
   rejectionReason: string | null;
   completedAt: string | null;
-  metadata: ApprovalRequestV2Metadata;
+  metadata: ApprovalRequestMetadata;
 
   tenantOID: string;
   createdAt: string;

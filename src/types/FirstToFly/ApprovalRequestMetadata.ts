@@ -5,11 +5,11 @@ import { FTFGroupTourBookingPax, GroupTourBookingPaxType } from "./GroupTourBook
 
 
 /**
- * Metadata types for ApprovalRequestV2 metadata field
+ * Metadata types for ApprovalRequest metadata field
  * These are the same as the legacy ApprovalRequest metadatas but used in the new system
  */
 
-export interface ApprovalRequestV2GroupTourBookingSpecialDiscountMetadata {
+export interface ApprovalRequestGroupTourBookingSpecialDiscountMetadata {
   type: ApprovalType.GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT;
   discountName: string;
   discountValue: number;
@@ -17,12 +17,12 @@ export interface ApprovalRequestV2GroupTourBookingSpecialDiscountMetadata {
   reason?: string;
 }
 
-export interface ApprovalRequestV2BudgetApprovalMetadata {
+export interface ApprovalRequestBudgetApprovalMetadata {
   type: ApprovalType.BUDGET_APPROVAL;
   // empty metadata
 }
 
-export interface ApprovalRequestV2GroupTourBookingTransferMetadata {
+export interface ApprovalRequestGroupTourBookingTransferMetadata {
   type: ApprovalType.GROUP_TOUR_BOOKING_TRANSFER;
   originalBookingOID: string;
   transferItems: Array<{
@@ -88,7 +88,7 @@ export interface ApprovalRequestV2GroupTourBookingTransferMetadata {
   };
 }
 
-export interface ApprovalRequestV2GroupTourBookingAmendmentMetadata {
+export interface ApprovalRequestGroupTourBookingAmendmentMetadata {
   type: ApprovalType.GROUP_TOUR_BOOKING_AMENDMENT;
   originalBookingOID: string;
 
@@ -242,9 +242,9 @@ export interface ApprovalRequestV2GroupTourBookingAmendmentMetadata {
   requestedDate: string;
 }
 
-// Union type for all V2 metadata
-export type ApprovalRequestV2Metadata =
-  | ApprovalRequestV2GroupTourBookingSpecialDiscountMetadata
-  | ApprovalRequestV2BudgetApprovalMetadata
-  | ApprovalRequestV2GroupTourBookingTransferMetadata
-  | ApprovalRequestV2GroupTourBookingAmendmentMetadata;
+// Union type for all metadata
+export type ApprovalRequestMetadata =
+  | ApprovalRequestGroupTourBookingSpecialDiscountMetadata
+  | ApprovalRequestBudgetApprovalMetadata
+  | ApprovalRequestGroupTourBookingTransferMetadata
+  | ApprovalRequestGroupTourBookingAmendmentMetadata;

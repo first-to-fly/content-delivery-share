@@ -3,19 +3,12 @@ import { CDEntity } from "../entity";
 
 export enum ApprovalType {
   GROUP_TOUR_BOOKING = "group-tour-booking-approval",
-
   GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT = "group-tour-booking-special-discount-approval",
-
   GROUP_TOUR_BOOKING_TRANSFER = "group-tour-booking-transfer-approval",
-
   GROUP_TOUR_BOOKING_AMENDMENT = "group-tour-booking-amendment-approval",
-
   BUDGET_APPROVAL = "budget-approval",
-
   TRAVEL_REQUEST = "travel-request-approval",
-
   EXPENSE_REPORT = "expense-report-approval",
-
   PURCHASE_ORDER = "purchase-order-approval",
   CONTRACT_APPROVAL = "contract-approval",
   VENDOR_APPROVAL = "vendor-approval",

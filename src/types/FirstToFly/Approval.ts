@@ -42,7 +42,6 @@ export interface FTFApproval extends CDEntity {
   tenantOID: string;
   name: string;
   approvalType: ApprovalType;
-  targetEntityType: string;
   groups: string[] | null;
   sendEmail: boolean;
   notifySubmitterOnFinalOutcome: boolean;

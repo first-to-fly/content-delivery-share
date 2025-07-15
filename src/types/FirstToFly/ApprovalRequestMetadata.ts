@@ -3,7 +3,6 @@ import { DiscountMode } from "./Discount";
 import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
 import { FTFGroupTourBookingPax, GroupTourBookingPaxType } from "./GroupTourBookingPax";
 
-
 /**
  * Metadata types for ApprovalRequest metadata field
  * These are the same as the legacy ApprovalRequest metadatas but used in the new system
@@ -86,6 +85,40 @@ export interface ApprovalRequestGroupTourBookingTransferMetadata {
       balanceDue: number;
     }>;
   };
+}
+
+// Common booking breakdown interface used for both original and amended breakdowns
+interface BookingBreakdown {
+  tourFare: Array<{
+    paxType: string;
+    quantity: number;
+    unitPrice: number;
+    subTotal: number;
+  }>;
+  miscellaneous: Array<{
+    name: string;
+    quantity: number;
+    unitPrice: number;
+    subTotal: number;
+  }>;
+  addons: Array<{
+    name: string;
+    quantity: number;
+    unitPrice: number;
+    subTotal: number;
+  }>;
+  discounts: Array<{
+    discountOID: string;
+    description?: string;
+    appliedAmount: number;
+  }>;
+  taxes: Array<{
+    name: string;
+    quantity: number;
+    unitPrice: number;
+    subTotal: number;
+  }>;
+  total: number;
 }
 
 export interface ApprovalRequestGroupTourBookingAmendmentMetadata {
@@ -188,39 +221,11 @@ export interface ApprovalRequestGroupTourBookingAmendmentMetadata {
     };
   };
 
+  // Calculated breakdown for original booking (before amendment)
+  originalBookingBreakdown: BookingBreakdown;
+
   // Calculated breakdown for amended booking (for comparison UI)
-  amendedBreakdown: {
-    tourFare: Array<{
-      paxType: string;
-      quantity: number;
-      unitPrice: number;
-      subTotal: number;
-    }>;
-    miscellaneous: Array<{
-      name: string;
-      quantity: number;
-      unitPrice: number;
-      subTotal: number;
-    }>;
-    addons: Array<{
-      name: string;
-      quantity: number;
-      unitPrice: number;
-      subTotal: number;
-    }>;
-    discounts: Array<{
-      discountOID: string;
-      description?: string;
-      appliedAmount: number;
-    }>;
-    taxes: Array<{
-      name: string;
-      quantity: number;
-      unitPrice: number;
-      subTotal: number;
-    }>;
-    total: number;
-  };
+  amendedBreakdown: BookingBreakdown;
 
   // Financial summary for the amended booking
   financialSummary: {

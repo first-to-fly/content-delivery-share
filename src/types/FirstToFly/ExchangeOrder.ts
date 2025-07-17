@@ -1,40 +1,44 @@
 import { CDEntity } from "../entity";
 
 
-export enum ExchangeOrderType {
-  PURCHASE = "purchase",
-  SALE = "sale",
-  TRANSFER = "transfer",
-  REFUND = "refund",
-}
-
 export enum ExchangeOrderStatus {
   DRAFT = "draft",
-  PENDING = "pending",
+  WFA = "wfa",
   APPROVED = "approved",
   REJECTED = "rejected",
   COMPLETED = "completed",
   CANCELLED = "cancelled",
+  VOIDED = "voided",
 }
 
 export interface FTFExchangeOrder extends CDEntity {
   exchangeOrderNo: string;
-  type: ExchangeOrderType;
   status: ExchangeOrderStatus;
 
-  parentExchangeOrderOID: string | null;
+  issueDate: string;
+  dueDate: string | null;
+
   budgetOID: string | null;
-  supplierOID: string | null;
+  tourDepartureOID: string | null;
+
+  parentExchangeOrderOID: string | null;
 
   totalAmount: number;
   currency: string;
 
-  description: string | null;
   remarks: string | null;
 
   isArchived: boolean;
 
   tenantOID: string;
+
+  // Related entities
+  exchangeOrderItemOIDs: string[];
+
+  supplierOID: string;
+  supplierPersonOID: string;
+  supplierPaymentOID: string;
+  supplierAddressOID: string;
 
   createdAt: string;
   updatedAt: string;

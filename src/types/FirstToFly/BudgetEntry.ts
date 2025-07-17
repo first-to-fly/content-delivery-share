@@ -37,6 +37,11 @@ export interface FTFBudgetEntry extends CDEntity {
     tax: number;
   }[];
 
+  exchangeOrderItemLinks: {
+    exchangeOrderItemOID: string;
+    amountUsed: number;
+  }[] | null;
+
   originalCostingEntryOID: string;
   forexRate: number;
   localCurrency: string;

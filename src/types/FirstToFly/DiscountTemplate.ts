@@ -46,6 +46,7 @@ export interface FTFDiscountTemplate extends CDEntity {
   timeslotType: DiscountTimeslotType;
   timeslotStart: string | null;
   timeslotEnd: string | null;
+  timeslotTimezone: string | null;
 
   discountValue: number;
   howToApply: DiscountHowToApply;

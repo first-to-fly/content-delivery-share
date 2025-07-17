@@ -1,4 +1,6 @@
 import { CDEntity } from "./entity";
+import { FTFApproval } from "./FirstToFly/Approval";
+import { FTFApprovalRequest } from "./FirstToFly/ApprovalRequest";
 import { FTFAssembleLocationAirlines } from "./FirstToFly/AssembleLocationAirlines";
 import { FTFBadge } from "./FirstToFly/Badge";
 import { FTFBudget } from "./FirstToFly/Budget";
@@ -11,13 +13,12 @@ import { FTFDesignation } from "./FirstToFly/Designation";
 import { FTFDiscount } from "./FirstToFly/Discount";
 import { FTFDiscountTemplate } from "./FirstToFly/DiscountTemplate";
 import { FTFDocument } from "./FirstToFly/Document";
+import { FTFExchangeOrder } from "./FirstToFly/ExchangeOrder";
 import { FTFGroupTourBooking } from "./FirstToFly/GroupTourBooking";
 import { FTFGroupTourBookingAddon } from "./FirstToFly/GroupTourBookingAddon";
 import { FTFGroupTourBookingDiscount } from "./FirstToFly/GroupTourBookingDiscount";
 import { FTFGroupTourBookingPax } from "./FirstToFly/GroupTourBookingPax";
 import { FTFGroupTourBookingRoom } from "./FirstToFly/GroupTourBookingRoom";
-import { FTFPaymentOrder } from "./FirstToFly/PaymentOrder";
-import { FTFTransaction } from "./FirstToFly/Transaction";
 import { FTFGroupTourCosting } from "./FirstToFly/GroupTourCosting";
 import { FTFGroupTourCostingEntry } from "./FirstToFly/GroupTourCostingEntry";
 import { FTFGroupTourItinerary } from "./FirstToFly/GroupTourItinerary";
@@ -30,6 +31,7 @@ import { FTFGroupTourProduct } from "./FirstToFly/GroupTourProduct";
 import { FTFInsuranceDiscount } from "./FirstToFly/InsuranceDiscount";
 import { FTFLocation } from "./FirstToFly/Location";
 import { FTFMeal } from "./FirstToFly/Meal";
+import { FTFPaymentOrder } from "./FirstToFly/PaymentOrder";
 import { FTFPOI } from "./FirstToFly/POI";
 import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
 import { FTFProductType } from "./FirstToFly/ProductType";
@@ -48,6 +50,7 @@ import { FTFTenant } from "./FirstToFly/Tenant";
 import { FTFTerm } from "./FirstToFly/Term";
 import { FTFTermCondition } from "./FirstToFly/TermCondition";
 import { FTFTourDeparture } from "./FirstToFly/TourDeparture";
+import { FTFTransaction } from "./FirstToFly/Transaction";
 import { FTFTransportGroup } from "./FirstToFly/TransportGroup";
 import { FTFTransportPlan } from "./FirstToFly/TransportPlan";
 import { FTFTransportSegment } from "./FirstToFly/TransportSegment";
@@ -55,8 +58,6 @@ import { FTFUsefulInfo } from "./FirstToFly/UsefulInfo";
 import { FTFUser } from "./FirstToFly/User";
 import { FTFUserTenant } from "./FirstToFly/UserTenant";
 import { OID } from "./generic";
-import { FTFApproval } from "./FirstToFly/Approval";
-import { FTFApprovalRequest } from "./FirstToFly/ApprovalRequest";
 
 
 export type AllEntityField =
@@ -119,6 +120,7 @@ export type AllEntityField =
   | keyof FTFGroupTourBookingAddon
   | keyof FTFGroupTourBookingDiscount
   | keyof FTFPaymentOrder
+  | keyof FTFExchangeOrder
   | keyof FTFTransaction;
 
 export interface RequestIncludeOptions {

@@ -39,6 +39,8 @@ export interface FTFGroupTourProduct extends CDEntity {
   isActive: boolean;
   published: boolean;
 
+  ownerOIDs: string[] | null;
+
   groupTourItineraryOIDs: string[] | null;
   groupTourCostingOIDs: string[] | null;
   groupTourPricingOIDs: string[] | null;

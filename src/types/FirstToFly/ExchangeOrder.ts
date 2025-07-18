@@ -22,6 +22,7 @@ export interface FTFExchangeOrder extends CDEntity {
   tourDepartureOID: string | null;
 
   parentExchangeOrderOID: string | null;
+  childrenExchangeOrderOIDs: string[];
 
   totalAmount: number;
   currency: string;

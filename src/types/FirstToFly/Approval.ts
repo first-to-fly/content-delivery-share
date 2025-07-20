@@ -16,6 +16,7 @@ export enum ApprovalType {
   EQUIPMENT_REQUEST = "equipment-request-approval",
   LEAVE_REQUEST = "leave-request-approval",
   EO_REQUEST = "eo-approval",
+  EXCHANGE_ORDER_STATUS_CHANGE = "exchange-order-status-change-approval",
 }
 
 

@@ -1,5 +1,6 @@
 import { ApprovalType } from "./Approval";
 import { DiscountMode } from "./Discount";
+import { ExchangeOrderStatus } from "./ExchangeOrder";
 import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
 import { FTFGroupTourBookingPax, GroupTourBookingPaxType } from "./GroupTourBookingPax";
 
@@ -247,9 +248,20 @@ export interface ApprovalRequestGroupTourBookingAmendmentMetadata {
   requestedDate: string;
 }
 
+export interface ApprovalRequestExchangeOrderStatusChangeMetadata {
+  type: ApprovalType.EXCHANGE_ORDER_STATUS_CHANGE;
+  exchangeOrderOID: string;
+  fromStatus: ExchangeOrderStatus;
+  toStatus: ExchangeOrderStatus;
+  requestedBy: string;
+  requestedAt: string;
+  businessJustification?: string;
+}
+
 // Union type for all metadata
 export type ApprovalRequestMetadata =
   | ApprovalRequestGroupTourBookingSpecialDiscountMetadata
   | ApprovalRequestBudgetApprovalMetadata
   | ApprovalRequestGroupTourBookingTransferMetadata
-  | ApprovalRequestGroupTourBookingAmendmentMetadata;
+  | ApprovalRequestGroupTourBookingAmendmentMetadata
+  | ApprovalRequestExchangeOrderStatusChangeMetadata;

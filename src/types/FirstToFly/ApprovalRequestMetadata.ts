@@ -248,8 +248,8 @@ export interface ApprovalRequestGroupTourBookingAmendmentMetadata {
   requestedDate: string;
 }
 
-export interface ApprovalRequestExchangeOrderStatusChangeMetadata {
-  type: ApprovalType.EXCHANGE_ORDER_STATUS_CHANGE;
+export interface ApprovalRequestExchangeOrderDraftToWfaMetadata {
+  type: ApprovalType.EXCHANGE_ORDER_DRAFT_TO_WFA;
   exchangeOrderOID: string;
   fromStatus: ExchangeOrderStatus;
   toStatus: ExchangeOrderStatus;
@@ -264,4 +264,4 @@ export type ApprovalRequestMetadata =
   | ApprovalRequestBudgetApprovalMetadata
   | ApprovalRequestGroupTourBookingTransferMetadata
   | ApprovalRequestGroupTourBookingAmendmentMetadata
-  | ApprovalRequestExchangeOrderStatusChangeMetadata;
+  | ApprovalRequestExchangeOrderDraftToWfaMetadata;

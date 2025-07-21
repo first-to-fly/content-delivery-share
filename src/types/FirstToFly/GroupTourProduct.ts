@@ -1,5 +1,6 @@
 import { CDEntity } from "../entity";
 import { MultiLangRecord } from "../multipleLanguage";
+import { NamedURL } from "../url";
 
 /**
  * @export
@@ -40,6 +41,8 @@ export interface FTFGroupTourProduct extends CDEntity {
   published: boolean;
 
   ownerOIDs: string[] | null;
+
+  media: NamedURL[] | null;
 
   groupTourItineraryOIDs: string[] | null;
   groupTourCostingOIDs: string[] | null;

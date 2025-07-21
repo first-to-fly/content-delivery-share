@@ -334,4 +334,6 @@ export interface FTFGroupTourBooking extends CDEntity {
   updatedAt: string;
   createdBy: string;
   updatedBy: string | null;
+
+  ownerOIDs: string[];
 }

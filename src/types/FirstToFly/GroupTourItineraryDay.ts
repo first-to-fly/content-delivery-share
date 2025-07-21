@@ -1,5 +1,6 @@
 import { CDEntity } from "../entity";
 import { MultiLangRecord } from "../multipleLanguage";
+import { NamedURL } from "../url";
 
 /**
  * @export
@@ -15,6 +16,8 @@ export interface FTFGroupTourItineraryDay extends CDEntity {
 
   groupTourItineraryMealOIDs: string[] | null;
   groupTourItineraryEventOIDs: string[] | null;
+
+  files: NamedURL[] | null;
 
   createdAt: string;
   updatedAt: string;

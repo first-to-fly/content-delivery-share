@@ -330,6 +330,8 @@ export interface FTFGroupTourBooking extends CDEntity {
   liveRoomCount: number;
   livePaxCount: number;
 
+  latestApprovalRequestOID: string | null;
+
   createdAt: string;
   updatedAt: string;
   createdBy: string;

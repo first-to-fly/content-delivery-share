@@ -18,6 +18,8 @@ export enum PaymentStatus {
 export interface FTFBudgetEntry extends CDEntity {
   budgetOID: string; // parent
 
+  supplierOID: string | null;
+
   name: string;
   category: CostingItemCategory;
   calculationBasis: CalculationBasis;

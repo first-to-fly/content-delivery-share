@@ -10,6 +10,8 @@ import { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } fro
 export interface FTFGroupTourCostingEntry extends CDEntity {
   groupTourCostingOID: string; // parent
 
+  supplierOID: string | null;
+
   name: string;
   category: CostingItemCategory;
   calculationBasis: CalculationBasis;

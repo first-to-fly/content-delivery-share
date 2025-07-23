@@ -8,7 +8,6 @@ export interface FTFExchangeOrderItem extends CDEntity {
 
   quantity: number;
   unitPrice: number;
-  totalPrice: number;
   currency: string;
 
   budgetEntryUsages: {

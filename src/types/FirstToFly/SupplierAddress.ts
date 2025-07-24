@@ -15,5 +15,5 @@ export interface FTFSupplierAddress extends CDEntity {
   updatedAt: string;
   createdBy: string;
   updatedBy: string;
-  tenantId: string;
+  tenantOID: string;
 }

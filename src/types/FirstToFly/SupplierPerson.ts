@@ -1,19 +1,22 @@
 import { CDEntity } from "../entity";
 
 
+export interface ContactInfo {
+  email?: string;
+  phone?: string;
+  fax?: string;
+  officePhone?: string;
+  isDefault: boolean;
+}
+
 export interface FTFSupplierPerson extends CDEntity {
+  oid: string;
   supplierOID: string;
   firstName: string;
   lastName: string;
   position?: string;
   department?: string;
-  contactInfo: Array<{
-    email?: string;
-    phone?: string;
-    fax?: string;
-    officePhone?: string;
-    isDefault?: boolean;
-  }>;
+  contactInfo: ContactInfo[];
   isDefault: boolean;
   createdAt: string;
   updatedAt: string;

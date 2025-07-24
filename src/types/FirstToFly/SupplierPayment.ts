@@ -10,7 +10,11 @@ export interface FTFSupplierPayment extends CDEntity {
   bankCode?: string;
   swiftCode?: string;
   routingNumber?: string;
+  iban?: string;
+  currency?: string;
+  paymentTerms?: string;
   isDefault: boolean;
+  remarks?: string;
   createdAt: string;
   updatedAt: string;
   createdBy: string;

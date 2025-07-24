@@ -5,11 +5,15 @@ export interface FTFSupplierPerson extends CDEntity {
   supplierOID: string;
   firstName: string;
   lastName: string;
-  email?: string;
-  phone?: string;
   position?: string;
   department?: string;
-  isPrimary: boolean;
+  contactInfo: Array<{
+    email?: string;
+    phone?: string;
+    fax?: string;
+    officePhone?: string;
+    isDefault?: boolean;
+  }>;
   createdAt: string;
   updatedAt: string;
   createdBy: string;

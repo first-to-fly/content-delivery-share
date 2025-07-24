@@ -12,12 +12,16 @@ export interface FTFSupplierPayment extends CDEntity {
   routingNumber?: string;
   iban?: string;
   currency?: string;
-  paymentTerms?: string;
+  cnapCode?: string;
+  bicCode?: string;
+  branchNo?: string;
+  branch?: string;
+  beneficiary?: string;
   isDefault: boolean;
   remarks?: string;
   createdAt: string;
   updatedAt: string;
   createdBy: string;
   updatedBy: string;
-  tenantId: string;
+  tenantOID: string;
 }

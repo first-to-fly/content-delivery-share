@@ -30,6 +30,22 @@ export interface SupplierInfo {
   iataCode?: string | null;
   icon?: string | null;
   bsp?: boolean | null;
+
+  // Below are fields that are not yet implemented
+  // Land Operator fields
+  // vehicleTypes?: string[] | null;
+  // // Hotel fields
+  // starRating?: number | null;
+  // chainAffiliation?: string | null;
+  // propertyType?: string | null;
+  // // Insurance fields
+  // coverageTypes?: string[] | null;
+  // policyLimits?: string | null;
+  // // Travel Agency fields
+  // territories?: string[] | null;
+  // specializations?: string[] | null;
+  // destinations?: string[] | null;
+  // languages?: string[] | null;
 }
 
 export interface FTFSupplier {

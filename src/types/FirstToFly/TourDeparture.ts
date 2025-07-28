@@ -35,6 +35,7 @@ export interface FTFTourDeparture extends CDEntity {
   budgetOID: string | null; // available at OPEN status
 
   departureCode: string;
+  customTourName: string | null;
 
   startingFullFare: number;
   startingLandFare: number;

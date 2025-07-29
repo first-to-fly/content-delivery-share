@@ -18,6 +18,7 @@ export interface FTFTourDepartureAccommodation extends CDEntity {
   poiOID: string | null;
   countryCode: string;
   cityCode: string;
+  dev: string;
 
   createdAt: string;
   updatedAt: string;

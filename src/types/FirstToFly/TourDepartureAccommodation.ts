@@ -5,7 +5,7 @@ import { GeoPoint } from "./POI";
 export interface FTFTourDepartureAccommodation extends CDEntity {
   tenantOID: string;
   tourDepartureOID: string;
-  
+
   name: string; // Resolved multilanguage field
   checkIn: string; // ISO datetime string
   checkOut: string; // ISO datetime string

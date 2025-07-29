@@ -1,4 +1,5 @@
 import { CDEntity } from "../entity";
+import { MultiLangRecord } from "../multipleLanguage";
 import { GeoPoint } from "./POI";
 
 
@@ -6,13 +7,13 @@ export interface FTFTourDepartureAccommodation extends CDEntity {
   tenantOID: string;
   tourDepartureOID: string;
 
-  name: string; // Resolved multilanguage field
+  name: MultiLangRecord<string>;
   checkIn: string; // ISO datetime string
   checkOut: string; // ISO datetime string
   location: GeoPoint;
   contact: string;
   address: string;
-  description: string; // Resolved multilanguage field
+  description: MultiLangRecord<string>
   remarks: string | null;
   poiOID: string | null;
   countryCode: string;

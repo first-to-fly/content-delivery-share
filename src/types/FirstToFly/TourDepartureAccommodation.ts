@@ -13,6 +13,7 @@ export interface FTFTourDepartureAccommodation extends CDEntity {
   contact: string;
   address: string;
   description: string; // Resolved multilanguage field
+  remarks: string | null;
   poiOID: string | null;
   countryCode: string;
   cityCode: string;

@@ -10,13 +10,16 @@ import { getCDTypeFromOID } from "../../utils";
 
 
 export const MAX_THREAD = 10;
-const CD_DB_VERSION = 42;
+
+const CD_DB_VERSION = Object.values(CDEntityType).length;
+
 // ===========================================================================
 // TYPES
 // ===========================================================================
 // const isBrowser = typeof window !== "undefined";
 // Backward compatible
 // const { indexedDB } = self;
+
 let initPromiseResolve: (value: void | PromiseLike<void>) => void;
 let initialized = false;
 let cdDB: IDBDatabase;

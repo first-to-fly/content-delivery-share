@@ -51,6 +51,7 @@ export enum CDEntityType {
   FTF_SUPPLIER_PAYMENT = "ftf-supplierPayment",
   FTF_SUPPLIER_PERSON = "ftf-supplierPerson",
   FTF_TOUR_DEPARTURE = "ftf-tourDeparture",
+  FTF_TOUR_DEPARTURE_ACCOMMODATION = "ftf-tourDepartureAccommodation",
   FTF_EXCHANGE_ORDER = "ftf-exchangeOrder",
   FTF_EXCHANGE_ORDER_ITEM = "ftf-exchangeOrderItem",
   FTF_APPROVAL_REQUEST = "ftf-approvalRequest",

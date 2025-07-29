@@ -58,6 +58,7 @@ export interface FTFTourDeparture extends CDEntity {
   isCancelled: boolean;
   tourLeaderOIDs: string[] | null;
   tourManagerOIDs: string[] | null;
+  accommodationOIDs: string[] | null;
 
   livePaxCount: number; // number of pax in live bookings (including in_progress bookings)
   bookedPaxCount: number; // number of pax in booked bookings

@@ -3,6 +3,7 @@ import { FTFApproval } from "./FirstToFly/Approval";
 import { FTFApprovalRequest } from "./FirstToFly/ApprovalRequest";
 import { FTFAssembleLocationAirlines } from "./FirstToFly/AssembleLocationAirlines";
 import { FTFBadge } from "./FirstToFly/Badge";
+import { FTFBill } from "./FirstToFly/Bill";
 import { FTFBudget } from "./FirstToFly/Budget";
 import { FTFBudgetEntry } from "./FirstToFly/BudgetEntry";
 import { FTFCostingItem } from "./FirstToFly/CostingItem";
@@ -30,6 +31,7 @@ import { FTFGroupTourPricing } from "./FirstToFly/GroupTourPricing";
 import { FTFGroupTourProduct } from "./FirstToFly/GroupTourProduct";
 import { FTFInsuranceDiscount } from "./FirstToFly/InsuranceDiscount";
 import { FTFLocation } from "./FirstToFly/Location";
+import { FTFMatchDoc } from "./FirstToFly/MatchDoc";
 import { FTFMeal } from "./FirstToFly/Meal";
 import { FTFPaymentOrder } from "./FirstToFly/PaymentOrder";
 import { FTFPOI } from "./FirstToFly/POI";
@@ -65,6 +67,7 @@ export type AllEntityField =
   | keyof FTFApproval
   | keyof FTFApprovalRequest
   | keyof FTFBadge
+  | keyof FTFBill
   | keyof FTFBudget
   | keyof FTFBudgetEntry
   | keyof FTFCostingItem
@@ -74,6 +77,7 @@ export type AllEntityField =
   | keyof FTFDesignation
   | keyof FTFDocument
   | keyof FTFLocation
+  | keyof FTFMatchDoc
   | keyof FTFMeal
   | keyof FTFPOI
   | keyof FTFPrivacyPolicy

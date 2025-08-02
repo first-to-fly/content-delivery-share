@@ -24,6 +24,8 @@ export enum CDEntityType {
   FTF_TERM = "ftf-term",
   FTF_BADGE = "ftf-badge",
   FTF_BUDGET = "ftf-budget",
+  FTF_BILL = "ftf-bill",
+  FTF_MATCH_DOC = "ftf-matchDoc",
   FTF_BUDGET_ENTRY = "ftf-budgetEntry",
   FTF_MEAL = "ftf-meal",
   FTF_DESIGNATION = "ftf-designation",

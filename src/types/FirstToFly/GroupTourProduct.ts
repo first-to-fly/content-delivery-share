@@ -43,6 +43,9 @@ export interface FTFGroupTourProduct extends CDEntity {
   ownerOIDs: string[] | null;
 
   media: NamedURL[] | null;
+  coverPicture: NamedURL | null;
+  productBannerDesktop: NamedURL | null;
+  productBannerMobile: NamedURL | null;
 
   groupTourItineraryOIDs: string[] | null;
   groupTourCostingOIDs: string[] | null;

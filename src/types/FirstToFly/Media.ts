@@ -1,5 +1,6 @@
 import { CDEntity } from "../entity";
 
+
 export enum MediaType {
   PHOTO = "photo",
   VIDEO = "video",

@@ -12,6 +12,15 @@ export enum CDEntityType {
   FTF_GROUP_TOUR_COSTING_ENTRY = "ftf-groupTourCostingEntry",
   FTF_GROUP_TOUR_PRICING = "ftf-groupTourPricing",
   FTF_GROUP_TOUR_PNL_SIMULATION = "ftf-groupTourPNLSimulation",
+
+  // INDEPENDENT TOUR PRODUCTS
+  FTF_INDEPENDENT_TOUR_PRODUCT = "ftf-independentTourProduct",
+  FTF_INDEPENDENT_TOUR_COSTING = "ftf-independentTourCosting",
+  FTF_INDEPENDENT_TOUR_PRICING = "ftf-independentTourPricing",
+  FTF_INDEPENDENT_TOUR_ACCOMMODATION_COSTING = "ftf-independentTourAccommodationCosting",
+  FTF_INDEPENDENT_TOUR_MISCELLANEOUS_COSTING = "ftf-independentTourMiscellaneousCosting",
+  FTF_INDEPENDENT_TOUR_OPTIONAL_SERVICE_COSTING = "ftf-independentTourOptionalServiceCosting",
+
   FTF_PRODUCT_TYPE = "ftf-productType",
   FTF_DEPARTMENT = "ftf-department",
   FTF_DISCOUNT = "ftf-discount",

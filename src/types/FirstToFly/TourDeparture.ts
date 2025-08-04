@@ -53,6 +53,7 @@ export interface FTFTourDeparture extends CDEntity {
   paymentDueDate: string | null;
   assembleLocationAirlineOID: string | null;
   assembleAirlineLocationTime: string | null;
+  hkSeat: number | null;
   description: MultiLangRecord<string> | null;
   isArchived: boolean;
   isCancelled: boolean;

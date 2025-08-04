@@ -1,3 +1,5 @@
+import { CDEntity } from "../entity";
+
 export enum MediaType {
   PHOTO = "photo",
   VIDEO = "video",
@@ -13,9 +15,7 @@ export interface MediaRelevantLocation {
   cities: string[];
 }
 
-export interface FTFMedia {
-  oid: string;
-  entityType: "media";
+export interface FTFMedia extends CDEntity {
   tenantOID: string;
 
   type: MediaType;

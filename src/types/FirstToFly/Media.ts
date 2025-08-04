@@ -13,7 +13,7 @@ export interface MediaRelevantLocation {
   cities: string[];
 }
 
-export interface Media {
+export interface FTFMedia {
   oid: string;
   entityType: "media";
   tenantOID: string;

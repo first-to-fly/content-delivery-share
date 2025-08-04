@@ -33,6 +33,7 @@ import { FTFInsuranceDiscount } from "./FirstToFly/InsuranceDiscount";
 import { FTFLocation } from "./FirstToFly/Location";
 import { FTFMatchDoc } from "./FirstToFly/MatchDoc";
 import { FTFMeal } from "./FirstToFly/Meal";
+import { FTFMedia } from "./FirstToFly/Media";
 import { FTFPaymentOrder } from "./FirstToFly/PaymentOrder";
 import { FTFPOI } from "./FirstToFly/POI";
 import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
@@ -79,7 +80,6 @@ export type AllEntityField =
   | keyof FTFMeal
   | keyof FTFLocation
   | keyof FTFMatchDoc
-  | keyof FTFMeal
   | keyof FTFPOI
   | keyof FTFPrivacyPolicy
   | keyof FTFDiscount
@@ -112,7 +112,7 @@ export type AllEntityField =
   | keyof FTFUser
   | keyof FTFAssembleLocationAirlines
   | keyof FTFUsefulInfo
-
+  | keyof FTFMedia
   | keyof FTFSupplier
   | keyof FTFSupplierAddress
   | keyof FTFSupplierPayment

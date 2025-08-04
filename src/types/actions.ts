@@ -76,6 +76,7 @@ export type AllEntityField =
   | keyof FTFDeposit
   | keyof FTFDesignation
   | keyof FTFDocument
+  | keyof FTFMeal
   | keyof FTFLocation
   | keyof FTFMatchDoc
   | keyof FTFMeal

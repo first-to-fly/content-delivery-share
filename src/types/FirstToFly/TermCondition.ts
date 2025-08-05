@@ -1,4 +1,5 @@
 import { CDEntity } from "../entity";
+import { ProductType } from "../enums/productType";
 import { NamedURL } from "../url";
 
 
@@ -31,7 +32,7 @@ export interface FTFTermCondition extends CDEntity {
 
   coveredEntityOIDs: string[];
 
-  productTypeOIDs: string[] | null;
+  productTypes: ProductType[] | null;
 
   createdAt: string;
   updatedAt: string;

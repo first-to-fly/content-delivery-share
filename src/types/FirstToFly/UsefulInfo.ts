@@ -1,4 +1,5 @@
 import { CDEntity } from "../entity";
+import { ProductType } from "../enums/productType";
 
 /**
  * @export
@@ -9,7 +10,7 @@ import { CDEntity } from "../entity";
 export interface FTFUsefulInfo extends CDEntity {
   name: string;
 
-  productTypeOIDs: string[] | null;
+  productTypes: ProductType[] | null;
 
   isActive: boolean;
   remarks: string | null;

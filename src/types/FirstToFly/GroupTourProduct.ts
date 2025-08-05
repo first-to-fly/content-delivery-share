@@ -1,6 +1,19 @@
 import { CDEntity } from "../entity";
+import { LanguageCode } from "../enums/language";
 import { MultiLangRecord } from "../multipleLanguage";
 import { NamedURL } from "../url";
+
+
+export enum GroupTourProductDocumentationType {
+  SALE_KIT = "sale-kit",
+  COMPARISON_CHART = "comparison-chart",
+  USP_LIST = "usp-list",
+  IMPORTANT_NOTICE = "important-notice",
+  IMMIGRATION_POLICY = "immigration-policy",
+  SPECIAL_REQUIREMENTS = "special-requirements",
+  VISA_APPLICATION_FORM = "visa-application-form",
+  EXTRA_INFORMATION = "extra-information",
+}
 
 /**
  * @export
@@ -43,6 +56,31 @@ export interface FTFGroupTourProduct extends CDEntity {
   ownerOIDs: string[] | null;
 
   media: NamedURL[] | null;
+
+  videos: {
+    active: boolean;
+    title: string;
+    file: NamedURL;
+    updatedAt: string;
+  }[] | null;
+  itineraryPDFs: {
+    active: boolean;
+    lang: LanguageCode;
+    title: string;
+    itineraryOID?: string;
+    file: NamedURL;
+    updatedAt: string;
+  }[] | null;
+  documentations: {
+    active: boolean;
+    type: GroupTourProductDocumentationType;
+    file: NamedURL;
+    updatedAt: string;
+  }[] | null;
+
+  coverPicture: NamedURL | null;
+  productBannerDesktop: NamedURL | null;
+  productBannerMobile: NamedURL | null;
 
   groupTourItineraryOIDs: string[] | null;
   groupTourCostingOIDs: string[] | null;

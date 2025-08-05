@@ -1,12 +1,22 @@
+import { LanguageCode } from "../enums/language";
+import { MultiLangRecord } from "../multipleLanguage";
+import { NamedURL } from "../url";
+
+
+export enum IndependentTourProductDocumentationType {
+  SALE_KIT = "sale-kit",
+  COMPARISON_CHART = "comparison-chart",
+  USP_LIST = "usp-list",
+  IMPORTANT_NOTICE = "important-notice",
+  IMMIGRATION_POLICY = "immigration-policy",
+  SPECIAL_REQUIREMENTS = "special-requirements",
+  VISA_APPLICATION_FORM = "visa-application-form",
+  EXTRA_INFORMATION = "extra-information",
+}
+
 // Interface for Independent Tour Product MultiLanguageContent fields
 export interface MultiLanguageContent {
   [languageCode: string]: string;
-}
-
-// Interface for Named URL
-export interface NamedURL {
-  name: string;
-  url: string;
 }
 
 export interface FTFIndependentTourProduct {
@@ -21,15 +31,15 @@ export interface FTFIndependentTourProduct {
 
   code: string;
 
-  name: MultiLanguageContent;
-  description: MultiLanguageContent | null;
+  name: MultiLangRecord<string>;
+  description: MultiLangRecord<string> | null;
 
-  shoutout: MultiLanguageContent | null;
-  highlights: MultiLanguageContent | null;
-  writeup: MultiLanguageContent | null;
-  importantNotes: MultiLanguageContent | null;
-  inclusions: MultiLanguageContent | null;
-  exclusions: MultiLanguageContent | null;
+  shoutout: MultiLangRecord<string> | null;
+  highlights: MultiLangRecord<string> | null;
+  writeup: MultiLangRecord<string> | null;
+  importantNotes: MultiLangRecord<string> | null;
+  inclusions: MultiLangRecord<string> | null;
+  exclusions: MultiLangRecord<string> | null;
 
   durationDays: number;
   durationNights: number;
@@ -44,6 +54,30 @@ export interface FTFIndependentTourProduct {
   published: boolean;
 
   media: NamedURL[];
+  coverPicture: NamedURL | null;
+  productBannerDesktop: NamedURL | null;
+  productBannerMobile: NamedURL | null;
+
+  videos: {
+    active: boolean;
+    title: string;
+    file: NamedURL;
+    updatedAt: string;
+  }[] | null;
+  itineraryPDFs: {
+    active: boolean;
+    lang: LanguageCode;
+    title: string;
+    itineraryOID?: string;
+    file: NamedURL;
+    updatedAt: string;
+  }[] | null;
+  documentations: {
+    active: boolean;
+    type: IndependentTourProductDocumentationType;
+    file: NamedURL;
+    updatedAt: string;
+  }[] | null;
 
   independentTourProductPricingOID: string | null;
   independentTourProductCostingOID: string | null;

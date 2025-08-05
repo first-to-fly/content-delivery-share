@@ -45,6 +45,9 @@ export interface FTFIndependentTourProduct {
 
   media: NamedURL[];
 
+  independentTourProductPricingOID: string | null;
+  independentTourProductCostingOID: string | null;
+
   tenantOID: string;
 
   createdBy: string;

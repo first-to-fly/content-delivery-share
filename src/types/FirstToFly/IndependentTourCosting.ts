@@ -12,6 +12,10 @@ export interface FTFIndependentTourCosting {
 
   isActive: boolean;
 
+  independentTourAccommodationCostingOIDs: string[];
+  independentTourOptionalServiceCostingOIDs: string[];
+  independentTourMiscellaneousCostingOIDs: string[];
+
   tenantOID: string;
 
   createdBy: string;

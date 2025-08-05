@@ -27,7 +27,7 @@ export interface FTFIndependentTourProduct {
 
   departmentOID: string;
   sectorGroupOID: string | null;
-  itineraryOID: string | null;
+  itineraryOID: string | undefined;
 
   code: string;
 

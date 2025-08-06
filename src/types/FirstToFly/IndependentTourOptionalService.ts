@@ -1,9 +1,8 @@
-export interface FTFIndependentTourOptionalServiceCosting {
+export interface FTFIndependentTourOptionalService {
   oid: string;
-  entityType: "independentTourOptionalServiceCosting";
+  entityType: "independentTourOptionalService";
 
-  independentTourOptionalServiceCostingOID: string;
-  independentTourCostingOID: string;
+  independentTourProductOID: string;
 
   name: string;
   costValue: {

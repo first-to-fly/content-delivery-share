@@ -1,12 +1,11 @@
 import type { OccupancyType } from "./CostingItem";
 
 
-export interface FTFIndependentTourAccommodationCosting {
+export interface FTFIndependentTourAccommodation {
   oid: string;
-  entityType: "independentTourAccommodationCosting";
+  entityType: "independentTourAccommodation";
 
-  independentTourAccommodationCostingOID: string;
-  independentTourCostingOID: string;
+  independentTourProductOID: string;
 
   name: string;
   costValue: {

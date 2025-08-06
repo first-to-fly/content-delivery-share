@@ -29,10 +29,9 @@ import { FTFGroupTourItineraryMeal } from "./FirstToFly/GroupTourItineraryMeal";
 import { FTFGroupTourPNLSimulation } from "./FirstToFly/GroupTourPNLSimulation";
 import { FTFGroupTourPricing } from "./FirstToFly/GroupTourPricing";
 import { FTFGroupTourProduct } from "./FirstToFly/GroupTourProduct";
-import { FTFIndependentTourAccommodationCosting } from "./FirstToFly/IndependentTourAccommodationCosting";
-import { FTFIndependentTourCosting } from "./FirstToFly/IndependentTourCosting";
-import { FTFIndependentTourMiscellaneousCosting } from "./FirstToFly/IndependentTourMiscellaneousCosting";
-import { FTFIndependentTourOptionalServiceCosting } from "./FirstToFly/IndependentTourOptionalServiceCosting";
+import { FTFIndependentTourAccommodation } from "./FirstToFly/IndependentTourAccommodation";
+import { FTFIndependentTourMiscellaneous } from "./FirstToFly/IndependentTourMiscellaneous";
+import { FTFIndependentTourOptionalService } from "./FirstToFly/IndependentTourOptionalService";
 import { FTFIndependentTourPricing } from "./FirstToFly/IndependentTourPricing";
 import { FTFIndependentTourProduct } from "./FirstToFly/IndependentTourProduct";
 import { FTFInsuranceDiscount } from "./FirstToFly/InsuranceDiscount";
@@ -100,11 +99,10 @@ export type AllEntityField =
   | keyof FTFGroupTourPricing
   | keyof FTFGroupTourPNLSimulation
   | keyof FTFIndependentTourProduct
-  | keyof FTFIndependentTourCosting
   | keyof FTFIndependentTourPricing
-  | keyof FTFIndependentTourAccommodationCosting
-  | keyof FTFIndependentTourMiscellaneousCosting
-  | keyof FTFIndependentTourOptionalServiceCosting
+  | keyof FTFIndependentTourAccommodation
+  | keyof FTFIndependentTourMiscellaneous
+  | keyof FTFIndependentTourOptionalService
   | keyof FTFTransportGroup
   | keyof FTFTransportSegment
   | keyof FTFTransportPlan

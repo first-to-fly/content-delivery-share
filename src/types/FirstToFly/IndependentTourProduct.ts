@@ -82,6 +82,9 @@ export interface FTFIndependentTourProduct {
   }[] | null;
 
   independentTourProductCostingOID: string | null;
+  independentTourAccommodationOIDs: string[];
+  independentTourOptionalServiceOIDs: string[];
+  independentTourMiscellaneousOIDs: string[];
 
   tenantOID: string;
 

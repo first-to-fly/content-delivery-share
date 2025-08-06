@@ -1,4 +1,6 @@
 import { CDEntity } from "../entity";
+import { MultiLangRecord } from "../multipleLanguage";
+import { NamedURL } from "../url";
 
 /**
  * @export
@@ -17,6 +19,12 @@ export interface FTFGroupTourItinerary extends CDEntity {
 
   isActive: boolean;
   tenantOID: string;
+
+  pdfs: MultiLangRecord<{
+    active: boolean;
+    file: NamedURL;
+    updatedAt: string;
+  }[]> | null;
 
   groupTourItineraryDayOIDs: string[] | null;
 

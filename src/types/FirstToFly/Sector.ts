@@ -1,4 +1,6 @@
 import { CDEntity } from "../entity";
+import { ProductType } from "../enums/productType";
+
 
 /**
  * @export
@@ -14,7 +16,7 @@ export interface FTFSector extends CDEntity {
   parentOID: string | null;
 
   isPopular: boolean;
-  productTypeOIDs: string[] | null;
+  productTypes: ProductType[] | null;
   departmentOID: string | null;
 
   createdAt: string;

@@ -1,4 +1,5 @@
 import { CDEntity } from "../entity";
+import { ProductType } from "../enums/productType";
 
 
 export enum DepositType {
@@ -20,7 +21,7 @@ export interface FTFDeposit extends CDEntity {
   remarks: string | null;
 
   coveredEntityOIDs: string[];
-  productTypeOIDs: string[] | null;
+  productTypes: ProductType[] | null;
 
   isActive: boolean;
 

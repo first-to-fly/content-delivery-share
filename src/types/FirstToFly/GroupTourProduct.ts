@@ -1,5 +1,4 @@
 import { CDEntity } from "../entity";
-import { LanguageCode } from "../enums/language";
 import { MultiLangRecord } from "../multipleLanguage";
 import { NamedURL } from "../url";
 
@@ -55,19 +54,9 @@ export interface FTFGroupTourProduct extends CDEntity {
 
   ownerOIDs: string[] | null;
 
-  media: NamedURL[] | null;
-
   videos: {
     active: boolean;
     title: string;
-    file: NamedURL;
-    updatedAt: string;
-  }[] | null;
-  itineraryPDFs: {
-    active: boolean;
-    lang: LanguageCode;
-    title: string;
-    itineraryOID?: string;
     file: NamedURL;
     updatedAt: string;
   }[] | null;

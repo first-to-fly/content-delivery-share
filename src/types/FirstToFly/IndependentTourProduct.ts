@@ -50,6 +50,8 @@ export interface FTFIndependentTourProduct {
   salesPeriodStartDate: string;
   salesPeriodEndDate: string | null;
 
+  targetYieldPercentage: number | null;
+
   isActive: boolean;
   published: boolean;
 
@@ -79,7 +81,6 @@ export interface FTFIndependentTourProduct {
     updatedAt: string;
   }[] | null;
 
-  independentTourProductPricingOID: string | null;
   independentTourProductCostingOID: string | null;
 
   tenantOID: string;

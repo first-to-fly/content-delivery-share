@@ -32,7 +32,6 @@ import { FTFGroupTourProduct } from "./FirstToFly/GroupTourProduct";
 import { FTFIndependentTourAccommodation } from "./FirstToFly/IndependentTourAccommodation";
 import { FTFIndependentTourMiscellaneous } from "./FirstToFly/IndependentTourMiscellaneous";
 import { FTFIndependentTourOptionalService } from "./FirstToFly/IndependentTourOptionalService";
-import { FTFIndependentTourPricing } from "./FirstToFly/IndependentTourPricing";
 import { FTFIndependentTourProduct } from "./FirstToFly/IndependentTourProduct";
 import { FTFInsuranceDiscount } from "./FirstToFly/InsuranceDiscount";
 import { FTFLocation } from "./FirstToFly/Location";
@@ -99,7 +98,6 @@ export type AllEntityField =
   | keyof FTFGroupTourPricing
   | keyof FTFGroupTourPNLSimulation
   | keyof FTFIndependentTourProduct
-  | keyof FTFIndependentTourPricing
   | keyof FTFIndependentTourAccommodation
   | keyof FTFIndependentTourMiscellaneous
   | keyof FTFIndependentTourOptionalService

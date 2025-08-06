@@ -15,7 +15,6 @@ export interface FTFIndependentTourItinerary extends CDEntity {
   validityStartDate: string;
   validityEndDate: string;
   
-  isActive: boolean;
   tenantOID: string;
   
   pdfs: MultiLangRecord<{

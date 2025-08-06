@@ -43,7 +43,6 @@ import { FTFMedia } from "./FirstToFly/Media";
 import { FTFPaymentOrder } from "./FirstToFly/PaymentOrder";
 import { FTFPOI } from "./FirstToFly/POI";
 import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
-import { FTFProductType } from "./FirstToFly/ProductType";
 import { FTFReferenceCode } from "./FirstToFly/ReferenceCode";
 import { FTFRoomConfiguration } from "./FirstToFly/RoomConfiguration";
 import { FTFRoomConfigurationRule } from "./FirstToFly/RoomConfigurationRule";
@@ -108,7 +107,6 @@ export type AllEntityField =
   | keyof FTFTransportGroup
   | keyof FTFTransportSegment
   | keyof FTFTransportPlan
-  | keyof FTFProductType
   | keyof FTFReferenceCode
   | keyof FTFRoomConfiguration
   | keyof FTFRoomConfigurationRule

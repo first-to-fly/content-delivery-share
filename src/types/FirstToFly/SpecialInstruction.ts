@@ -1,4 +1,5 @@
 import { CDEntity } from "../entity";
+import { ProductType } from "../enums/productType";
 
 /**
  * @export
@@ -15,7 +16,7 @@ export interface FTFSpecialInstruction extends CDEntity {
 
   // Relationships
   coveredEntityOIDs: string[];
-  productTypeOIDs: string[];
+  productTypes: ProductType[];
 
   createdAt: string;
   updatedAt: string;

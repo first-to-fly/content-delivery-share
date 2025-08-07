@@ -15,7 +15,6 @@ export enum CDEntityType {
 
   // INDEPENDENT TOUR PRODUCTS
   FTF_INDEPENDENT_TOUR_PRODUCT = "ftf-independentTourProduct",
-  FTF_INDEPENDENT_TOUR_PRICING = "ftf-independentTourPricing",
   FTF_INDEPENDENT_TOUR_ACCOMMODATION = "ftf-independentTourAccommodation",
   FTF_INDEPENDENT_TOUR_MISCELLANEOUS = "ftf-independentTourMiscellaneous",
   FTF_INDEPENDENT_TOUR_OPTIONAL_SERVICE = "ftf-independentTourOptionalService",

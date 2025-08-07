@@ -1,4 +1,3 @@
-import { LanguageCode } from "../enums/language";
 import { MultiLangRecord } from "../multipleLanguage";
 import { NamedURL } from "../url";
 
@@ -53,20 +52,12 @@ export interface FTFIndependentTourProduct {
   isActive: boolean;
   published: boolean;
 
-  media: NamedURL[];
   coverPicture: NamedURL | null;
   productBannerDesktop: NamedURL | null;
   productBannerMobile: NamedURL | null;
 
   videos: {
     active: boolean;
-    title: string;
-    file: NamedURL;
-    updatedAt: string;
-  }[] | null;
-  itineraryPDFs: {
-    active: boolean;
-    lang: LanguageCode;
     title: string;
     file: NamedURL;
     updatedAt: string;

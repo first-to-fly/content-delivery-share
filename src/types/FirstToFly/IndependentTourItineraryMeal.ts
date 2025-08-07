@@ -14,7 +14,7 @@ export interface FTFIndependentTourItineraryMeal extends CDEntity {
   provided: boolean;
   onBoard: boolean;
   poiOID: string | null;
-  
+
   createdAt: string;
   updatedAt: string;
   createdBy: string;

@@ -12,7 +12,7 @@ export interface FTFIndependentTourItineraryEvent extends CDEntity {
   title: MultiLangRecord<string>;
   description: MultiLangRecord<string>;
   poiOID: string | null;
-  
+
   createdAt: string;
   updatedAt: string;
   createdBy: string;

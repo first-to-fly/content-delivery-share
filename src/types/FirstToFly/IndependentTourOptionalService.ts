@@ -1,6 +1,7 @@
-export interface FTFIndependentTourOptionalService {
-  oid: string;
-  entityType: "independentTourOptionalService";
+import type { CDEntity } from "../entity";
+
+
+export interface FTFIndependentTourOptionalService extends CDEntity {
 
   independentTourProductOID: string;
 

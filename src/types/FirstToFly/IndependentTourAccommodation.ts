@@ -1,10 +1,8 @@
+import type { CDEntity } from "../entity";
 import type { OccupancyType } from "./CostingItem";
 
 
-export interface FTFIndependentTourAccommodation {
-  oid: string;
-  entityType: "independentTourAccommodation";
-
+export interface FTFIndependentTourAccommodation extends CDEntity {
   independentTourProductOID: string;
 
   name: string;

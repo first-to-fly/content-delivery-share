@@ -1,6 +1,7 @@
-export interface FTFIndependentTourMiscellaneous {
-  oid: string;
-  entityType: "independentTourMiscellaneous";
+import type { CDEntity } from "../entity";
+
+
+export interface FTFIndependentTourMiscellaneous extends CDEntity {
 
   independentTourProductOID: string;
 

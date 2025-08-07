@@ -1,3 +1,4 @@
+import type { CDEntity } from "../entity";
 import { MultiLangRecord } from "../multipleLanguage";
 import { NamedURL } from "../url";
 
@@ -18,12 +19,11 @@ export interface MultiLanguageContent {
   [languageCode: string]: string;
 }
 
-export interface FTFIndependentTourProduct {
-  oid: string;
-  entityType: "independentTourProduct";
+export interface FTFIndependentTourProduct extends CDEntity {
 
   departmentOID: string;
   sectorGroupOID: string | null;
+  sectorOIDs: string[];
   independentTourProductItineraryOID: string | undefined;
 
   code: string;
@@ -43,9 +43,6 @@ export interface FTFIndependentTourProduct {
 
   validityStartDate: string;
   validityEndDate: string | null;
-
-  salesPeriodStartDate: string;
-  salesPeriodEndDate: string | null;
 
   targetYieldPercentage: number | null;
 
@@ -69,7 +66,6 @@ export interface FTFIndependentTourProduct {
     updatedAt: string;
   }[] | null;
 
-  independentTourProductCostingOID: string | null;
   independentTourAccommodationOIDs: string[];
   independentTourOptionalServiceOIDs: string[];
   independentTourMiscellaneousOIDs: string[];

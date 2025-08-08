@@ -1,10 +1,11 @@
 import type { CDEntity } from "../entity";
+import { BookingPaxType } from "../enums/bookingTypes";
 import { MultiLangRecord } from "../multipleLanguage";
 import { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
 import { DiscountMode } from "./Discount";
 import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
 import { GroupTourBookingDiscountMetadata, GroupTourBookingDiscountType } from "./GroupTourBookingDiscount";
-import { GroupTourBookingPaxPersonalDetails, GroupTourBookingPaxType } from "./GroupTourBookingPax";
+import { GroupTourBookingPaxPersonalDetails } from "./GroupTourBookingPax";
 import { GroupTourBookingRoomStatus } from "./GroupTourBookingRoom";
 import { MealType } from "./GroupTourItineraryMeal";
 import { FTFGroupTourPricingEntry } from "./GroupTourPricing";
@@ -35,7 +36,7 @@ export interface GroupTourBookingBookedRoomSnapshot {
 
 export interface GroupTourBookingPaxSnapshot {
   oid: string;
-  type: GroupTourBookingPaxType;
+  type: BookingPaxType;
   isLandTourOnly: boolean;
   mealPreference?: string;
   transportRecordOID?: string;

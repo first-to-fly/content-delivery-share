@@ -1,9 +1,8 @@
 import type { CDEntity } from "../entity";
-import type { BookingPaxPersonalDetails } from "./IndependentTourBookingPax";
+import { BookingPaxPersonalDetails, BookingPaxType } from "../enums/bookingTypes";
 
 // Import shared types
 export type { BookingDiscountType, DiscountMode } from "./IndependentTourBookingDiscount";
-export type { BookingPaxPersonalDetails, BookingPaxType } from "./IndependentTourBookingPax";
 export type { BookingRoomStatus } from "./IndependentTourBookingRoom";
 
 // Define payment and booking statuses as per requirements
@@ -66,7 +65,7 @@ export interface IndependentTourBookingRoomSnapshot {
 
 export interface IndependentTourBookingPaxSnapshot {
   oid: string;
-  type: string; // BookingPaxType as string
+  type: BookingPaxType;
   personalDetails?: BookingPaxPersonalDetails;
   mealPreference?: string;
   documentIds?: string[];

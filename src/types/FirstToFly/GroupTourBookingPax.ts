@@ -1,15 +1,17 @@
 import type { CDEntity } from "../entity";
-import type { BookingPaxPersonalDetails, BookingPaxType } from "./IndependentTourBookingPax";
+import { BookingPaxPersonalDetails, BookingPaxType } from "../enums/bookingTypes";
 
-// Use unified types for backward compatibility
+
+// TODO: this is messy, clean this up
 export type GroupTourBookingPaxType = BookingPaxType;
+export const GroupTourBookingPaxType = BookingPaxType;
 export type GroupTourBookingPaxPersonalDetails = BookingPaxPersonalDetails;
 
 export interface FTFGroupTourBookingPax extends CDEntity {
   // Fields specific to GroupTourBookingPax
   bookingOID: string;
   bookingRoomOID: string;
-  type: GroupTourBookingPaxType;
+  type: BookingPaxType;
   isLandTourOnly: boolean;
   personalDetails: GroupTourBookingPaxPersonalDetails | null;
   mealPreference: string | null;

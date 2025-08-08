@@ -1,5 +1,6 @@
 import type { CDEntity } from "../entity";
 
+
 export enum BookingDiscountType {
   CODE_BASED = "CODE_BASED",
   SPECIAL_REQUEST = "SPECIAL_REQUEST",
@@ -24,31 +25,31 @@ export interface IndependentTourBookingDiscountMetadata {
 }
 
 export interface FTFIndependentTourBookingDiscount extends CDEntity {
-  
+
   independentTourBookingOID: string;
-  
+
   discountType: BookingDiscountType;
   discountOID?: string; // Reference to Discount entity if applicable
-  
+
   discountCode?: string;
   discountName: string;
   description?: string;
-  
+
   discountMode: DiscountMode;
   discountValue: number; // Percentage (0-100) or fixed amount
   appliedAmount: number; // Actual amount discounted
-  
+
   // Validation metadata
   metadata?: IndependentTourBookingDiscountMetadata;
-  
+
   // Approval tracking for special discounts
   approvalRequired: boolean;
   approvalRequestOID?: string;
   approvedBy?: string;
   approvedAt?: string; // ISO date string
-  
+
   sortOrder?: number;
-  
+
   // Timestamps
   createdAt: string;
   updatedAt: string;

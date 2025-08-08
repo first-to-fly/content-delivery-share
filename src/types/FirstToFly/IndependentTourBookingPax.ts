@@ -1,5 +1,6 @@
 import type { CDEntity } from "../entity";
 
+
 export enum BookingPaxType {
   TWIN = "twin",
   SINGLE = "single",
@@ -43,31 +44,31 @@ export interface BookingPaxPersonalDetails {
 }
 
 export interface FTFIndependentTourBookingPax extends CDEntity {
-  
+
   independentTourBookingRoomOID: string;
-  
+
   paxType: BookingPaxType;
   personalDetails: BookingPaxPersonalDetails;
-  
+
   // Document references
   documentOIDs?: string[];
-  
+
   // Additional information
   ageAtTravel?: number;
   dietaryRequirements?: string[];
   medicalConditions?: string[];
-  
+
   // Insurance information
   insurancePolicyNumber?: string;
   insuranceProvider?: string;
   insuranceValidUntil?: string; // ISO date string
-  
+
   // Transport preferences (for optional transport services)
   transportRecordOID?: string;
   seatPreference?: string;
-  
+
   sortOrder?: number;
-  
+
   // Timestamps
   createdAt: string;
   updatedAt: string;

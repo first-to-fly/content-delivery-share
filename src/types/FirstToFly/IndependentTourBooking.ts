@@ -89,8 +89,24 @@ export interface IndependentTourBookingSnapshotData {
   snapshotVersion: string;
 }
 
-export interface IndependentTourBookingMetadata {
-  // Flexible metadata - use unknown instead of any for type safety
+/**
+ * Base metadata for IndependentTourBooking
+ * Contains primary customer/contact information
+ */
+export interface BaseIndependentTourBookingMetadata {
+  /**
+   * Primary customer/contact information
+   * This is required for all bookings
+   */
+  customer: BookingPaxPersonalDetails;
+}
+
+/**
+ * Complete IndependentTourBooking metadata
+ * Extends base metadata and allows additional fields
+ */
+export interface IndependentTourBookingMetadata extends BaseIndependentTourBookingMetadata {
+  // Additional fields can be added as needed
   [key: string]: unknown;
 }
 

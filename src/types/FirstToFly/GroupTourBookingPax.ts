@@ -1,5 +1,5 @@
 import type { CDEntity } from "../entity";
-import type { BookingPaxType, BookingPaxPersonalDetails } from "./IndependentTourBookingPax";
+import type { BookingPaxPersonalDetails, BookingPaxType } from "./IndependentTourBookingPax";
 
 // Use unified types for backward compatibility
 export type GroupTourBookingPaxType = BookingPaxType;

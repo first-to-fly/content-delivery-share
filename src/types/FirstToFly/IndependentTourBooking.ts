@@ -1,9 +1,10 @@
 import type { CDEntity } from "../entity";
+import type { BookingPaxPersonalDetails } from "./IndependentTourBookingPax";
 
 // Import shared types
-export type { BookingPaxType, BookingPaxPersonalDetails } from "./IndependentTourBookingPax";
-export type { BookingRoomStatus } from "./IndependentTourBookingRoom";
 export type { BookingDiscountType, DiscountMode } from "./IndependentTourBookingDiscount";
+export type { BookingPaxPersonalDetails, BookingPaxType } from "./IndependentTourBookingPax";
+export type { BookingRoomStatus } from "./IndependentTourBookingRoom";
 
 // Define payment and booking statuses as per requirements
 export enum BookingPaymentStatus {
@@ -26,17 +27,17 @@ export enum BookingStatus {
 // --- Snapshot Data Structure Interface (as per requirements lines 392-423) ---
 
 export interface IndependentTourProductSnapshot {
-  // Minimal product snapshot - extend as needed
   oid: string;
   name: string;
-  [key: string]: any;
+  // Add other fields as needed when implementing product snapshots
+  [key: string]: unknown;
 }
 
 export interface IndependentTourAccommodationSnapshot {
   oid: string;
   name: string;
-  costValue: any;
-  priceValue: any;
+  costValue: number | { amount: number; currency: string };
+  priceValue: number | { amount: number; currency: string };
 }
 
 export interface IndependentTourBookingRoomSnapshot {
@@ -48,32 +49,32 @@ export interface IndependentTourBookingRoomSnapshot {
 
 export interface IndependentTourBookingPaxSnapshot {
   oid: string;
-  type: string; // BookingPaxType
-  personalDetails?: any; // BookingPaxPersonalDetails
+  type: string; // BookingPaxType as string
+  personalDetails?: BookingPaxPersonalDetails;
   mealPreference?: string;
 }
 
 export interface IndependentTourBookingAddonSnapshot {
-  // Minimal addon snapshot - extend as needed
   oid: string;
   name: string;
   serviceDate: string;
   totalPrice: number;
-  [key: string]: any;
+  // Add other fields as needed when implementing addon snapshots
+  [key: string]: unknown;
 }
 
 export interface IndependentTourBookingAppliedDiscountSnapshot {
-  // Minimal discount snapshot - extend as needed
   oid: string;
   discountName: string;
   appliedAmount: number;
-  [key: string]: any;
+  // Add other fields as needed when implementing discount snapshots
+  [key: string]: unknown;
 }
 
 export interface TenantCurrencySnapshot {
-  // Minimal currency snapshot - extend as needed
   currency: string;
-  [key: string]: any;
+  // Add other fields as needed when implementing currency snapshots
+  [key: string]: unknown;
 }
 
 export interface IndependentTourBookingSnapshotData {
@@ -89,8 +90,8 @@ export interface IndependentTourBookingSnapshotData {
 }
 
 export interface IndependentTourBookingMetadata {
-  // Flexible metadata - can contain any fields
-  [key: string]: any;
+  // Flexible metadata - use unknown instead of any for type safety
+  [key: string]: unknown;
 }
 
 // --- Main CD Entity (as per requirements lines 340-378) ---
@@ -102,8 +103,8 @@ export interface FTFIndependentTourBooking extends CDEntity {
   departmentOID: string | null;
 
   bookingReference: string;
-  paymentStatus: string; // BookingPaymentStatus
-  bookingStatus: string; // BookingStatus
+  paymentStatus: string; // BookingPaymentStatus as string
+  bookingStatus: string; // BookingStatus as string
   totalAmount: number;
   receivedAmount: number;
 

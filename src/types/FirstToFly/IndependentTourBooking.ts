@@ -29,22 +29,39 @@ export enum BookingStatus {
 export interface IndependentTourProductSnapshot {
   oid: string;
   name: string;
-  // Add other fields as needed when implementing product snapshots
-  [key: string]: unknown;
+  code?: string;
+  description?: string;
+  duration?: number;
+  startLocation?: string;
+  endLocation?: string;
+  highlights?: string[];
+  inclusions?: string[];
+  exclusions?: string[];
+  additionalInfo?: Record<string, unknown>;
 }
 
 export interface IndependentTourAccommodationSnapshot {
   oid: string;
   name: string;
+  type?: string;
+  location?: string;
+  checkInDate?: string;
+  checkOutDate?: string;
+  nights?: number;
+  roomType?: string;
+  mealPlan?: string;
   costValue: number | { amount: number; currency: string };
   priceValue: number | { amount: number; currency: string };
+  additionalInfo?: Record<string, unknown>;
 }
 
 export interface IndependentTourBookingRoomSnapshot {
   oid: string;
   roomNumber: string | null;
-  status: string;
+  status: string; // BookingRoomStatus as string
+  notes?: string;
   paxes: IndependentTourBookingPaxSnapshot[];
+  snapshotCreatedAt: string;
 }
 
 export interface IndependentTourBookingPaxSnapshot {
@@ -52,29 +69,50 @@ export interface IndependentTourBookingPaxSnapshot {
   type: string; // BookingPaxType as string
   personalDetails?: BookingPaxPersonalDetails;
   mealPreference?: string;
+  documentIds?: string[];
+  snapshotCreatedAt: string;
 }
 
 export interface IndependentTourBookingAddonSnapshot {
   oid: string;
+  type: string; // 'optional_service' | 'manual'
   name: string;
   serviceDate: string;
+  unitPrice: number;
+  tax?: number;
+  quantity: number;
   totalPrice: number;
-  // Add other fields as needed when implementing addon snapshots
-  [key: string]: unknown;
+  supplierOID?: string;
+  notes?: string;
+  snapshotCreatedAt: string;
 }
 
 export interface IndependentTourBookingAppliedDiscountSnapshot {
   oid: string;
-  discountName: string;
+  discountType: string; // BookingDiscountType as string
+  discountId?: string;
+  appliedDiscountCode?: string;
+  description: string;
   appliedAmount: number;
-  // Add other fields as needed when implementing discount snapshots
-  [key: string]: unknown;
+  discountMode: string; // DiscountMode as string
+  metadata?: Record<string, unknown>;
+  snapshotCreatedAt: string;
 }
 
-export interface TenantCurrencySnapshot {
-  currency: string;
-  // Add other fields as needed when implementing currency snapshots
-  [key: string]: unknown;
+export interface IndependentTourBookingTenantCurrencySnapshot {
+  homeCurrency: string;
+  supportedCurrencies: {
+    currency: string;
+    rate: number;
+  }[];
+  defaultTaxConfig: {
+    scheme: string;
+    rate: number;
+  } | null;
+  overwriteTaxConfig: {
+    scheme: string;
+    rate: number;
+  } | null;
 }
 
 export interface IndependentTourBookingSnapshotData {
@@ -84,7 +122,7 @@ export interface IndependentTourBookingSnapshotData {
   addonsSnapshot: IndependentTourBookingAddonSnapshot[];
   appliedDiscountsSnapshot: IndependentTourBookingAppliedDiscountSnapshot[];
   paxSnapshot: IndependentTourBookingPaxSnapshot[];
-  tenantCurrencySnapshot: TenantCurrencySnapshot;
+  tenantCurrencySnapshot: IndependentTourBookingTenantCurrencySnapshot;
   snapshotTimestamp: string;
   snapshotVersion: string;
 }

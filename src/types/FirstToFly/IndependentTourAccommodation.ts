@@ -8,10 +8,14 @@ export interface FTFIndependentTourAccommodation extends CDEntity {
   name: string;
   costValue: {
     currency: string;
-    amount: number;
     tax?: number;
+    occupancyPricing: Record<OccupancyType, number>;
   };
-  occupancyPricing: Record<OccupancyType, number>;
+  priceValue: {
+    currency: string;
+    tax?: number;
+    occupancyPricing: Record<OccupancyType, number>;
+  };
   nightExtensionConfig: {
     maxNights: number;
     pricePerNight: number;

@@ -11,6 +11,11 @@ export interface FTFIndependentTourOptionalService extends CDEntity {
     amount: number;
     tax?: number;
   };
+  priceValue: {
+    currency: string;
+    amount: number;
+    tax: number;
+  };
 
   tenantOID: string;
 

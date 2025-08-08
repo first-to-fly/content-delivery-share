@@ -1,7 +1,7 @@
 import type { CDEntity } from "../entity";
 import { ApprovalRequestGroupTourBookingSpecialDiscountMetadata } from "./ApprovalRequestMetadata";
 import type { DiscountAmountType, DiscountBasePrice, DiscountBookingChannel, DiscountHowToApply, DiscountMechanics, DiscountMode, DiscountPaxType, DiscountSpecialDatesType, DiscountTimeslotType, DiscountType, DiscountWhichPax } from "./Discount";
-import { BookingPaxType } from "./GroupTourBookingPax";
+import { BookingPaxType } from "../enums/bookingTypes";
 
 
 export enum GroupTourBookingDiscountType {

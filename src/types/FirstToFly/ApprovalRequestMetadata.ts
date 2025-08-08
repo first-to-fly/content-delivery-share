@@ -1,8 +1,9 @@
+import { BookingPaxType } from "../enums/bookingTypes";
 import { ApprovalType } from "./Approval";
 import { DiscountMode } from "./Discount";
 import { ExchangeOrderStatus } from "./ExchangeOrder";
 import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
-import { FTFGroupTourBookingPax, BookingPaxType } from "./GroupTourBookingPax";
+import { FTFGroupTourBookingPax } from "./GroupTourBookingPax";
 
 /**
  * Metadata types for ApprovalRequest metadata field

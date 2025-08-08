@@ -11,38 +11,13 @@ export enum BookingRoomStatus {
 export interface FTFIndependentTourBookingRoom extends CDEntity {
 
   independentTourBookingOID: string;
+  
+  roomNumber: string | null;
+  status: string; // BookingRoomStatus as string
+  notes: string | null;
 
-  roomName?: string;
-  roomType: string; // e.g., "twin", "single", "triple", "quad"
-  roomStatus: BookingRoomStatus;
-
-  // Room allocation details
-  adultsCount: number;
-  childrenCount: number;
-  infantsCount: number;
-
-  // Room preferences
-  bedPreference?: string; // e.g., "twin beds", "double bed"
-  floorPreference?: string;
-  viewPreference?: string;
-  specialRequests?: string[];
-
-  // Pricing
-  roomPrice?: number;
-  extraBedPrice?: number;
-
-  // Confirmation details
-  confirmationNumber?: string;
-  confirmedAt?: string; // ISO date string
-
-  // Passenger OIDs assigned to this room
-  paxOIDs: string[];
-
-  sortOrder?: number;
-
-  // Timestamps
   createdAt: string;
   updatedAt: string;
   createdBy: string;
-  updatedBy?: string;
+  updatedBy: string | null;
 }

@@ -9,37 +9,21 @@ export enum IndependentTourBookingAddonType {
 export interface FTFIndependentTourBookingAddon extends CDEntity {
 
   independentTourBookingOID: string;
+  independentTourOptionalServiceOID: string | null;
+  tenantOID: string;
 
-  addonType: IndependentTourBookingAddonType;
-
-  // Reference to optional service or manual entry
-  optionalServiceOID?: string; // Reference to IndependentTourOptionalService
-  manualServiceName?: string; // For manual entries
-
-  description?: string;
-  serviceDate: string; // ISO date string - when the service will be provided
-
-  // Pricing
+  type: IndependentTourBookingAddonType;
+  serviceDate: string; // ISO datetime string
+  name: string;
   unitPrice: number;
-  tax: number;
+  tax: number | null;
   quantity: number;
   totalPrice: number;
+  supplierOID: string | null;
+  notes: string | null;
 
-  // Service details
-  supplierOID?: string;
-  confirmationNumber?: string;
-  voucherNumber?: string;
-
-  // Passenger assignment (optional - some services apply to specific passengers)
-  paxOIDs?: string[];
-
-  notes?: string;
-
-  sortOrder?: number;
-
-  // Timestamps
   createdAt: string;
   updatedAt: string;
   createdBy: string;
-  updatedBy?: string;
+  updatedBy: string | null;
 }

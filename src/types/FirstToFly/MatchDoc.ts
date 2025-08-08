@@ -12,6 +12,12 @@ export enum MatchDocStatus {
   VOIDED = "voided",
 }
 
+export enum MatchDocCategory {
+  PAYMENT_MADE = "payment-made",
+  PAYMENT_RECEIVED = "payment-received",
+  BUDGET_TRANSFER = "budget-transfer",
+}
+
 /**
  * @export
  * @interface FTFMatchDoc
@@ -20,6 +26,7 @@ export enum MatchDocStatus {
 export interface FTFMatchDoc extends CDEntity {
   matchDocNo: string;
   status: MatchDocStatus;
+  category: MatchDocCategory;
 
   issueDate: string;
   dueDate: string | null;
@@ -29,11 +36,15 @@ export interface FTFMatchDoc extends CDEntity {
 
   totalAmount: number;
   currency: string;
+  currencyRate: number | null;
+  foreignAmount: number | null;
+  localAmount: number | null;
 
   remarks: string | null;
   documentUrl: string | null;
 
   isArchived: boolean;
+  manualCompleted: boolean | null;
 
   // Bill relationship
   billOID: string | null;

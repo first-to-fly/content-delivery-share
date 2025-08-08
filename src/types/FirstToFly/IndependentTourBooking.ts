@@ -2,10 +2,10 @@ import type { CDEntity } from "../entity";
 import { MultiLangRecord } from "../multipleLanguage";
 
 // Import from related entities
-export { BookingPaxType, BookingPaxPersonalDetails } from "./IndependentTourBookingPax";
-export { BookingRoomStatus } from "./IndependentTourBookingRoom";
-export { IndependentTourBookingAddonType } from "./IndependentTourBookingAddon";
-export { BookingDiscountType, DiscountMode } from "./IndependentTourBookingDiscount";
+export type { BookingPaxType, BookingPaxPersonalDetails } from "./IndependentTourBookingPax";
+export type { BookingRoomStatus } from "./IndependentTourBookingRoom";
+export type { IndependentTourBookingAddonType } from "./IndependentTourBookingAddon";
+export type { BookingDiscountType, DiscountMode } from "./IndependentTourBookingDiscount";
 
 // --- Snapshot Data Structure Interface ---
 

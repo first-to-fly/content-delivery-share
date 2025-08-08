@@ -1,141 +1,11 @@
 import type { CDEntity } from "../entity";
-import { MultiLangRecord } from "../multipleLanguage";
 
-// Import from related entities
+// Import shared types
 export type { BookingPaxType, BookingPaxPersonalDetails } from "./IndependentTourBookingPax";
 export type { BookingRoomStatus } from "./IndependentTourBookingRoom";
-export type { IndependentTourBookingAddonType } from "./IndependentTourBookingAddon";
 export type { BookingDiscountType, DiscountMode } from "./IndependentTourBookingDiscount";
 
-// --- Snapshot Data Structure Interface ---
-
-export interface IndependentTourBookingAccommodationSnapshot {
-  oid: string;
-  name: MultiLangRecord<string>;
-  description: MultiLangRecord<string>;
-  roomType: string;
-  maxOccupancy: number;
-  pricePerNight: number;
-  currency: string;
-  supplierOID?: string;
-  supplierName?: string;
-  location?: string;
-  amenities?: string[];
-}
-
-export interface IndependentTourBookingRoomSnapshot {
-  oid: string;
-  roomName?: string;
-  roomType: string;
-  roomStatus: string;
-  adultsCount: number;
-  childrenCount: number;
-  infantsCount: number;
-  bedPreference?: string;
-  specialRequests?: string[];
-  roomPrice?: number;
-  confirmationNumber?: string;
-  paxes: IndependentTourBookingPaxSnapshot[];
-}
-
-export interface IndependentTourBookingPaxSnapshot {
-  oid: string;
-  paxType: string;
-  personalDetails: any; // BookingPaxPersonalDetails
-  ageAtTravel?: number;
-  documentOIDs?: string[];
-  insurancePolicyNumber?: string;
-  transportRecordOID?: string;
-}
-
-export interface IndependentTourBookingAddonSnapshot {
-  oid: string;
-  addonType: string;
-  serviceName: string;
-  description?: string;
-  serviceDate: string;
-  unitPrice: number;
-  tax: number;
-  quantity: number;
-  totalPrice: number;
-  supplierOID?: string;
-  confirmationNumber?: string;
-  paxOIDs?: string[];
-}
-
-export interface IndependentTourBookingDiscountSnapshot {
-  oid: string;
-  discountType: string;
-  discountCode?: string;
-  discountName: string;
-  description?: string;
-  discountMode: string;
-  discountValue: number;
-  appliedAmount: number;
-  metadata?: any;
-  approvalRequired: boolean;
-  approvedBy?: string;
-  approvedAt?: string;
-}
-
-export interface IndependentTourBookingItinerarySnapshot {
-  oid: string;
-  name: string;
-  days?: IndependentTourBookingItineraryDaySnapshot[];
-}
-
-export interface IndependentTourBookingItineraryDaySnapshot {
-  oid: string;
-  dayNumber: number;
-  title: MultiLangRecord<string>;
-  description: MultiLangRecord<string>;
-  meals: any[];
-  events: any[];
-}
-
-export interface IndependentTourBookingProductSnapshot {
-  oid: string;
-  code: string;
-  name: MultiLangRecord<string>;
-  description?: MultiLangRecord<string>;
-  durationDays: number;
-  durationNights: number;
-  validityStartDate: string;
-  validityEndDate?: string;
-  highlights?: MultiLangRecord<string>;
-  inclusions?: MultiLangRecord<string>;
-  exclusions?: MultiLangRecord<string>;
-}
-
-export interface IndependentTourBookingTenantCurrencySnapshot {
-  homeCurrency: string;
-  supportedCurrencies: {
-    currency: string;
-    rate: number;
-  }[];
-  defaultTaxConfig: {
-    scheme: string;
-    rate: number;
-  } | null;
-  overwriteTaxConfig: {
-    scheme: string;
-    rate: number;
-  } | null;
-}
-
-export interface IndependentTourBookingSnapshotData {
-  productSnapshot?: IndependentTourBookingProductSnapshot;
-  accommodationSnapshot?: IndependentTourBookingAccommodationSnapshot;
-  itinerarySnapshot?: IndependentTourBookingItinerarySnapshot;
-  bookedRoomsSnapshot: IndependentTourBookingRoomSnapshot[];
-  appliedAddonsSnapshot: IndependentTourBookingAddonSnapshot[];
-  appliedDiscountsSnapshot: IndependentTourBookingDiscountSnapshot[];
-  tenantCurrencySnapshot: IndependentTourBookingTenantCurrencySnapshot;
-  snapshotTimestamp: string;
-  snapshotVersion: string;
-}
-
-// Enums for Independent Tour Booking
+// Define payment and booking statuses as per requirements
 export enum BookingPaymentStatus {
   UNPAID = "unpaid",
   PARTIAL_DEPOSIT = "partial_deposit",
@@ -153,78 +23,114 @@ export enum BookingStatus {
   TRANSFERRED = "transferred",
 }
 
-export interface IndependentTourBookingMetadata {
-  source?: string;
-  campaignCode?: string;
-  agentCode?: string;
-  referrerUrl?: string;
-  customerNotes?: string;
-  internalNotes?: string;
-  leadGuestInfo?: {
-    name: string;
-    email: string;
-    phone: string;
-    nationality?: string;
-  };
+// --- Snapshot Data Structure Interface (as per requirements lines 392-423) ---
+
+export interface IndependentTourProductSnapshot {
+  // Minimal product snapshot - extend as needed
+  oid: string;
+  name: string;
+  [key: string]: any;
 }
 
+export interface IndependentTourAccommodationSnapshot {
+  oid: string;
+  name: string;
+  costValue: any;
+  priceValue: any;
+}
+
+export interface IndependentTourBookingRoomSnapshot {
+  oid: string;
+  roomNumber: string | null;
+  status: string;
+  paxes: IndependentTourBookingPaxSnapshot[];
+}
+
+export interface IndependentTourBookingPaxSnapshot {
+  oid: string;
+  type: string; // BookingPaxType
+  personalDetails?: any; // BookingPaxPersonalDetails
+  mealPreference?: string;
+}
+
+export interface IndependentTourBookingAddonSnapshot {
+  // Minimal addon snapshot - extend as needed
+  oid: string;
+  name: string;
+  serviceDate: string;
+  totalPrice: number;
+  [key: string]: any;
+}
+
+export interface IndependentTourBookingAppliedDiscountSnapshot {
+  // Minimal discount snapshot - extend as needed
+  oid: string;
+  discountName: string;
+  appliedAmount: number;
+  [key: string]: any;
+}
+
+export interface TenantCurrencySnapshot {
+  // Minimal currency snapshot - extend as needed
+  currency: string;
+  [key: string]: any;
+}
+
+export interface IndependentTourBookingSnapshotData {
+  productSnapshot?: IndependentTourProductSnapshot;
+  selectedAccommodationSnapshot?: IndependentTourAccommodationSnapshot;
+  roomsSnapshot: IndependentTourBookingRoomSnapshot[];
+  addonsSnapshot: IndependentTourBookingAddonSnapshot[];
+  appliedDiscountsSnapshot: IndependentTourBookingAppliedDiscountSnapshot[];
+  paxSnapshot: IndependentTourBookingPaxSnapshot[];
+  tenantCurrencySnapshot: TenantCurrencySnapshot;
+  snapshotTimestamp: string;
+  snapshotVersion: string;
+}
+
+export interface IndependentTourBookingMetadata {
+  // Flexible metadata - can contain any fields
+  [key: string]: any;
+}
+
+// --- Main CD Entity (as per requirements lines 340-378) ---
+
 export interface FTFIndependentTourBooking extends CDEntity {
-  
   tenantOID: string;
-  
   independentTourProductOID: string;
-  departmentOID?: string;
-  
+  independentTourAccommodationOID: string | null;
+  departmentOID: string | null;
+
   bookingReference: string;
-  paymentStatus: BookingPaymentStatus;
-  bookingStatus: BookingStatus;
-  
-  totalAmount?: number;
-  receivedAmount?: number;
-  
-  // Selected accommodation
-  accommodationOID?: string;
-  
-  // Travel dates
-  startDate: string; // ISO date string
-  endDate: string; // ISO date string
-  
-  // Customer information
-  customerOID?: string;
-  leadGuestName?: string;
-  leadGuestEmail?: string;
-  leadGuestPhone?: string;
-  
-  // Pricing breakdown
-  accommodationCost?: number;
-  optionalServicesCost?: number;
-  miscellaneousCost?: number;
-  discountAmount?: number;
-  taxAmount?: number;
-  
-  metadata?: IndependentTourBookingMetadata;
-  specialInstructions?: string[];
-  
-  // Payment order reference
-  paymentOrderOID?: string;
-  transactionOIDs?: string[];
-  
-  // Approval status for special discounts
-  approvalRequestOID?: string;
-  
-  // Snapshot data
-  snapshot?: IndependentTourBookingSnapshotData;
-  
-  // Counts for performance
+  paymentStatus: string; // BookingPaymentStatus
+  bookingStatus: string; // BookingStatus
+  totalAmount: number;
+  receivedAmount: number;
+
+  travelStartDate: string;
+  travelEndDate: string;
+
+  snapshot: IndependentTourBookingSnapshotData | null;
+  metadata: IndependentTourBookingMetadata | null;
+  specialInstructions: string[] | null;
+  overwriteTax: {
+    scheme: string;
+    rate: number;
+  } | null;
+
+  transactionOIDs: string[] | null;
+  paymentOrderOID: string | null;
+
   liveRoomCount: number;
   livePaxCount: number;
-  
-  // Timestamps
+  liveAddonCount: number;
+
+  latestApprovalRequestOID: string | null;
+
   createdAt: string;
   updatedAt: string;
   createdBy: string;
-  updatedBy?: string;
-  
-  // Owner information
+  updatedBy: string | null;
+
   ownerOIDs: string[];
 }

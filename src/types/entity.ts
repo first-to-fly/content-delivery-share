@@ -78,6 +78,13 @@ export enum CDEntityType {
   FTF_GROUP_TOUR_BOOKING_ADDON = "ftf-groupTourBookingAddon",
   FTF_GROUP_TOUR_BOOKING_DISCOUNT = "ftf-groupTourBookingDiscount",
 
+  // INDEPENDENT TOUR BOOKING
+  FTF_INDEPENDENT_TOUR_BOOKING = "ftf-independentTourBooking",
+  FTF_INDEPENDENT_TOUR_BOOKING_ROOM = "ftf-independentTourBookingRoom",
+  FTF_INDEPENDENT_TOUR_BOOKING_PAX = "ftf-independentTourBookingPax",
+  FTF_INDEPENDENT_TOUR_BOOKING_ADDON = "ftf-independentTourBookingAddon",
+  FTF_INDEPENDENT_TOUR_BOOKING_DISCOUNT = "ftf-independentTourBookingDiscount",
+
   // USER MESSAGES
   FTF_USER_MESSAGE = "ftf-userMessage",
   // PAYMENT AND TRANSACTION

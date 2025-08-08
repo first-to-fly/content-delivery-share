@@ -4,7 +4,7 @@ import { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } fro
 import { DiscountMode } from "./Discount";
 import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
 import { GroupTourBookingDiscountMetadata, GroupTourBookingDiscountType } from "./GroupTourBookingDiscount";
-import { GroupTourBookingPaxPersonalDetails, GroupTourBookingPaxType } from "./GroupTourBookingPax";
+import { GroupTourBookingPaxPersonalDetails, BookingPaxType } from "./GroupTourBookingPax";
 import { GroupTourBookingRoomStatus } from "./GroupTourBookingRoom";
 import { MealType } from "./GroupTourItineraryMeal";
 import { FTFGroupTourPricingEntry } from "./GroupTourPricing";
@@ -35,7 +35,7 @@ export interface GroupTourBookingBookedRoomSnapshot {
 
 export interface GroupTourBookingPaxSnapshot {
   oid: string;
-  type: GroupTourBookingPaxType;
+  type: BookingPaxType;
   isLandTourOnly: boolean;
   mealPreference?: string;
   transportRecordOID?: string;

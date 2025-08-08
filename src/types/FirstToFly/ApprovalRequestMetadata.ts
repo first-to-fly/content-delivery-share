@@ -2,7 +2,7 @@ import { ApprovalType } from "./Approval";
 import { DiscountMode } from "./Discount";
 import { ExchangeOrderStatus } from "./ExchangeOrder";
 import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
-import { FTFGroupTourBookingPax, GroupTourBookingPaxType } from "./GroupTourBookingPax";
+import { FTFGroupTourBookingPax, BookingPaxType } from "./GroupTourBookingPax";
 
 /**
  * Metadata types for ApprovalRequest metadata field
@@ -31,7 +31,7 @@ export interface ApprovalRequestGroupTourBookingTransferMetadata {
       oid: string;
       firstName: string;
       lastName: string;
-      paxType: GroupTourBookingPaxType;
+      paxType: BookingPaxType;
       personalDetails: FTFGroupTourBookingPax["personalDetails"];
     }>;
     rooms: Array<{
@@ -43,7 +43,7 @@ export interface ApprovalRequestGroupTourBookingTransferMetadata {
       infantsCount: number;
       passengerAssignments: Array<{
         passengerOID: string;
-        paxType: GroupTourBookingPaxType;
+        paxType: BookingPaxType;
       }>;
     }>;
     addons: Array<{

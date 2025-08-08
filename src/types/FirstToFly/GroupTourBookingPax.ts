@@ -1,7 +1,7 @@
 import type { CDEntity } from "../entity";
 
 // Enums redefined for content-delivery-share, or should be imported if a shared enum strategy exists
-export enum GroupTourBookingPaxType {
+export enum BookingPaxType {
   TWIN = "twin",
   SINGLE = "single",
   TRIPLE = "triple",
@@ -47,7 +47,7 @@ export interface FTFGroupTourBookingPax extends CDEntity {
   // Fields specific to GroupTourBookingPax
   bookingOID: string;
   bookingRoomOID: string;
-  type: GroupTourBookingPaxType;
+  type: BookingPaxType;
   isLandTourOnly: boolean;
   personalDetails: GroupTourBookingPaxPersonalDetails | null;
   mealPreference: string | null;

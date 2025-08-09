@@ -21,8 +21,6 @@ export interface FTFAccountCode extends CDEntity {
   xeroSyncedAt: string | null;
 
   isSystemGenerated: boolean;
-  allowManualJournals: boolean;
-  taxType: string | null;
 
   createdAt: string;
   updatedAt: string;

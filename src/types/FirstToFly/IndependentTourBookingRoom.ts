@@ -1,19 +1,13 @@
 import type { CDEntity } from "../entity";
+import { BookingRoomStatus } from "../enums/bookingTypes";
 
-
-export enum BookingRoomStatus {
-  REQUESTED = "requested",
-  CONFIRMED = "confirmed",
-  WAITLISTED = "waitlisted",
-  CANCELLED = "cancelled",
-}
 
 export interface FTFIndependentTourBookingRoom extends CDEntity {
 
   independentTourBookingOID: string;
-  
+
   roomNumber: string | null;
-  status: string; // BookingRoomStatus as string
+  status: BookingRoomStatus;
   notes: string | null;
 
   createdAt: string;

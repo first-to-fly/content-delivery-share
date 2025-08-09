@@ -1,27 +1,7 @@
 import type { CDEntity } from "../entity";
-import { BookingPaxPersonalDetails, BookingPaxType } from "../enums/bookingTypes";
+import { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
+import { DiscountMode } from "./Discount";
 
-// Import shared types
-export type { BookingDiscountType, DiscountMode } from "./IndependentTourBookingDiscount";
-export type { BookingRoomStatus } from "./IndependentTourBookingRoom";
-
-// Define payment and booking statuses as per requirements
-export enum BookingPaymentStatus {
-  UNPAID = "unpaid",
-  PARTIAL_DEPOSIT = "partial_deposit",
-  DEPOSIT_PAID = "deposit_paid",
-  FULLY_PAID = "fully_paid",
-}
-
-export enum BookingStatus {
-  IN_PROGRESS = "in_progress",
-  UNPAID = "unpaid",
-  DEPOSIT_PAID = "deposit_paid",
-  COMPLETED = "completed",
-  CANCELLED = "cancelled",
-  VOIDED = "voided",
-  TRANSFERRED = "transferred",
-}
 
 // --- Snapshot Data Structure Interface (as per requirements lines 392-423) ---
 
@@ -57,7 +37,7 @@ export interface IndependentTourAccommodationSnapshot {
 export interface IndependentTourBookingRoomSnapshot {
   oid: string;
   roomNumber: string | null;
-  status: string; // BookingRoomStatus as string
+  status: BookingRoomStatus;
   notes?: string;
   paxes: IndependentTourBookingPaxSnapshot[];
   snapshotCreatedAt: string;
@@ -88,12 +68,12 @@ export interface IndependentTourBookingAddonSnapshot {
 
 export interface IndependentTourBookingAppliedDiscountSnapshot {
   oid: string;
-  discountType: string; // BookingDiscountType as string
+  discountType: BookingDiscountType;
   discountId?: string;
   appliedDiscountCode?: string;
   description: string;
   appliedAmount: number;
-  discountMode: string; // DiscountMode as string
+  discountMode: DiscountMode;
   metadata?: Record<string, unknown>;
   snapshotCreatedAt: string;
 }
@@ -156,8 +136,8 @@ export interface FTFIndependentTourBooking extends CDEntity {
   departmentOID: string | null;
 
   bookingReference: string;
-  paymentStatus: string; // BookingPaymentStatus as string
-  bookingStatus: string; // BookingStatus as string
+  paymentStatus: BookingPaymentStatus;
+  bookingStatus: BookingStatus;
   totalAmount: number;
   receivedAmount: number;
 

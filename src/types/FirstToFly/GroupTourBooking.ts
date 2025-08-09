@@ -1,12 +1,11 @@
 import type { CDEntity } from "../entity";
-import { BookingPaxType } from "../enums/bookingTypes";
+import { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
 import { MultiLangRecord } from "../multipleLanguage";
 import { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
 import { DiscountMode } from "./Discount";
 import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
-import { GroupTourBookingDiscountMetadata, GroupTourBookingDiscountType } from "./GroupTourBookingDiscount";
-import { GroupTourBookingPaxPersonalDetails } from "./GroupTourBookingPax";
-import { GroupTourBookingRoomStatus } from "./GroupTourBookingRoom";
+import { GroupTourBookingDiscountMetadata } from "./GroupTourBookingDiscount";
+
 import { MealType } from "./GroupTourItineraryMeal";
 import { FTFGroupTourPricingEntry } from "./GroupTourPricing";
 import { GeoPoint } from "./POI";
@@ -30,7 +29,7 @@ export interface GroupTourBookingBookedRoomSnapshot {
   paxes: GroupTourBookingPaxSnapshot[];
   roomNumber?: string;
   isDbl?: boolean;
-  status: GroupTourBookingRoomStatus;
+  status: BookingRoomStatus;
   notes?: string;
 }
 
@@ -44,7 +43,7 @@ export interface GroupTourBookingPaxSnapshot {
 
 export interface GroupTourBookingAppliedDiscountSnapshot {
   oid: string;
-  discountType: GroupTourBookingDiscountType;
+  discountType: BookingDiscountType;
   appliedDiscountCode?: string;
   description?: string;
   appliedAmount: number;
@@ -222,24 +221,6 @@ export interface GroupTourBookingSnapshotData {
   snapshotVersion: string;
 }
 
-// Enums redefined for content-delivery-share, or should be imported if a shared enum strategy exists
-export enum GroupTourBookingPaymentStatus {
-  UNPAID = "unpaid",
-  PARTIAL_DEPOSIT = "partial_deposit",
-  DEPOSIT_PAID = "deposit_paid",
-  FULLY_PAID = "fully_paid",
-}
-
-export enum GroupTourBookingBookingStatus {
-  IN_PROGRESS = "in_progress",
-  UNPAID = "unpaid",
-  DEPOSIT_PAID = "deposit_paid",
-  COMPLETED = "completed",
-  CANCELLED = "cancelled",
-  VOIDED = "voided",
-  TRANSFERRED = "transferred",
-}
-
 /**
  * Base metadata structure for GroupTourBooking
  * This provides a foundation that can be extended for specific use cases
@@ -249,7 +230,7 @@ export interface BaseGroupTourBookingMetadata {
    * Primary customer/contact information
    * This is required for all bookings
    */
-  customer: GroupTourBookingPaxPersonalDetails;
+  customer: BookingPaxPersonalDetails;
 
 }
 
@@ -313,8 +294,8 @@ export interface FTFGroupTourBooking extends CDEntity {
   sectorOIDs: string[];
 
   bookingReference: string;
-  paymentStatus: GroupTourBookingPaymentStatus;
-  bookingStatus: GroupTourBookingBookingStatus;
+  paymentStatus: BookingPaymentStatus;
+  bookingStatus: BookingStatus;
   totalAmount: number;
   receivedAmount: number;
   snapshot: GroupTourBookingSnapshotData | null;

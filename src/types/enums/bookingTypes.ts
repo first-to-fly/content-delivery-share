@@ -1,4 +1,3 @@
-// Enums redefined for content-delivery-share, or should be imported if a shared enum strategy exists
 export enum BookingPaxType {
   TWIN = "twin",
   SINGLE = "single",
@@ -40,4 +39,35 @@ export interface BookingPaxPersonalDetails {
     wheelchairRequired: boolean;
   };
   isLeadPassenger?: boolean;
+}
+
+export enum BookingPaymentStatus {
+  UNPAID = "unpaid",
+  PARTIAL_DEPOSIT = "partial_deposit",
+  DEPOSIT_PAID = "deposit_paid",
+  FULLY_PAID = "fully_paid",
+}
+
+
+export enum BookingStatus {
+  IN_PROGRESS = "in_progress",
+  UNPAID = "unpaid",
+  DEPOSIT_PAID = "deposit_paid",
+  COMPLETED = "completed",
+  CANCELLED = "cancelled",
+  VOIDED = "voided",
+  TRANSFERRED = "transferred",
+}
+
+export enum BookingRoomStatus {
+  REQUESTED = "requested",
+  CONFIRMED = "confirmed",
+  WAITLISTED = "waitlisted",
+  CANCELLED = "cancelled",
+}
+
+export enum BookingDiscountType {
+  CODE_BASED = "CODE_BASED",
+  SPECIAL_REQUEST = "SPECIAL_REQUEST",
+  TOUR_DEPARTURE_DISCOUNT = "TOUR_DEPARTURE_DISCOUNT", // Specific to group tours
 }

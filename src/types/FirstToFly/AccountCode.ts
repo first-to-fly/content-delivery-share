@@ -15,8 +15,6 @@ export interface FTFAccountCode extends CDEntity {
   status: string;
   currency: string | null;
 
-  parentAccountCodeOID: string | null;
-
   xeroAccountId: string | null;
   xeroAccountCode: string | null;
   xeroSyncStatus: string | null;

@@ -40,6 +40,7 @@ import { FTFMatchDoc } from "./FirstToFly/MatchDoc";
 import { FTFMeal } from "./FirstToFly/Meal";
 import { FTFMedia } from "./FirstToFly/Media";
 import { FTFPaymentOrder } from "./FirstToFly/PaymentOrder";
+import { FTFPaymentWay } from "./FirstToFly/PaymentWay";
 import { FTFPOI } from "./FirstToFly/POI";
 import { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
 import { FTFReferenceCode } from "./FirstToFly/ReferenceCode";
@@ -125,6 +126,7 @@ export type AllEntityField =
   | keyof FTFSupplierAddress
   | keyof FTFSupplierPayment
   | keyof FTFSupplierPerson
+  | keyof FTFPaymentWay
 
   | keyof FTFTourDeparture
   | keyof FTFGroupTourBooking

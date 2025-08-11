@@ -35,6 +35,7 @@ import { FTFIndependentTourMiscellaneous } from "./FirstToFly/IndependentTourMis
 import { FTFIndependentTourOptionalService } from "./FirstToFly/IndependentTourOptionalService";
 import { FTFIndependentTourProduct } from "./FirstToFly/IndependentTourProduct";
 import { FTFInsuranceDiscount } from "./FirstToFly/InsuranceDiscount";
+import { FTFJournal } from "./FirstToFly/Journal";
 import { FTFLocation } from "./FirstToFly/Location";
 import { FTFMatchDoc } from "./FirstToFly/MatchDoc";
 import { FTFMeal } from "./FirstToFly/Meal";
@@ -83,6 +84,7 @@ export type AllEntityField =
   | keyof FTFDeposit
   | keyof FTFDesignation
   | keyof FTFDocument
+  | keyof FTFJournal
   | keyof FTFMeal
   | keyof FTFLocation
   | keyof FTFMatchDoc

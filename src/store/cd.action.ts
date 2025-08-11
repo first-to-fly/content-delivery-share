@@ -202,7 +202,7 @@ export const createCDActions = (set: StoreApi<CDReducerState>["setState"]) => {
           const entity = cd.get(oid) as CDEntity;
 
           // eslint-disable-next-line guard-for-in
-          for (const key in payloadEntity) {
+          for (const key of Object.keys(payloadEntity)) {
             const updatedFields: string[] = [];
             if (!(key in entity)) {
               // @ts-expect-error please ignore

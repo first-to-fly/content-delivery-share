@@ -102,8 +102,8 @@ export const createCDSelectors = (
       const _entityUpdatedTime = entityUpdatedTime.get(oid);
       if (_entityUpdatedTime) {
         const prefix = `${cacheUpdatedStringToNumber.get(oid) || oid}.`;
-        // use native method for the best perfomance
-        for (const field in result) {
+        // use native method for the best performance
+        for (const field of Object.keys(result || {})) {
           if (field === "oid") continue;
 
           const fieldNum = cacheUpdatedStringToNumber.get(field);

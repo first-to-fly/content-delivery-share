@@ -129,7 +129,7 @@ function setup(message: { cdAPIEndpoint: string, idToken?: string; }) {
       });
     } catch (error) {
       // captureExceptionBySentry(error, "decryptImage");
-      // eslint-disable-next-line no-console
+
       console.error(error);
 
       postMessage({

@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 import cloneDeep from "lodash.clonedeep";
 import { StoreApi } from "zustand";
 

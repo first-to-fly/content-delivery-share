@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 import { CDRequestBody } from "../../types/actions";
 import { CDEntity } from "../../types/entity";
 import { OID } from "../../types/generic";
@@ -95,7 +94,7 @@ const fetchEntityContents = async () => {
     }
     await fetchCDBatchData(requestBodies, "", "autoFetchCD");
   } catch (err) {
-    // eslint-disable-next-line no-console
+
     console.error(err);
   } finally {
     isFetching = false;

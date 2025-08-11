@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import isEqual from "react-fast-compare";
 

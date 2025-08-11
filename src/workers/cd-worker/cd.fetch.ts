@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-
 import { CD_MODULE_NOT_INIT } from "../../constants";
 import { CDRequestBody } from "../../types/actions";
 import { CDEntity } from "../../types/entity";
@@ -128,7 +126,7 @@ export const fetchCDData = async <S extends CDEntity>(
     }
   } catch (e) {
     // captureExceptionBySentry(e, "fetchCDData");
-    // eslint-disable-next-line no-console
+
     console.error("Fail to fetch CD. ", e);
   }
 };
@@ -242,7 +240,7 @@ export const fetchCDBatchData = async <S extends CDEntity>(
 
   } catch (e) {
     // captureExceptionBySentry(e, "fetchCDData");
-    // eslint-disable-next-line no-console
+
     console.error("Fail to fetch CD Batch. ", e);
   }
 };

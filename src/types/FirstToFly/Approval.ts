@@ -16,6 +16,10 @@ export enum ApprovalType {
   EQUIPMENT_REQUEST = "equipment-request-approval",
   LEAVE_REQUEST = "leave-request-approval",
   EXCHANGE_ORDER_DRAFT_TO_WFA = "exchange-order-draft-to-wfa-approval",
+  // Independent tour booking approvals
+  INDEPENDENT_TOUR_BOOKING = "independent-tour-booking-approval",
+  INDEPENDENT_TOUR_BOOKING_SPECIAL_DISCOUNT = "independent-tour-booking-special-discount-approval",
+  INDEPENDENT_TOUR_BOOKING_AMENDMENT = "independent-tour-booking-amendment-approval",
 }
 
 

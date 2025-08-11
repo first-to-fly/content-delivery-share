@@ -28,7 +28,7 @@ export const nullToUndefined = <T>(obj: T): NullableToOptional<T> => {
   // Only support the first level of the nullable keys from CD,
   // this is to keep deeper structure of the object
   // If you want to convert the deeper structure, you can use deepNullToUndefined
-  for (const key of Object.keys(result)) {
+  for (const key in result) {
     if (Object.prototype.hasOwnProperty.call(result, key)) {
       if (result[key] === null) {
         result[key] = undefined;
@@ -67,7 +67,7 @@ export function deepNullToUndefined<T>(obj: T): DeepNullableToOptional<T> {
   }
 
   const result = { ...obj } as Record<string, unknown>;
-  for (const key of Object.keys(result)) {
+  for (const key in result) {
     if (Object.prototype.hasOwnProperty.call(result, key)) {
       if (result[key] === null) {
         result[key] = undefined;

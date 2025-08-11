@@ -10,19 +10,15 @@ export interface FTFIndependentTourAccommodation extends CDEntity {
     currency: string;
     tax?: number;
     occupancyPricing: Record<OccupancyType, number>;
+    peakSurchargeFixedAmount?: number;
+    extraNightPrice?: number;
   };
   priceValue: {
     currency: string;
     tax?: number;
     occupancyPricing: Record<OccupancyType, number>;
-  };
-  nightExtensionConfig: {
-    maxNights: number;
-    pricePerNight: number;
-  };
-  peakSurchargeRates: {
-    percentage: number;
-    fixedAmount: number;
+    peakSurchargeFixedAmount?: number;
+    extraNightPrice?: number;
   };
   peakPeriods: Array<{
     startDate: string; // ISO date string

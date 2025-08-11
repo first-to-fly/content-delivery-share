@@ -71,3 +71,6 @@ tsconfig.staged.json
 
 # Lock files
 # pnpm-lock.yaml
+
+# ESLint
+.eslintcache

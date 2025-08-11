@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 import { StoreApi } from "zustand";
 
 import { queueFetchItems } from "../cd.worker";

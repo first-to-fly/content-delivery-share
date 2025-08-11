@@ -5,7 +5,6 @@ import { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } fro
 import { DiscountMode } from "./Discount";
 import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
 import { GroupTourBookingDiscountMetadata } from "./GroupTourBookingDiscount";
-
 import { MealType } from "./GroupTourItineraryMeal";
 import { FTFGroupTourPricingEntry } from "./GroupTourPricing";
 import { GeoPoint } from "./POI";

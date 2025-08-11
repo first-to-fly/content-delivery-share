@@ -1,7 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable @typescript-eslint/no-use-before-define */
-
-
 import isEqual from "react-fast-compare";
 
 import { CDEntity, CDEntityType } from "../../types/entity";
@@ -294,7 +290,7 @@ export const initContentDeliveryDB = async () => {
     }
 
     openReq.onerror = (e) => {
-      // eslint-disable-next-line no-console
+
       console.error("Cannot init CD DB ", e);
       reject(e);
     };

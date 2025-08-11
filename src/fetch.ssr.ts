@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 import { CD_MODULE_NOT_INIT } from "./constants";
 import { CDRequestBody } from "./types/actions";
 import { CDEntity } from "./types/entity";
@@ -88,7 +87,7 @@ export const fetchCDDataSSR = async <S extends CDEntity, F extends Readonly<(key
   } catch (e) {
 
     // captureExceptionBySentry(e, "fetchCDDataSSR");
-    // eslint-disable-next-line no-console
+
     console.error("Fail to fetch CD. ", e);
   }
   return new Map();
@@ -196,7 +195,7 @@ export const fetchCDBatchDataSSR = async <
   } catch (e) {
 
     // captureExceptionBySentry(e, "fetchCDDataSSR");
-    // eslint-disable-next-line no-console
+
     console.error("Fail to fetch CD. ", e);
   }
   return new Map();

@@ -76,14 +76,14 @@ export async function initWorker(cdAPIEndpoint: string, getUserTokenCb?: getUser
 
         case "ready":
           if (showLog) {
-            // eslint-disable-next-line no-console
+
             console.info("[cdWorker] new worker is ready ", message);
           }
           resolve();
           break;
         case "stdout":
           if (showLog) {
-            // eslint-disable-next-line no-console
+
             console.info(`[cdWorker] ${message.data}`);
           }
           break;

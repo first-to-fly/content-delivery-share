@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-
 import isEqual from "react-fast-compare";
 
 import { CheckResponseHandlerOptions, IcdResponse } from "./types/actions";

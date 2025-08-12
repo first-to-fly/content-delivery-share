@@ -10,7 +10,7 @@ export enum PaymentOrderStatus {
 
 export interface FTFPaymentOrder extends CDBaseEntity {
   tenantOID: string;
-  groupTourBookingOID: string;
+  entityOID: string; // Reference to any entity (e.g., GROUP_TOUR_BOOKING, INDEPENDENT_TOUR_BOOKING)
 
   amount: number;
   received: number;

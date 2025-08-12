@@ -20,6 +20,9 @@ export enum ApprovalType {
   INDEPENDENT_TOUR_BOOKING = "independent-tour-booking-approval",
   INDEPENDENT_TOUR_BOOKING_SPECIAL_DISCOUNT = "independent-tour-booking-special-discount-approval",
   INDEPENDENT_TOUR_BOOKING_AMENDMENT = "independent-tour-booking-amendment-approval",
+
+  CUSTOMER_REFUND_REQUEST = "customer-refund-request",
+  CUSTOMER_CANCELLATION_FEE_REQUEST = "customer-cancellation-fee-request",
 }
 
 

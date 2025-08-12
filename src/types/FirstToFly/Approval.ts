@@ -16,6 +16,8 @@ export enum ApprovalType {
   EQUIPMENT_REQUEST = "equipment-request-approval",
   LEAVE_REQUEST = "leave-request-approval",
   EXCHANGE_ORDER_DRAFT_TO_WFA = "exchange-order-draft-to-wfa-approval",
+  CUSTOMER_REFUND_REQUEST = "customer-refund-request",
+  CUSTOMER_CANCELLATION_FEE_REQUEST = "customer-cancellation-fee-request",
 }
 
 

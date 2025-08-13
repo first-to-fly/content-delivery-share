@@ -1,4 +1,5 @@
 import { CDEntity } from "../entity";
+import type { NamedURL } from "../url";
 
 /**
  * Bill status enum
@@ -20,13 +21,18 @@ export enum BillPaymentStatus {
   PAID = "paid",
 }
 
+export enum BillCategory {
+  BILL = "bill",
+  CREDIT_NOTE = "credit-note",
+}
+
 /**
  * @export
  * @interface FTFBill
  * @extends {CDEntity}
  */
 export interface FTFBill extends CDEntity {
-  billNo: string;
+  code: string;
   invoiceNo: string | null;
   status: BillStatus;
   paymentStatus: BillPaymentStatus;
@@ -39,6 +45,9 @@ export interface FTFBill extends CDEntity {
 
   totalAmount: number;
   currency: string;
+  category: BillCategory;
+  currencyRate: number | null;
+  files: NamedURL[] | null;
 
   // Xero integration fields
   xeroInvoiceId: string | null;

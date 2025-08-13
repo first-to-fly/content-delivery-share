@@ -24,7 +24,7 @@ export enum MatchDocCategory {
  * @extends {CDEntity}
  */
 export interface FTFMatchDoc extends CDEntity {
-  matchDocNo: string;
+  code: string;
   status: MatchDocStatus;
   category: MatchDocCategory;
 

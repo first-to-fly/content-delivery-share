@@ -6,7 +6,7 @@ import { CDEntity } from "../entity";
  * @extends {CDEntity}
  */
 export interface FTFJournal extends CDEntity {
-  ref: string;
+  code: string;
   fromEntityOID: string;
   toEntityOID: string;
   amount: number;

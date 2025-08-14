@@ -9,7 +9,7 @@ export interface FTFIndependentTourBookingDiscount extends CDEntity {
   tenantOID: string;
 
   discountType: BookingDiscountType;
-  discountId: string | null; // UUID reference to Discount entity
+  discountOID: string | null;
   appliedDiscountCode: string | null;
   description: string;
   appliedAmount: number;

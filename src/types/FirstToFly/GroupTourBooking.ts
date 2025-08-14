@@ -8,7 +8,7 @@ import { GroupTourBookingDiscountMetadata } from "./GroupTourBookingDiscount";
 import { MealType } from "./GroupTourItineraryMeal";
 import { FTFGroupTourPricingEntry } from "./GroupTourPricing";
 import { GeoPoint } from "./POI";
-import { RoomType, RuleOccupancy, RulePricingArrangement } from "./RoomConfigurationRule";
+import { RoomType, RoomOccupancy, RulePricingArrangement } from "./RoomConfigurationRule";
 import { TransportType } from "./TransportGroup";
 import { FTFTransportSegmentDetails } from "./TransportSegment";
 
@@ -16,7 +16,7 @@ import { FTFTransportSegmentDetails } from "./TransportSegment";
 export interface GroupTourBookingRoomConfigurationRuleSnapshot {
   oid: string;
   roomType: RoomType;
-  occupancy: RuleOccupancy;
+  occupancy: RoomOccupancy;
   pricingArrangement: RulePricingArrangement;
   isBackendOnly: boolean;
   isTcp: boolean;

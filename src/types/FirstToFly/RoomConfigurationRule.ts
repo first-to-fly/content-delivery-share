@@ -8,7 +8,7 @@ export enum RoomType {
   QUADRUPLE = "quadruple",
 }
 
-export type RuleOccupancy = {
+export type RoomOccupancy = {
   adultNum?: number;
   childWithBedNum?: number;
   childWithoutBedNum?: number;
@@ -38,7 +38,7 @@ export interface FTFRoomConfigurationRule extends CDEntity {
 
   roomType: RoomType;
 
-  occupancy: RuleOccupancy;
+  occupancy: RoomOccupancy;
 
   pricingArrangement: RulePricingArrangement;
 

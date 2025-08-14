@@ -1,5 +1,6 @@
 import type { CDEntity } from "../entity";
 import { BookingRoomStatus } from "../enums/bookingTypes";
+import { RoomOccupancy } from "./RoomConfigurationRule";
 
 
 export interface FTFIndependentTourBookingRoom extends CDEntity {
@@ -8,6 +9,7 @@ export interface FTFIndependentTourBookingRoom extends CDEntity {
 
   roomNumber: string | null;
   status: BookingRoomStatus;
+  occupancy: RoomOccupancy;
   notes: string | null;
 
   createdAt: string;

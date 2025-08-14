@@ -8,7 +8,7 @@ import { GroupTourBookingDiscountMetadata } from "./GroupTourBookingDiscount";
 import { MealType } from "./GroupTourItineraryMeal";
 import { FTFGroupTourPricingEntry } from "./GroupTourPricing";
 import { GeoPoint } from "./POI";
-import { RoomType, RoomOccupancy, RulePricingArrangement } from "./RoomConfigurationRule";
+import { RoomOccupancy, RoomType, RulePricingArrangement } from "./RoomConfigurationRule";
 import { TransportType } from "./TransportGroup";
 import { FTFTransportSegmentDetails } from "./TransportSegment";
 

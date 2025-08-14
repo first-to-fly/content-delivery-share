@@ -1,11 +1,12 @@
 import type { CDEntity } from "../entity";
+import { PaymentMethod } from "./Transaction";
 
 
 export type FTFPaymentWay = CDEntity & {
   tenantOID: string;
 
   // Core Payment Configuration
-  paymentMethod: string; // PaymentMethod enum string
+  paymentMethod: PaymentMethod;
   name: string;
   mode: string; // online | offline
 

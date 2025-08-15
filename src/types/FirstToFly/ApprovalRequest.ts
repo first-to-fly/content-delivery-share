@@ -19,6 +19,7 @@ export interface FTFApprovalRequest extends CDEntity {
   rejectionReason: string | null;
   completedAt: string | null;
   metadata: ApprovalRequestMetadata;
+  code: string;
 
   tenantOID: string;
   createdAt: string;

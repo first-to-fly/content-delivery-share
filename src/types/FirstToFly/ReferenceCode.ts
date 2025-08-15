@@ -23,10 +23,12 @@ export interface FTFReferenceCode extends CDEntity {
 
   name: string;
   moduleName: string;
+  machineCode: string;
   counterType: CounterType;
   resetCounterType: ResetCounterType;
   counterWidth: number;
   template: string;
+  metadata: Record<string, unknown>;
 
   // Relationships
   availableComponents: string[] | null;

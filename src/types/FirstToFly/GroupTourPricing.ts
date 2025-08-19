@@ -37,6 +37,58 @@ export interface FTFGroupTourPricingFareStructure {
   infant: number;
 }
 
+export enum PricingMatrixChangeType {
+  RETAIL_PRICE = "RETAIL_PRICE",
+  DISCOUNT = "DISCOUNT",
+  GROUP_VOLUME = "GROUP_VOLUME",
+}
+
+export interface BasePricingMatrixChange {
+  id: string;
+  timestamp: string;
+  userOID: string;
+  description: string;
+}
+
+export interface PricingMatrixRetailPriceChange extends BasePricingMatrixChange {
+  previousValues: {
+    retailPrices: FTFGroupTourPricingFareStructure;
+  };
+  newValues: {
+    retailPrices: FTFGroupTourPricingFareStructure;
+  };
+}
+
+export interface PricingMatrixDiscountChange extends BasePricingMatrixChange {
+  previousValues: {
+    discounts: FTFGroupTourPricingDiscount[];
+  };
+  newValues: {
+    discounts: FTFGroupTourPricingDiscount[];
+  };
+}
+
+export interface PricingMatrixGroupVolumeChange extends BasePricingMatrixChange {
+  previousValues: {
+    tierConfigs: Array<{
+      from: number;
+      to: number;
+    }>;
+  };
+  newValues: {
+    tierConfigs: Array<{
+      from: number;
+      to: number;
+    }>;
+  };
+}
+
+export interface GroupTourPricingMatrixChangeHistory {
+  retailPriceChanges: PricingMatrixRetailPriceChange[];
+  discountChanges: PricingMatrixDiscountChange[];
+  groupVolumeChanges: PricingMatrixGroupVolumeChange[];
+}
+
 
 /**
  * @export
@@ -75,6 +127,8 @@ export interface FTFGroupTourPricing extends CDEntity {
   groupTourPricingEntries: FTFGroupTourPricingEntry[];
 
   groupTourPNLSimulationOIDs: string[] | null;
+
+  changeHistory: GroupTourPricingMatrixChangeHistory | null;
 
   createdAt: string;
   updatedAt: string;

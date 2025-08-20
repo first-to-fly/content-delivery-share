@@ -20,8 +20,6 @@ export type FTFPaymentWay = CDEntity & {
   // Business Rules
   isDaily: boolean;
   isEvent: boolean;
-  isRefund: boolean;
-  isPaymentLink: boolean;
 
   // Transaction Fees
   txnRatePercent?: number;

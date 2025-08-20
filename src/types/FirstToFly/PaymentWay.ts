@@ -2,6 +2,25 @@ import type { CDEntity } from "../entity";
 import { PaymentMethod } from "./Transaction";
 
 
+export enum CreditCardBank {
+  AMEX = "amex",
+  UOB = "uob",
+  DBS = "dbs",
+  CITI = "citi",
+  VISA = "visa",
+  MASTERCARD = "mastercard",
+  OTHERS = "others",
+}
+
+export type PaymentConfig = {
+  bank?: CreditCardBank; // Only for CREDIT_CARD methods
+  accountCodeOID: string;
+  txnRateAccountCodeOID?: string;
+  txnRatePercent?: number;
+  txnRateAmount?: number;
+};
+
+
 export type FTFPaymentWay = CDEntity & {
   tenantOID: string;
 
@@ -21,13 +40,8 @@ export type FTFPaymentWay = CDEntity & {
   isDaily: boolean;
   isEvent: boolean;
 
-  // Transaction Fees
-  txnRatePercent?: number;
-  txnRateAmount?: number;
-
-  // Account Code OIDs
-  accountCodeOID: string;
-  txnRateAccountCodeOID?: string;
+  // Unified Payment Configurations (for all payment methods)
+  paymentConfigs: PaymentConfig[];
 
   // Audit fields
   createdAt: string;

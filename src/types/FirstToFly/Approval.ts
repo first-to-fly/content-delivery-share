@@ -23,6 +23,10 @@ export enum ApprovalType {
 
   CUSTOMER_REFUND_REQUEST = "customer-refund-request",
   CUSTOMER_CANCELLATION_FEE_REQUEST = "customer-cancellation-fee-request",
+
+  MATCH_DOC_PAYMENT_MADE_DRAFT_TO_SUBMITTED = "match-doc-payment-made-draft-to-submitted-approval",
+  MATCH_DOC_PAYMENT_RECEIVED_DRAFT_TO_SUBMITTED = "match-doc-payment-received-draft-to-submitted-approval",
+  BILL_DRAFT_TO_SUBMITTED = "bill-draft-to-submitted-approval",
 }
 
 

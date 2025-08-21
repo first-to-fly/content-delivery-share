@@ -1,9 +1,11 @@
 import { BookingPaxType } from "../enums/bookingTypes";
 import { ApprovalType } from "./Approval";
+import { BillStatus } from "./Bill";
 import { DiscountMode } from "./Discount";
 import { ExchangeOrderStatus } from "./ExchangeOrder";
 import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
 import { FTFGroupTourBookingPax } from "./GroupTourBookingPax";
+import { MatchDocStatus } from "./MatchDoc";
 
 /**
  * Metadata types for ApprovalRequest metadata field
@@ -249,14 +251,34 @@ export interface ApprovalRequestGroupTourBookingAmendmentMetadata {
   requestedDate: string;
 }
 
-export interface ApprovalRequestExchangeOrderDraftToWfaMetadata {
-  type: ApprovalType.EXCHANGE_ORDER_DRAFT_TO_WFA;
-  exchangeOrderOID: string;
-  fromStatus: ExchangeOrderStatus;
-  toStatus: ExchangeOrderStatus;
+type CommonSubmitDraftMetadata<T> = {
+  fromStatus: T;
+  toStatus: T;
   requestedBy: string;
   requestedAt: string;
   businessJustification?: string;
+};
+
+export interface ApprovalRequestExchangeOrderDraftToWfaMetadata extends CommonSubmitDraftMetadata<ExchangeOrderStatus> {
+  type: ApprovalType.EXCHANGE_ORDER_DRAFT_TO_WFA;
+  exchangeOrderOID: string;
+}
+
+export interface ApprovalRequestMatchDocPaymentMadeDraftToSubmittedMetadata
+  extends CommonSubmitDraftMetadata<MatchDocStatus> {
+  type: ApprovalType.MATCH_DOC_PAYMENT_MADE_DRAFT_TO_SUBMITTED;
+  matchDocOID: string;
+}
+
+export interface ApprovalRequestMatchDocPaymentReceivedDraftToSubmittedMetadata
+  extends CommonSubmitDraftMetadata<MatchDocStatus> {
+  type: ApprovalType.MATCH_DOC_PAYMENT_RECEIVED_DRAFT_TO_SUBMITTED;
+  matchDocOID: string;
+}
+
+export interface ApprovalRequestBillDraftToSubmittedMetadata extends CommonSubmitDraftMetadata<BillStatus> {
+  type: ApprovalType.BILL_DRAFT_TO_SUBMITTED;
+  billOID: string;
 }
 
 // Union type for all metadata
@@ -265,4 +287,7 @@ export type ApprovalRequestMetadata =
   | ApprovalRequestBudgetApprovalMetadata
   | ApprovalRequestGroupTourBookingTransferMetadata
   | ApprovalRequestGroupTourBookingAmendmentMetadata
-  | ApprovalRequestExchangeOrderDraftToWfaMetadata;
+  | ApprovalRequestExchangeOrderDraftToWfaMetadata
+  | ApprovalRequestMatchDocPaymentMadeDraftToSubmittedMetadata
+  | ApprovalRequestMatchDocPaymentReceivedDraftToSubmittedMetadata
+  | ApprovalRequestBillDraftToSubmittedMetadata;

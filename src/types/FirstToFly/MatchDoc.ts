@@ -50,6 +50,13 @@ export interface FTFMatchDoc extends CDEntity {
   billOID: string | null;
   billUsedAmount: number | null;
 
+  // Linked Budget Entries
+  budgetEntryUsages: {
+    budgetEntryOID: string;
+    amountUsed: number;
+    currencyRate?: number;
+  }[];
+
   createdAt: string;
   updatedAt: string;
   createdBy: string;

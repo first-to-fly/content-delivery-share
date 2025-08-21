@@ -20,6 +20,16 @@ export type PaymentConfig = {
   txnRateAmount?: number;
 };
 
+export enum PaymentMode {
+  ONLINE = "online",
+  OFFLINE = "offline",
+}
+
+export enum PaymentWayStatus {
+  ACTIVE = "active",
+  INACTIVE = "inactive",
+}
+
 
 export type FTFPaymentWay = CDEntity & {
   tenantOID: string;
@@ -27,14 +37,14 @@ export type FTFPaymentWay = CDEntity & {
   // Core Payment Configuration
   paymentMethod: PaymentMethod;
   name: string;
-  mode: string; // online | offline
+  mode: PaymentMode;
 
   // UI and Display
   icon?: string;
   remarks?: string;
 
   // Status
-  status: string; // active | inactive
+  status: PaymentWayStatus;
 
   // Business Rules
   isDaily: boolean;

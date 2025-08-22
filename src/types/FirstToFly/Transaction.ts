@@ -26,11 +26,6 @@ export enum PaymentMethod {
   OTHER = "other",
 }
 
-export interface PaymentWay {
-  method: PaymentMethod;
-  details?: Record<string, unknown>;
-}
-
 export interface FTFTransaction extends CDBaseEntity {
   tenantOID: string;
   paymentOrderOID: string;
@@ -43,7 +38,7 @@ export interface FTFTransaction extends CDBaseEntity {
   serviceFee: number;
   transactionType: TransactionType;
   transactionDate: string; // ISO Date string
-  paymentWay: PaymentWay | null;
+  paymentWayOID: string | null; // Link to PaymentWay entity
   status: TransactionStatus;
   transactionReference: string | null;
   notes: string | null;

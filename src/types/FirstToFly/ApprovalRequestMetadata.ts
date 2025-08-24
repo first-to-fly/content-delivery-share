@@ -281,6 +281,26 @@ export interface ApprovalRequestBillDraftToSubmittedMetadata extends CommonSubmi
   billOID: string;
 }
 
+export interface ApprovalRequestCustomerRefundMetadata {
+  type: ApprovalType.CUSTOMER_REFUND_REQUEST;
+  amount: number;
+  paymentOrderOID: string;
+  bookingOID: string;
+  tenantOID: string;
+  currencyCode?: string;
+  notes?: string;
+}
+
+export interface ApprovalRequestCustomerCancellationFeeMetadata {
+  type: ApprovalType.CUSTOMER_CANCELLATION_FEE_REQUEST;
+  amount: number;
+  paymentOrderOID: string;
+  bookingOID: string;
+  tenantOID: string;
+  currencyCode?: string;
+  notes?: string;
+}
+
 // Union type for all metadata
 export type ApprovalRequestMetadata =
   | ApprovalRequestGroupTourBookingSpecialDiscountMetadata
@@ -290,4 +310,6 @@ export type ApprovalRequestMetadata =
   | ApprovalRequestExchangeOrderDraftToWfaMetadata
   | ApprovalRequestMatchDocPaymentMadeDraftToSubmittedMetadata
   | ApprovalRequestMatchDocPaymentReceivedDraftToSubmittedMetadata
-  | ApprovalRequestBillDraftToSubmittedMetadata;
+  | ApprovalRequestBillDraftToSubmittedMetadata
+  | ApprovalRequestCustomerRefundMetadata
+  | ApprovalRequestCustomerCancellationFeeMetadata;

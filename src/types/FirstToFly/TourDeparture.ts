@@ -69,6 +69,8 @@ export interface FTFTourDeparture extends CDEntity {
 
   discount: FTFGroupTourPricingDiscount | null;
 
+  countriesCovered: string[] | null;
+
   createdAt: string;
   updatedAt: string;
   createdBy: string;

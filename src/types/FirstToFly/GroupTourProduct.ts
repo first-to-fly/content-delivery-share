@@ -1,5 +1,6 @@
 import { CDEntity } from "../entity";
 import { MultiLangRecord } from "../multipleLanguage";
+import { FTFProductPlatform as ProductPlatform } from "../platform";
 import { NamedURL } from "../url";
 
 
@@ -51,6 +52,9 @@ export interface FTFGroupTourProduct extends CDEntity {
 
   isActive: boolean;
   published: boolean;
+
+  // Available platforms (e.g., saleskit, b2b, b2c)
+  platforms: ProductPlatform[] | null;
 
   ownerOIDs: string[] | null;
 

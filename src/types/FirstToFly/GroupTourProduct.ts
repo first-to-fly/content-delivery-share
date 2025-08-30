@@ -1,6 +1,6 @@
 import { CDEntity } from "../entity";
 import { MultiLangRecord } from "../multipleLanguage";
-import { FTFProductPlatform as ProductPlatform } from "../platform";
+import { ProductPlatform } from "../platform";
 import { NamedURL } from "../url";
 
 

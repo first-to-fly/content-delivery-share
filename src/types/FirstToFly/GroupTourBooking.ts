@@ -282,6 +282,11 @@ export interface GroupTourBookingMetadata extends BaseGroupTourBookingMetadata, 
 }
 
 
+/**
+ * @export
+ * @interface FTFGroupTourBooking
+ * @extends {CDEntity}
+ */
 export interface FTFGroupTourBooking extends CDEntity {
 
   tenantOID: string;
@@ -291,6 +296,7 @@ export interface FTFGroupTourBooking extends CDEntity {
   groupTourProductOID: string;
   itineraryOID: string;
   sectorOIDs: string[];
+  stationCodeOID: string | null;
 
   bookingReference: string;
   paymentStatus: BookingPaymentStatus;

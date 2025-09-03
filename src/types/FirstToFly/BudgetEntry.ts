@@ -1,5 +1,5 @@
-import { CDEntity } from "../entity";
-import { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
+import type { CDEntity } from "../entity";
+import type { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
 
 /**
  * Payment status enum

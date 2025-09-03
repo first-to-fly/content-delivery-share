@@ -1,8 +1,9 @@
 import isEqual from "react-fast-compare";
 
-import { CheckResponseHandlerOptions, IcdResponse } from "./types/actions";
-import { CDEntity, CDEntityType } from "./types/entity";
-import { OID } from "./types/generic";
+import type { CheckResponseHandlerOptions, IcdResponse } from "./types/actions";
+import type { CDEntity } from "./types/entity";
+import { CDEntityType } from "./types/entity";
+import type { OID } from "./types/generic";
 
 
 // Deliberately not support deep convert nullable to optional,

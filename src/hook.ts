@@ -4,10 +4,10 @@ import isEqual from "react-fast-compare";
 import { fetchCDDataBatch } from "./cd.worker";
 import { CD_MODULE_NOT_INIT } from "./constants";
 import { getCDState, useCDStoreShallow } from "./store/cd.store";
-import { CDReducerState, SelectCDEntitiesResult, SelectCDEntityResult } from "./store/cd.types";
-import { AllEntityField, CDRequestBody, RequestIncludeOptions } from "./types/actions";
-import { CDEntity } from "./types/entity";
-import { OID } from "./types/generic";
+import type { CDReducerState, SelectCDEntitiesResult, SelectCDEntityResult } from "./store/cd.types";
+import type { AllEntityField, CDRequestBody, RequestIncludeOptions } from "./types/actions";
+import type { CDEntity } from "./types/entity";
+import type { OID } from "./types/generic";
 import { checkIsOID } from "./utils";
 
 

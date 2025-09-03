@@ -1,5 +1,5 @@
-import { CDEntity } from "../entity";
-import { NamedURL } from "../url";
+import type { CDEntity } from "../entity";
+import type { NamedURL } from "../url";
 
 
 export enum FTFDocumentType {

@@ -1,6 +1,6 @@
-import { CDEntity } from "../entity";
-import { MultiLangRecord } from "../multipleLanguage";
-import { GeoPoint } from "./POI";
+import type { CDEntity } from "../entity";
+import type { MultiLangRecord } from "../multipleLanguage";
+import type { GeoPoint } from "./POI";
 
 
 export interface FTFTourDepartureAccommodation extends CDEntity {

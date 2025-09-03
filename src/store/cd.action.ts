@@ -1,12 +1,12 @@
 import cloneDeep from "lodash.clonedeep";
-import { StoreApi } from "zustand";
+import type { StoreApi } from "zustand";
 
 import { queueFetchItems, updateCDObject, updateCDObjectAsync } from "../cd.worker";
-import { AllEntityField } from "../types/actions";
-import { CDEntity } from "../types/entity";
-import { OID } from "../types/generic";
+import type { AllEntityField } from "../types/actions";
+import type { CDEntity } from "../types/entity";
+import type { OID } from "../types/generic";
 import { mergeCDObject } from "../utils";
-import { CDReducerState } from "./cd.types";
+import type { CDReducerState } from "./cd.types";
 
 // trick to reduce memory footprint
 export const cacheUpdatedStringToNumber = new Map<string, number>();

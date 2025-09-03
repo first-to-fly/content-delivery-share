@@ -1,11 +1,11 @@
-import { BookingPaxType } from "../enums/bookingTypes";
-import { ApprovalType } from "./Approval";
-import { BillStatus } from "./Bill";
-import { DiscountMode } from "./Discount";
-import { ExchangeOrderStatus } from "./ExchangeOrder";
-import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
-import { FTFGroupTourBookingPax } from "./GroupTourBookingPax";
-import { MatchDocStatus } from "./MatchDoc";
+import type { BookingPaxType } from "../enums/bookingTypes";
+import type { ApprovalType } from "./Approval";
+import type { BillStatus } from "./Bill";
+import type { DiscountMode } from "./Discount";
+import type { ExchangeOrderStatus } from "./ExchangeOrder";
+import type { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
+import type { FTFGroupTourBookingPax } from "./GroupTourBookingPax";
+import type { MatchDocStatus } from "./MatchDoc";
 
 /**
  * Metadata types for ApprovalRequest metadata field

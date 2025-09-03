@@ -1,6 +1,6 @@
 import { fetchCDData, fetchCDDataBatch } from "./cd.worker";
 import { getCDState } from "./store/cd.store";
-import { CDEntity } from "./types/entity";
+import type { CDEntity } from "./types/entity";
 
 
 export const silentRefetchCDEntityData = async (oids: string[]) => {

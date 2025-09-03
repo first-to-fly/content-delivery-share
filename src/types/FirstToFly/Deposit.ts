@@ -1,5 +1,5 @@
-import { CDEntity } from "../entity";
-import { ProductType } from "../enums/productType";
+import type { CDEntity } from "../entity";
+import type { ProductType } from "../enums/productType";
 
 
 export enum DepositType {

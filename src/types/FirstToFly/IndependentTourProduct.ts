@@ -1,7 +1,7 @@
 import type { CDEntity } from "../entity";
-import { MultiLangRecord } from "../multipleLanguage";
-import { ProductPlatform } from "../platform";
-import { NamedURL } from "../url";
+import type { MultiLangRecord } from "../multipleLanguage";
+import type { ProductPlatform } from "../platform";
+import type { NamedURL } from "../url";
 
 
 export enum IndependentTourProductDocumentationType {
@@ -46,6 +46,8 @@ export interface FTFIndependentTourProduct extends CDEntity {
   validityEndDate: string | null;
 
   targetYieldPercentage: number | null;
+
+  defaultFullPaymentDueDays: number | null;
 
   isActive: boolean;
   published: boolean;

@@ -1,6 +1,6 @@
-import { AllEntityField } from "../types/actions";
-import { CDEntity } from "../types/entity";
-import { OID } from "../types/generic";
+import type { AllEntityField } from "../types/actions";
+import type { CDEntity } from "../types/entity";
+import type { OID } from "../types/generic";
 
 
 export interface CDReducerState {

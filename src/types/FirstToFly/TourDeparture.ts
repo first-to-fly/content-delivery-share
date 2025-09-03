@@ -1,6 +1,6 @@
-import { CDEntity } from "../entity";
-import { MultiLangRecord } from "../multipleLanguage";
-import { FTFGroupTourPricingDiscount } from "./GroupTourPricing";
+import type { CDEntity } from "../entity";
+import type { MultiLangRecord } from "../multipleLanguage";
+import type { FTFGroupTourPricingDiscount } from "./GroupTourPricing";
 
 
 export enum TourDepartureStatus {
@@ -51,6 +51,7 @@ export interface FTFTourDeparture extends CDEntity {
   blockedCapacity: number;
   finalizationDate: string | null;
   paymentDueDate: string | null;
+  fullPaymentDueDaysOverride: number | null;
   assembleLocationAirlineOID: string | null;
   assembleAirlineLocationTime: string | null;
   hkSeat: number | null;

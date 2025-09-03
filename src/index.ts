@@ -4,7 +4,7 @@ import { initWorker } from "./cd.worker";
 import { setCDApiEndpoint as setCDApiEndpointForSSR } from "./fetch.ssr";
 import { setVerbose as setHookVerbose } from "./hook";
 import { initCDStore } from "./store/init";
-import { CDEntity } from "./types/entity";
+import type { CDEntity } from "./types/entity";
 
 
 interface InitOptions {

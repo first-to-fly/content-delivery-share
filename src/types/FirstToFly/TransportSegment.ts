@@ -1,5 +1,5 @@
-import { CDEntity } from "../entity";
-import { TransportType } from "./TransportGroup";
+import type { CDEntity } from "../entity";
+import type { TransportType } from "./TransportGroup";
 
 
 export enum FlightStatus {

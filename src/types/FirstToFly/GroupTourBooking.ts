@@ -1,16 +1,16 @@
 import type { CDEntity } from "../entity";
-import { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
-import { MultiLangRecord } from "../multipleLanguage";
-import { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
-import { DiscountMode } from "./Discount";
-import { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
-import { GroupTourBookingDiscountMetadata } from "./GroupTourBookingDiscount";
-import { MealType } from "./GroupTourItineraryMeal";
-import { FTFGroupTourPricingEntry } from "./GroupTourPricing";
-import { GeoPoint } from "./POI";
-import { RoomOccupancy, RoomType, RulePricingArrangement } from "./RoomConfigurationRule";
-import { TransportType } from "./TransportGroup";
-import { FTFTransportSegmentDetails } from "./TransportSegment";
+import type { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
+import type { MultiLangRecord } from "../multipleLanguage";
+import type { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
+import type { DiscountMode } from "./Discount";
+import type { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
+import type { GroupTourBookingDiscountMetadata } from "./GroupTourBookingDiscount";
+import type { MealType } from "./GroupTourItineraryMeal";
+import type { FTFGroupTourPricingEntry } from "./GroupTourPricing";
+import type { GeoPoint } from "./POI";
+import type { RoomOccupancy, RoomType, RulePricingArrangement } from "./RoomConfigurationRule";
+import type { TransportType } from "./TransportGroup";
+import type { FTFTransportSegmentDetails } from "./TransportSegment";
 
 // --- Snapshot Data Structure Interface ---
 export interface GroupTourBookingRoomConfigurationRuleSnapshot {
@@ -282,6 +282,11 @@ export interface GroupTourBookingMetadata extends BaseGroupTourBookingMetadata, 
 }
 
 
+/**
+ * @export
+ * @interface FTFGroupTourBooking
+ * @extends {CDEntity}
+ */
 export interface FTFGroupTourBooking extends CDEntity {
 
   tenantOID: string;
@@ -291,12 +296,14 @@ export interface FTFGroupTourBooking extends CDEntity {
   groupTourProductOID: string;
   itineraryOID: string;
   sectorOIDs: string[];
+  stationCodeOID: string | null;
 
   bookingReference: string;
   paymentStatus: BookingPaymentStatus;
   bookingStatus: BookingStatus;
   totalAmount: number;
   receivedAmount: number;
+  fullPaymentDueDate: string | null;
   snapshot: GroupTourBookingSnapshotData | null;
   metadata: GroupTourBookingMetadata | null;
   specialInstructions: string[] | null;

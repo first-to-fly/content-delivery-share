@@ -1,5 +1,5 @@
-import { CDEntity } from "../entity";
-import {
+import type { CDEntity } from "../entity";
+import type {
   DiscountAmountType,
   DiscountBasePrice,
   DiscountBookingChannel,

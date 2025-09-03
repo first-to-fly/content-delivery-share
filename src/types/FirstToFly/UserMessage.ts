@@ -1,4 +1,4 @@
-import { CDBaseEntity } from "../entity";
+import type { CDBaseEntity } from "../entity";
 
 
 export interface FTFUserMessage extends CDBaseEntity {

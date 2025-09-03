@@ -1,6 +1,6 @@
 import { CD_MODULE_NOT_INIT } from "./constants";
-import { CDRequestBody } from "./types/actions";
-import { CDEntity } from "./types/entity";
+import type { CDRequestBody } from "./types/actions";
+import type { CDEntity } from "./types/entity";
 import { checkIcdResponseHandler, mergeCDObject } from "./utils";
 
 

@@ -1,9 +1,9 @@
-import { StoreApi } from "zustand";
+import type { StoreApi } from "zustand";
 
 import { queueFetchItems } from "../cd.worker";
-import { CDEntity } from "../types/entity";
+import type { CDEntity } from "../types/entity";
 import { cacheUpdatedStringToNumber } from "./cd.action";
-import { CDReducerState, SelectCDEntitiesResult, SelectCDEntityResult } from "./cd.types";
+import type { CDReducerState, SelectCDEntitiesResult, SelectCDEntityResult } from "./cd.types";
 
 
 const isBrowser = typeof window !== "undefined";

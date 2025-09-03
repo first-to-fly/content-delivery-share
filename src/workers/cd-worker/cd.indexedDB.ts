@@ -1,7 +1,8 @@
 import isEqual from "react-fast-compare";
 
-import { CDEntity, CDEntityType } from "../../types/entity";
-import { OID } from "../../types/generic";
+import type { CDEntity } from "../../types/entity";
+import { CDEntityType } from "../../types/entity";
+import type { OID } from "../../types/generic";
 import { getCDTypeFromOID } from "../../utils";
 
 

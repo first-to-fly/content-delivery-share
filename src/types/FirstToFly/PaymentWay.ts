@@ -1,5 +1,5 @@
 import type { CDEntity } from "../entity";
-import { PaymentMethod } from "./Transaction";
+import type { PaymentMethod } from "./Transaction";
 
 
 export enum CreditCardBank {

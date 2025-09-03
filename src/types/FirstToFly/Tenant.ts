@@ -1,6 +1,6 @@
-import { CDEntity } from "../entity";
-import { CurrencyCode } from "../enums/currency";
-import { LanguageCode } from "../enums/language";
+import type { CDEntity } from "../entity";
+import type { CurrencyCode } from "../enums/currency";
+import type { LanguageCode } from "../enums/language";
 
 /**
  * @export

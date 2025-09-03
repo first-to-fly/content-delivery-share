@@ -1,10 +1,10 @@
-import { StoreApi } from "zustand";
+import type { StoreApi } from "zustand";
 
-import { CDEntity } from "../types/entity";
+import type { CDEntity } from "../types/entity";
 import { createCDActions } from "./cd.action";
 import { createCDSelectors } from "./cd.selector";
 import { createCDStore } from "./cd.store";
-import { CDStore } from "./cd.types";
+import type { CDStore } from "./cd.types";
 
 
 export function initCDStore(initData?: Map<string, CDEntity | undefined>, isDebug?: boolean) {

@@ -1,5 +1,5 @@
-import { CDEntity } from "../entity";
-import { ApprovalRequestMetadata } from "./ApprovalRequestMetadata";
+import type { CDEntity } from "../entity";
+import type { ApprovalRequestMetadata } from "./ApprovalRequestMetadata";
 
 
 export enum ApprovalRequestStatus {

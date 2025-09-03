@@ -1,5 +1,5 @@
-import { CDEntity } from "../entity";
-import { MultiLangRecord } from "../multipleLanguage";
+import type { CDEntity } from "../entity";
+import type { MultiLangRecord } from "../multipleLanguage";
 
 /**
  * @export

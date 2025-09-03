@@ -1,7 +1,7 @@
 import { getCDState } from "./store/cd.store";
-import { AllEntityField, CDRequestBody } from "./types/actions";
-import { CDEntity, CDEntityType } from "./types/entity";
-import { OID } from "./types/generic";
+import type { AllEntityField, CDRequestBody } from "./types/actions";
+import type { CDEntity, CDEntityType } from "./types/entity";
+import type { OID } from "./types/generic";
 
 
 type getUserTokenFn = () => Promise<string>;

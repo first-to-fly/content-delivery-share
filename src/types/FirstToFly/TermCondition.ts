@@ -1,6 +1,6 @@
-import { CDEntity } from "../entity";
-import { ProductType } from "../enums/productType";
-import { NamedURL } from "../url";
+import type { CDEntity } from "../entity";
+import type { ProductType } from "../enums/productType";
+import type { NamedURL } from "../url";
 
 
 export enum TermConditionType {

@@ -1,6 +1,6 @@
 import type { CDEntity } from "../entity";
-import { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
-import { DiscountMode } from "./Discount";
+import type { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
+import type { DiscountMode } from "./Discount";
 
 
 // --- Snapshot Data Structure Interface (as per requirements lines 392-423) ---

@@ -1,4 +1,4 @@
-import { CDEntity } from "../entity";
+import type { CDEntity } from "../entity";
 import type { NamedURL } from "../url";
 
 /**

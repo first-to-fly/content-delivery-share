@@ -1,5 +1,5 @@
 import type { CDEntity } from "../entity";
-import { BookingRoomStatus } from "../enums/bookingTypes";
+import type { BookingRoomStatus } from "../enums/bookingTypes";
 
 
 export interface FTFGroupTourBookingRoom extends CDEntity {

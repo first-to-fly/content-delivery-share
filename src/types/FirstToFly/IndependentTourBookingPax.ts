@@ -1,5 +1,5 @@
 import type { CDEntity } from "../entity";
-import { BookingPaxPersonalDetails, BookingPaxType } from "../enums/bookingTypes";
+import type { BookingPaxPersonalDetails, BookingPaxType } from "../enums/bookingTypes";
 
 
 export interface FTFIndependentTourBookingPax extends CDEntity {

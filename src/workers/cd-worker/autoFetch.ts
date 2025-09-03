@@ -1,6 +1,6 @@
-import { CDRequestBody } from "../../types/actions";
-import { CDEntity } from "../../types/entity";
-import { OID } from "../../types/generic";
+import type { CDRequestBody } from "../../types/actions";
+import type { CDEntity } from "../../types/entity";
+import type { OID } from "../../types/generic";
 import { checkIsOID } from "../../utils";
 import { fetchCDBatchData, setListenOnFetchDone } from "./cd.fetch";
 import { getCDObjectsFromLocalDB } from "./cd.indexedDB";

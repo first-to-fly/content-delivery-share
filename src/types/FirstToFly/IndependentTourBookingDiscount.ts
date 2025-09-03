@@ -1,6 +1,6 @@
 import type { CDEntity } from "../entity";
-import { BookingDiscountType } from "../enums/bookingTypes";
-import { DiscountMode } from "./Discount";
+import type { BookingDiscountType } from "../enums/bookingTypes";
+import type { DiscountMode } from "./Discount";
 
 
 export interface FTFIndependentTourBookingDiscount extends CDEntity {

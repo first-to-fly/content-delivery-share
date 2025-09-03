@@ -1,10 +1,11 @@
 import isEqual from "react-fast-compare";
-import { StoreApi } from "zustand";
+import type { StoreApi } from "zustand";
 import { devtools } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import { createWithEqualityFn, UseBoundStoreWithEqualityFn } from "zustand/traditional";
+import type { UseBoundStoreWithEqualityFn } from "zustand/traditional";
+import { createWithEqualityFn } from "zustand/traditional";
 
-import { CDStore } from "./cd.types";
+import type { CDStore } from "./cd.types";
 
 
 let cdStore: UseBoundStoreWithEqualityFn<StoreApi<CDStore>>;

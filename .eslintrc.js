@@ -357,6 +357,8 @@ const config = {
       { accessibility: "no-public" },
     ],
 
+    "@typescript-eslint/consistent-type-imports": "error",
+
     "@typescript-eslint/explicit-module-boundary-types": "off",
 
     // Overrides 'indent', follow AirBnB's

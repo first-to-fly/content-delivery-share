@@ -47,6 +47,8 @@ export interface FTFIndependentTourProduct extends CDEntity {
 
   targetYieldPercentage: number | null;
 
+  defaultFullPaymentDueDays: number | null;
+
   isActive: boolean;
   published: boolean;
 

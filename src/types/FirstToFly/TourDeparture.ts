@@ -51,6 +51,7 @@ export interface FTFTourDeparture extends CDEntity {
   blockedCapacity: number;
   finalizationDate: string | null;
   paymentDueDate: string | null;
+  fullPaymentDueDaysOverride: number | null;
   assembleLocationAirlineOID: string | null;
   assembleAirlineLocationTime: string | null;
   hkSeat: number | null;

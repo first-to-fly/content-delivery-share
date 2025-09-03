@@ -303,6 +303,7 @@ export interface FTFGroupTourBooking extends CDEntity {
   bookingStatus: BookingStatus;
   totalAmount: number;
   receivedAmount: number;
+  fullPaymentDueDate: string | null;
   snapshot: GroupTourBookingSnapshotData | null;
   metadata: GroupTourBookingMetadata | null;
   specialInstructions: string[] | null;

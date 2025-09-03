@@ -56,6 +56,8 @@ export interface FTFGroupTourProduct extends CDEntity {
   // Available platforms (e.g., saleskit, b2b, b2c)
   platforms: ProductPlatform[] | null;
 
+  defaultFullPaymentDueDays: number | null;
+
   ownerOIDs: string[] | null;
 
   videos: {

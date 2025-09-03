@@ -141,6 +141,7 @@ export interface FTFIndependentTourBooking extends CDEntity {
   bookingStatus: BookingStatus;
   totalAmount: number;
   receivedAmount: number;
+  fullPaymentDueDate: string | null;
 
   travelStartDate: string | null;
   travelEndDate: string | null;

@@ -2,7 +2,6 @@ import type { CDEntity } from "../entity";
 
 
 export enum ApprovalType {
-  GROUP_TOUR_BOOKING = "group-tour-booking-approval",
   GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT = "group-tour-booking-special-discount-approval",
   GROUP_TOUR_BOOKING_TRANSFER = "group-tour-booking-transfer-approval",
   GROUP_TOUR_BOOKING_AMENDMENT = "group-tour-booking-amendment-approval",
@@ -16,8 +15,6 @@ export enum ApprovalType {
   EQUIPMENT_REQUEST = "equipment-request-approval",
   LEAVE_REQUEST = "leave-request-approval",
   EXCHANGE_ORDER_DRAFT_TO_WFA = "exchange-order-draft-to-wfa-approval",
-  // Independent tour booking approvals
-  INDEPENDENT_TOUR_BOOKING = "independent-tour-booking-approval",
   INDEPENDENT_TOUR_BOOKING_SPECIAL_DISCOUNT = "independent-tour-booking-special-discount-approval",
   INDEPENDENT_TOUR_BOOKING_AMENDMENT = "independent-tour-booking-amendment-approval",
 

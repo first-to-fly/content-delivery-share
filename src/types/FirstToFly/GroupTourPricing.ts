@@ -87,6 +87,8 @@ export interface GroupTourPricingMatrixChangeHistory {
   retailPriceChanges: PricingMatrixRetailPriceChange[];
   discountChanges: PricingMatrixDiscountChange[];
   groupVolumeChanges: PricingMatrixGroupVolumeChange[];
+  landRetailPriceChanges: PricingMatrixRetailPriceChange[];
+  landGroupVolumeChanges: PricingMatrixGroupVolumeChange[];
 }
 
 

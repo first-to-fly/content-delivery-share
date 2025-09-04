@@ -251,6 +251,29 @@ export interface ApprovalRequestGroupTourBookingAmendmentMetadata {
   requestedDate: string;
 }
 
+export interface ApprovalRequestIndependentTourBookingAmendmentMetadata {
+  type: ApprovalType.INDEPENDENT_TOUR_BOOKING_AMENDMENT;
+  originalBookingOID: string;
+  amendedFormValues: Record<string, unknown>;
+  originalBookingBreakdown: BookingBreakdown;
+  amendedBreakdown: BookingBreakdown;
+  financialSummary: {
+    amendedTotal: number;
+    totalDifference: number;
+    originalOutstanding: number;
+    amendedOutstanding: number;
+    receivedAmount: number;
+    refundRequired: boolean;
+    refundAmount: number;
+    additionalPaymentRequired: boolean;
+    additionalPaymentAmount: number;
+  };
+  amendmentReason: string;
+  changedFields: string[];
+  requestedBy: string;
+  requestedDate: string;
+}
+
 type CommonSubmitDraftMetadata<T> = {
   fromStatus: T;
   toStatus: T;
@@ -307,6 +330,7 @@ export type ApprovalRequestMetadata =
   | ApprovalRequestBudgetApprovalMetadata
   | ApprovalRequestGroupTourBookingTransferMetadata
   | ApprovalRequestGroupTourBookingAmendmentMetadata
+  | ApprovalRequestIndependentTourBookingAmendmentMetadata
   | ApprovalRequestExchangeOrderDraftToWfaMetadata
   | ApprovalRequestMatchDocPaymentMadeDraftToSubmittedMetadata
   | ApprovalRequestMatchDocPaymentReceivedDraftToSubmittedMetadata

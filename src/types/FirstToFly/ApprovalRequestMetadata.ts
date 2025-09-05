@@ -1,10 +1,11 @@
-import type { BookingPaxType } from "../enums/bookingTypes";
+import type { BookingDiscountType, BookingPaxType } from "../enums/bookingTypes";
 import type { ApprovalType } from "./Approval";
 import type { BillStatus } from "./Bill";
 import type { DiscountMode } from "./Discount";
 import type { ExchangeOrderStatus } from "./ExchangeOrder";
 import type { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
 import type { FTFGroupTourBookingPax } from "./GroupTourBookingPax";
+import type { IndependentTourBookingAddonType } from "./IndependentTourBookingAddon";
 import type { MatchDocStatus } from "./MatchDoc";
 
 /**
@@ -254,7 +255,84 @@ export interface ApprovalRequestGroupTourBookingAmendmentMetadata {
 export interface ApprovalRequestIndependentTourBookingAmendmentMetadata {
   type: ApprovalType.INDEPENDENT_TOUR_BOOKING_AMENDMENT;
   originalBookingOID: string;
-  amendedFormValues: Record<string, unknown>;
+  amendedFormValues: {
+    rooms: Array<{
+      roomNumber: number;
+      accommodationOID?: string;
+      roomTypeOID?: string;
+      checkInDate?: string;
+      checkOutDate?: string;
+      selectedRuleOID?: string;
+      passengers: Array<{
+        oid?: string;
+        bookingPaxOID?: string;
+        title: string;
+        gender: string;
+        firstName: string;
+        lastName: string;
+        dateOfBirth?: string;
+        nationality?: string;
+        email?: string;
+        phone?: string;
+        alternativeMobile?: string;
+        address?: string;
+        postalCode?: string;
+        isLeadPassenger?: boolean;
+      }>;
+      adultSelections: Array<{ paxIndex: number }>;
+      childWithBedSelections: Array<{ paxIndex: number }>;
+      childNoBedSelections: Array<{ paxIndex: number }>;
+      infantSelections: Array<{ paxIndex: number }>;
+      bookingRoomOID?: string;
+      toBeRemoved?: boolean;
+    }>;
+    addOns?: Array<{
+      oid?: string;
+      independentTourOptionalServiceOID?: string;
+      independentTourBookingAddonOID?: string;
+      name: string;
+      price: number;
+      quantity: number;
+      tax?: number;
+      totalPrice: number;
+      type?: IndependentTourBookingAddonType;
+      passengerOIDs?: string[];
+      toBeRemoved?: boolean;
+    }>;
+    discounts?: Array<{
+      oid?: string;
+      independentTourBookingDiscountOID?: string;
+      type: BookingDiscountType;
+      amount: number;
+      percentage?: number;
+      discountMode: DiscountMode;
+      name: string;
+      description?: string;
+      code?: string;
+      discountCodeOID?: string;
+      reason?: string;
+      approvalRequestOID?: string;
+      toBeRemoved?: boolean;
+    }>;
+    primaryContact?: {
+      oid?: string;
+      title: string;
+      gender: string;
+      firstName: string;
+      lastName: string;
+      dateOfBirth?: string;
+      nationality?: string;
+      email?: string;
+      phone?: string;
+      alternativeMobile?: string;
+      address?: string;
+      postalCode?: string;
+      isLeadPassenger?: boolean;
+    };
+    specialInstructions?: string;
+    overwriteTax?: { scheme: string; rate: number };
+    totalAmount: number;
+  };
   originalBookingBreakdown: BookingBreakdown;
   amendedBreakdown: BookingBreakdown;
   financialSummary: {

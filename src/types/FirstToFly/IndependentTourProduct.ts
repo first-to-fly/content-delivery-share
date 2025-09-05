@@ -48,9 +48,11 @@ export interface FTFIndependentTourProduct extends CDEntity {
   targetYieldPercentage: number | null;
 
   defaultFullPaymentDueDays: number | null;
+  pricingPlaceholder: Record<string, number> | null;
 
   isActive: boolean;
   published: boolean;
+  isUmrahHaj: boolean | null;
 
   // Available platforms (e.g., saleskit, b2b, b2c)
   platforms: ProductPlatform[] | null;

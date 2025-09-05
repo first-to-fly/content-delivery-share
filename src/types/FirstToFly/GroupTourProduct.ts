@@ -57,6 +57,9 @@ export interface FTFGroupTourProduct extends CDEntity {
   platforms: ProductPlatform[] | null;
 
   defaultFullPaymentDueDays: number | null;
+  pricingPlaceholder: Record<string, number> | null;
+
+  isUmrahHaj: boolean | null;
 
   ownerOIDs: string[] | null;
 

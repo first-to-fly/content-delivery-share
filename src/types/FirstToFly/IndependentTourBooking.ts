@@ -66,6 +66,14 @@ export interface IndependentTourBookingAddonSnapshot {
   snapshotCreatedAt: string;
 }
 
+export interface IndependentTourMiscellaneousSnapshot {
+  oid: string;
+  name: string;
+  // Snapshot the selling price; tax is optional depending on config
+  priceValue: number | { amount: number; currency?: string; tax?: number };
+  snapshotCreatedAt: string;
+}
+
 export interface IndependentTourBookingAppliedDiscountSnapshot {
   oid: string;
   discountType: BookingDiscountType;
@@ -98,6 +106,8 @@ export interface IndependentTourBookingSnapshotData {
   productSnapshot?: IndependentTourProductSnapshot;
   selectedAccommodationSnapshot?: IndependentTourAccommodationSnapshot;
   roomsSnapshot: IndependentTourBookingRoomSnapshot[];
+  /** Product-level miscellaneous items included in the booking at snapshot time */
+  miscellaneousSnapshot?: IndependentTourMiscellaneousSnapshot[];
   addonsSnapshot: IndependentTourBookingAddonSnapshot[];
   appliedDiscountsSnapshot: IndependentTourBookingAppliedDiscountSnapshot[];
   paxSnapshot: IndependentTourBookingPaxSnapshot[];

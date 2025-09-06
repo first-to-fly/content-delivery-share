@@ -69,8 +69,7 @@ export interface IndependentTourBookingAddonSnapshot {
 export interface IndependentTourMiscellaneousSnapshot {
   oid: string;
   name: string;
-  // Snapshot the selling price; tax is optional depending on config
-  priceValue: number | { amount: number; currency?: string; tax?: number };
+  priceValue: { amount: number; currency?: string; tax?: number };
   snapshotCreatedAt: string;
 }
 

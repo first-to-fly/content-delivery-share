@@ -26,71 +26,6 @@ export interface ApprovalRequestBudgetApprovalMetadata {
   // empty metadata
 }
 
-export interface ApprovalRequestGroupTourBookingTransferMetadata {
-  type: ApprovalType.GROUP_TOUR_BOOKING_TRANSFER;
-  originalBookingOID: string;
-  transferItems: Array<{
-    targetTourDepartureOID: string;
-    passengers: Array<{
-      oid: string;
-      firstName: string;
-      lastName: string;
-      paxType: BookingPaxType;
-      personalDetails: FTFGroupTourBookingPax["personalDetails"];
-    }>;
-    rooms: Array<{
-      roomType: string;
-      roomCategory: string;
-      adultsCount: number;
-      childrenWithBedCount: number;
-      childrenNoBedCount: number;
-      infantsCount: number;
-      passengerAssignments: Array<{
-        passengerOID: string;
-        paxType: BookingPaxType;
-      }>;
-    }>;
-    addons: Array<{
-      oid?: string;
-      name: string;
-      price: number;
-      quantity: number;
-      tax?: number;
-      totalPrice: number;
-      type?: GroupTourBookingAddonType;
-      groupTourPricingOID?: string;
-      groupTourCostingEntryOID?: string;
-      bookingAddonOID?: string;
-      toBeRemoved?: boolean;
-    }>;
-    discounts: Array<{
-      oid?: string;
-      name: string;
-      type?: string; // BookingDiscountType as string
-      amount: number;
-      discountMode: DiscountMode;
-      code?: string;
-      discountCodeOID?: string;
-      reason?: string;
-      assigneeOID?: string;
-      tourDepartureDiscountGroupIndex?: number;
-      bookingDiscountOID?: string;
-      approvalRequestOID?: string;
-      toBeRemoved?: boolean;
-    }>;
-    specialInstructions?: string[];
-  }>;
-  transferReason: string;
-  financialSummary: {
-    originalBookingPaidAmount: number;
-    transferAllocation: Array<{
-      targetIndex: number;
-      allocatedAmount: number;
-      newBookingTotal: number;
-      balanceDue: number;
-    }>;
-  };
-}
 
 // Unified Booking Transfer (GTB↔ITB, ITB↔ITB, GTB↔GTB)
 type BookingTransferTargetGTB = {
@@ -523,7 +458,6 @@ export interface ApprovalRequestCustomerCancellationFeeMetadata {
 export type ApprovalRequestMetadata =
   | ApprovalRequestGroupTourBookingSpecialDiscountMetadata
   | ApprovalRequestBudgetApprovalMetadata
-  | ApprovalRequestGroupTourBookingTransferMetadata
   | ApprovalRequestGroupTourBookingAmendmentMetadata
   | ApprovalRequestIndependentTourBookingAmendmentMetadata
   | ApprovalRequestBookingTransferMetadata

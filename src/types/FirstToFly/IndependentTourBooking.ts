@@ -132,40 +132,8 @@ export interface BaseIndependentTourBookingMetadata {
  * Extends base metadata and allows additional fields
  */
 export interface IndependentTourBookingMetadata extends BaseIndependentTourBookingMetadata {
-  /** If this is a destination booking, the OID of the source booking it was transferred from */
-  transferredFrom?: string;
-  /** If this is a source booking, the list of newly created destination booking OIDs */
-  transferredTo?: string[];
-  /** The approval request OID that governs this transfer operation */
-  transferApprovalRequestOID?: string;
-  /** Timestamp (ISO string) when the transfer was executed/recorded */
-  transferDate?: string;
-  /** The user OID who approved the transfer at completion */
-  transferApprovedBy?: string;
-  /** Optional minimal audit trail of passengers included in the transfer */
-  transferPassengers?: Array<{
-    /** Original passenger OID on the source booking (if available) */
-    oid?: string;
-    /** Human-readable passenger name at time of transfer */
-    name?: string;
-  }>;
-  /** Mapping of original passenger OIDs → new passenger OIDs on destination booking(s) */
-  passengerMapping?: Record<string, string>;
-  /** Mapping of original room OIDs → new room OIDs created by the transfer */
-  roomMapping?: Record<string, string>;
-  /** Mapping of original addon OIDs → new addon OIDs on destination booking(s) */
-  addonMapping?: Record<string, string>;
-  /** Mapping of original discount OIDs → new discount OIDs on destination booking(s) */
-  discountMapping?: Record<string, string>;
-  /** Cross-module correlation when the transfer crosses booking types (GTB↔ITB) */
-  crossModuleTransfer?: {
-    /** The booking type of the original/source booking */
-    originalBookingType?: "GTB" | "ITB";
-    /** The booking type of the destination(s): "GTB", "ITB", or "mixed" if both */
-    targetBookingType?: string; // "GTB" | "ITB" | "mixed"
-    /** All destination booking OIDs created by this transfer */
-    targetBookingOIDs?: string[];
-  };
+  // Additional fields can be added as needed
+  [key: string]: unknown;
 }
 
 // --- Main CD Entity (as per requirements lines 340-378) ---

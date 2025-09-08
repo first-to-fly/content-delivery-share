@@ -238,42 +238,38 @@ export interface BaseGroupTourBookingMetadata {
  * Used when a booking is involved in a transfer process
  */
 export interface TransferMetadata {
-  /** If this is a destination booking, the OID of the source booking it was transferred from */
-  transferredFrom?: string;
-  /** If this is a source booking, the list of newly created destination booking OIDs */
+  // === Original GroupTourBooking (being transferred FROM) ===
+  /** Array of new GroupTourBooking OIDs that this booking was transferred to */
   transferredTo?: string[];
-  /** The approval request OID that governs this transfer operation */
-  transferApprovalRequestOID?: string;
-  /** Timestamp (ISO string) when the transfer was executed/recorded */
-  transferDate?: string;
-  /** The user OID who approved the transfer at completion */
-  transferApprovedBy?: string;
-  /** Optional minimal audit trail of passengers included in the transfer */
+  /** Array of GroupTourBooking OIDs currently being transferred (in-progress) */
+  transferringOIDs?: string[];
+  /** Date when the transfer process started */
+  transferStartDate?: string;
+  /** User OID who initiated the transfer */
+  transferredBy?: string;
+  /** Passengers being transferred with their target destinations */
   transferPassengers?: Array<{
-    /** Original passenger OID on the source booking (if available) */
     oid?: string;
-    /** Human-readable passenger name at time of transfer */
     name: string;
-    /** For GTB→GTB, the target tour departure OID the pax is moved into */
-    targetTourDepartureOID?: string;
+    targetTourDepartureOID: string;
   }>;
-  /** Mapping of original passenger OIDs → new passenger OIDs on destination booking(s) */
-  passengerMapping?: Record<string, string>;
-  /** Mapping of original room OIDs → new room OIDs created by the transfer */
-  roomMapping?: Record<string, string>;
-  /** Mapping of original addon OIDs → new addon OIDs on destination booking(s) */
-  addonMapping?: Record<string, string>;
-  /** Mapping of original discount OIDs → new discount OIDs on destination booking(s) */
-  discountMapping?: Record<string, string>;
-  /** Cross-module correlation when the transfer crosses booking types (GTB↔ITB) */
-  crossModuleTransfer?: {
-    /** The booking type of the original/source booking */
-    originalBookingType?: "GTB" | "ITB";
-    /** The booking type of the destination(s): "GTB", "ITB", or "mixed" if both */
-    targetBookingType?: string; // "GTB" | "ITB" | "mixed"
-    /** All destination booking OIDs created by this transfer */
-    targetBookingOIDs?: string[];
+
+  // === New GroupTourBooking (created FROM transfer) ===
+  /** Original GroupTourBooking OID that this booking was transferred from */
+  transferredFrom?: string;
+  /** GroupTourBooking reference of the original booking */
+  transferredFromBookingNumber?: string;
+  /** Date when the transfer was completed */
+  transferDate?: string;
+  /** Name/identifier of the person who approved the transfer */
+  transferApprovedBy?: string;
+  /** Mapping of original passenger OIDs to new passenger OIDs */
+  passengerMapping?: {
+    [originalPaxOID: string]: string; // Maps to new pax OID
   };
+
+  // NOTE: Payment data is now stored in PaymentOrder and Transaction entities
+  // and can be queried by bookingOID - no need to duplicate references here
 }
 
 /**

@@ -1,4 +1,4 @@
-import type { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType } from "../enums/bookingTypes";
+import type { BookingDiscountType, BookingPaxType } from "../enums/bookingTypes";
 import type { ApprovalType } from "./Approval";
 import type { BillStatus } from "./Bill";
 import type { DiscountMode } from "./Discount";
@@ -90,123 +90,6 @@ export interface ApprovalRequestGroupTourBookingTransferMetadata {
       balanceDue: number;
     }>;
   };
-}
-
-// Unified Booking Transfer (GTB↔ITB, ITB↔ITB, GTB↔GTB)
-type BookingTransferTargetGTB = {
-  targetBookingType: "GTB";
-  targetTourDepartureOID: string;
-  passengers: Array<{
-    oid?: string;
-    firstName: string;
-    lastName: string;
-    paxType: BookingPaxType;
-    personalDetails: BookingPaxPersonalDetails;
-  }>;
-  rooms: Array<{
-    roomType: string;
-    roomCategory: string;
-    adultsCount: number;
-    childrenWithBedCount: number;
-    childrenNoBedCount: number;
-    infantsCount: number;
-    passengerAssignments: Array<{
-      passengerOID: string;
-      paxType: BookingPaxType;
-    }>;
-  }>;
-  addons?: Array<{
-    oid?: string;
-    name: string;
-    price: number;
-    quantity: number;
-    tax?: number;
-    totalPrice: number;
-    type?: GroupTourBookingAddonType;
-    groupTourPricingOID?: string;
-    groupTourCostingEntryOID?: string;
-    bookingAddonOID?: string;
-    toBeRemoved?: boolean;
-  }>;
-  discounts?: Array<{
-    oid?: string;
-    name: string;
-    type?: string;
-    amount: number;
-    discountMode: DiscountMode;
-    code?: string;
-    discountCodeOID?: string;
-    reason?: string;
-    assigneeOID?: string;
-    tourDepartureDiscountGroupIndex?: number;
-    bookingDiscountOID?: string;
-    approvalRequestOID?: string;
-    toBeRemoved?: boolean;
-  }>;
-  specialInstructions?: string[];
-};
-
-type BookingTransferTargetITB = {
-  targetBookingType: "ITB";
-  targetIndependentTourProductOID: string;
-  targetIndependentTourAccommodationOID?: string;
-  rooms: Array<{
-    roomNumber: number;
-    passengers: Array<BookingPaxPersonalDetails & { oid?: string }>;
-    adultSelections: Array<{ paxIndex: number }>;
-    childWithBedSelections: Array<{ paxIndex: number }>;
-    childNoBedSelections: Array<{ paxIndex: number }>;
-    infantSelections: Array<{ paxIndex: number }>;
-    selectedRuleOID?: string;
-  }>;
-  addons?: Array<{
-    oid?: string;
-    independentTourOptionalServiceOID?: string;
-    independentTourBookingAddonOID?: string;
-    name: string;
-    price: number;
-    quantity: number;
-    tax?: number;
-    totalPrice: number;
-    type?: IndependentTourBookingAddonType;
-    passengerOIDs?: string[];
-    toBeRemoved?: boolean;
-  }>;
-  discounts?: Array<{
-    oid?: string;
-    independentTourBookingDiscountOID?: string;
-    type: BookingDiscountType;
-    amount: number;
-    percentage?: number;
-    discountMode: DiscountMode;
-    name: string;
-    description?: string;
-    code?: string;
-    discountCodeOID?: string;
-    reason?: string;
-    approvalRequestOID?: string;
-    toBeRemoved?: boolean;
-  }>;
-  specialInstructions?: string[];
-};
-
-export interface ApprovalRequestBookingTransferMetadata {
-  type: ApprovalType.BOOKING_TRANSFER;
-  sourceBookingType: "GTB" | "ITB";
-  originalBookingOID: string;
-  transferItems: Array<BookingTransferTargetGTB | BookingTransferTargetITB>;
-  transferReason: string;
-  financialSummary: {
-    originalBookingPaidAmount: number;
-    transferAllocation: Array<{
-      targetIndex: number;
-      allocatedAmount: number;
-      newBookingTotal: number;
-      balanceDue: number;
-    }>;
-  };
-  idempotencyKey: string;
-  createdBookingOIDs?: string[];
 }
 
 // Common booking breakdown interface used for both original and amended breakdowns
@@ -526,7 +409,6 @@ export type ApprovalRequestMetadata =
   | ApprovalRequestGroupTourBookingTransferMetadata
   | ApprovalRequestGroupTourBookingAmendmentMetadata
   | ApprovalRequestIndependentTourBookingAmendmentMetadata
-  | ApprovalRequestBookingTransferMetadata
   | ApprovalRequestExchangeOrderDraftToWfaMetadata
   | ApprovalRequestMatchDocPaymentMadeDraftToSubmittedMetadata
   | ApprovalRequestMatchDocPaymentReceivedDraftToSubmittedMetadata

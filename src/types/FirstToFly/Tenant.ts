@@ -24,6 +24,7 @@ export interface FTFTenant extends CDEntity {
     scheme: string;
     rate: number; // Tax rate as percentage, e.g., 7.5 for 7.5%
   } | null;
+  pdfHeader: string | null;
 
   createdAt: string;
   updatedAt: string;

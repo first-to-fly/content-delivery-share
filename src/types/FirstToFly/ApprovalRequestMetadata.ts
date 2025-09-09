@@ -4,7 +4,6 @@ import type { BillStatus } from "./Bill";
 import type { DiscountMode } from "./Discount";
 import type { ExchangeOrderStatus } from "./ExchangeOrder";
 import type { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
-import type { FTFGroupTourBookingPax } from "./GroupTourBookingPax";
 import type { IndependentTourBookingAddonType } from "./IndependentTourBookingAddon";
 import type { MatchDocStatus } from "./MatchDoc";
 

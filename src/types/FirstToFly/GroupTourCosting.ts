@@ -21,7 +21,7 @@ export interface FTFGroupTourCosting extends CDEntity {
 
   isActive: boolean;
 
-  airlineOIDs: string[];
+  airlineOIDs: string[] | null;
 
   landTourGroupSizeTiers: {
     from: number;
@@ -31,13 +31,13 @@ export interface FTFGroupTourCosting extends CDEntity {
   freeOfChargeTiers: {
     pax: number;
     freePax: number;
-  }[];
+  }[] | null;
 
   leadManagerCountTiers: {
     pax: number;
     leadCount: number;
     managerCount: number;
-  }[];
+  }[] | null;
 
   groupTourCostingEntryOIDs: string[];
 

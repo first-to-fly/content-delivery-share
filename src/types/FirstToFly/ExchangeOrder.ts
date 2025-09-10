@@ -37,9 +37,9 @@ export interface FTFExchangeOrder extends CDEntity {
   exchangeOrderItemOIDs: string[];
 
   supplierOID: string;
-  supplierPersonOID: string;
-  supplierPaymentOID: string;
-  supplierAddressOID: string;
+  supplierPersonOID: string | null;
+  supplierPaymentOID: string | null;
+  supplierAddressOID: string | null;
 
   createdAt: string;
   updatedAt: string;

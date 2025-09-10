@@ -305,6 +305,8 @@ export interface FTFGroupTourBooking extends CDEntity {
   totalAmount: number;
   receivedAmount: number;
   fullPaymentDueDate: string | null;
+  expectedCancelTime: string | null;
+  platform: string;
   snapshot: GroupTourBookingSnapshotData | null;
   metadata: GroupTourBookingMetadata | null;
   specialInstructions: string[] | null;

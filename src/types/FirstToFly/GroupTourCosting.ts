@@ -16,12 +16,12 @@ export interface FTFGroupTourCosting extends CDEntity {
 
   remarks: string | null;
 
-  validityStartDate: string | null;
-  validityEndDate: string | null;
+  validityStartDate: string;
+  validityEndDate: string;
 
   isActive: boolean;
 
-  airlineOIDs: string[];
+  airlineOIDs: string[] | null;
 
   landTourGroupSizeTiers: {
     from: number;
@@ -31,13 +31,13 @@ export interface FTFGroupTourCosting extends CDEntity {
   freeOfChargeTiers: {
     pax: number;
     freePax: number;
-  }[];
+  }[] | null;
 
   leadManagerCountTiers: {
     pax: number;
     leadCount: number;
     managerCount: number;
-  }[];
+  }[] | null;
 
   groupTourCostingEntryOIDs: string[];
 

@@ -1,6 +1,7 @@
 import type { CDEntity } from "../entity";
-import type { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
+import type { BookingDiscountType, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
 import type { MultiLangRecord } from "../multipleLanguage";
+import type { BaseBookingCustomerMetadata, GTBTransferMetadata } from "./BookingMetadata";
 import type { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
 import type { DiscountMode } from "./Discount";
 import type { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
@@ -224,66 +225,19 @@ export interface GroupTourBookingSnapshotData {
  * Base metadata structure for GroupTourBooking
  * This provides a foundation that can be extended for specific use cases
  */
-export interface BaseGroupTourBookingMetadata {
-  /**
-   * Primary customer/contact information
-   * This is required for all bookings
-   */
-  customer: BookingPaxPersonalDetails;
-
-}
+/**
+ * Base metadata structure for Group Tour Booking
+ * Delegates customer/contact fields to BaseBookingCustomerMetadata
+ */
+export interface BaseGroupTourBookingMetadata extends BaseBookingCustomerMetadata {}
 
 /**
- * Transfer-specific metadata fields
- * Used when a booking is involved in a transfer process
+ * Complete Group Tour Booking metadata
+ * Combines base customer info with GTB-specific transfer metadata fields
  */
-export interface TransferMetadata {
-  /** If this is a destination booking, the OID of the source booking it was transferred from */
-  transferredFrom?: string;
-  /** If this is a source booking, the list of newly created destination booking OIDs */
-  transferredTo?: string[];
-  /** The approval request OID that governs this transfer operation */
-  transferApprovalRequestOID?: string;
-  /** Timestamp (ISO string) when the transfer was executed/recorded */
-  transferDate?: string;
-  /** The user OID who approved the transfer at completion */
-  transferApprovedBy?: string;
-  /** Optional minimal audit trail of passengers included in the transfer */
-  transferPassengers?: Array<{
-    /** Original passenger OID on the source booking (if available) */
-    oid?: string;
-    /** Human-readable passenger name at time of transfer */
-    name: string;
-    /** For GTB→GTB, the target tour departure OID the pax is moved into */
-    targetTourDepartureOID?: string;
-  }>;
-  /** Mapping of original passenger OIDs → new passenger OIDs on destination booking(s) */
-  passengerMapping?: Record<string, string>;
-  /** Mapping of original room OIDs → new room OIDs created by the transfer */
-  roomMapping?: Record<string, string>;
-  /** Mapping of original addon OIDs → new addon OIDs on destination booking(s) */
-  addonMapping?: Record<string, string>;
-  /** Mapping of original discount OIDs → new discount OIDs on destination booking(s) */
-  discountMapping?: Record<string, string>;
-  /** Cross-module correlation when the transfer crosses booking types (GTB↔ITB) */
-  crossModuleTransfer?: {
-    /** The booking type of the original/source booking */
-    originalBookingType?: "GTB" | "ITB";
-    /** The booking type of the destination(s): "GTB", "ITB", or "mixed" if both */
-    targetBookingType?: string; // "GTB" | "ITB" | "mixed"
-    /** All destination booking OIDs created by this transfer */
-    targetBookingOIDs?: string[];
-  };
-}
-
-/**
- * Complete GroupTourBooking metadata structure
- * Combines base metadata with optional transfer metadata
- */
-export interface GroupTourBookingMetadata extends BaseGroupTourBookingMetadata, Partial<TransferMetadata> {
-  // This interface combines both base and transfer metadata
-  // Transfer fields are optional since not all bookings involve transfers
-}
+export interface GroupTourBookingMetadata
+  extends BaseGroupTourBookingMetadata,
+  Partial<GTBTransferMetadata> {}
 
 
 /**

@@ -24,7 +24,7 @@ export interface FTFIndependentTourProduct extends CDEntity {
 
   departmentOID: string;
   sectorGroupOID: string | null;
-  sectorOIDs: string[];
+  sectorOIDs: string[] | null;
   independentTourProductItineraryOID: string | undefined;
 
   code: string;

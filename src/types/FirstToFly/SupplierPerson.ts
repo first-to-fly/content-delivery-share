@@ -14,13 +14,13 @@ export interface FTFSupplierPerson extends CDEntity {
   supplierOID: string;
   firstName: string;
   lastName: string;
-  position?: string;
-  department?: string;
+  position: string | null;
+  department: string | null;
   contactInfo: ContactInfo[];
   isDefault: boolean;
   createdAt: string;
   updatedAt: string;
   createdBy: string;
-  updatedBy: string;
+  updatedBy: string | null;
   tenantOID: string;
 }

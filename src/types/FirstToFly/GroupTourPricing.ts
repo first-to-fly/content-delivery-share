@@ -119,7 +119,7 @@ export interface FTFGroupTourPricing extends CDEntity {
 
   landFare: FTFGroupTourPricingFareStructure;
 
-  discount: FTFGroupTourPricingDiscount;
+  discount: FTFGroupTourPricingDiscount | null;
 
   airportTax: {
     adult: number;

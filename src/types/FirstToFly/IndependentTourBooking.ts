@@ -157,6 +157,7 @@ export interface FTFIndependentTourBooking extends CDEntity {
 
   travelStartDate: string | null;
   travelEndDate: string | null;
+  platform: string;
 
   snapshot: IndependentTourBookingSnapshotData | null;
   metadata: IndependentTourBookingMetadata | null;

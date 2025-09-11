@@ -6,13 +6,13 @@ export interface FTFSupplierAddress extends CDEntity {
   supplierOID: string;
   addressLines: string[];
   city: string;
-  state?: string;
-  postalCode?: string;
+  state: string | null;
+  postalCode: string | null;
   country: string;
   isDefault: boolean;
   createdAt: string;
   updatedAt: string;
   createdBy: string;
-  updatedBy: string;
+  updatedBy: string | null;
   tenantOID: string;
 }

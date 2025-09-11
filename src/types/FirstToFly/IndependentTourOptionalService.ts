@@ -9,7 +9,7 @@ export interface FTFIndependentTourOptionalService extends CDEntity {
   costValue: {
     currency: string;
     amount: number;
-    tax?: number;
+    tax?: number | null;
   };
   priceValue: {
     currency: string;

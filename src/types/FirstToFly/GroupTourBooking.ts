@@ -240,33 +240,33 @@ export interface BaseGroupTourBookingMetadata {
 export interface TransferMetadata {
   // === Original GroupTourBooking (being transferred FROM) ===
   /** Array of new GroupTourBooking OIDs that this booking was transferred to */
-  transferredTo?: string[];
+  transferredTo?: string[] | null;
   /** Array of GroupTourBooking OIDs currently being transferred (in-progress) */
-  transferringOIDs?: string[];
+  transferringOIDs?: string[] | null;
   /** Date when the transfer process started */
-  transferStartDate?: string;
+  transferStartDate?: string | null;
   /** User OID who initiated the transfer */
-  transferredBy?: string;
+  transferredBy?: string | null;
   /** Passengers being transferred with their target destinations */
   transferPassengers?: Array<{
-    oid?: string;
+    oid?: string | null;
     name: string;
     targetTourDepartureOID: string;
-  }>;
+  }> | null;
 
   // === New GroupTourBooking (created FROM transfer) ===
   /** Original GroupTourBooking OID that this booking was transferred from */
-  transferredFrom?: string;
+  transferredFrom?: string | null;
   /** GroupTourBooking reference of the original booking */
-  transferredFromBookingNumber?: string;
+  transferredFromBookingNumber?: string | null;
   /** Date when the transfer was completed */
-  transferDate?: string;
+  transferDate?: string | null;
   /** Name/identifier of the person who approved the transfer */
-  transferApprovedBy?: string;
+  transferApprovedBy?: string | null;
   /** Mapping of original passenger OIDs to new passenger OIDs */
   passengerMapping?: {
     [originalPaxOID: string]: string; // Maps to new pax OID
-  };
+  } | null;
 
   // NOTE: Payment data is now stored in PaymentOrder and Transaction entities
   // and can be queried by bookingOID - no need to duplicate references here

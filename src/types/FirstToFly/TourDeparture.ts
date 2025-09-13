@@ -23,6 +23,16 @@ export type AssemblyDetails = {
   time: string | null;
 };
 
+export interface FTFRoomAdjacencyData {
+  roomOneOID: string;
+  roomTwoOID: string;
+}
+
+export interface FTFRoomPaxAllocationData {
+  paxOID: string;
+  assignedRoomOID: string;
+}
+
 export interface FTFTourDeparture extends CDEntity {
   tenantOID: string;
 
@@ -70,6 +80,12 @@ export interface FTFTourDeparture extends CDEntity {
   discount: FTFGroupTourPricingDiscount | null;
 
   countriesCovered: string[] | null;
+
+  // Room adjacency data (OIDs only)
+  roomAdjacencies: FTFRoomAdjacencyData[];
+
+  // Room-pax allocation data (OIDs only)
+  roomPaxAllocations: FTFRoomPaxAllocationData[];
 
   createdAt: string;
   updatedAt: string;

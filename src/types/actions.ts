@@ -9,6 +9,7 @@ import type { FTFBudget } from "./FirstToFly/Budget";
 import type { FTFBudgetEntry } from "./FirstToFly/BudgetEntry";
 import type { FTFCostingItem } from "./FirstToFly/CostingItem";
 import type { FTFCostingTemplate } from "./FirstToFly/CostingTemplate";
+import type { FTFCustomerBookingLink } from "./FirstToFly/CustomerBookingLink";
 import type { FTFDepartment } from "./FirstToFly/Department";
 import type { FTFDeposit } from "./FirstToFly/Deposit";
 import type { FTFDesignation } from "./FirstToFly/Designation";
@@ -79,6 +80,7 @@ export type AllEntityField =
   | keyof FTFBudgetEntry
   | keyof FTFCostingItem
   | keyof FTFCostingTemplate
+  | keyof FTFCustomerBookingLink
   | keyof FTFDepartment
   | keyof FTFDeposit
   | keyof FTFDesignation

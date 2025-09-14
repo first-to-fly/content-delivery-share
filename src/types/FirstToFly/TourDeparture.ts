@@ -23,6 +23,14 @@ export type AssemblyDetails = {
   time: string | null;
 };
 
+export interface FTFRoomAdjacencyData {
+  roomOneOID: string;
+  roomTwoOID: string;
+}
+
+// Record mapping PAX OID to assigned Room OID (one-to-one relationship)
+export type FTFRoomPaxAllocationData = Record<string, string>;
+
 export interface FTFTourDeparture extends CDEntity {
   tenantOID: string;
 
@@ -70,6 +78,12 @@ export interface FTFTourDeparture extends CDEntity {
   discount: FTFGroupTourPricingDiscount | null;
 
   countriesCovered: string[] | null;
+
+  // Room adjacency data (OIDs only)
+  roomAdjacencies: FTFRoomAdjacencyData[];
+
+  // Room-pax allocation data (PAX OID -> Room OID mapping)
+  roomPaxAllocations: FTFRoomPaxAllocationData;
 
   createdAt: string;
   updatedAt: string;

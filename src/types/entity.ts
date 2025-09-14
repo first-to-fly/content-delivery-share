@@ -94,6 +94,9 @@ export enum CDEntityType {
   // PAYMENT AND TRANSACTION
   FTF_PAYMENT_ORDER = "ftf-paymentOrder",
   FTF_TRANSACTION = "ftf-transaction",
+
+  // CUSTOMER BOOKING LINK
+  FTF_CUSTOMER_BOOKING_LINK = "ftf-customerBookingLink",
 }
 
 

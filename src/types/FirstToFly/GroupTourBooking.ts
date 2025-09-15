@@ -272,6 +272,9 @@ export interface FTFGroupTourBooking extends CDEntity {
     scheme: string;
     rate: number;
   } | null;
+  overwriteDeposit: number | null;
+  saleStaffOID: string | null;
+  saleReferrerOID: string | null;
 
   transactionOIDs: string[] | null;
   paymentOrderOID: string | null;

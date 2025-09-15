@@ -1,6 +1,7 @@
 import type { CDEntity } from "../entity";
-import type { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
+import type { BookingDiscountType, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
 import type { MultiLangRecord } from "../multipleLanguage";
+import type { BaseBookingCustomerMetadata, GTBTransferMetadata } from "./BookingMetadata";
 import type { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
 import type { DiscountMode } from "./Discount";
 import type { GroupTourBookingAddonType } from "./GroupTourBookingAddon";
@@ -224,62 +225,19 @@ export interface GroupTourBookingSnapshotData {
  * Base metadata structure for GroupTourBooking
  * This provides a foundation that can be extended for specific use cases
  */
-export interface BaseGroupTourBookingMetadata {
-  /**
-   * Primary customer/contact information
-   * This is required for all bookings
-   */
-  customer: BookingPaxPersonalDetails;
-
-}
+/**
+ * Base metadata structure for Group Tour Booking
+ * Delegates customer/contact fields to BaseBookingCustomerMetadata
+ */
+export interface BaseGroupTourBookingMetadata extends BaseBookingCustomerMetadata {}
 
 /**
- * Transfer-specific metadata fields
- * Used when a booking is involved in a transfer process
+ * Complete Group Tour Booking metadata
+ * Combines base customer info with GTB-specific transfer metadata fields
  */
-export interface TransferMetadata {
-  // === Original GroupTourBooking (being transferred FROM) ===
-  /** Array of new GroupTourBooking OIDs that this booking was transferred to */
-  transferredTo?: string[] | null;
-  /** Array of GroupTourBooking OIDs currently being transferred (in-progress) */
-  transferringOIDs?: string[] | null;
-  /** Date when the transfer process started */
-  transferStartDate?: string | null;
-  /** User OID who initiated the transfer */
-  transferredBy?: string | null;
-  /** Passengers being transferred with their target destinations */
-  transferPassengers?: Array<{
-    oid?: string | null;
-    name: string;
-    targetTourDepartureOID: string;
-  }> | null;
-
-  // === New GroupTourBooking (created FROM transfer) ===
-  /** Original GroupTourBooking OID that this booking was transferred from */
-  transferredFrom?: string | null;
-  /** GroupTourBooking reference of the original booking */
-  transferredFromBookingNumber?: string | null;
-  /** Date when the transfer was completed */
-  transferDate?: string | null;
-  /** Name/identifier of the person who approved the transfer */
-  transferApprovedBy?: string | null;
-  /** Mapping of original passenger OIDs to new passenger OIDs */
-  passengerMapping?: {
-    [originalPaxOID: string]: string; // Maps to new pax OID
-  } | null;
-
-  // NOTE: Payment data is now stored in PaymentOrder and Transaction entities
-  // and can be queried by bookingOID - no need to duplicate references here
-}
-
-/**
- * Complete GroupTourBooking metadata structure
- * Combines base metadata with optional transfer metadata
- */
-export interface GroupTourBookingMetadata extends BaseGroupTourBookingMetadata, Partial<TransferMetadata> {
-  // This interface combines both base and transfer metadata
-  // Transfer fields are optional since not all bookings involve transfers
-}
+export interface GroupTourBookingMetadata
+  extends BaseGroupTourBookingMetadata,
+  Partial<GTBTransferMetadata> {}
 
 
 /**

@@ -1,5 +1,6 @@
 import type { CDEntity } from "../entity";
 import type { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
+import type { BaseBookingCustomerMetadata, ITBTransferMetadata } from "./BookingMetadata";
 import type { DiscountMode } from "./Discount";
 
 
@@ -119,22 +120,23 @@ export interface IndependentTourBookingSnapshotData {
  * Base metadata for IndependentTourBooking
  * Contains primary customer/contact information
  */
-export interface BaseIndependentTourBookingMetadata {
-  /**
-   * Primary customer/contact information
-   * This is required for all bookings
-   */
-  customer: BookingPaxPersonalDetails;
-}
+/**
+ * Base metadata for Independent Tour Booking
+ * Delegates customer/contact fields to BaseBookingCustomerMetadata
+ */
+export interface BaseIndependentTourBookingMetadata extends BaseBookingCustomerMetadata {}
 
 /**
  * Complete IndependentTourBooking metadata
  * Extends base metadata and allows additional fields
  */
-export interface IndependentTourBookingMetadata extends BaseIndependentTourBookingMetadata {
-  // Additional fields can be added as needed
-  [key: string]: unknown;
-}
+/**
+ * Complete Independent Tour Booking metadata
+ * Combines base customer info with ITB-specific transfer metadata fields
+ */
+export interface IndependentTourBookingMetadata
+  extends BaseIndependentTourBookingMetadata,
+  Partial<ITBTransferMetadata> {}
 
 // --- Main CD Entity (as per requirements lines 340-378) ---
 

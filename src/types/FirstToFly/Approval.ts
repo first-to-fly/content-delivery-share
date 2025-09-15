@@ -3,8 +3,9 @@ import type { CDEntity } from "../entity";
 
 export enum ApprovalType {
   GROUP_TOUR_BOOKING_SPECIAL_DISCOUNT = "group-tour-booking-special-discount-approval",
-  GROUP_TOUR_BOOKING_TRANSFER = "group-tour-booking-transfer-approval",
   GROUP_TOUR_BOOKING_AMENDMENT = "group-tour-booking-amendment-approval",
+  // Unified booking transfer (GTB↔ITB, ITB↔ITB, GTB↔GTB)
+  BOOKING_TRANSFER = "booking-transfer-approval",
   BUDGET_APPROVAL = "budget-approval",
   TRAVEL_REQUEST = "travel-request-approval",
   EXPENSE_REPORT = "expense-report-approval",

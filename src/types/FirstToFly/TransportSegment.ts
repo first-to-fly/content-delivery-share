@@ -140,6 +140,8 @@ export type FTFTransportSegment = CDEntity & {
   plannedDepartureTime: string | null; // Time in "HH:MM" format
   plannedArrivalTime: string | null; // Time in "HH:MM" format
 
+  isActive: boolean | null;
+
   tenantOID: string;
 
   createdAt: string;

@@ -9,6 +9,7 @@ import type { CDEntity } from "../entity";
 export type FTFTransportPlan = CDEntity & {
   name: string;
   description: string | null;
+  isActive: boolean | null;
 
   groupTourProductOID: string;
 

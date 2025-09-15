@@ -80,10 +80,10 @@ export interface FTFTourDeparture extends CDEntity {
   countriesCovered: string[] | null;
 
   // Room adjacency data (OIDs only)
-  roomAdjacencies: FTFRoomAdjacencyData[];
+  roomAdjacencies: FTFRoomAdjacencyData[] | null;
 
   // Room-pax allocation data (PAX OID -> Room OID mapping)
-  roomPaxAllocations: FTFRoomPaxAllocationData;
+  roomPaxAllocations: FTFRoomPaxAllocationData | null;
 
   createdAt: string;
   updatedAt: string;

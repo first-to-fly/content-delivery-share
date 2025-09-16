@@ -20,6 +20,14 @@ export interface ApprovalRequestGroupTourBookingSpecialDiscountMetadata {
   reason?: string;
 }
 
+export interface ApprovalRequestIndependentTourBookingSpecialDiscountMetadata {
+  type: ApprovalType.INDEPENDENT_TOUR_BOOKING_SPECIAL_DISCOUNT;
+  discountName: string;
+  discountValue: number;
+  discountMode: DiscountMode;
+  reason?: string;
+}
+
 export interface ApprovalRequestBudgetApprovalMetadata {
   type: ApprovalType.BUDGET_APPROVAL;
   // empty metadata
@@ -456,6 +464,7 @@ export interface ApprovalRequestCustomerCancellationFeeMetadata {
 // Union type for all metadata
 export type ApprovalRequestMetadata =
   | ApprovalRequestGroupTourBookingSpecialDiscountMetadata
+  | ApprovalRequestIndependentTourBookingSpecialDiscountMetadata
   | ApprovalRequestBudgetApprovalMetadata
   | ApprovalRequestGroupTourBookingAmendmentMetadata
   | ApprovalRequestIndependentTourBookingAmendmentMetadata

@@ -461,6 +461,12 @@ export interface ApprovalRequestCustomerCancellationFeeMetadata {
   notes?: string;
 }
 
+export interface ApprovalRequestBookingExtensionMetadata {
+  type: ApprovalType.BOOKING_EXTENSION;
+  extensionRequestID: string;
+  remarks?: string;
+}
+
 // Union type for all metadata
 export type ApprovalRequestMetadata =
   | ApprovalRequestGroupTourBookingSpecialDiscountMetadata
@@ -474,4 +480,5 @@ export type ApprovalRequestMetadata =
   | ApprovalRequestMatchDocPaymentReceivedDraftToSubmittedMetadata
   | ApprovalRequestBillDraftToSubmittedMetadata
   | ApprovalRequestCustomerRefundMetadata
-  | ApprovalRequestCustomerCancellationFeeMetadata;
+  | ApprovalRequestCustomerCancellationFeeMetadata
+  | ApprovalRequestBookingExtensionMetadata;

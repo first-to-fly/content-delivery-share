@@ -65,6 +65,7 @@ export interface FTFTourDeparture extends CDEntity {
   description: MultiLangRecord<string> | null;
   isArchived: boolean;
   isCancelled: boolean;
+  hardpush: boolean | null;
   tourLeaderOIDs: string[] | null;
   tourManagerOIDs: string[] | null;
   accommodationOIDs: string[] | null;

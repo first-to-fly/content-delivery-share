@@ -10,6 +10,9 @@ export interface FTFIndependentTourBookingPax extends CDEntity {
   personalDetails: BookingPaxPersonalDetails | null;
   mealPreference: string | null;
   documentOIDs: string[] | null;
+  remarks: string | null;
+  isConfirmed: boolean;
+  confirmedAt: string | null;
 
   createdAt: string;
   updatedAt: string;

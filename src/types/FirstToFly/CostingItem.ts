@@ -43,12 +43,18 @@ export enum OccupancyType {
   INFANT = "infant",
 }
 
+export enum QuantityMode {
+  AUTO = "auto",
+  MANUAL = "manual",
+}
+
 export interface FTFCostingItem extends CDEntity {
   name: string;
   category: CostingItemCategory;
   calculationBasis: CalculationBasis;
   applyToPackageType: PackageType;
   applyToOccupancyType: OccupancyType;
+  quantityMode: QuantityMode;
 
   remarks: string | null;
   isActive: boolean;

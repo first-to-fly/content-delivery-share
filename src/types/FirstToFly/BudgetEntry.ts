@@ -1,3 +1,5 @@
+import type { QuantityMode } from "@firsttofly/travel-share/src/entities/Settings/Product/CostingItem";
+
 import type { CDEntity } from "../entity";
 import type { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
 
@@ -28,6 +30,7 @@ export interface FTFBudgetEntry extends CDEntity {
 
   remarks: string | null;
 
+  quantityMode: QuantityMode;
   quantity: number;
 
   isTieredPrice: boolean;

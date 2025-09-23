@@ -172,6 +172,9 @@ export interface FTFIndependentTourBooking extends CDEntity {
   saleStaffOID: string | null;
   saleReferrerOID: string | null;
 
+  // Cancellation/Void remarks
+  remarks: string | null;
+
   transactionOIDs: string[] | null;
   paymentOrderOID: string | null;
 

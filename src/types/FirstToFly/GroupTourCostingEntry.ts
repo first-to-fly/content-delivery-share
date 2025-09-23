@@ -1,5 +1,5 @@
 import type { CDEntity } from "../entity";
-import type { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
+import type { CalculationBasis, CostingItemCategory, OccupancyType, PackageType, QuantityMode } from "./CostingItem";
 
 
 /**
@@ -20,6 +20,7 @@ export interface FTFGroupTourCostingEntry extends CDEntity {
 
   remarks: string | null;
 
+  quantityMode: QuantityMode;
   quantity: number;
 
   isTieredPrice: boolean;

@@ -1,7 +1,5 @@
-import type { QuantityMode } from "@firsttofly/travel-share/src/entities/Settings/Product/CostingItem";
-
 import type { CDEntity } from "../entity";
-import type { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
+import type { CalculationBasis, CostingItemCategory, OccupancyType, PackageType, QuantityMode } from "./CostingItem";
 
 
 /**

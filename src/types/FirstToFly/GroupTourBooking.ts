@@ -278,6 +278,7 @@ export interface FTFGroupTourBooking extends CDEntity {
 
   // Cancellation/Void remarks
   remarks: string | null;
+  insuranceDeclaration: string | null;
 
   transactionOIDs: string[] | null;
   paymentOrderOID: string | null;

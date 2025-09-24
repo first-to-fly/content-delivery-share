@@ -146,6 +146,7 @@ export interface FTFIndependentTourBooking extends CDEntity {
   independentTourAccommodationOID: string | null;
   departmentOID: string | null;
   stationCodeOID: string | null;
+  budgetOID: string | null;
   tcpBookingOID: string | null;
 
   bookingReference: string;

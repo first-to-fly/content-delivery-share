@@ -287,6 +287,11 @@ export interface FTFGroupTourBooking extends CDEntity {
 
   liveRoomCount: number;
   livePaxCount: number;
+  liveAddonCount: number;
+
+  travelStartDate: string | null;
+  travelEndDate: string | null;
+  customerConfirmedAt: string | null;
 
   latestApprovalRequestOID: string | null;
 

@@ -182,6 +182,7 @@ export interface FTFIndependentTourBooking extends CDEntity {
   liveRoomCount: number;
   livePaxCount: number;
   liveAddonCount: number;
+  customerConfirmedAt: string | null;
 
   latestApprovalRequestOID: string | null;
 

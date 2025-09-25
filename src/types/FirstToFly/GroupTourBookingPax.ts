@@ -12,6 +12,9 @@ export interface FTFGroupTourBookingPax extends CDEntity {
   mealPreference: string | null;
   transportRecordOID: string | null;
   documentOIDs: string[] | null;
+  remarks: string | null;
+  isConfirmed: boolean;
+  confirmedAt: string | null;
 
   createdBy: string;
   updatedBy: string | null;

@@ -265,6 +265,8 @@ export interface FTFGroupTourBooking extends CDEntity {
   fullPaymentDueDate: string | null;
   expectedCancelTime: string | null;
   platform: string;
+  isCustomerConfirmed: boolean;
+  finalConfirmed: boolean;
   snapshot: GroupTourBookingSnapshotData | null;
   metadata: GroupTourBookingMetadata | null;
   specialInstructions: string[] | null;
@@ -285,6 +287,11 @@ export interface FTFGroupTourBooking extends CDEntity {
 
   liveRoomCount: number;
   livePaxCount: number;
+  liveAddonCount: number;
+
+  travelStartDate: string | null;
+  travelEndDate: string | null;
+  customerConfirmedAt: string | null;
 
   latestApprovalRequestOID: string | null;
 

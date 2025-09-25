@@ -159,6 +159,8 @@ export interface FTFIndependentTourBooking extends CDEntity {
   travelStartDate: string | null;
   travelEndDate: string | null;
   platform: string;
+  isCustomerConfirmed: boolean;
+  finalConfirmed: boolean;
 
   snapshot: IndependentTourBookingSnapshotData | null;
   metadata: IndependentTourBookingMetadata | null;
@@ -181,6 +183,7 @@ export interface FTFIndependentTourBooking extends CDEntity {
   liveRoomCount: number;
   livePaxCount: number;
   liveAddonCount: number;
+  customerConfirmedAt: string | null;
 
   latestApprovalRequestOID: string | null;
 

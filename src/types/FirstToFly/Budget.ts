@@ -35,8 +35,6 @@ export interface FTFBudget extends CDEntity {
     managerCount: number;
   }[];
 
-  originalGroupTourCostingOID: string;
-
   budgetEntryOIDs: string[];
 
   tenantOID: string;

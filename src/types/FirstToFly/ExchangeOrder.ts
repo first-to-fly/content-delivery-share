@@ -31,6 +31,10 @@ export interface FTFExchangeOrder extends CDEntity {
 
   isArchived: boolean;
 
+  // Bill relationship
+  billOID: string | null;
+  billUsedAmount: number | null;
+
   tenantOID: string;
 
   // Related entities

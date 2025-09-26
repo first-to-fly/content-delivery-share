@@ -45,14 +45,12 @@ export interface FTFBudgetEntry extends CDEntity {
     amountUsed: number;
   }[] | null;
 
-  originalCostingEntryOID: string;
-  forexRate: number;
-  localCurrency: string;
-  localAmount: number;
-  paymentStatus: PaymentStatus;
-  paidAmount: number;
-  // paymentTransactionOIDs: string[] | null; // Available when Finance module is added
-  // exchangeOrderItemOIDs: string[] | null; // Available when EO module is added
+  originalCostingEntryOID: string | null;
+  forexRate: number | null;
+  localCurrency: string | null;
+  localAmount: number | null;
+  paymentStatus: PaymentStatus | null;
+  paidAmount: number | null;
 
   createdAt: string;
   updatedAt: string;

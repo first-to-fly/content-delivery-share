@@ -1,4 +1,5 @@
 import type { CDEntity } from "../entity";
+import type { NamedURL } from "../url";
 
 /**
  * @export
@@ -12,7 +13,7 @@ export interface FTFAssembleLocationAirlines extends CDEntity {
   airportCode: string;
 
   location: string | null;
-  files: string[] | null;
+  files: NamedURL[] | null;
   isActive: boolean;
 
   createdAt: string;

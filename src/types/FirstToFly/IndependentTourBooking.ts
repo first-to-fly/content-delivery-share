@@ -55,6 +55,7 @@ export interface IndependentTourBookingPaxSnapshot {
 
 export interface IndependentTourBookingAddonSnapshot {
   oid: string;
+  independentTourOptionalServiceOID?: string;
   type: string; // 'optional_service' | 'manual'
   name: string;
   serviceDate: string;

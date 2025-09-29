@@ -454,6 +454,8 @@ export interface ApprovalRequestCustomerRefundMetadata {
   tenantOID: string;
   currencyCode?: string;
   notes?: string;
+  internalRemarks?: string;
+  externalRemarks?: string;
 }
 
 export interface ApprovalRequestCustomerCancellationFeeMetadata {
@@ -464,6 +466,8 @@ export interface ApprovalRequestCustomerCancellationFeeMetadata {
   tenantOID: string;
   currencyCode?: string;
   notes?: string;
+  internalRemarks?: string;
+  externalRemarks?: string;
 }
 
 export interface ApprovalRequestBookingExtensionMetadata {

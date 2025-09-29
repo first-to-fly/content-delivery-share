@@ -50,6 +50,7 @@ export interface IndependentTourBookingPaxSnapshot {
   personalDetails?: BookingPaxPersonalDetails;
   mealPreference?: string;
   documentIds?: string[];
+  isLocked?: boolean;
   snapshotCreatedAt: string;
 }
 

@@ -39,6 +39,7 @@ export interface GroupTourBookingPaxSnapshot {
   isLandTourOnly: boolean;
   mealPreference?: string;
   transportRecordOID?: string;
+  isLocked?: boolean;
 }
 
 export interface GroupTourBookingAppliedDiscountSnapshot {

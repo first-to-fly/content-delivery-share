@@ -1,4 +1,5 @@
 import type { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType } from "../enums/bookingTypes";
+import type { GroupTourBookingPricingSnapshot } from "./GroupTourBooking";
 import type { ApprovalType } from "./Approval";
 import type { BillStatus } from "./Bill";
 import type { DiscountMode } from "./Discount";
@@ -268,6 +269,10 @@ export interface ApprovalRequestGroupTourBookingAmendmentMetadata {
       rate: number;
     };
     totalAmount: number;
+    overridePricing?: {
+      fullFare?: Partial<GroupTourBookingPricingSnapshot["fullFare"]>; // Override selected retail fares
+      landFare?: Partial<GroupTourBookingPricingSnapshot["landFare"]>; // Override selected land fares
+    };
     primaryContact: {
       oid?: string;
       title: string;

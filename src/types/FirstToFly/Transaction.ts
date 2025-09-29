@@ -42,6 +42,8 @@ export interface FTFTransaction extends CDBaseEntity {
   status: TransactionStatus;
   transactionReference: string | null;
   notes: string | null;
+  internalRemarks: string | null;
+  externalRemarks: string | null;
   metadata: Record<string, unknown> | null;
   files: NamedURL[];
 

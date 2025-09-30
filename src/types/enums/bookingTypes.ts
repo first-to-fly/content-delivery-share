@@ -54,6 +54,7 @@ export enum BookingStatus {
   UNPAID = "unpaid",
   DEPOSIT_PAID = "deposit_paid",
   COMPLETED = "completed",
+  WAITLISTED = "waitlisted",
   CANCELLED = "cancelled",
   VOIDED = "voided",
   TRANSFERRED = "transferred",
@@ -62,7 +63,6 @@ export enum BookingStatus {
 export enum BookingRoomStatus {
   REQUESTED = "requested",
   CONFIRMED = "confirmed",
-  WAITLISTED = "waitlisted",
   CANCELLED = "cancelled",
 }
 

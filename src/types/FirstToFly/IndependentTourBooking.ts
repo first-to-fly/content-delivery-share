@@ -162,7 +162,6 @@ export interface FTFIndependentTourBooking extends CDEntity {
   travelEndDate: string | null;
   platform: string;
   isCustomerConfirmed: boolean;
-  finalConfirmed: boolean;
 
   snapshot: IndependentTourBookingSnapshotData | null;
   metadata: IndependentTourBookingMetadata | null;

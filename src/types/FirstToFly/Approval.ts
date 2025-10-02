@@ -27,6 +27,7 @@ export enum ApprovalType {
   BILL_DRAFT_TO_SUBMITTED = "bill-draft-to-submitted-approval",
 
   BOOKING_EXTENSION = "booking-extension-approval",
+  BOOKING_CANCELLATION_WITH_FINANCIALS = "booking-cancellation-with-financials-approval",
 }
 
 

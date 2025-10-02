@@ -470,6 +470,31 @@ export interface ApprovalRequestCustomerCancellationFeeMetadata {
   externalRemarks?: string;
 }
 
+export interface ApprovalRequestBookingCancellationMetadata {
+  type: ApprovalType.BOOKING_CANCELLATION_WITH_FINANCIALS;
+  bookingOID: string;
+  tenantOID: string;
+  cancellationReason?: string;
+  refund?: {
+    requestedAmount: number;
+    currencyCode?: string;
+    internalRemarks?: string;
+    externalRemarks?: string;
+  };
+  cancellationFee?: {
+    amount: number;
+    currencyCode?: string;
+    internalRemarks?: string;
+    externalRemarks?: string;
+  };
+  financialSummary: {
+    receivedAmount: number;
+    refundAmount: number;
+    cancellationFeeAmount: number;
+    netImpactToCustomer: number;
+  };
+}
+
 export interface ApprovalRequestBookingExtensionMetadata {
   type: ApprovalType.BOOKING_EXTENSION;
   extensionRequestID: string;
@@ -490,4 +515,5 @@ export type ApprovalRequestMetadata =
   | ApprovalRequestBillDraftToSubmittedMetadata
   | ApprovalRequestCustomerRefundMetadata
   | ApprovalRequestCustomerCancellationFeeMetadata
+  | ApprovalRequestBookingCancellationMetadata
   | ApprovalRequestBookingExtensionMetadata;

@@ -30,6 +30,7 @@ export enum CDEntityType {
   FTF_DEPOSIT = "ftf-deposit",
   FTF_TENANT = "ftf-tenant",
   FTF_TENANT_CONFIG = "ftf-tenantConfig",
+  FTF_TENANT_API = "ftf-tenantApi",
   FTF_PRIVACY_POLICY = "ftf-privacyPolicy",
   FTF_SECTOR = "ftf-sector",
   FTF_SECTOR_GROUP = "ftf-sectorGroup",

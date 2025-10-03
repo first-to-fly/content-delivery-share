@@ -23,9 +23,9 @@ export interface BookingPaxPersonalDetails {
   address?: string;
   postalCode?: string;
   emergencyContact?: {
-    name: string;
-    phone: string;
-    relationship: string;
+    name?: string;
+    phone?: string;
+    relationship?: string;
   };
   travelDocuments?: {
     visaApplicationRequired: boolean;

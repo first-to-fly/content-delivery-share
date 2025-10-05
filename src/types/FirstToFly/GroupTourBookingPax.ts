@@ -15,7 +15,10 @@ export interface FTFGroupTourBookingPax extends CDEntity {
   remarks: string | null;
   isConfirmed: boolean;
   confirmedAt: string | null;
+  confirmedByEmail: string | null;
   isLocked: boolean;
+  lockedAt: string | null;
+  lockedBy: string | null;
 
   createdBy: string;
   updatedBy: string | null;

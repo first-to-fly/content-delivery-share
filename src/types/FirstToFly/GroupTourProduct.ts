@@ -1,4 +1,5 @@
 import type { CDEntity } from "../entity";
+import type { BookingPaxType } from "../enums/bookingTypes";
 import type { MultiLangRecord } from "../multipleLanguage";
 import type { ProductPlatform } from "../platform";
 import type { NamedURL } from "../url";
@@ -58,6 +59,7 @@ export interface FTFGroupTourProduct extends CDEntity {
 
   defaultFullPaymentDueDays: number | null;
   pricingPlaceholder: Record<string, number> | null;
+  defaultStartingPricePaxType: BookingPaxType;
 
   isUmrahHaj: boolean | null;
 

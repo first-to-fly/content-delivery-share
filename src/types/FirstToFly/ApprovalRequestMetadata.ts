@@ -456,6 +456,9 @@ export interface ApprovalRequestCustomerRefundMetadata {
   notes?: string;
   internalRemarks?: string;
   externalRemarks?: string;
+  customerName?: string;
+  customerFirstName?: string;
+  customerLastName?: string;
 }
 
 export interface ApprovalRequestCustomerCancellationFeeMetadata {
@@ -468,6 +471,9 @@ export interface ApprovalRequestCustomerCancellationFeeMetadata {
   notes?: string;
   internalRemarks?: string;
   externalRemarks?: string;
+  customerName?: string;
+  customerFirstName?: string;
+  customerLastName?: string;
 }
 
 export interface ApprovalRequestBookingCancellationMetadata {
@@ -475,6 +481,9 @@ export interface ApprovalRequestBookingCancellationMetadata {
   bookingOID: string;
   tenantOID: string;
   cancellationReason?: string;
+  customerName?: string;
+  customerFirstName?: string;
+  customerLastName?: string;
   refund?: {
     requestedAmount: number;
     currencyCode?: string;

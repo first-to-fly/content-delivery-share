@@ -127,7 +127,8 @@ export type FTFTransportSegment = CDEntity & {
   destinationLocation: string;
   originTimezone: string;
   destinationTimezone: string;
-  /** Calendar day offset between departure and arrival. Range: -2 to +2. Manually entered by users based on airline tickets. */
+  /** Calendar day offset between departure and arrival. Range: -2 to +2.
+   * Manually entered by users based on airline tickets. */
   zoneOffset: number | null;
 
   // Actual mode fields

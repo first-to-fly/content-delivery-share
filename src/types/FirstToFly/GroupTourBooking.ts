@@ -268,6 +268,7 @@ export interface FTFGroupTourBooking extends CDEntity {
   platform: string;
   isCustomerConfirmed: boolean;
   snapshot: GroupTourBookingSnapshotData | null;
+  bookedPricingCurrency: string | null;
   metadata: GroupTourBookingMetadata | null;
   specialInstructions: string[] | null;
   overwriteTax: {

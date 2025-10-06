@@ -164,6 +164,7 @@ export interface FTFIndependentTourBooking extends CDEntity {
   isCustomerConfirmed: boolean;
 
   snapshot: IndependentTourBookingSnapshotData | null;
+  bookedPricingCurrency: string | null;
   metadata: IndependentTourBookingMetadata | null;
   specialInstructions: string[] | null;
   overwriteTax: {

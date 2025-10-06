@@ -45,6 +45,12 @@ export interface FTFBudgetEntry extends CDEntity {
     amountUsed: number;
   }[] | null;
 
+  matchDocLinks: {
+    matchDocOID: string;
+    amountUsed: number;
+    currencyRate?: number;
+  }[] | null;
+
   originalCostingEntryOID: string | null;
   forexRate: number | null;
   localCurrency: string | null;

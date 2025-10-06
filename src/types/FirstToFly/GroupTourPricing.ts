@@ -1,3 +1,4 @@
+import type { BookingPaxType } from "../enums/bookingTypes";
 import type { CDEntity } from "../entity";
 
 
@@ -131,6 +132,7 @@ export interface FTFGroupTourPricing extends CDEntity {
   groupTourPNLSimulationOIDs: string[] | null;
 
   changeHistory: GroupTourPricingMatrixChangeHistory | null;
+  startingPricePaxType: BookingPaxType;
 
   createdAt: string;
   updatedAt: string;

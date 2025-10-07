@@ -172,7 +172,7 @@ export interface GroupTourBookingPOISnapshot {
   name: string;
   address: string;
   type: string;
-  country: string;
+  countryCode: string;
   position: GeoPoint;
   additionalInfo?: Record<string, unknown>;
 }

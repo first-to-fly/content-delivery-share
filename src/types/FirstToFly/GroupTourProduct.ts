@@ -88,7 +88,7 @@ export interface FTFGroupTourProduct extends CDEntity {
 
   transportPlanOIDs: string[] | null;
 
-  countriesCovered: string[] | null;
+  countryCodesCovered: string[] | null;
 
   createdAt: string;
   updatedAt: string;

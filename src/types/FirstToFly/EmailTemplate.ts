@@ -1,4 +1,5 @@
 import type { CDEntity } from "../entity";
+import type { MultiLangRecord } from "../multipleLanguage";
 
 
 export type EmailTemplateKey =
@@ -15,23 +16,15 @@ export type EmailTemplateKey =
   | "customer.verification-otp"
   | "customer.booking-link";
 
-/**
- * @export
- * @interface FTFEmailTemplate
- * @extends {CDEntity}
- */
 export interface FTFEmailTemplate extends CDEntity {
-  id: string;
   key: EmailTemplateKey;
   tenantOID: string | null;
-  locale: string | null;
-  subjectTemplate: string;
-  bodyTemplate: string;
-  textTemplate: string | null;
-  isActive: boolean;
-  version: number;
+  subjectTemplate: MultiLangRecord<string>;
+  bodyTemplate: MultiLangRecord<string>;
+  textTemplate: MultiLangRecord<string | null>;
   createdAt: string;
-  updatedAt: string;
+  updatedAt: string | null;
+  deletedAt: string | null;
   createdBy: string;
   updatedBy: string | null;
 }

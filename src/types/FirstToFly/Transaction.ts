@@ -36,6 +36,7 @@ export interface FTFTransaction extends CDBaseEntity {
   payerEmail: string | null;
   amount: number;
   serviceFee: number;
+  currency: string | null;
   transactionType: TransactionType;
   transactionDate: string; // ISO Date string
   paymentWayOID: string | null; // Link to PaymentWay entity

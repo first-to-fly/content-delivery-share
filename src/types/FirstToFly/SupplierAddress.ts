@@ -8,7 +8,7 @@ export interface FTFSupplierAddress extends CDEntity {
   city: string;
   state: string | null;
   postalCode: string | null;
-  country: string;
+  countryCode: string;
   isDefault: boolean;
   createdAt: string;
   updatedAt: string;

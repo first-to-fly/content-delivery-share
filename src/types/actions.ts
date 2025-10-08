@@ -16,6 +16,7 @@ import type { FTFDesignation } from "./FirstToFly/Designation";
 import type { FTFDiscount } from "./FirstToFly/Discount";
 import type { FTFDiscountTemplate } from "./FirstToFly/DiscountTemplate";
 import type { FTFDocument } from "./FirstToFly/Document";
+import type { FTFEmailTemplate } from "./FirstToFly/EmailTemplate";
 import type { FTFExchangeOrder } from "./FirstToFly/ExchangeOrder";
 import type { FTFGroupTourBooking } from "./FirstToFly/GroupTourBooking";
 import type { FTFGroupTourBookingAddon } from "./FirstToFly/GroupTourBookingAddon";
@@ -85,6 +86,7 @@ export type AllEntityField =
   | keyof FTFDeposit
   | keyof FTFDesignation
   | keyof FTFDocument
+  | keyof FTFEmailTemplate
   | keyof FTFJournal
   | keyof FTFLocation
   | keyof FTFMatchDoc

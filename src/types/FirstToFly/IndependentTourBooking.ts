@@ -20,6 +20,14 @@ export interface IndependentTourProductSnapshot {
   additionalInfo?: Record<string, unknown>;
 }
 
+export interface IndependentTourAccommodationPriceValueSnapshot {
+  currency?: string;
+  tax?: number;
+  paxPricing?: Partial<Record<BookingPaxType, number>>;
+  peakSurchargeFixedAmount?: number;
+  extraNightPrice?: number;
+}
+
 export interface IndependentTourAccommodationSnapshot {
   oid: string;
   name: string;
@@ -30,9 +38,13 @@ export interface IndependentTourAccommodationSnapshot {
   nights?: number;
   roomType?: string;
   mealPlan?: string;
-  costValue: number | { amount: number; currency: string };
-  priceValue: number | { amount: number; currency: string };
-  additionalInfo?: Record<string, unknown>;
+  costValue?: IndependentTourAccommodationPriceValueSnapshot | null;
+  priceValue?: IndependentTourAccommodationPriceValueSnapshot | null;
+  peakPeriods: Array<{
+    startDate: string; // ISO date string
+    endDate: string; // ISO date string
+    name?: string | null;
+  }>;
 }
 
 export interface IndependentTourBookingRoomSnapshot {
@@ -64,6 +76,7 @@ export interface IndependentTourBookingAddonSnapshot {
   tax?: number;
   quantity: number;
   totalPrice: number;
+  currency?: string | null;
   supplierOID?: string;
   notes?: string;
   snapshotCreatedAt: string;

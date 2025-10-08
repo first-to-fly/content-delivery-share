@@ -316,6 +316,30 @@ export interface ApprovalRequestGroupTourBookingAmendmentMetadata {
   requestedDate: string;
 }
 
+export interface IndependentTourAccommodationPriceOverride {
+  currency?: string;
+  tax?: number;
+  paxPricing?: Partial<Record<BookingPaxType, number>>;
+  peakSurchargeFixedAmount?: number;
+  extraNightPrice?: number;
+}
+
+export interface IndependentTourOptionalServicePricingOverride {
+  independentTourOptionalServiceOID?: string;
+  unitPrice?: number;
+}
+
+export interface IndependentTourMiscellaneousPricingOverride {
+  independentTourMiscellaneousOID?: string;
+  amount?: number;
+}
+
+export interface IndependentTourBookingPricingOverride {
+  accommodation?: IndependentTourAccommodationPriceOverride;
+  optionalServices?: IndependentTourOptionalServicePricingOverride[];
+  miscellaneous?: IndependentTourMiscellaneousPricingOverride[];
+}
+
 export interface ApprovalRequestIndependentTourBookingAmendmentMetadata {
   type: ApprovalType.INDEPENDENT_TOUR_BOOKING_AMENDMENT;
   originalBookingOID: string;
@@ -395,6 +419,7 @@ export interface ApprovalRequestIndependentTourBookingAmendmentMetadata {
     };
     specialInstructions?: string;
     overwriteTax?: { scheme: string; rate: number };
+    overridePricing?: IndependentTourBookingPricingOverride;
     totalAmount: number;
   };
   originalBookingBreakdown: BookingBreakdown;

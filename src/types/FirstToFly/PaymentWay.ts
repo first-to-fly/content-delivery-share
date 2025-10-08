@@ -25,12 +25,6 @@ export enum PaymentMode {
   OFFLINE = "offline",
 }
 
-export enum PaymentWayStatus {
-  ACTIVE = "active",
-  INACTIVE = "inactive",
-}
-
-
 export type FTFPaymentWay = CDEntity & {
   tenantOID: string;
 
@@ -44,7 +38,7 @@ export type FTFPaymentWay = CDEntity & {
   remarks?: string;
 
   // Status
-  status: PaymentWayStatus;
+  isActive: boolean;
 
   // Business Rules
   isDaily: boolean;

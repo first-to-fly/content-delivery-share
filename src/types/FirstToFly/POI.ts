@@ -24,7 +24,7 @@ export interface FTFPOI extends CDEntity {
   name: string;
   address: string;
   type: string;
-  country: string;
+  countryCode: string;
   area: string;
   category: string;
   description: string | null;

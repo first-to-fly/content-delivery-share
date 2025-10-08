@@ -78,7 +78,7 @@ export interface FTFTourDeparture extends CDEntity {
 
   discount: FTFGroupTourPricingDiscount | null;
 
-  countriesCovered: string[] | null;
+  countryCodesCovered: string[] | null;
 
   // Room adjacency data (OIDs only)
   roomAdjacencies: FTFRoomAdjacencyData[] | null;

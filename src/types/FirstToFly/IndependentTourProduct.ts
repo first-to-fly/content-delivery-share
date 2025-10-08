@@ -79,7 +79,7 @@ export interface FTFIndependentTourProduct extends CDEntity {
   independentTourOptionalServiceOIDs: string[];
   independentTourMiscellaneousOIDs: string[];
 
-  countriesCovered: string[] | null;
+  countryCodesCovered: string[] | null;
 
   tenantOID: string;
 

@@ -2,19 +2,20 @@ import type { CDEntity } from "../entity";
 import type { MultiLangRecord } from "../multipleLanguage";
 
 
-export type EmailTemplateKey =
-  | "payment.request"
-  | "user.invitation"
-  | "group-tour.booking.confirmation"
-  | "independent-tour.booking.confirmation"
-  | "independent-tour.booking.cancellation"
-  | "user-message.notification"
-  | "approval.notification"
-  | "approval.outcome"
-  | "approval.timeout-warning"
-  | "tour-departure.min-pax-alert"
-  | "customer.verification-otp"
-  | "customer.booking-link";
+export enum EmailTemplateKey {
+  PAYMENT_REQUEST = "payment.request",
+  USER_INVITATION = "user.invitation",
+  GROUP_TOUR_BOOKING_CONFIRMATION = "group-tour.booking.confirmation",
+  INDEPENDENT_TOUR_BOOKING_CONFIRMATION = "independent-tour.booking.confirmation",
+  INDEPENDENT_TOUR_BOOKING_CANCELLATION = "independent-tour.booking.cancellation",
+  USER_MESSAGE_NOTIFICATION = "user-message.notification",
+  APPROVAL_NOTIFICATION = "approval.notification",
+  APPROVAL_OUTCOME = "approval.outcome",
+  APPROVAL_TIMEOUT_WARNING = "approval.timeout-warning",
+  TOUR_DEPARTURE_MIN_PAX_ALERT = "tour-departure.min-pax-alert",
+  CUSTOMER_VERIFICATION_OTP = "customer.verification-otp",
+  CUSTOMER_BOOKING_LINK = "customer.booking-link",
+}
 
 export interface FTFEmailTemplate extends CDEntity {
   key: EmailTemplateKey;

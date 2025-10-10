@@ -18,8 +18,8 @@ export interface FTFSupplierPayment extends CDEntity {
   branch: string | null;
   beneficiaryInfo: {
     name: string;
-    uen: string | null;
-    gst: string | null;
+    uen?: string | null;
+    gst?: string | null;
   };
   isDefault: boolean;
   remarks: string | null;

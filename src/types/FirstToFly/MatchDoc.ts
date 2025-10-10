@@ -33,6 +33,7 @@ export interface FTFMatchDoc extends CDEntity {
 
   // Supplier reference
   supplierOID: string | null;
+  supplierPaymentOID: string | null;
 
   totalAmount: number;
   currency: string;

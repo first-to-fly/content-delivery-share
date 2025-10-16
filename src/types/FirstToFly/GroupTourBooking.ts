@@ -254,7 +254,7 @@ export interface FTFGroupTourBooking extends CDEntity {
   groupTourPricingOID: string;
   groupTourProductOID: string;
   itineraryOID: string;
-  sectorOIDs: string[];
+  sectorOID: string;
   stationCodeOID: string | null;
   tcpBookingOID: string | null;
 

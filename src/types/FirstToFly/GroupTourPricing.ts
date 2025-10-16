@@ -102,7 +102,7 @@ export interface FTFGroupTourPricing extends CDEntity {
 
   groupTourProductOID: string; // parent
   groupTourCostingOID: string; // cost linkage
-  sectorOIDs: string[];
+  sectorOID: string;
 
   name: string;
   code: string;

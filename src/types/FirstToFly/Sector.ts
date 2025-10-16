@@ -16,6 +16,7 @@ export interface FTFSector extends CDEntity {
   parentOID: string | null;
 
   isPopular: boolean;
+  allowOverbooking: boolean;
   productTypes: ProductType[] | null;
   departmentOID: string | null;
 

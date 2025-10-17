@@ -54,7 +54,7 @@ export async function initWorker(cdAPIEndpoint: string, getUserTokenCb?: getUser
   await new Promise<void>(async (resolve) => {
 
     // 'import.meta' only allowed when '--module' is 'esnext' - already set in outside projects
-    cdWorker = new Worker(new URL("./workers/cd-worker/cd.worker.ts", import.meta.url));
+    cdWorker = new Worker(new URL("./workers/cd-worker/cd.worker.ts", import.meta.url), { type: "module" });
 
     let currentIDToken = "";
     if (getUserTokenCallback) {

@@ -46,8 +46,10 @@ import type { FTFPaymentWay } from "./FirstToFly/PaymentWay";
 import type { FTFPOI } from "./FirstToFly/POI";
 import type { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
 import type { FTFReferenceCode } from "./FirstToFly/ReferenceCode";
+import type { FTFReport } from "./FirstToFly/Report";
 import type { FTFRoomConfiguration } from "./FirstToFly/RoomConfiguration";
 import type { FTFRoomConfigurationRule } from "./FirstToFly/RoomConfigurationRule";
+import type { FTFScheduledReport } from "./FirstToFly/ScheduledReport";
 import type { FTFSector } from "./FirstToFly/Sector";
 import type { FTFSectorGroup } from "./FirstToFly/SectorGroup";
 import type { FTFSpecialInstruction } from "./FirstToFly/SpecialInstruction";
@@ -133,6 +135,8 @@ export type AllEntityField =
   | keyof FTFPaymentWay
 
   | keyof FTFTourDeparture
+  | keyof FTFReport
+  | keyof FTFScheduledReport
   | keyof FTFGroupTourBooking
   | keyof FTFGroupTourBookingRoom
   | keyof FTFGroupTourBookingPax

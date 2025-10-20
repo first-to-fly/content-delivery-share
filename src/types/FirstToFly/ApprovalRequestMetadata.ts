@@ -477,6 +477,7 @@ export interface ApprovalRequestCustomerRefundMetadata {
   paymentOrderOID: string;
   bookingOID: string;
   tenantOID: string;
+  paymentWayOID?: string;
   currencyCode?: string;
   notes?: string;
   internalRemarks?: string;

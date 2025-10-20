@@ -39,6 +39,7 @@ export type FTFPaymentWay = CDEntity & {
 
   // Status
   isActive: boolean;
+  isRefund: boolean;
 
   // Business Rules
   isDaily: boolean;

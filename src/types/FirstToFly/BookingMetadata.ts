@@ -71,7 +71,41 @@ export interface ITBTransferMetadata extends BaseTransferMetadata {
 /**
  * Primary customer/contact information required for all bookings.
  */
+export interface BookingPendingPaymentLink {
+  /** AirWallex payment link identifier */
+  id: string;
+  /** Direct URL for the payment link */
+  url: string;
+  /** Requested amount (major currency units) */
+  amount?: number;
+  /** Currency code used for the payment link */
+  currency?: string;
+  /** Booking reference supplied when creating the link */
+  reference?: string;
+  /** Human readable title provided to the link */
+  title?: string;
+  /** Description accompanying the link */
+  description?: string;
+  /** Current status reported by AirWallex */
+  status?: "UNPAID" | "PAID";
+  /** ISO timestamp when the link was created */
+  createdAt?: string;
+  /** ISO timestamp when the link will expire */
+  expiresAt?: string;
+  /** Internal user ID who initiated the link */
+  createdBy?: string;
+  /** Email address associated with the payment link */
+  customerEmail?: string;
+  /** Preferred payment way identifier for reconciliation */
+  paymentWayOID?: string;
+}
+
+/**
+ * Primary customer/contact information required for all bookings.
+ */
 export interface BaseBookingCustomerMetadata {
   /** Contact details of the main customer for the booking */
   customer: BookingPaxPersonalDetails;
+  /** Outstanding AirWallex payment links awaiting settlement */
+  pendingPaymentLinks?: BookingPendingPaymentLink[];
 }

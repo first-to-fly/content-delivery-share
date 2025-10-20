@@ -15,6 +15,20 @@ export enum EmailTemplateKey {
   TOUR_DEPARTURE_MIN_PAX_ALERT = "tour-departure.min-pax-alert",
   CUSTOMER_VERIFICATION_OTP = "customer.verification-otp",
   CUSTOMER_BOOKING_LINK = "customer.booking-link",
+  // NEW: Payment & Booking
+  PAYMENT_REMINDER = "payment.reminder",
+  PAYMENT_RECEIVED = "payment.received",
+  BOOKING_DETAIL_UPDATED_BY_CUSTOMER = "booking.detail-updated-by-customer",
+  // NEW: System & Account
+  USER_PASSWORD_RESET = "user.password-reset",
+  // NEW: Operations
+  STAFF_ASSIGNMENT_CHANGE = "staff.assignment-change",
+  // NEW: Approval Workflow
+  APPROVAL_REQUEST_APPROVED = "approval.request-approved",
+  APPROVAL_REQUEST_REJECTED = "approval.request-rejected",
+  APPROVAL_REQUEST_ABORTED = "approval.request-aborted",
+  APPROVAL_EO_FOLLOW_UP = "approval.eo-follow-up",
+  APPROVAL_REFUND_FOLLOW_UP = "approval.refund-follow-up",
 }
 
 export interface FTFEmailTemplate extends CDEntity {

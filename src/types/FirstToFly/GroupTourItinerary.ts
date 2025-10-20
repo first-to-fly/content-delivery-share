@@ -10,7 +10,7 @@ import type { NamedURL } from "../url";
 export interface FTFGroupTourItinerary extends CDEntity {
   groupTourProductOID: string;
   tourDepartureOID: string | null;
-  sectorOIDs: string[];
+  sectorOID: string;
 
   name: string;
 

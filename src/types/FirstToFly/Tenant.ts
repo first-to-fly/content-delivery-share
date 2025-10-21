@@ -11,6 +11,11 @@ export interface FTFTenant extends CDEntity {
   name: string;
   logo: string | null;
   description: string;
+  registeredCompanyName: string | null;
+  businessRegistrationNumber: string | null;
+  taxRegistrationNumber: string | null;
+  companyAddress: string | null;
+  companyPhoneNumber: number | null;
   domain: string;
   localizationSupportLanguages: LanguageCode[];
   homeCurrency: CurrencyCode;

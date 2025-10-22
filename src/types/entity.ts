@@ -90,6 +90,13 @@ export enum CDEntityType {
   FTF_INDEPENDENT_TOUR_BOOKING_ADDON = "ftf-independentTourBookingAddon",
   FTF_INDEPENDENT_TOUR_BOOKING_DISCOUNT = "ftf-independentTourBookingDiscount",
 
+  FTF_CUSTOMIZED_TOUR_BOOKING = "ftf-customizedTourBooking",
+  FTF_CUSTOMIZED_TOUR_ITINERARY = "ftf-customizedTourItinerary",
+  FTF_CUSTOMIZED_TOUR_ITINERARY_DAY = "ftf-customizedTourItineraryDay",
+  FTF_CUSTOMIZED_TOUR_ITINERARY_ITEM = "ftf-customizedTourItineraryItem",
+  FTF_CUSTOMIZED_TOUR_COST_ITEM = "ftf-customizedTourCostItem",
+  FTF_CUSTOMIZED_TOUR_TASK = "ftf-customizedTourTask",
+
   // USER MESSAGES
   FTF_USER_MESSAGE = "ftf-userMessage",
   // PAYMENT AND TRANSACTION

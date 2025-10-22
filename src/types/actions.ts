@@ -16,6 +16,12 @@ import type { FTFDesignation } from "./FirstToFly/Designation";
 import type { FTFDiscount } from "./FirstToFly/Discount";
 import type { FTFDiscountTemplate } from "./FirstToFly/DiscountTemplate";
 import type { FTFDocument } from "./FirstToFly/Document";
+import type { FTFCustomizedTourBooking } from "./FirstToFly/CustomizedTourBooking";
+import type { FTFCustomizedTourCostItem } from "./FirstToFly/CustomizedTourCostItem";
+import type { FTFCustomizedTourItinerary } from "./FirstToFly/CustomizedTourItinerary";
+import type { FTFCustomizedTourItineraryDay } from "./FirstToFly/CustomizedTourItineraryDay";
+import type { FTFCustomizedTourItineraryItem } from "./FirstToFly/CustomizedTourItineraryItem";
+import type { FTFCustomizedTourTask } from "./FirstToFly/CustomizedTourTask";
 import type { FTFEmailTemplate } from "./FirstToFly/EmailTemplate";
 import type { FTFExchangeOrder } from "./FirstToFly/ExchangeOrder";
 import type { FTFGroupTourBooking } from "./FirstToFly/GroupTourBooking";
@@ -138,6 +144,12 @@ export type AllEntityField =
   | keyof FTFGroupTourBookingPax
   | keyof FTFGroupTourBookingAddon
   | keyof FTFGroupTourBookingDiscount
+  | keyof FTFCustomizedTourBooking
+  | keyof FTFCustomizedTourItinerary
+  | keyof FTFCustomizedTourItineraryDay
+  | keyof FTFCustomizedTourItineraryItem
+  | keyof FTFCustomizedTourCostItem
+  | keyof FTFCustomizedTourTask
   | keyof FTFPaymentOrder
   | keyof FTFExchangeOrder
   | keyof FTFTransaction;

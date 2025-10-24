@@ -1,6 +1,7 @@
 import type { CDEntity } from "../entity";
 import type { BookingDiscountType, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
 import type { MultiLangRecord } from "../multipleLanguage";
+import type { NamedURL } from "../url";
 import type { BaseBookingCustomerMetadata, GTBTransferMetadata } from "./BookingMetadata";
 import type { CalculationBasis, CostingItemCategory, OccupancyType, PackageType } from "./CostingItem";
 import type { DiscountMode } from "./Discount";
@@ -282,6 +283,8 @@ export interface FTFGroupTourBooking extends CDEntity {
   // Cancellation/Void remarks
   remarks: string | null;
   insuranceDeclaration: string | null;
+  agreeToTerms: boolean | null;
+  signatureUrl: NamedURL | null;
 
   transactionOIDs: string[] | null;
   paymentOrderOID: string | null;

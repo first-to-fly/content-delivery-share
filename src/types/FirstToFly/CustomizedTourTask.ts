@@ -19,7 +19,7 @@ export interface FTFCustomizedTourTask extends CDEntity {
   customizedTourBookingOID: string;
   customizedTourItineraryItemOID: string | null;
   supplierOID: string | null;
-  assignedTo: string | null;
+  assignedToOID: string | null;
   title: string;
   description: string | null;
   status: CustomizedTourTaskStatus;

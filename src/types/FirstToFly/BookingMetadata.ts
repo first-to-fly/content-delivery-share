@@ -87,7 +87,7 @@ export interface BookingPendingPaymentLink {
   /** Description accompanying the link */
   description?: string;
   /** Current status reported by AirWallex */
-  status?: "UNPAID" | "PAID";
+  status?: "UNPAID" | "PAID" | "CANCELLED" | "EXPIRED" | "DISABLED";
   /** ISO timestamp when the link was created */
   createdAt?: string;
   /** ISO timestamp when the link will expire */
@@ -98,6 +98,8 @@ export interface BookingPendingPaymentLink {
   customerEmail?: string;
   /** Preferred payment way identifier for reconciliation */
   paymentWayOID?: string;
+  /** ISO timestamp representing when the link was last sent to the customer */
+  lastSentAt?: string;
 }
 
 /**

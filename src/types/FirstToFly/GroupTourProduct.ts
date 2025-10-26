@@ -96,4 +96,6 @@ export interface FTFGroupTourProduct extends CDEntity {
   updatedBy: string | null;
 
   tenantOID: string;
+
+  startingPrice: number | null;
 }

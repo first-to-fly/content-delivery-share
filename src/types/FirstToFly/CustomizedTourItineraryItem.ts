@@ -1,5 +1,33 @@
 import type { CDEntity } from "../entity";
+import type { GeoPoint } from "./POI";
 
+
+export interface FTFPOIAccommodationDetails {
+  type: "poi-accommodation";
+  poiOID: string;
+  checkIn?: string | null;
+  checkOut?: string | null;
+  roomType?: string | null;
+  specialRequests?: string | null;
+  notes?: string | null;
+}
+
+export interface FTFFreeFormAccommodationDetails {
+  type: "free-form-accommodation";
+  hotelName: string;
+  address?: string | null;
+  location?: GeoPoint | null;
+  contactNumber?: string | null;
+  checkIn?: string | null;
+  checkOut?: string | null;
+  roomType?: string | null;
+  specialRequests?: string | null;
+  notes?: string | null;
+}
+
+export type FTFCustomizedTourItineraryItemDetails =
+  | FTFPOIAccommodationDetails
+  | FTFFreeFormAccommodationDetails;
 
 export interface FTFCustomizedTourItineraryItem extends CDEntity {
   tenantOID: string;
@@ -7,7 +35,7 @@ export interface FTFCustomizedTourItineraryItem extends CDEntity {
   category: string;
   supplierOID: string | null;
   name: string;
-  details: Record<string, string> | null;
+  details: FTFCustomizedTourItineraryItemDetails | null;
   costEstimated: number | null;
   priceQuoted: number | null;
   costActual: number | null;

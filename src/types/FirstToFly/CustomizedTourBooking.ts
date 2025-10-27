@@ -77,7 +77,6 @@ export interface CustomizedTourBookingMetadata extends BaseBookingCustomerMetada
 
 export interface FTFCustomizedTourBooking extends CDEntity {
   tenantOID: string;
-  customerOID: string;
   departmentOID: string | null;
   stationCodeOID: string | null;
   saleStaffOID: string | null;

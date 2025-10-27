@@ -91,6 +91,7 @@ export enum CDEntityType {
   FTF_INDEPENDENT_TOUR_BOOKING_DISCOUNT = "ftf-independentTourBookingDiscount",
 
   FTF_CUSTOMIZED_TOUR_BOOKING = "ftf-customizedTourBooking",
+  FTF_CUSTOMIZED_TOUR_BOOKING_PAX = "ftf-customizedTourBookingPax",
   FTF_CUSTOMIZED_TOUR_ITINERARY = "ftf-customizedTourItinerary",
   FTF_CUSTOMIZED_TOUR_ITINERARY_DAY = "ftf-customizedTourItineraryDay",
   FTF_CUSTOMIZED_TOUR_ITINERARY_ITEM = "ftf-customizedTourItineraryItem",

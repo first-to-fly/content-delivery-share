@@ -89,4 +89,7 @@ export interface FTFIndependentTourProduct extends CDEntity {
   createdAt: string;
   updatedAt: string | null;
   deletedAt: string | null;
+
+  /** Derived from accommodations, placeholder */
+  startingPrice: number | null;
 }

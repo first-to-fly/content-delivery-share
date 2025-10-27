@@ -1,6 +1,6 @@
 import type { CDEntity } from "../entity";
 import type { BookingDiscountType, BookingPaxPersonalDetails, BookingPaxType, BookingPaymentStatus, BookingRoomStatus, BookingStatus } from "../enums/bookingTypes";
-import type { NamedURL } from "../url";
+import type { SignatureData } from "../signature";
 import type { BaseBookingCustomerMetadata, ITBTransferMetadata } from "./BookingMetadata";
 import type { DiscountMode } from "./Discount";
 
@@ -193,7 +193,7 @@ export interface FTFIndependentTourBooking extends CDEntity {
   remarks: string | null;
   insuranceDeclaration: string | null;
   agreeToTerms: boolean | null;
-  signatureUrl: NamedURL | null;
+  signature: SignatureData | null;
 
   transactionOIDs: string[] | null;
   paymentOrderOID: string | null;

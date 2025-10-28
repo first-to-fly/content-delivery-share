@@ -93,6 +93,7 @@ export enum CDEntityType {
   // USER MESSAGES
   FTF_USER_MESSAGE = "ftf-userMessage",
   // PAYMENT AND TRANSACTION
+  FTF_ENQUIRY = "ftf-enquiry",
   FTF_PAYMENT_ORDER = "ftf-paymentOrder",
   FTF_TRANSACTION = "ftf-transaction",
 

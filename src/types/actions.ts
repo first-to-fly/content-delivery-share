@@ -17,6 +17,7 @@ import type { FTFDiscount } from "./FirstToFly/Discount";
 import type { FTFDiscountTemplate } from "./FirstToFly/DiscountTemplate";
 import type { FTFDocument } from "./FirstToFly/Document";
 import type { FTFEmailTemplate } from "./FirstToFly/EmailTemplate";
+import type { FTFEnquiry } from "./FirstToFly/Enquiry";
 import type { FTFExchangeOrder } from "./FirstToFly/ExchangeOrder";
 import type { FTFGroupTourBooking } from "./FirstToFly/GroupTourBooking";
 import type { FTFGroupTourBookingAddon } from "./FirstToFly/GroupTourBookingAddon";
@@ -139,6 +140,7 @@ export type AllEntityField =
   | keyof FTFGroupTourBookingAddon
   | keyof FTFGroupTourBookingDiscount
   | keyof FTFPaymentOrder
+  | keyof FTFEnquiry
   | keyof FTFExchangeOrder
   | keyof FTFTransaction;
 

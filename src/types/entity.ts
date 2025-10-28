@@ -60,6 +60,7 @@ export enum CDEntityType {
   FTF_ROOM_CONFIGURATION = "ftf-roomConfiguration",
   FTF_ROOM_CONFIGURATION_RULE = "ftf-roomConfigurationRule",
   FTF_EMAIL_TEMPLATE = "ftf-emailTemplate",
+  FTF_PDF_TEMPLATE = "ftf-pdfTemplate",
   FTF_TRANSPORT_GROUP = "ftf-transportGroup",
   FTF_TRANSPORT_SEGMENT = "ftf-transportSegment",
   FTF_TRANSPORT_PLAN = "ftf-transportPlan",

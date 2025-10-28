@@ -6,6 +6,7 @@ export enum EmailTemplateKey {
   PAYMENT_REQUEST = "payment.request",
   USER_INVITATION = "user.invitation",
   GROUP_TOUR_BOOKING_CONFIRMATION = "group-tour.booking.confirmation",
+  CUSTOMIZED_TOUR_BOOKING_CONFIRMATION = "customized-tour.booking.confirmation",
   INDEPENDENT_TOUR_BOOKING_CONFIRMATION = "independent-tour.booking.confirmation",
   INDEPENDENT_TOUR_BOOKING_CANCELLATION = "independent-tour.booking.cancellation",
   USER_MESSAGE_NOTIFICATION = "user-message.notification",

@@ -88,12 +88,9 @@ export interface FTFCustomizedTourBooking extends CDEntity {
   status: CustomizedTourBookingStatus;
   paymentStatus: BookingPaymentStatus;
   overwriteDeposit: number | null;
-  expectedCancelTime: string | null;
   specialInstructions: string[] | null;
   insuranceDeclaration: string | null;
   remarks: string | null;
-  isCustomerConfirmed: boolean;
-  customerConfirmedAt: string | null;
   totalAmount: number | null;
   receivedAmount: number | null;
 

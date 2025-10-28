@@ -5,8 +5,6 @@ export interface FTFCustomizedTourItinerary extends CDEntity {
   tenantOID: string;
   customizedTourBookingOID: string;
   name: string;
-  validityStartDate: string | null;
-  validityEndDate: string | null;
   pdfs: Record<string, string> | null;
 
   createdAt: string;

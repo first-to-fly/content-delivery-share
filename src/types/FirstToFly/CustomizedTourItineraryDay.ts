@@ -1,4 +1,5 @@
 import type { CDEntity } from "../entity";
+import type { NamedURL } from "../url";
 
 
 export interface FTFCustomizedTourItineraryDay extends CDEntity {
@@ -7,7 +8,7 @@ export interface FTFCustomizedTourItineraryDay extends CDEntity {
   dayNumber: number;
   title: Record<string, string> | null;
   description: Record<string, string> | null;
-  files: Array<{ name: string; url: string }> | null;
+  files: NamedURL[] | null;
 
   createdAt: string;
   updatedAt: string;

@@ -71,8 +71,6 @@ export interface FTFEnquiry extends CDBaseEntity {
   notes: string | null;
   status: EnquiryStatus;
   statusReason: string | null;
-  statusChangedAt: string | null;
-  lastActivityAt: string;
 
   createdAt: string;
   updatedAt: string;

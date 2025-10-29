@@ -16,4 +16,5 @@ export interface FTFCustomizedTourItineraryDay extends CDEntity {
   updatedBy: string | null;
 
   itemOIDs: string[] | null;
+  itineraryItemOIDs: string[] | null;
 }

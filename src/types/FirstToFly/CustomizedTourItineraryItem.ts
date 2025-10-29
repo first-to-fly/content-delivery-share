@@ -31,7 +31,7 @@ export type FTFCustomizedTourItineraryItemDetails =
 
 export interface FTFCustomizedTourItineraryItem extends CDEntity {
   tenantOID: string;
-  customizedTourItineraryDayOID: string;
+  dayOIDs: string[] | null;
   category: string;
   supplierOID: string | null;
   name: string;

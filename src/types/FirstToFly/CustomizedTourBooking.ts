@@ -44,8 +44,8 @@ export interface CustomizedTourItineraryItemSnapshot {
   details?: string;
   poiOID?: string;
   dayAssignmentOIDs?: string[];
-  internalRemarks?: string[];
-  externalRemarks?: string[];
+  internalRemarks?: string | null;
+  externalRemarks?: string | null;
   startsAt?: string;
   endsAt?: string;
   snapshotCreatedAt: string;

@@ -36,6 +36,8 @@ export interface FTFCustomizedTourItineraryItem extends CDEntity {
   supplierOID: string | null;
   name: string;
   details: FTFCustomizedTourItineraryItemDetails | null;
+  internalRemarks?: string | null;
+  externalRemarks?: string | null;
   costEstimated: number | null;
   priceQuoted: number | null;
   costActual: number | null;

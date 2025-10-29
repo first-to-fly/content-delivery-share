@@ -9,6 +9,8 @@ export interface FTFCustomizedTourItineraryDay extends CDEntity {
   title: Record<string, string> | null;
   description: Record<string, string> | null;
   files: NamedURL[] | null;
+  internalRemarks?: string | null;
+  externalRemarks?: string | null;
 
   createdAt: string;
   updatedAt: string;

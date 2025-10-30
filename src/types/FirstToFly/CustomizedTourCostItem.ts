@@ -1,11 +1,27 @@
 import type { CDEntity } from "../entity";
 
 
+export enum CustomizedTourCostItemCategory {
+  GENERAL = "general",
+  ACCOMMODATION = "accommodation",
+  TRANSPORTATION = "transportation",
+  MEAL = "meal",
+  ACTIVITY = "activity",
+  SERVICE = "service",
+  TICKET = "ticket",
+  FEE = "fee",
+  TAX = "tax",
+  INSURANCE = "insurance",
+  MISCELLANEOUS = "miscellaneous",
+  OTHER = "other",
+}
+
+
 export interface FTFCustomizedTourCostItem extends CDEntity {
   tenantOID: string;
   customizedTourBookingOID: string;
   customizedTourItineraryItemOID: string | null;
-  category: string;
+  category: CustomizedTourCostItemCategory;
   supplierOID: string | null;
   estCost: number | null;
   quotedPrice: number | null;

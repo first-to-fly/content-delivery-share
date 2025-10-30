@@ -16,6 +16,7 @@ import type { FTFCustomizedTourCostItem } from "./FirstToFly/CustomizedTourCostI
 import type { FTFCustomizedTourItinerary } from "./FirstToFly/CustomizedTourItinerary";
 import type { FTFCustomizedTourItineraryDay } from "./FirstToFly/CustomizedTourItineraryDay";
 import type { FTFCustomizedTourItineraryItem } from "./FirstToFly/CustomizedTourItineraryItem";
+import type { FTFCustomizedTourQuote } from "./FirstToFly/CustomizedTourQuote";
 import type { FTFCustomizedTourTask } from "./FirstToFly/CustomizedTourTask";
 import type { FTFDepartment } from "./FirstToFly/Department";
 import type { FTFDeposit } from "./FirstToFly/Deposit";
@@ -151,6 +152,7 @@ export type AllEntityField =
   | keyof FTFCustomizedTourItineraryItem
   | keyof FTFCustomizedTourBookingPax
   | keyof FTFCustomizedTourCostItem
+  | keyof FTFCustomizedTourQuote
   | keyof FTFCustomizedTourTask
   | keyof FTFPaymentOrder
   | keyof FTFExchangeOrder

@@ -96,6 +96,7 @@ export enum CDEntityType {
   FTF_CUSTOMIZED_TOUR_ITINERARY_DAY = "ftf-customizedTourItineraryDay",
   FTF_CUSTOMIZED_TOUR_ITINERARY_ITEM = "ftf-customizedTourItineraryItem",
   FTF_CUSTOMIZED_TOUR_COST_ITEM = "ftf-customizedTourCostItem",
+  FTF_CUSTOMIZED_TOUR_QUOTE = "ftf-customizedTourQuote",
   FTF_CUSTOMIZED_TOUR_TASK = "ftf-customizedTourTask",
 
   // USER MESSAGES

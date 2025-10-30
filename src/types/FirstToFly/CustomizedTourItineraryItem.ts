@@ -1,5 +1,16 @@
 import type { CDEntity } from "../entity";
 import type { GeoPoint } from "./POI";
+import type { RoomType } from "./RoomConfigurationRule";
+
+
+export enum CustomizedTourItineraryItemCategory {
+  ACCOMMODATION = "accommodation",
+  TRANSPORT = "transport",
+  ACTIVITY = "activity",
+  FOOD_DINING = "food-dining",
+  SERVICES = "services",
+  OTHER = "other",
+}
 
 
 export interface FTFPOIAccommodationDetails {
@@ -7,7 +18,7 @@ export interface FTFPOIAccommodationDetails {
   poiOID: string;
   checkIn?: string | null;
   checkOut?: string | null;
-  roomType?: string | null;
+  roomType?: RoomType | null;
   specialRequests?: string | null;
   notes?: string | null;
 }
@@ -20,7 +31,7 @@ export interface FTFFreeFormAccommodationDetails {
   contactNumber?: string | null;
   checkIn?: string | null;
   checkOut?: string | null;
-  roomType?: string | null;
+  roomType?: RoomType | null;
   specialRequests?: string | null;
   notes?: string | null;
 }
@@ -32,7 +43,7 @@ export type FTFCustomizedTourItineraryItemDetails =
 export interface FTFCustomizedTourItineraryItem extends CDEntity {
   tenantOID: string;
   dayOIDs: string[] | null;
-  category: string;
+  category: CustomizedTourItineraryItemCategory;
   supplierOID: string | null;
   name: string;
   details: FTFCustomizedTourItineraryItemDetails | null;

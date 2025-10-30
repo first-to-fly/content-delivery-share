@@ -49,10 +49,16 @@ export interface FTFBill extends CDEntity {
   currencyRate: number | null;
   files: NamedURL[] | null;
 
-  // Xero integration fields
-  xeroInvoiceId: string | null;
-  xeroSyncStatus: string | null;
-  xeroSyncedAt: string | null;
+  // Xero sync status (from xero_sync table)
+  xeroSyncInfo: {
+    xeroId: string | null;
+    status: "synced" | "failed" | "pending" | null;
+    lastSyncAt: string | null;
+    error: string | null;
+  } | null;
+
+  // Bill-specific Xero field (supplier-finance integration)
+  xeroPaidEffectsAppliedAt: string | null;
 
   remarks: string | null;
   internalNotes: string | null;

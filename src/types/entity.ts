@@ -60,6 +60,7 @@ export enum CDEntityType {
   FTF_ROOM_CONFIGURATION = "ftf-roomConfiguration",
   FTF_ROOM_CONFIGURATION_RULE = "ftf-roomConfigurationRule",
   FTF_EMAIL_TEMPLATE = "ftf-emailTemplate",
+  FTF_PDF_TEMPLATE = "ftf-pdfTemplate",
   FTF_TRANSPORT_GROUP = "ftf-transportGroup",
   FTF_TRANSPORT_SEGMENT = "ftf-transportSegment",
   FTF_TRANSPORT_PLAN = "ftf-transportPlan",
@@ -102,6 +103,7 @@ export enum CDEntityType {
   // USER MESSAGES
   FTF_USER_MESSAGE = "ftf-userMessage",
   // PAYMENT AND TRANSACTION
+  FTF_ENQUIRY = "ftf-enquiry",
   FTF_PAYMENT_ORDER = "ftf-paymentOrder",
   FTF_TRANSACTION = "ftf-transaction",
 

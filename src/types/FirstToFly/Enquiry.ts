@@ -48,7 +48,7 @@ export interface FTFEnquiryTravelPeriod {
 export interface FTFEnquiryShortlistItem {
   productOID: string;
   label?: string | null;
-  productType?: string | null;
+  productType?: EnquiryProductType | null;
 }
 
 export interface FTFEnquiry extends CDBaseEntity {
@@ -58,8 +58,6 @@ export interface FTFEnquiry extends CDBaseEntity {
   customerName: string;
   mobile: string;
   email: string | null;
-
-  productType: EnquiryProductType;
   enquiryChannel: EnquiryChannel;
 
   occupancy: FTFEnquiryOccupancy;

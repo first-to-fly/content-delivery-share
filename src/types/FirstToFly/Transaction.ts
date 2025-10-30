@@ -48,6 +48,14 @@ export interface FTFTransaction extends CDBaseEntity {
   metadata: Record<string, unknown> | null;
   files: NamedURL[];
 
+  // Xero sync status (from xero_sync table)
+  xeroSyncInfo: {
+    xeroId: string | null;
+    status: "synced" | "failed" | "pending" | null;
+    lastSyncAt: string | null;
+    error: string | null;
+  } | null;
+
   createdAt: string; // ISO Date string
   updatedAt: string; // ISO Date string
   createdBy: string; // UserOID

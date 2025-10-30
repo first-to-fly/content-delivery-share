@@ -20,6 +20,14 @@ export interface FTFJournal extends CDEntity {
     type: "FROM" | "TO";
   }[] | null;
 
+  // Xero sync status (from xero_sync table)
+  xeroSyncInfo: {
+    xeroId: string | null;
+    status: "synced" | "failed" | "pending" | null;
+    lastSyncAt: string | null;
+    error: string | null;
+  } | null;
+
   createdAt: string;
   updatedAt: string;
   createdBy: string;

@@ -58,6 +58,7 @@ import type { FTFSupplier } from "./FirstToFly/Supplier";
 import type { FTFSupplierAddress } from "./FirstToFly/SupplierAddress";
 import type { FTFSupplierPayment } from "./FirstToFly/SupplierPayment";
 import type { FTFSupplierPerson } from "./FirstToFly/SupplierPerson";
+import type { FTFTaxType } from "./FirstToFly/TaxType";
 import type { FTFTenant } from "./FirstToFly/Tenant";
 import type { FTFTerm } from "./FirstToFly/Term";
 import type { FTFTermCondition } from "./FirstToFly/TermCondition";
@@ -134,6 +135,7 @@ export type AllEntityField =
   | keyof FTFSupplierPerson
   | keyof FTFPaymentWay
   | keyof FTFPdfTemplate
+  | keyof FTFTaxType
 
   | keyof FTFTourDeparture
   | keyof FTFGroupTourBooking

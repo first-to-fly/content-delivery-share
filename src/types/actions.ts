@@ -49,6 +49,7 @@ import type { FTFPOI } from "./FirstToFly/POI";
 import type { FTFPrivacyPolicy } from "./FirstToFly/PrivacyPolicy";
 import type { FTFReferenceCode } from "./FirstToFly/ReferenceCode";
 import type { FTFReport } from "./FirstToFly/Report";
+import type { FTFReportTemplate } from "./FirstToFly/ReportTemplate";
 import type { FTFRoomConfiguration } from "./FirstToFly/RoomConfiguration";
 import type { FTFRoomConfigurationRule } from "./FirstToFly/RoomConfigurationRule";
 import type { FTFScheduledReport } from "./FirstToFly/ScheduledReport";
@@ -140,6 +141,7 @@ export type AllEntityField =
   | keyof FTFTourDeparture
   | keyof FTFReport
   | keyof FTFScheduledReport
+  | keyof FTFReportTemplate
   | keyof FTFGroupTourBooking
   | keyof FTFGroupTourBookingRoom
   | keyof FTFGroupTourBookingPax

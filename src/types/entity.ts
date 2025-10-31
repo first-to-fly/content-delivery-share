@@ -76,6 +76,7 @@ export enum CDEntityType {
   FTF_EXCHANGE_ORDER_ITEM = "ftf-exchangeOrderItem",
   FTF_REPORT = "ftf-report",
   FTF_SCHEDULED_REPORT = "ftf-scheduledReport",
+  FTF_REPORT_TEMPLATE = "ftf-reportTemplate",
   FTF_APPROVAL_REQUEST = "ftf-approvalRequest",
   FTF_APPROVAL = "ftf-approval",
 

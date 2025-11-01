@@ -16,17 +16,24 @@ export enum CustomizedTourCostItemCategory {
   OTHER = "other",
 }
 
+export enum CustomizedTourCostItemOrigin {
+  AUTO = "auto",
+  MANUAL = "manual",
+}
+
 
 export interface FTFCustomizedTourCostItem extends CDEntity {
   tenantOID: string;
   customizedTourBookingOID: string;
   customizedTourItineraryItemOID: string | null;
+  origin: CustomizedTourCostItemOrigin;
   category: CustomizedTourCostItemCategory;
   supplierOID: string | null;
   estCost: number | null;
   quotedPrice: number | null;
   actualCost: number | null;
   margin: number | null;
+  overrideLocked: boolean;
 
   createdAt: string;
   updatedAt: string;

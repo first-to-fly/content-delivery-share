@@ -12,14 +12,14 @@ export interface FTFCustomizedTourQuoteAdjustment {
 
 export interface FTFCustomizedTourQuoteDeposit {
   amount: number;
-  dueDate: string | null;
+  dueDate?: string | null;
 }
 
 export interface FTFCustomizedTourQuotePaymentScheduleEntry {
   label: string;
-  dueDate: string | null;
+  dueDate?: string | null;
   amount: number;
-  description: string | null;
+  description?: string | null;
 }
 
 export type FTFCustomizedTourQuotePaymentSchedule = FTFCustomizedTourQuotePaymentScheduleEntry[];
@@ -27,7 +27,7 @@ export type FTFCustomizedTourQuotePaymentSchedule = FTFCustomizedTourQuotePaymen
 export interface FTFCustomizedTourQuoteLineItem {
   category: string;
   label: string;
-  description: string | null;
+  description?: string | null;
   quantity: number;
   unitPrice: number;
   totalPrice: number;

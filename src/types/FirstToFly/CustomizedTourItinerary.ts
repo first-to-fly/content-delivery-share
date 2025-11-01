@@ -9,6 +9,9 @@ export interface FTFCustomizedTourItinerary extends CDEntity {
   internalRemarks?: string | null;
   externalRemarks?: string | null;
 
+  itineraryItemOIDs: string[] | null;
+  itineraryDayOIDs: string[] | null;
+
   createdAt: string;
   updatedAt: string;
   createdBy: string;
